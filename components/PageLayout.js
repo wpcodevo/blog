@@ -7,7 +7,7 @@ const PageLayout = ({ children, className }) => {
     <>
       <BlogNavBar />
       <Container>
-        <div className={`page-wrapper container ${className}`}>{children}</div>
+        <div className={`page-wrapper ${className}`}>{children}</div>
         <Footer />
       </Container>
     </>

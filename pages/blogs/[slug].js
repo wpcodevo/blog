@@ -1,7 +1,9 @@
-import { Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card, Image } from "react-bootstrap";
 import PageLayout from "components/PageLayout";
 import { getBlogById, getAllBlogs } from "lib/api";
 import ShareSocial from "components/ShareSocial";
+import BlogContent from "components/BlogContent";
+import { urlFor } from "lib/api";
 
 function BlogDetails({ blog }) {
   return (
@@ -24,8 +26,7 @@ function BlogDetails({ blog }) {
               <div className='card-body-wrapper card-body-wrapper-1'>
                 <Card.Body className='card-body-1'>
                   <Card.Title className='card-main-title'>
-                    MemberPress Creators Have Earned over $1 billion dollars
-                    (Milestone Update)
+                    {blog.title}
                   </Card.Title>
                   <div className='authorInfo'>
                     Posted on {blog.date} by{" "}
@@ -36,7 +37,14 @@ function BlogDetails({ blog }) {
             </Card>
 
             <ShareSocial />
-            <img src={blog.coverImage} alt='' className='img-fluid rounded' />
+            <Image
+              width='100%'
+              src={urlFor(blog.coverImage).height(300).url()}
+              alt=''
+              className='img-fluid rounded mb-2 pb-4'
+            />
+
+            {<BlogContent content={blog.content} />}
           </main>
         </Col>
       </Row>

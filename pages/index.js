@@ -8,18 +8,34 @@ import {
   Image,
   Card,
 } from "react-bootstrap";
-
+import { useState } from "react";
 import PageLayout from "components/PageLayout";
 import AuthorIntro from "components/AuthorIntro";
 import CardListItem from "components/CartListItem";
 import CardsItemRow from "components/CardsItemRow";
 import { getAllBlogs } from "lib/api";
+import FilteringMenu from "components/FilteringMenu";
+import { useGetBlogs } from "actions";
 
-export default function Home({ blogs }) {
+export default function Home({ blogs: initialData }) {
+  const [filter, setFilter] = useState({
+    view: { list: 1 },
+  });
+
+  const { data: blogs, error } = useGetBlogs(initialData);
+  if (!blogs) {
+    return "Loading!";
+  }
+
   return (
     <PageLayout>
-      <AuthorIntro />
-      <hr />
+      {/* <AuthorIntro /> */}
+      <FilteringMenu
+        filter={filter}
+        onChange={(option, value) => {
+          setFilter({ ...filter, [option]: value });
+        }}
+      />
       <Row className='mb-5'>
         <Col md='10 wrapper-lg'>
           <main className='main-content'>
@@ -32,14 +48,25 @@ export default function Home({ blogs }) {
               </p>
             </div>
             {/* CardListItem STARTS */}
-            {/* {blogs.map((blog) => (
-              <div key={`${blogs.length}-list`}>
-                <CardListItem blog={blog} />
-              </div>
-            ))} */}
-
-            <CardsItemRow blogs={blogs} />
-
+            {filter.view.list ? (
+              blogs.map((blog) => (
+                <div key={`${blogs.length}-${Math.random()}-list`}>
+                  <CardListItem
+                    title={blog.title}
+                    coverImage={blog.coverImage}
+                    subtitle={blog.subtitle}
+                    date={blog.date}
+                    author={blog.author}
+                    link={{
+                      href: "blogs/[slug]",
+                      as: `blogs/${blog.slug}`,
+                    }}
+                  />
+                </div>
+              ))
+            ) : (
+              <CardsItemRow blogs={blogs} />
+            )}
             {/* CardListItem ENDS */}
           </main>
         </Col>

@@ -10,6 +10,8 @@ const CardsItemRow = ({ blogs }) => {
             subtitle={blog.subtitle}
             slug={blog.slug}
             coverImage={blog.coverImage}
+            date={blog.date}
+            author={blog.author}
             link={{
               href: "/blogs/[slug]",
               as: `/blogs/${blog.slug}`,
