@@ -4,13 +4,13 @@ import Footer from "./Footer";
 
 const PageLayout = ({ children, className }) => {
   return (
-    <>
+    <div className='grid-layout'>
       <BlogNavBar />
       <Container>
         <div className={`page-wrapper ${className}`}>{children}</div>
-        <Footer />
       </Container>
-    </>
+      <Footer />
+    </div>
   );
 };
 

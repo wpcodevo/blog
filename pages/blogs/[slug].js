@@ -1,16 +1,37 @@
-import { Row, Col, Card, Image } from "react-bootstrap";
+import { Row, Col, Card, Image, Spinner } from "react-bootstrap";
 import PageLayout from "components/PageLayout";
-import { getBlogById, getAllBlogs } from "lib/api";
+import { useRouter } from "next/router";
+import ErrorPage from "next/error";
+import { getBlogBySlug, getPaginatedBlogs } from "lib/api";
 import ShareSocial from "components/ShareSocial";
 import BlogContent from "components/BlogContent";
 import { urlFor } from "lib/api";
+import moment from "moment";
+import { PreviewAlert } from "components/PreviewAlert";
 
-function BlogDetails({ blog }) {
+function BlogDetails({ blog, preview }) {
+  const router = useRouter();
+
+  if (!router.isFallback && !blog?.slug) {
+    return <ErrorPage statusCode='404' />;
+  }
+
+  if (router.isFallback) {
+    return (
+      <PageLayout className='center'>
+        <div>
+          <Spinner animation='border' variant='danger' />
+        </div>
+      </PageLayout>
+    );
+  }
+
   return (
     <PageLayout>
       <Row className='mb-5'>
         <Col className='wrapper-lg'>
           <main className='main-content'>
+            {preview && <PreviewAlert />}
             <div className='archive-description'>
               <h1>Top WordPress News</h1>
               <p>
@@ -29,7 +50,7 @@ function BlogDetails({ blog }) {
                     {blog.title}
                   </Card.Title>
                   <div className='authorInfo'>
-                    Posted on {blog.date} by{" "}
+                    Posted on {moment(blog.date).format("LLLL")} by{" "}
                     <span className='orange-text'>{blog.author.name}</span>
                   </div>
                 </Card.Body>
@@ -37,14 +58,16 @@ function BlogDetails({ blog }) {
             </Card>
 
             <ShareSocial />
-            <Image
-              width='100%'
-              src={urlFor(blog.coverImage).height(300).url()}
-              alt=''
-              className='img-fluid rounded mb-2 pb-4'
-            />
+            {blog.coverImage && (
+              <Image
+                width='100%'
+                src={urlFor(blog.coverImage).height(300).url()}
+                alt=''
+                className='img-fluid rounded mb-2 pb-4'
+              />
+            )}
 
-            {<BlogContent content={blog.content} />}
+            {blog.content && <BlogContent content={blog.content} />}
           </main>
         </Col>
       </Row>
@@ -54,17 +77,18 @@ function BlogDetails({ blog }) {
 
 export default BlogDetails;
 
-export async function getStaticProps({ params }) {
-  const blog = await getBlogById(params.slug);
+export async function getStaticProps({ params, preview = false, previewData }) {
+  const blog = await getBlogBySlug(params.slug, preview);
   return {
     props: {
       blog,
+      preview,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const blogs = await getAllBlogs();
+  const blogs = await getPaginatedBlogs();
   const paths = blogs?.map((b) => {
     return {
       params: { slug: b.slug },
@@ -72,6 +96,6 @@ export async function getStaticPaths() {
   });
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }

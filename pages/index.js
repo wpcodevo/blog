@@ -1,31 +1,22 @@
-import {
-  Container,
-  Row,
-  Col,
-  Navbar,
-  Nav,
-  Media,
-  Image,
-  Card,
-} from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
 import PageLayout from "components/PageLayout";
 import AuthorIntro from "components/AuthorIntro";
-import CardListItem from "components/CartListItem";
-import CardsItemRow from "components/CardsItemRow";
-import { getAllBlogs } from "lib/api";
 import FilteringMenu from "components/FilteringMenu";
-import { useGetBlogs } from "actions";
+import { getPaginatedBlogs } from "lib/api";
+import { useGetBlogPages } from "actions/Pagination";
+import { PreviewAlert } from "components/PreviewAlert";
 
-export default function Home({ blogs: initialData }) {
+function Home({ blogs, preview }) {
   const [filter, setFilter] = useState({
     view: { list: 1 },
+    date: { asc: 0 },
   });
 
-  const { data: blogs, error } = useGetBlogs(initialData);
-  if (!blogs) {
-    return "Loading!";
-  }
+  const { pages, isLoadingMore, isReachingEnd, loadMore } = useGetBlogPages({
+    blogs,
+    filter,
+  });
 
   return (
     <PageLayout>
@@ -39,36 +30,23 @@ export default function Home({ blogs: initialData }) {
       <Row className='mb-5'>
         <Col md='10 wrapper-lg'>
           <main className='main-content'>
-            <div className='archive-description'>
-              <h1>Top WordPress News</h1>
-              <p>
-                WPBeginner's WordPress News keep you updated with what's hot in
-                the WordPress industry. Stay updated with WordPress releases,
-                major announcements, exclusive WordPress deals, and much more.
-              </p>
-            </div>
-            {/* CardListItem STARTS */}
-            {filter.view.list ? (
-              blogs.map((blog) => (
-                <div key={`${blogs.length}-${Math.random()}-list`}>
-                  <CardListItem
-                    title={blog.title}
-                    coverImage={blog.coverImage}
-                    subtitle={blog.subtitle}
-                    date={blog.date}
-                    author={blog.author}
-                    link={{
-                      href: "blogs/[slug]",
-                      as: `blogs/${blog.slug}`,
-                    }}
-                  />
-                </div>
-              ))
-            ) : (
-              <CardsItemRow blogs={blogs} />
-            )}
-            {/* CardListItem ENDS */}
+            {preview && <PreviewAlert />}
+            {pages}
           </main>
+          {/* Button */}
+          <div style={{ textAlign: "center", marginBottom: "20px" }}>
+            <button
+              onClick={loadMore}
+              disabled={isReachingEnd | isLoadingMore}
+              className='load-btn'
+            >
+              {isLoadingMore
+                ? "Loading..."
+                : isReachingEnd
+                ? "No More Blog"
+                : "Load More"}
+            </button>
+          </div>
         </Col>
 
         <Col md='4'>{/* <CardItem /> */}</Col>
@@ -77,11 +55,14 @@ export default function Home({ blogs: initialData }) {
   );
 }
 
-export async function getStaticProps() {
-  const blogs = await getAllBlogs();
+export default Home;
+
+export async function getStaticProps({ preview = false }) {
+  const blogs = await getPaginatedBlogs({ offset: 0, date: "desc" });
   return {
     props: {
       blogs,
+      preview,
     },
   };
 }

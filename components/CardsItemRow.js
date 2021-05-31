@@ -1,9 +1,9 @@
 import CardItem from "./CardItem";
 
-const CardsItemRow = ({ blogs }) => {
+const CardsItemRow = ({ paginatedBlogs }) => {
   return (
     <div className='d-grid'>
-      {blogs.map((blog) => (
+      {paginatedBlogs.map((blog) => (
         <div key={`${blog.slug}-list`}>
           <CardItem
             title={blog.title}

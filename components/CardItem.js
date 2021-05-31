@@ -1,6 +1,7 @@
 import { Card, Image } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
+import moment from "moment";
 
 const CardItem = ({
   title,
@@ -52,7 +53,7 @@ const CardItem = ({
                 {author.name}
               </Card.Title>
               <Card.Subtitle className='card-subtitle-avatar orange-text'>
-                {date}
+                {moment(date).format("LL")}
               </Card.Subtitle>
             </div>
           </div>
