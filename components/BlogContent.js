@@ -20,6 +20,38 @@ const serializers = {
       );
     },
   },
+  marks: {
+    color: ({ mark, children }) => {
+      return <span style={{ color: mark.hex }}>{children}</span>;
+    },
+    link: ({ mark, children }) => {
+      const { blank, href } = mark;
+      return blank ? (
+        <a
+          href={href}
+          style={{ color: "#ff6200" }}
+          target='_blank'
+          rel='noopener'
+        >
+          {children}
+        </a>
+      ) : (
+        <a href={href} style={{ color: "#ff6200" }}>
+          {children}
+        </a>
+      );
+    },
+    internalLink: ({ mark, children }) => {
+      const { slug = {} } = mark;
+      debugger;
+      const href = `/blogs/${slug.current}`;
+      return (
+        <a href={href} style={{ color: "#ff6200" }}>
+          {children}
+        </a>
+      );
+    },
+  },
 };
 
 const BlogContent = ({ content }) => {
