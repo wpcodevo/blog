@@ -23,7 +23,7 @@ function Home({ blogs, preview }) {
   return (
     <PageLayout className='container'>
       {/* Google Ads */}
-      <div className='google-ads'>
+      <div className='google-ads' style={{ height: "50px !important" }}>
         <GoogleAds slot='9967007599' />
       </div>
       {/* <AuthorIntro /> */}
