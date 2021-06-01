@@ -209,6 +209,7 @@ p {
     .card-link {
       margin: 0 25px 0 0;
       float: left;
+
     }
 
     p {
@@ -885,19 +886,23 @@ p {
     .card-link {
       width: 120px;
       height: auto;
+
+      img {
+        border: 1px solid var(--borderColor);
+      }
     }
   }
 
   .sharerHorizontal {
     .social-button {
-     justify-content: center;
+      justify-content: center;
 
-     span:first-child{
-      margin: 0;
-      text-align: center;
-     }
+      span:first-child {
+        margin: 0;
+        text-align: center;
+      }
 
-      span:last-child{
+      span:last-child {
         display: none;
       }
     }

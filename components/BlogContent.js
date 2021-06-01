@@ -43,7 +43,6 @@ const serializers = {
     },
     internalLink: ({ mark, children }) => {
       const { slug = {} } = mark;
-      debugger;
       const href = `/blogs/${slug.current}`;
       return (
         <a href={href} style={{ color: "#ff6200" }}>

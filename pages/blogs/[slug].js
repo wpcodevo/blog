@@ -30,8 +30,8 @@ function BlogDetails({ blog, preview }) {
   return (
     <PageLayout className='container'>
       <Row className='mb-5'>
-        <Col className='wrapper-lg'>
-          <main className='main-content'>
+        <div className='wrapper-lg no-border'>
+          <main className='main-content no-pad'>
             {preview && <PreviewAlert />}
             <div className='archive-description'>
               <h1>Top WordPress News</h1>
@@ -70,7 +70,7 @@ function BlogDetails({ blog, preview }) {
 
             {blog.content && <BlogContent content={blog.content} />}
           </main>
-        </Col>
+        </div>
         {/* Aside */}
         <Aside />
       </Row>
