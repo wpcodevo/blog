@@ -1,4 +1,4 @@
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { useState } from "react";
 import PageLayout from "components/PageLayout";
 import AuthorIntro from "components/AuthorIntro";
@@ -26,7 +26,7 @@ function Home({ blogs, preview }) {
       <div className='google-ads'>
         <GoogleFixAds
           slot='9967007599'
-          style={{ display: "block", height: "200px" }}
+          style={{ display: "block", height: "150px" }}
         />
       </div>
       {/* <AuthorIntro /> */}
