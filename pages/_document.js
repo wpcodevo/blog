@@ -7,10 +7,18 @@ class MyDocument extends Document {
   }
 
   render() {
+    const ads = process.env.NODE_ENV === "production" && (
+      <script
+        async
+        src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+      ></script>
+    );
+
     return (
       <Html lang='en'>
         <Head>
           {/* Google Ads */}
+
           <script
             async
             src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
@@ -80,6 +88,7 @@ class MyDocument extends Document {
             href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
             rel='stylesheet'
           />
+          {ads && ads}
         </Head>
         <body>
           <Main />
