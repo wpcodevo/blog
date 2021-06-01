@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import BlogNavBar from "./Navbar";
 import Footer from "./Footer";
 

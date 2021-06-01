@@ -15,7 +15,7 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
-      <title>Edem</title>
+      <title>Codevo</title>
       <Component {...pageProps} />
     </>
   );
