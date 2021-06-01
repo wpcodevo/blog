@@ -13,7 +13,7 @@ import {
   FaTachometerAlt,
 } from "react-icons/fa";
 import Link from "next/link";
-import GoogleAds from "./GoogleAds";
+import GoogleFixAds from "components/GoogleFixAds";
 
 const Aside = () => {
   return (
@@ -56,8 +56,8 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div className='widget advertisement' style={{ height: '400px !important'; }}>
-        <GoogleAds slot='8841628189' />
+      <div className='widget advertisement'>
+        <GoogleFixAds slot='8841628189' style={{ height: "400px" }} />
       </div>
 
       <div className='widget help'>
