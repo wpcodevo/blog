@@ -907,4 +907,29 @@ p {
       }
     }
   }
+
+
+  .block-img {
+    margin: 10px;
+    border: 1px solid var(--borderColor);
+
+    &-center {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    &-left {
+      float: left;
+    }
+
+    &-right {
+      float: right;
+    }
+
+    &-right,
+    &-left {
+      width: 53%;
+      height: auto;
+    }
+  }
 }
