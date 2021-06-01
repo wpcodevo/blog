@@ -10,6 +10,12 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
+          {/* Google Ads */}
+          <script
+            async
+            src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+          />
+
           <link
             rel='preload'
             href='/fonts/proxima/Proxima-Nova-Light.ttf'
@@ -73,7 +79,7 @@ class MyDocument extends Document {
           <link
             href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
             rel='stylesheet'
-          ></link>
+          />
         </Head>
         <body>
           <Main />

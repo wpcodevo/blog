@@ -33,13 +33,11 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
             </Link>
 
             <Card.Text className='card-main-text'>
-              {/* It’s always mind blowing for me to see the impact WordPress makes on
-            the global economy. MemberPress, the leading WordPress membership
-            and course platform, announced today that they have passed the
-            milestone of $1 billion dollars in creator earnings…{" "} */}
-              {subtitle}
+              {subtitle.length > 252
+                ? subtitle.substr(0, 252) + " ..."
+                : subtitle}
               <Link {...link}>
-                <a className='orange-text italic'>READ MORE</a>
+                <a className='orange-text italic'> READ MORE</a>
               </Link>
             </Card.Text>
           </div>

@@ -28,6 +28,34 @@ const BlogNavBar = () => {
             >
               Home
             </Nav.Link>
+
+            <Nav.Link
+              as={() => (
+                <Link href='#'>
+                  <a className='fj-navbar-item fj-navbar-link'>About</a>
+                </Link>
+              )}
+            >
+              About
+            </Nav.Link>
+            <Nav.Link
+              as={() => (
+                <Link href='#'>
+                  <a className='fj-navbar-item fj-navbar-link'>Privacy</a>
+                </Link>
+              )}
+            >
+              Privacy
+            </Nav.Link>
+            <Nav.Link
+              as={() => (
+                <Link href='#'>
+                  <a className='fj-navbar-item fj-navbar-link'>Terms</a>
+                </Link>
+              )}
+            >
+              Terms
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

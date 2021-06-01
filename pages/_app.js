@@ -2,14 +2,23 @@ import "styles/global.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "highlight.js/styles/darcula.css";
 import "styles/styles.scss";
+import { Adsense } from "@ctrl/react-adsense";
 
-function MyApp({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
+  <Adsense
+    client={process.env.DATA_AD_CLIENT}
+    slot='7259870550'
+    style={{ display: "block" }}
+    layout='in-article'
+    format='fluid'
+  />;
+
   return (
     <>
       <title>Edem</title>
       <Component {...pageProps} />
     </>
   );
-}
+};
 
-export default MyApp;
+export default App;

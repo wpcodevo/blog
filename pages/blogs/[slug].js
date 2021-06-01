@@ -8,6 +8,7 @@ import BlogContent from "components/BlogContent";
 import { urlFor } from "lib/api";
 import moment from "moment";
 import { PreviewAlert } from "components/PreviewAlert";
+import Aside from "components/Aside";
 
 function BlogDetails({ blog, preview }) {
   const router = useRouter();
@@ -27,7 +28,7 @@ function BlogDetails({ blog, preview }) {
   }
 
   return (
-    <PageLayout>
+    <PageLayout className='container'>
       <Row className='mb-5'>
         <Col className='wrapper-lg'>
           <main className='main-content'>
@@ -70,6 +71,8 @@ function BlogDetails({ blog, preview }) {
             {blog.content && <BlogContent content={blog.content} />}
           </main>
         </Col>
+        {/* Aside */}
+        <Aside />
       </Row>
     </PageLayout>
   );
@@ -84,6 +87,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
       blog,
       preview,
     },
+    revalidate: 1,
   };
 }
 

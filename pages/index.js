@@ -6,6 +6,7 @@ import FilteringMenu from "components/FilteringMenu";
 import { getPaginatedBlogs } from "lib/api";
 import { useGetBlogPages } from "actions/Pagination";
 import { PreviewAlert } from "components/PreviewAlert";
+import Aside from "components/Aside";
 
 function Home({ blogs, preview }) {
   const [filter, setFilter] = useState({
@@ -19,7 +20,7 @@ function Home({ blogs, preview }) {
   });
 
   return (
-    <PageLayout>
+    <PageLayout className='container'>
       {/* <AuthorIntro /> */}
       <FilteringMenu
         filter={filter}
@@ -28,8 +29,8 @@ function Home({ blogs, preview }) {
         }}
       />
       <Row className='mb-5'>
-        <Col md='10 wrapper-lg'>
-          <main className='main-content'>
+        <div className='wrapper-lg no-border'>
+          <main className='main-content no-pad'>
             {preview && <PreviewAlert />}
             {pages}
           </main>
@@ -47,9 +48,9 @@ function Home({ blogs, preview }) {
                 : "Load More"}
             </button>
           </div>
-        </Col>
-
-        <Col md='4'>{/* <CardItem /> */}</Col>
+        </div>
+        {/* Aside */}
+        <Aside />
       </Row>
     </PageLayout>
   );
@@ -64,5 +65,6 @@ export async function getStaticProps({ preview = false }) {
       blogs,
       preview,
     },
+    revalidate: 1,
   };
 }

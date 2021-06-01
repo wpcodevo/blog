@@ -23,8 +23,8 @@ const CardItem = ({
                   src={urlFor(coverImage)
                     .crop("center")
                     .fit("clip")
-                    .width(250)
-                    .height(200)
+                    .width(300)
+                    .height(300)
                     .url()}
                   alt='Card image cap'
                 />
@@ -36,7 +36,9 @@ const CardItem = ({
           {link && (
             <Link {...link}>
               <a className='no-italic'>
-                <Card.Title className='card-main-title-2'>{title}</Card.Title>
+                <Card.Title className='card-main-title-2'>
+                  {title.length > 40 ? title.substr(0, 40) + " ..." : title}
+                </Card.Title>
               </a>
             </Link>
           )}
