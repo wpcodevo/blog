@@ -61,6 +61,15 @@ const BlogNavBar = () => {
                   </a>
                 </Link>
               </li>
+
+              <li className='nav-item'>
+                <div
+                  class='g-ytsubscribe'
+                  data-channelid={process.env.DATA_YOUTUBE_ID}
+                  data-layout='default'
+                  data-count='default'
+                ></div>
+              </li>
             </ul>
           </div>
 

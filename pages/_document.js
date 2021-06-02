@@ -89,6 +89,7 @@ class MyDocument extends Document {
             rel='stylesheet'
           />
           {ads && ads}
+          <script src='https://apis.google.com/js/platform.js'></script>
         </Head>
         <body>
           <Main />
