@@ -18,11 +18,6 @@ export default class YouTubeSubscribe extends Component {
     count: "default",
   };
 
-  /**
-   *  React.createRef to attach script after mount
-   *  Ref) https://reactjs.org/docs/refs-and-the-dom.html
-   */
-
   constructor(props) {
     super(props);
     this.youtubeSubscribeNode = React.createRef();
