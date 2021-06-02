@@ -10,6 +10,7 @@ import moment from "moment";
 import { PreviewAlert } from "components/PreviewAlert";
 import Aside from "components/Aside";
 import GoogleFixAds from "components/GoogleFixAds";
+import AdSense from "react-adsense";
 
 function BlogDetails({ blog, preview }) {
   const router = useRouter();
@@ -31,7 +32,15 @@ function BlogDetails({ blog, preview }) {
   return (
     <PageLayout className='container'>
       {/* Google Ads */}
-      <div className='google-ads'></div>
+      <div className='google-ads'>
+        <AdSense.Google
+          client='ca-pub-1057373061381635'
+          slot='9967007599'
+          style={{ display: "block" }}
+          layout='in-article'
+          format='fluid'
+        />
+      </div>
       <Row className='mb-5'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>

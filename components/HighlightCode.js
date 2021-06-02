@@ -6,7 +6,7 @@ const HighlightCode = ({ language, children }) => {
   const code = createRef();
 
   useEffect(() => {
-    highlight.highlightBlock(findDOMNode(code.current));
+    highlight.highlightElement(findDOMNode(code.current));
   }, []);
 
   return (

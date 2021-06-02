@@ -2,7 +2,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { BiMenu } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
-import youtubeSubscribe from "components/youtubeSubcribe";
 import YouTubeSubscribe from "components/youtubeSubcribe";
 
 const BlogNavBar = () => {
