@@ -16,7 +16,7 @@ const Footer = () => {
           </p>
           <p>
             Contact Us:{" "}
-            <Link href='#'>
+            <Link href='mailto:contact@wpcodevo.com'>
               <a>contact@wpcodevo.com</a>
             </Link>
           </p>
