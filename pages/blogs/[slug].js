@@ -9,6 +9,7 @@ import { urlFor } from "lib/api";
 import moment from "moment";
 import { PreviewAlert } from "components/PreviewAlert";
 import Aside from "components/Aside";
+import GoogleFixAds from "components/GoogleFixAds";
 
 function BlogDetails({ blog, preview }) {
   const router = useRouter();
@@ -29,6 +30,8 @@ function BlogDetails({ blog, preview }) {
 
   return (
     <PageLayout className='container'>
+      {/* Google Ads */}
+      <div className='google-ads'></div>
       <Row className='mb-5'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>

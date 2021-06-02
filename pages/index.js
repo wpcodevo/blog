@@ -23,12 +23,7 @@ function Home({ blogs, preview }) {
   return (
     <PageLayout className='container'>
       {/* Google Ads */}
-      <div className='google-ads'>
-        <GoogleFixAds
-          slot='9967007599'
-          style={{ display: "block", height: "150px" }}
-        />
-      </div>
+      <div className='google-ads'></div>
       {/* <AuthorIntro /> */}
       <FilteringMenu
         filter={filter}

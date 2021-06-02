@@ -56,9 +56,7 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div className='widget advertisement'>
-        <GoogleFixAds slot='8841628189' style={{ height: "400px" }} />
-      </div>
+      <div className='widget advertisement'></div>
 
       <div className='widget help'>
         <div className='heading'>I need help with ...</div>

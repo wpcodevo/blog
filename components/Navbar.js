@@ -1,64 +1,74 @@
-import { Navbar, Nav } from "react-bootstrap";
+import { useState } from "react";
 import Link from "next/link";
+import { BiMenu } from "react-icons/bi";
+import { FaTimes } from "react-icons/fa";
 
 const BlogNavBar = () => {
+  const [openNav, setOpenNav] = useState(false);
+
   return (
     <div className='header'>
-      <Navbar
-        className='fj-navbar fj-nav-base container'
-        bg='transparent'
-        expand='lg'
-      >
-        <Navbar.Brand className='fj-navbar-brand'>
-          <Link href='/'>
-            <a>
-              <img src='/logo.svg' alt='' width='170px' height='40px' />
-            </a>
-          </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='ml-auto'>
-            <Nav.Link
-              as={() => (
-                <Link href='/'>
-                  <a className='fj-navbar-item fj-navbar-link'>Home</a>
-                </Link>
-              )}
-            >
-              Home
-            </Nav.Link>
+      <nav className='nav'>
+        <div className='navigation container'>
+          <div className='logo'>
+            <Link href='/' as='/'>
+              <a>
+                <h1>Codevo</h1>
+              </a>
+            </Link>
+          </div>
 
-            <Nav.Link
-              as={() => (
-                <Link href='#'>
-                  <a className='fj-navbar-item fj-navbar-link'>About</a>
+          <div className={`menu ${openNav ? "show" : ""}`}>
+            <div className='top-nav'>
+              <div className='logo'>
+                <Link href='/'>
+                  <a onClick={() => setOpenNav(!openNav)}>
+                    <h1>Codevo</h1>
+                  </a>
                 </Link>
-              )}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link
-              as={() => (
-                <Link href='#'>
-                  <a className='fj-navbar-item fj-navbar-link'>Privacy</a>
+              </div>
+              <div className='close' onClick={() => setOpenNav(!openNav)}>
+                <FaTimes />
+              </div>
+            </div>
+
+            <ul className='nav-list'>
+              <li className='nav-item'>
+                <Link href='/'>
+                  <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
+                    Home
+                  </a>
                 </Link>
-              )}
-            >
-              Privacy
-            </Nav.Link>
-            <Nav.Link
-              as={() => (
+              </li>
+              <li className='nav-item'>
                 <Link href='#'>
-                  <a className='fj-navbar-item fj-navbar-link'>Terms</a>
+                  <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
+                    About
+                  </a>
                 </Link>
-              )}
-            >
-              Terms
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+              </li>
+              <li className='nav-item'>
+                <Link href='#'>
+                  <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
+                    Privacy
+                  </a>
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link href='#'>
+                  <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
+                    Terms
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div onClick={() => setOpenNav(!openNav)} className='hamburger'>
+            <BiMenu />
+          </div>
+        </div>
+      </nav>
     </div>
   );
 };
