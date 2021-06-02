@@ -17,7 +17,7 @@ const Footer = () => {
           <p>
             Contact Us:{" "}
             <Link href='#'>
-              <a>youtube@gmail.com</a>
+              <a>contact@wpcodevo.com</a>
             </Link>
           </p>
         </div>
