@@ -3,7 +3,7 @@ import {
   FaTwitter,
   FaYoutube,
   FaLinkedinIn,
-  FaRegEnvelope,
+  FaGithub,
   FaPinterestP,
   FaBookReader,
   FaExclamationCircle,
@@ -20,38 +20,38 @@ const Aside = () => {
     <aside className='aside'>
       <div className='subscribe widget'>
         <div className='heading'>
-          Over 1,320,000+ Readers
-          <p>Get fresh content from WPBeginner</p>
+          Over 100+ Readers
+          <p>Get fresh content from Codevo</p>
         </div>
         <div className='social-icons'>
-          <Link href=''>
-            <a className='icon icon-facebook'>
+          <Link href='https://web.facebook.com/codevv/'>
+            <a className='icon icon-facebook' target='_blank'>
               <FaFacebookF />
             </a>
           </Link>
-          <Link href='#'>
-            <a className='icon icon-twitter'>
+          <Link href='https://twitter.com/EdemZiddah2'>
+            <a className='icon icon-twitter' target='_blank'>
               <FaTwitter />
             </a>
           </Link>
-          <Link href=''>
-            <a className='icon icon-youtube'>
+          <Link href='https://www.youtube.com/channel/UCRITDeojq9IsQfTWPeJ-pDQ?sub_confirmation=1'>
+            <a className='icon icon-youtube' target='_blank'>
               <FaYoutube />
             </a>
           </Link>
           <Link href='#'>
-            <a className='icon icon-linkin'>
+            <a className='icon icon-linkin' target='_blank'>
               <FaLinkedinIn />
             </a>
           </Link>
           <Link href='#'>
-            <a className='icon icon-pinterest'>
+            <a className='icon icon-pinterest' target='_blank'>
               <FaPinterestP />
             </a>
           </Link>
-          <Link href='#'>
-            <a className='icon icon-envelope'>
-              <FaRegEnvelope />
+          <Link href='https://github.com/ziddahedem'>
+            <a className='icon icon-envelope' target='_blank'>
+              <FaGithub />
             </a>
           </Link>
         </div>

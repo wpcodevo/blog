@@ -789,7 +789,7 @@ p {
         }
 
         &-envelope {
-          color: #9a9a9a;
+          color: var(--bodyColor);
         }
       }
     }

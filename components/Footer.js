@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaTwitter, FaYoutube, FaFacebookF } from "react-icons/fa";
+import { FaTwitter, FaYoutube, FaFacebookF, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -26,17 +26,22 @@ const Footer = () => {
           <div className='icons d-flex'>
             <div className='social-icons'>
               <Link href='https://web.facebook.com/codevv/'>
-                <a className='icon'>
+                <a className='icon' target='_blank'>
                   <FaFacebookF />
                 </a>
               </Link>
               <Link href='https://twitter.com/EdemZiddah2'>
-                <a className='icon'>
+                <a className='icon' target='_blank'>
                   <FaTwitter />
                 </a>
               </Link>
+              <Link href='https://github.com/ziddahedem'>
+                <a className='icon' target='_blank'>
+                  <FaGithub />
+                </a>
+              </Link>
               <Link href='https://www.youtube.com/channel/UCRITDeojq9IsQfTWPeJ-pDQ?sub_confirmation=1'>
-                <a className='icon'>
+                <a className='icon' target='_blank'>
                   <FaYoutube />
                 </a>
               </Link>
