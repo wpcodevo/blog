@@ -26,7 +26,7 @@ function Home({ blogs, preview }) {
       {/* Google Ads */}
       <div className='google-ads'>
         <AdSense.Google
-          client={process.env.DATA_AD_CLIENT}
+          client='ca-pub-1057373061381635'
           slot='9967007599'
           style={{ display: "block" }}
           layout='in-article'

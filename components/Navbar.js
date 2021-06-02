@@ -67,7 +67,7 @@ const BlogNavBar = () => {
               <li className='nav-item'>
                 <YouTubeSubscribe
                   // channelName={channelName}
-                  channelid={process.env.DATA_YOUTUBE_ID}
+                  channelid='UCRITDeojq9IsQfTWPeJ-pDQ'
                   theme={"default"}
                   layout={"default"}
                   count={"default"}
