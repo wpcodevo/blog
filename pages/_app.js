@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "highlight.js/styles/darcula.css";
 import "styles/styles.scss";
 import { Adsense } from "@ctrl/react-adsense";
+import { NextSeo } from "next-seo";
 
 const App = ({ Component, pageProps }) => {
   <Adsense
@@ -15,7 +16,7 @@ const App = ({ Component, pageProps }) => {
 
   return (
     <>
-      <title>Codevo</title>
+      <NextSeo title='Codevo - Exploring and Mastering Code' />
       <Component {...pageProps} />
     </>
   );

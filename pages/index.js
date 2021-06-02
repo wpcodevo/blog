@@ -25,13 +25,13 @@ function Home({ blogs, preview }) {
     <PageLayout className='container'>
       {/* Google Ads */}
       <div className='google-ads'>
-        <AdSense.Google
+        {/* <AdSense.Google
           client='ca-pub-1057373061381635'
           slot='9967007599'
           style={{ display: "block" }}
           layout='in-article'
           format='fluid'
-        />
+        /> */}
       </div>
       {/* <AuthorIntro /> */}
       <FilteringMenu

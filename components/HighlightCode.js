@@ -11,7 +11,7 @@ const HighlightCode = ({ language, children }) => {
 
   return (
     <pre>
-      <code ref={code} className={language}>
+      <code ref={code} className='language'>
         {children}
       </code>
     </pre>

@@ -360,6 +360,18 @@ p {
   font-size: 14px;
 }
 
+.code-block {
+  position: relative;
+}
+
+.code-copy {
+  font-size: 18px;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  cursor: pointer;
+}
+
 .blog-image {
   margin-bottom: 10px;
   text-align: center;
@@ -511,7 +523,7 @@ p {
 .nav-item {
   list-style: none;
 
-  &:last-child{
+  &:last-child {
     height: auto;
   }
 }
@@ -542,7 +554,7 @@ p {
 
 @media only screen and (max-width: 768px) {
   .nav {
-    padding: 5px 0;
+    padding: 0;
   }
 
   .menu {
@@ -572,18 +584,18 @@ p {
 
   .top-nav .close {
     color: #fff;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
   }
 
   .logo h1 {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .hamburger {
     display: block;
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
     padding: 10px;
     cursor: pointer;
   }
@@ -636,15 +648,15 @@ p {
   }
 
   .social-button {
+    display: flex !important;
+    align-items: center;
     color: #fff;
     padding: 8px 10px;
     border-radius: 3px;
     margin-right: 10px;
 
     span {
-      &:first-child {
-        margin-right: 5px;
-      }
+      margin-left: 5px;
     }
 
     &.sharerFacebook {
@@ -960,6 +972,14 @@ p {
       width: 53%;
       height: auto;
     }
+  }
+
+  .page-wrapper {
+    padding-top: 40px;
+  }
+
+  .google-ads {
+    display: none !important;
   }
 }
 
