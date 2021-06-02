@@ -25,17 +25,17 @@ const Footer = () => {
           <h3>Follow</h3>
           <div className='icons d-flex'>
             <div className='social-icons'>
-              <Link href='#'>
+              <Link href='https://web.facebook.com/codevv/'>
                 <a className='icon'>
                   <FaFacebookF />
                 </a>
               </Link>
-              <Link href='#'>
+              <Link href='https://twitter.com/EdemZiddah2'>
                 <a className='icon'>
                   <FaTwitter />
                 </a>
               </Link>
-              <Link href='#'>
+              <Link href='https://www.youtube.com/channel/UCRITDeojq9IsQfTWPeJ-pDQ?sub_confirmation=1'>
                 <a className='icon'>
                   <FaYoutube />
                 </a>
