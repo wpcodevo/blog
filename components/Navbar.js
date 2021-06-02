@@ -2,6 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { BiMenu } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
+import youtubeSubscribe from "components/youtubeSubcribe";
+import YouTubeSubscribe from "components/youtubeSubcribe";
 
 const BlogNavBar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -63,12 +65,13 @@ const BlogNavBar = () => {
               </li>
 
               <li className='nav-item'>
-                <div
-                  className='g-ytsubscribe'
-                  data-channelid={process.env.DATA_YOUTUBE_ID}
-                  data-layout='default'
-                  data-count='default'
-                ></div>
+                <YouTubeSubscribe
+                  // channelName={channelName}
+                  channelid={process.env.DATA_YOUTUBE_ID}
+                  theme={"default"}
+                  layout={"default"}
+                  count={"default"}
+                />
               </li>
             </ul>
           </div>

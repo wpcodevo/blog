@@ -9,6 +9,7 @@ class MyDocument extends Document {
   render() {
     const ads = process.env.NODE_ENV === "production" && (
       <script
+        defer
         async
         src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
       ></script>
@@ -17,13 +18,6 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          {/* Google Ads */}
-
-          <script
-            async
-            src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
-          />
-
           <link
             rel='preload'
             href='/fonts/proxima/Proxima-Nova-Light.ttf'
@@ -84,12 +78,7 @@ class MyDocument extends Document {
             href='/favicons/favicon-196.ico'
             type='image/x-icon'
           />
-          <link
-            href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
-            rel='stylesheet'
-          />
           {ads && ads}
-          <script src='https://apis.google.com/js/platform.js'></script>
         </Head>
         <body>
           <Main />

@@ -510,6 +510,10 @@ p {
 
 .nav-item {
   list-style: none;
+
+  &:last-child{
+    height: auto;
+  }
 }
 
 .nav-item:not(:last-child) {
