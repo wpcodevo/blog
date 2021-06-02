@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Row, Col, Card, Image, Spinner } from "react-bootstrap";
 import PageLayout from "components/PageLayout";
 import { useRouter } from "next/router";
@@ -12,9 +13,13 @@ import Aside from "components/Aside";
 import GoogleFixAds from "components/GoogleFixAds";
 import AdSense from "react-adsense";
 import { NextSeo } from "next-seo";
+import { FaDownload } from "react-icons/fa";
+import Link from "next/link";
 
 function BlogDetails({ blog, preview }) {
   const router = useRouter();
+  const [counter, setCounter] = useState(0);
+  const [showLink, setShowLink] = useState(false);
 
   if (!router.isFallback && !blog?.slug) {
     return <ErrorPage statusCode='404' />;
@@ -29,6 +34,18 @@ function BlogDetails({ blog, preview }) {
       </PageLayout>
     );
   }
+
+  useEffect(() => {
+    const timer =
+      showLink & (counter > 0) &&
+      setInterval(() => setCounter(counter - 1), 1000);
+    return () => clearInterval(timer);
+  }, [counter]);
+
+  const setTime = () => {
+    setShowLink(!showLink);
+    setCounter(50);
+  };
 
   return (
     <>
@@ -88,10 +105,33 @@ function BlogDetails({ blog, preview }) {
               )}
 
               {blog.content && <BlogContent content={blog.content} />}
+              {blog.file && (
+                <div
+                  className={`download-button d-flex ${showLink ? "hide" : ""}`}
+                  onClick={() => setTime()}
+                >
+                  <span>
+                    <FaDownload />
+                  </span>
+                  <span>Download Code Files</span>
+                </div>
+              )}
+              {showLink && (
+                <div className='download-link'>
+                  <p>
+                    Generating download link in <span>{counter}s</span>
+                  </p>
+                  {counter === 0 && (
+                    <Link href={`${blog.file}?dl=`}>
+                      <a>link here</a>
+                    </Link>
+                  )}
+                </div>
+              )}
             </main>
           </div>
           {/* Aside */}
-          <Aside />
+          <Aside file={blog.file} />
         </Row>
       </PageLayout>
     </>

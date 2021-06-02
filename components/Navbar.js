@@ -62,6 +62,13 @@ const BlogNavBar = () => {
                   </a>
                 </Link>
               </li>
+              <li className='nav-item'>
+                <Link href='#'>
+                  <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
+                    Contact Us
+                  </a>
+                </Link>
+              </li>
 
               <li className='nav-item'>
                 <YouTubeSubscribe

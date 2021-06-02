@@ -37,7 +37,7 @@ body {
 }
 
 .header {
-  background-color: var(--black);
+  background-color: var(--bodyColor);
   width: 100%;
   border-bottom: 1px solid var(--borderColor);
 }
@@ -529,14 +529,14 @@ p {
 }
 
 .nav-item:not(:last-child) {
-  margin-right: 0.5rem;
+  margin-right: 5px;
 }
 
 .nav-link:link,
 .nav-link:visited {
   color: #fff;
-  padding: 0.8rem 1rem;
-  border-radius: 0.3rem;
+  padding: 10px;
+  border-radius: 10px;
   transition: all 300ms ease-in-out;
 }
 
@@ -989,4 +989,45 @@ p {
   width: 100%;
   margin: 10px 0;
   background-color: var(--white);
+}
+
+.download-button {
+  width: 250px;
+  background-color: var(--orange);
+  margin: 10px auto 10px;
+  padding: 13px 10px;
+  border-radius: 10px;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+  &.hide {
+    display: none !important;
+  }
+
+  span {
+    display: inline-block;
+    color: #fff;
+
+    &:last-child {
+      font-family: 'Proxima-3';
+      font-size: 18px;
+      margin-left: 10px;
+    }
+  }
+}
+
+.download-link {
+  text-align: center;
+  margin: 10px auto 10px;
+
+  p {
+    font-size: 18px;
+    padding-bottom: 0 !important;
+
+    span {
+      color: var(--orange);
+      font-family: 'Proxima-3';
+    }
+  }
 }
