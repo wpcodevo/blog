@@ -8,6 +8,7 @@ import { useGetBlogPages } from "actions/Pagination";
 import { PreviewAlert } from "components/PreviewAlert";
 import Aside from "components/Aside";
 import GoogleFixAds from "components/GoogleFixAds";
+import AdSense from "react-adsense";
 
 function Home({ blogs, preview }) {
   const [filter, setFilter] = useState({
@@ -23,7 +24,15 @@ function Home({ blogs, preview }) {
   return (
     <PageLayout className='container'>
       {/* Google Ads */}
-      <div className='google-ads'></div>
+      <div className='google-ads'>
+        <AdSense.Google
+          client={process.env.DATA_AD_CLIENT}
+          slot='9967007599'
+          style={{ display: "block" }}
+          layout='in-article'
+          format='fluid'
+        />
+      </div>
       {/* <AuthorIntro /> */}
       <FilteringMenu
         filter={filter}
