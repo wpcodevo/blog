@@ -1,10 +1,12 @@
 import Layout from "components/Layout";
 import { getTerms } from "lib/api";
 import BlogContent from "components/BlogContent";
+import { NextSeo } from "next-seo";
 
 const Terms = ({ termsData }) => {
   return (
     <>
+      <NextSeo title='Terms of Use' />
       {/* Google Ads */}
       <div className='google-ads'>
         {/* <AdSense.Google

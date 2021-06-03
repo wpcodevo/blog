@@ -1,10 +1,12 @@
 import Layout from "components/Layout";
 import { getContact } from "lib/api";
 import BlogContent from "components/BlogContent";
+import { NextSeo } from "next-seo";
 
 const Contact = ({ contactData }) => {
   return (
     <>
+      <NextSeo title='Contact Codevo' />
       {/* Google Ads */}
       <div className='google-ads'>
         {/* <AdSense.Google

@@ -1,10 +1,12 @@
 import Layout from "components/Layout";
 import { getAbout } from "lib/api";
 import BlogContent from "components/BlogContent";
+import { NextSeo } from "next-seo";
 
 const About = ({ aboutData }) => {
   return (
     <>
+      <NextSeo title='About Codevo' />
       {/* Google Ads */}
       <div className='google-ads'>
         {/* <AdSense.Google

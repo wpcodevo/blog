@@ -1,10 +1,12 @@
 import Layout from "components/Layout";
 import { getPrivacy } from "lib/api";
 import BlogContent from "components/BlogContent";
+import { NextSeo } from "next-seo";
 
 const Privacy = ({ privacyData }) => {
   return (
     <>
+      <NextSeo title='Privacy at Codevo' />
       {/* Google Ads */}
       <div className='google-ads'>
         {/* <AdSense.Google
