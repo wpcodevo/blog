@@ -1,7 +1,6 @@
 import BlockContent from "@sanity/block-content-to-react";
 import HighlightCode from "components/HighlightCode";
 import { urlFor } from "lib/api";
-import { FaRegCopy } from "react-icons/fa";
 
 const serializers = {
   types: {
