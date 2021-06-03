@@ -78,6 +78,12 @@ class MyDocument extends Document {
             href='/favicons/favicon-196.ico'
             type='image/x-icon'
           />
+          <script
+            defer
+            type='text/javascript'
+            async
+            src='//l.getsitecontrol.com/p4r526o7.js'
+          ></script>
 
           {ads && ads}
         </Head>
