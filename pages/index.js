@@ -1,14 +1,11 @@
-import { Row } from "react-bootstrap";
 import { useState } from "react";
-import PageLayout from "components/PageLayout";
-import AuthorIntro from "components/AuthorIntro";
 import FilteringMenu from "components/FilteringMenu";
 import { getPaginatedBlogs } from "lib/api";
 import { useGetBlogPages } from "actions/Pagination";
 import { PreviewAlert } from "components/PreviewAlert";
-import Aside from "components/Aside";
-import GoogleFixAds from "components/GoogleFixAds";
-import AdSense from "react-adsense";
+import Layout from "components/Layout";
+// import GoogleFixAds from "components/GoogleFixAds";
+// import AdSense from "react-adsense";
 
 function Home({ blogs, preview }) {
   const [filter, setFilter] = useState({
@@ -22,7 +19,7 @@ function Home({ blogs, preview }) {
   });
 
   return (
-    <PageLayout className='container'>
+    <>
       {/* Google Ads */}
       <div className='google-ads'>
         {/* <AdSense.Google
@@ -40,31 +37,25 @@ function Home({ blogs, preview }) {
           setFilter({ ...filter, [option]: value });
         }}
       />
-      <Row className='mb-5'>
-        <div className='wrapper-lg no-border'>
-          <main className='main-content no-pad'>
-            {preview && <PreviewAlert />}
-            {pages}
-          </main>
-          {/* Button */}
-          <div style={{ textAlign: "center", marginBottom: "20px" }}>
-            <button
-              onClick={loadMore}
-              disabled={isReachingEnd | isLoadingMore}
-              className='load-btn'
-            >
-              {isLoadingMore
-                ? "Loading..."
-                : isReachingEnd
-                ? "No More Blog"
-                : "Load More"}
-            </button>
-          </div>
+      <Layout>
+        {preview && <PreviewAlert />}
+        {pages}
+        {/* Button */}
+        <div style={{ textAlign: "center", marginBottom: "20px" }}>
+          <button
+            onClick={loadMore}
+            disabled={isReachingEnd | isLoadingMore}
+            className='load-btn'
+          >
+            {isLoadingMore
+              ? "Loading..."
+              : isReachingEnd
+              ? "No More Blog"
+              : "Load More"}
+          </button>
         </div>
-        {/* Aside */}
-        <Aside />
-      </Row>
-    </PageLayout>
+      </Layout>
+    </>
   );
 }
 

@@ -42,28 +42,28 @@ const BlogNavBar = () => {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link href='#'>
+                <Link href='/about'>
                   <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
                     About
                   </a>
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link href='#'>
+                <Link href='/privacy'>
                   <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
                     Privacy
                   </a>
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link href='#'>
+                <Link href='/terms'>
                   <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
                     Terms
                   </a>
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link href='#'>
+                <Link href='/contact'>
                   <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
                     Contact Us
                   </a>

@@ -4,6 +4,7 @@ import "highlight.js/styles/darcula.css";
 import "styles/styles.scss";
 import { Adsense } from "@ctrl/react-adsense";
 import { NextSeo } from "next-seo";
+import PageLayout from "components/PageLayout";
 
 const App = ({ Component, pageProps }) => {
   <Adsense
@@ -17,7 +18,9 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <NextSeo title='Codevo - Exploring and Mastering Code' />
-      <Component {...pageProps} />
+      <PageLayout className='container'>
+        <Component {...pageProps} />
+      </PageLayout>
     </>
   );
 };
