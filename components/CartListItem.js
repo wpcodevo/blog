@@ -24,8 +24,8 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
                   variant='top'
                   className='card-img'
                   src={urlFor(coverImage)
-                    .width(180)
-                    .height(180)
+                    .width(270)
+                    .height(200)
                     .fit("clip")
                     .url()}
                 />

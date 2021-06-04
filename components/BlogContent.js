@@ -1,6 +1,8 @@
 import BlockContent from "@sanity/block-content-to-react";
 import HighlightCode from "components/HighlightCode";
 import { urlFor } from "lib/api";
+import getYouTubeId from "get-youtube-id";
+import YouTube from "react-youtube";
 
 const serializers = {
   types: {
@@ -11,6 +13,11 @@ const serializers = {
           <div className='code-filename'>{filename}</div>
         </HighlightCode>
       );
+    },
+    youtube: ({ node }) => {
+      const { url } = node;
+      const id = getYouTubeId(url);
+      return <YouTube className='youtubeWrapper' videoId={id} />;
     },
     image: ({ node: { alt, asset, position = "center" } }) => {
       return (

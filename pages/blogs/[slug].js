@@ -89,7 +89,7 @@ function BlogDetails({ blog, preview }) {
         {blog.coverImage && (
           <Image
             width='100%'
-            src={urlFor(blog.coverImage).height(300).url()}
+            src={urlFor(blog.coverImage).width(720).height(400).url()}
             alt=''
             className='img-fluid rounded mb-2 pb-4'
           />

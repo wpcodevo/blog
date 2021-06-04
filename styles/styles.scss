@@ -889,6 +889,10 @@ p {
   }
 }
 
+.youtubeWrapper {
+  width: 100%;
+}
+
 @media only screen and (max-width: 430px) {
   .card-flex {
     .card-link {
@@ -946,6 +950,30 @@ p {
 
   .google-ads {
     display: none !important;
+  }
+
+  .youtubeWrapper {
+    height: 190px;
+  }
+
+  //
+  .download-button {
+    width: 200px !important;
+    padding: 10px 10px !important;
+
+    span {
+      &:last-child {
+        font-size: 15px !important;
+      }
+    }
+  }
+
+  .download-link {
+    margin: 10px auto 10px;
+
+    p {
+      font-size: 15px !important;
+    }
   }
 }
 
