@@ -109,7 +109,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   return {
     props: {
       blog,
-      preview,
+      preview: true,
     },
     revalidate: 1,
   };
