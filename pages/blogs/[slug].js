@@ -3,7 +3,7 @@ import { Card, Image, Spinner } from "react-bootstrap";
 import PageLayout from "components/PageLayout";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import { getBlogBySlug, getPaginatedBlogs } from "lib/api";
+import { getBlogBySlug, getPaginatedBlogs, onBlogUpdate } from "lib/api";
 import ShareSocial from "components/ShareSocial";
 import BlogContent from "components/BlogContent";
 import { urlFor } from "lib/api";
@@ -15,10 +15,11 @@ import { NextSeo } from "next-seo";
 import DownloadFile from "components/DownloadFile";
 import Layout from "components/Layout";
 
-function BlogDetails({ blog, preview }) {
+function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
   const [counter, setCounter] = useState(0);
   const [showLink, setShowLink] = useState(false);
+  const [blog, setBlog] = useState(initialBlog);
 
   if (!router.isFallback && !blog?.slug) {
     return <ErrorPage statusCode='404' />;
@@ -33,6 +34,17 @@ function BlogDetails({ blog, preview }) {
       </PageLayout>
     );
   }
+
+  useEffect(() => {
+    let sub;
+    if (preview) {
+      sub = onBlogUpdate(blog.slug).subscribe((update) => {
+        setBlog(update.result);
+      });
+    }
+
+    return () => sub && sub.unsubscribe();
+  }, []);
 
   useEffect(() => {
     const timer =
@@ -62,7 +74,7 @@ function BlogDetails({ blog, preview }) {
             format='fluid'
           /> */}
       </div>
-      <Layout blog={blog}>
+      <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
         <div className='archive-description'>
           <h1>Top WordPress News</h1>
@@ -76,26 +88,28 @@ function BlogDetails({ blog, preview }) {
         <Card className={`fj-card fj-card-list card-wrapper card-wrapper-1`}>
           <div className='card-body-wrapper card-body-wrapper-1'>
             <Card.Body className='card-body-1'>
-              <Card.Title className='card-main-title'>{blog.title}</Card.Title>
+              <Card.Title className='card-main-title'>
+                {initialBlog.title}
+              </Card.Title>
               <div className='authorInfo'>
-                Posted on {moment(blog.date).format("LLLL")} by{" "}
-                <span className='orange-text'>{blog.author.name}</span>
+                Posted on {moment(initialBlog.date).format("LLLL")} by{" "}
+                <span className='orange-text'>{initialBlog.author.name}</span>
               </div>
             </Card.Body>
           </div>
         </Card>
 
         <ShareSocial />
-        {blog.coverImage && (
+        {initialBlog.coverImage && (
           <Image
             width='100%'
-            src={urlFor(blog.coverImage).width(720).height(400).url()}
+            src={urlFor(initialBlog.coverImage).width(720).height(400).url()}
             alt=''
             className='img-fluid rounded mb-2 pb-4'
           />
         )}
 
-        {blog.content && <BlogContent content={blog.content} />}
+        {initialBlog.content && <BlogContent content={initialBlog.content} />}
         <DownloadFile blog={blog} />
       </Layout>
     </>
@@ -109,6 +123,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   return {
     props: {
       blog,
+      preview,
     },
     revalidate: 1,
   };
