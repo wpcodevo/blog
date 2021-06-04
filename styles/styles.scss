@@ -51,6 +51,7 @@ a {
   width: 100%;
   background-color: var(--white);
   border: 1px solid var(--borderColor);
+  overflow: hidden;
 }
 
 .layoutWrapper {
@@ -868,6 +869,12 @@ p {
       }
     }
   }
+
+  // .hljs {
+  //   max-height: 500px;
+  //   max-width: 750px !important;
+  //   margin-right: 15px;
+  // }
 }
 
 @media only screen and (max-width: 567px) {
@@ -1036,4 +1043,5 @@ p {
 
 .hljs {
   max-height: 500px;
+  max-width: 100%;
 }
