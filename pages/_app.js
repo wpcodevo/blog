@@ -5,6 +5,7 @@ import "styles/styles.scss";
 import { Adsense } from "@ctrl/react-adsense";
 import { NextSeo } from "next-seo";
 import PageLayout from "components/PageLayout";
+import ScrollTop from "components/ScrollTop";
 
 const App = ({ Component, pageProps }) => {
   <Adsense
@@ -21,6 +22,7 @@ const App = ({ Component, pageProps }) => {
       <PageLayout className='container'>
         <Component {...pageProps} />
       </PageLayout>
+      <ScrollTop />
     </>
   );
 };

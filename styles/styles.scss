@@ -36,12 +36,6 @@ body {
   }
 }
 
-.header {
-  background-color: var(--bodyColor);
-  width: 100%;
-  border-bottom: 1px solid var(--borderColor);
-}
-
 a {
   text-decoration: none !important;
 }
@@ -472,18 +466,24 @@ p {
 }
 
 // Navigation
-.nav {
-  padding: 16px 0;
+.header {
+  background-color: var(--bodyColor);
+  width: 100%;
+  border-bottom: 1px solid var(--borderColor);
+
+  &.fix-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: all 500ms ease-in-out;
+  }
 }
 
-.nav.fix-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--black);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  z-index: 999;
+.nav {
+  padding: 16px 0;
 }
 
 .navigation {
@@ -1044,4 +1044,28 @@ p {
 .hljs {
   max-height: 500px;
   max-width: 100%;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  padding: 8px 13px;
+  border-radius: 50%;
+  background-color: var(--orange);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+  z-index: 10000;
+
+  span {
+    color: #fff;
+  }
+
+  &.showBtn {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
 }
