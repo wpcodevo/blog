@@ -61,7 +61,9 @@ function BlogDetails({ blog: initialBlog, preview }) {
   return (
     <>
       <NextSeo
-        title={blog.slug ? blog.slug : "Codevo - Exploring and Mastering Code"}
+        title={
+          blog.title ? blog.title : "Codevo - Exploring and Mastering Code"
+        }
         description='Welcome to my website codevo where I share latest coding snippets'
       />
       {/* Google Ads */}
