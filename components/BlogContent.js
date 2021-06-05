@@ -1,5 +1,6 @@
 import BlockContent from "@sanity/block-content-to-react";
 import HighlightCode from "components/HighlightCode";
+import Highlight from "react-highlight";
 import { urlFor } from "lib/api";
 import getYouTubeId from "get-youtube-id";
 import YouTube from "react-youtube";
@@ -8,10 +9,10 @@ const serializers = {
   types: {
     code: ({ node: { language, code, filename } }) => {
       return (
-        <HighlightCode language={language}>
+        <Highlight language={language}>
           {code}
           <div className='code-filename'>{filename}</div>
-        </HighlightCode>
+        </Highlight>
       );
     },
     youtube: ({ node }) => {

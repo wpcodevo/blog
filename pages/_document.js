@@ -78,6 +78,7 @@ class MyDocument extends Document {
             href='/favicons/favicon-196.ico'
             type='image/x-icon'
           />
+          {/* <link rel='stylesheet' href='/path/to/styles/theme-name.css'></link> */}
 
           {ads && ads}
         </Head>
