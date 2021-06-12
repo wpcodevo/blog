@@ -6,6 +6,7 @@ import { Adsense } from "@ctrl/react-adsense";
 import { NextSeo } from "next-seo";
 import PageLayout from "components/PageLayout";
 import ScrollTop from "components/ScrollTop";
+import CookieConsent from "react-cookie-consent";
 
 const App = ({ Component, pageProps }) => {
   <Adsense
@@ -22,6 +23,7 @@ const App = ({ Component, pageProps }) => {
       <PageLayout className='container'>
         <Component {...pageProps} />
       </PageLayout>
+      <CookieConsent>Hello and welcome</CookieConsent>
       <ScrollTop />
     </>
   );
