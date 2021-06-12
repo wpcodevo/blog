@@ -79,11 +79,11 @@ function BlogDetails({ blog: initialBlog, preview }) {
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
         <div className='archive-description'>
-          <h1>Top WordPress News</h1>
+          <h1>Top Coding News</h1>
           <p>
-            WPBeginner's WordPress News keep you updated with what's hot in the
-            WordPress industry. Stay updated with WordPress releases, major
-            announcements, exclusive WordPress deals, and much more.
+            Codevo's Programming News keeps you updated with what's hot in the
+            Programming industry. Stay updated with New Technology releases,
+            major announcements, exclusive Programming deals, and much more.
           </p>
         </div>
 
