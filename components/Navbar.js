@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { BiMenu } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
@@ -6,28 +6,9 @@ import YouTubeSubscribe from "components/youtubeSubcribe";
 
 const BlogNavBar = () => {
   const [openNav, setOpenNav] = useState(false);
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 500) {
-        setShow(!show);
-      } else {
-        setShow(false);
-      }
-    });
-
-    return window.removeEventListener("scroll", () => {
-      if (window.pageYOffset > 500) {
-        setShow(!show);
-      } else {
-        setShow(false);
-      }
-    });
-  }, []);
 
   return (
-    <div className={`header ${show ? "fix-nav" : ""}`}>
+    <div className='header'>
       <nav className='nav'>
         <div className='navigation container'>
           <div className='logo'>
