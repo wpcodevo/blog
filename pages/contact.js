@@ -10,7 +10,7 @@ const Contact = ({ contactData }) => {
       <NextSeo title='Contact Codevo' />
       {/* Google Ads */}
       <div className='google-ads'>
-        <GoogleAds slot='9967007599' layout='in-article' format='fluid' />
+        {/* <GoogleAds slot='9967007599' layout='in-article' format='fluid' /> */}
       </div>
       <Layout>
         {contactData.map((c, i) => {
