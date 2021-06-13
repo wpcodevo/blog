@@ -7,6 +7,8 @@ import ScrollTop from "components/ScrollTop";
 import CookieConsent from "react-cookie-consent";
 import MetaDecorator from "components/MetaDecorator";
 const content = require("data/content");
+import "lazysizes";
+import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 const App = ({ Component, pageProps }) => {
   return (

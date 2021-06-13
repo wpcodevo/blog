@@ -1341,6 +1341,11 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
+lazysizes@^5.3.2:
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-5.3.2.tgz#27f974c26f5fcc33e7db765c0f4930488c8a2984"
+  integrity sha512-22UzWP+Vedi/sMeOr8O7FWimRVtiNJV2HCa+V8+peZOw6QbswN9k58VUhd7i6iK5bw5QkYrF01LJbeJe0PV8jg==
+
 load-script@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/load-script/-/load-script-1.0.0.tgz"

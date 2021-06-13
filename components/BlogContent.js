@@ -13,13 +13,13 @@ const serializers = {
     youtube: ({ node }) => {
       const { url } = node;
       const id = getYouTubeId(url);
-      return <YouTube className='youtubeWrapper' videoId={id} />;
+      return <YouTube className='youtubeWrapper lazyload' videoId={id} />;
     },
     image: ({ node: { alt, asset, position = "center" } }) => {
       return (
         <img
-          className={`block-img block-img-${position}`}
-          src={urlFor(asset.url).height(300).url()}
+          className={`block-img block-img-${position} lazyload`}
+          data-src={urlFor(asset.url).height(300).url()}
           alt={alt}
         />
       );
