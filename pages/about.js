@@ -2,7 +2,7 @@ import Layout from "components/Layout";
 import { getAbout } from "lib/api";
 import BlogContent from "components/BlogContent";
 import { NextSeo } from "next-seo";
-import AdSense from "react-adsense";
+import GoogleAds from "components/GoogleAds";
 
 const About = ({ aboutData }) => {
   return (
@@ -10,13 +10,7 @@ const About = ({ aboutData }) => {
       <NextSeo title='About Codevo' />
       {/* Google Ads */}
       <div className='google-ads'>
-        <AdSense.Google
-          client='ca-pub-1057373061381635'
-          slot='9967007599'
-          style={{ display: "block" }}
-          layout='in-article'
-          format='fluid'
-        />
+        <GoogleAds slot='9967007599' layout='in-article' format='fluid' />
       </div>
       <Layout>
         {aboutData.map((c, i) => {

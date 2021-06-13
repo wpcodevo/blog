@@ -4,7 +4,7 @@ import { getPaginatedBlogs } from "lib/api";
 import { useGetBlogPages } from "actions/Pagination";
 import { PreviewAlert } from "components/PreviewAlert";
 import Layout from "components/Layout";
-import AdSense from "react-adsense";
+import GoogleAds from "components/GoogleAds";
 
 function Home({ blogs, preview }) {
   const [filter, setFilter] = useState({
@@ -21,13 +21,7 @@ function Home({ blogs, preview }) {
     <>
       {/* Google Ads */}
       <div className='google-ads'>
-        <AdSense.Google
-          client='ca-pub-1057373061381635'
-          slot='9967007599'
-          style={{ display: "block" }}
-          layout='in-article'
-          format='fluid'
-        />
+        <GoogleAds slot='9967007599' layout='in-article' format='fluid' />
       </div>
       {/* <AuthorIntro /> */}
       <FilteringMenu

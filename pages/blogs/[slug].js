@@ -9,10 +9,10 @@ import BlogContent from "components/BlogContent";
 import { urlFor } from "lib/api";
 import moment from "moment";
 import { PreviewAlert } from "components/PreviewAlert";
-import AdSense from "react-adsense";
 import DownloadFile from "components/DownloadFile";
 import Layout from "components/Layout";
 import MetaDecorator from "components/MetaDecorator";
+import GoogleAds from "components/GoogleAds";
 
 function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
@@ -75,13 +75,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
       />
       {/* Google Ads */}
       <div className='google-ads'>
-        <AdSense.Google
-          client={process.env.DATA_AD_CLIENT}
-          slot={process.env.HORIZONTAL_SLOT}
-          style={{ display: "block" }}
-          layout='in-article'
-          format='fluid'
-        />
+        <GoogleAds slot='9967007599' layout='in-article' format='fluid' />
       </div>
       <Layout blog={initialBlog} tags={tags}>
         {preview && <PreviewAlert />}

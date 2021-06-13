@@ -7,13 +7,13 @@ class MyDocument extends Document {
   }
 
   render() {
-    const ads = process.env.NODE_ENV === "production" && (
-      <script
-        defer
-        async
-        src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
-      ></script>
-    );
+    // const ads = process.env.NODE_ENV === "production" && (
+    //   <script
+    //     defer
+    //     async
+    //     src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+    //   ></script>
+    // );
 
     return (
       <Html lang='en'>
@@ -68,7 +68,7 @@ class MyDocument extends Document {
           />
           {/* <link rel='stylesheet' href='/path/to/styles/theme-name.css'></link> */}
 
-          {ads && ads}
+          {/* {ads && ads} */}
         </Head>
         <body>
           <Main />

@@ -13,7 +13,7 @@ import {
   FaTachometerAlt,
 } from "react-icons/fa";
 import Link from "next/link";
-import AdSense from "react-adsense";
+import GoogleAds from "components/GoogleAds";
 
 const Aside = ({ tags }) => {
   return (
@@ -57,13 +57,7 @@ const Aside = ({ tags }) => {
         </div>
       </div>
       <div className='widget advertisement'>
-        <AdSense.Google
-          client='ca-pub-1057373061381635'
-          slot='8841628189'
-          style={{ display: "block" }}
-          layout='in-article'
-          format='fluid'
-        />
+        <GoogleAds slot='8841628189' layout='in-article' format='fluid' />
       </div>
 
       <div className='widget help'>

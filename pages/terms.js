@@ -2,7 +2,7 @@ import Layout from "components/Layout";
 import { getTerms } from "lib/api";
 import BlogContent from "components/BlogContent";
 import { NextSeo } from "next-seo";
-import AdSense from "react-adsense";
+import GoogleAds from "components/GoogleAds";
 
 const Terms = ({ termsData }) => {
   return (
@@ -10,13 +10,7 @@ const Terms = ({ termsData }) => {
       <NextSeo title='Terms of Use' />
       {/* Google Ads */}
       <div className='google-ads'>
-        <AdSense.Google
-          client='ca-pub-1057373061381635'
-          slot='9967007599'
-          style={{ display: "block" }}
-          layout='in-article'
-          format='fluid'
-        />
+        <GoogleAds slot='9967007599' layout='in-article' format='fluid' />
       </div>
       <Layout>
         {termsData.map((c, i) => {
