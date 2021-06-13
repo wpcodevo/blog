@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Highlight from "react-highlight";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { FaClipboard, FaRegCopy } from "react-icons/fa";
+import { FaClipboard } from "react-icons/fa";
+import { BsCheck } from "react-icons/bs";
 
 const Code = ({ language, filename, code }) => {
   const [isCopy, setisCopy] = useState(false);
@@ -10,10 +11,10 @@ const Code = ({ language, filename, code }) => {
     <div className='code-block'>
       <CopyToClipboard
         text={code}
-        className='code-copy'
+        className={`code-copy ${isCopy ? "color" : ""}`}
         onCopy={() => setisCopy(true)}
       >
-        <button>{isCopy ? <FaClipboard /> : <FaRegCopy />}</button>
+        <button>{isCopy ? <BsCheck /> : <FaClipboard />}</button>
       </CopyToClipboard>
 
       <Highlight language={language}>

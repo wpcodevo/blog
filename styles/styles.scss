@@ -373,14 +373,14 @@ p {
     background-color: transparent;
     transition: 300ms ease-in-out;
 
-    &:hover {
-      color: var(--orange);
+    &.color {
+      color: var(--green);
     }
   }
 }
 
 .code-copy {
-  font-size: 22px;
+  font-size: 23px;
   position: absolute;
   right: 5%;
   top: 5%;
