@@ -32,7 +32,6 @@ const App = ({ Component, pageProps }) => {
         <Component {...pageProps} />
       </PageLayout>
       <CookieConsent
-        debug={true}
         buttonText='I Accept'
         style={{
           backgroundColor: "#fff",
