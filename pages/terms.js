@@ -10,7 +10,7 @@ const Terms = ({ termsData }) => {
       <NextSeo title='Terms of Use' />
       {/* Google Ads */}
       <div className='google-ads'>
-        <GoogleAds slot='9967007599' layout='in-article' format='fluid' />
+        {/* <GoogleAds slot='9967007599' layout='in-article' format='fluid' /> */}
       </div>
       <Layout>
         {termsData.map((c, i) => {
