@@ -57,7 +57,7 @@ const Aside = ({ tags }) => {
         </div>
       </div>
       <div className='widget advertisement'>
-        {/* <GoogleAds slot='8841628189' layout='in-article' format='fluid' /> */}
+        <GoogleAds slot='8841628189' layout='in-article' format='fluid' />
       </div>
 
       <div className='widget help'>

@@ -9,9 +9,9 @@ const About = ({ aboutData }) => {
     <>
       <NextSeo title='About Codevo' />
       {/* Google Ads */}
-      <div className='google-ads'>
-        {/* <GoogleAds slot='9967007599' layout='in-article' format='fluid' /> */}
-      </div>
+      {/* <div className='google-ads'>
+        <GoogleAds slot='9967007599' layout='in-article' format='fluid' />
+      </div> */}
       <Layout>
         {aboutData.map((c, i) => {
           return (

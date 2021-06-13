@@ -969,9 +969,9 @@ p {
     padding-top: 40px;
   }
 
-  .google-ads {
-    display: none !important;
-  }
+  // .google-ads {
+  //   display: none !important;
+  // }
 
   .youtubeWrapper {
     height: 190px;
@@ -999,9 +999,9 @@ p {
 
 .google-ads {
   display: inline-block;
-  height: 150px;
-  width: 100%;
   margin: 10px 0;
+  height: 200px;
+  width: 100%;
   background-color: var(--white);
 }
 
@@ -1093,4 +1093,8 @@ p {
   :global(.public-DraftEditor-content) {
     min-height: 140px;
   }
+}
+
+::marker {
+  font-size: 20px;
 }

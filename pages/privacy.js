@@ -9,9 +9,9 @@ const Privacy = ({ privacyData }) => {
     <>
       <NextSeo title='Privacy at Codevo' />
       {/* Google Ads */}
-      <div className='google-ads'>
-        {/* <GoogleAds slot='9967007599' layout='in-article' format='fluid' /> */}
-      </div>
+      {/* <div className='google-ads'>
+        <GoogleAds slot='9967007599' layout='in-article' format='fluid' />
+      </div> */}
       <Layout>
         {privacyData.map((c, i) => {
           return (
