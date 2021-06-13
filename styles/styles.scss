@@ -96,7 +96,7 @@ a {
   }
 
   .view.overlay {
-    height: 180px;
+    height: 200px;
 
     img {
       object-fit: cover;
@@ -205,18 +205,26 @@ p {
     .card-link {
       margin: 0 15px 0 0;
       float: left;
-    }
-
-    .card-img-wrapper {
       width: 300px;
       height: 250px;
       border: 1px solid var(--borderColor);
       border-radius: 5px;
 
-      .card-img {
+      img {
         height: 100%;
       }
     }
+
+    // .card-img-wrapper {
+    //   width: 300px;
+    //   height: 250px;
+    //   border: 1px solid var(--borderColor);
+    //   border-radius: 5px;
+
+    //   .card-img {
+    //     height: 100%;
+    //   }
+    // }
 
     p {
       font-size: 16px;
@@ -877,6 +885,13 @@ p {
 }
 
 @media only screen and (max-width: 567px) {
+  .card.fj-card .card-flex {
+    .card-link {
+      width: 200px;
+      height: 150px;
+    }
+  }
+
   .sharerHorizontal {
     a {
       font-size: 13px;

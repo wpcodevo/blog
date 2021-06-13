@@ -20,17 +20,15 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
           <div className='card-flex'>
             <Link {...link}>
               <a className='card-link'>
-                <div className='card-img-wrapper'>
-                  <Card.Img
-                    variant='top'
-                    className='card-img'
-                    src={urlFor(coverImage)
-                      .width(500)
-                      .height(500)
-                      .fit("clip")
-                      .url()}
-                  />
-                </div>
+                <Card.Img
+                  variant='top'
+                  className='card-img'
+                  src={urlFor(coverImage)
+                    .width(500)
+                    .height(500)
+                    .fit("clip")
+                    .url()}
+                />
               </a>
             </Link>
 
