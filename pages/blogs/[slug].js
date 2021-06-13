@@ -22,11 +22,12 @@ function BlogDetails({ blog: initialBlog, preview }) {
   const [blog, setBlog] = useState(initialBlog);
 
   let tags = "";
+  // console.log(initialBlog.tags);
 
-  if (initialBlog.tags) {
-    const blogTags = initialBlog.tags?.map((a) => a.value);
-    tags = blogTags.join("");
-  }
+  // if (initialBlog.tags) {
+  //   const blogTags = initialBlog.tags?.map((a) => a.value);
+  //   tags = blogTags.join("");
+  // }
 
   if (!router.isFallback && !blog?.slug) {
     return <ErrorPage statusCode='404' />;
@@ -83,7 +84,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
             format='fluid'
           /> */}
       </div>
-      <Layout blog={initialBlog} tags='#ecommerce'>
+      <Layout blog={initialBlog} tags={tags}>
         {preview && <PreviewAlert />}
         <div className='archive-description'>
           <h1>Top Coding News</h1>
