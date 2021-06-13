@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "highlight.js/styles/darcula.css";
 import "styles/styles.scss";
 import { Adsense } from "@ctrl/react-adsense";
+import Link from "next/link";
 import PageLayout from "components/PageLayout";
 import ScrollTop from "components/ScrollTop";
 import CookieConsent from "react-cookie-consent";
@@ -34,13 +35,18 @@ const App = ({ Component, pageProps }) => {
         debug={true}
         buttonText='I Accept'
         style={{
-          backgroundColor: "#222",
-          color: "#fff",
+          backgroundColor: "#fff",
+          color: "#222",
           textAlign: "center",
         }}
-        buttonStyle={{ backgroundColor: "#ff6200", color: "#fff" }}
+        buttonStyle={{ backgroundColor: "#46a5ff", color: "#fff" }}
+        expires={150}
       >
-        Hello and welcome
+        Codevo uses cookies to ensure you get the best experience on our
+        website.{" "}
+        <Link href='/privacy'>
+          <a>Learn more</a>
+        </Link>
       </CookieConsent>
       <ScrollTop />
     </>
