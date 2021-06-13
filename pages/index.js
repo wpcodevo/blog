@@ -20,9 +20,9 @@ function Home({ blogs, preview }) {
   return (
     <>
       {/* Google Ads */}
-      {/* <div className='google-ads'>
-        <GoogleAds slot='9967007599' layout='in-article' format='fluid' />
-      </div> */}
+      <div className='google-ads'>
+        {/* <GoogleAds slot='9967007599' layout='in-article' format='fluid' /> */}
+      </div>
       {/* <AuthorIntro /> */}
       <FilteringMenu
         filter={filter}

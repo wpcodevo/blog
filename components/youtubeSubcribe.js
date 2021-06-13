@@ -51,7 +51,7 @@ export default class YouTubeSubscribe extends Component {
 
     // Make <script src="https://apis.google.com/js/platform.js" ></script>
     const youtubescript = document.createElement("script");
-    youtubescript.src = "https://apis.google.com/js/platform.js";
+    youtubescript.src = "//apis.google.com/js/platform.js";
     this.youtubeSubscribeNode.current.parentNode.appendChild(youtubescript);
     this.initialized();
   }
