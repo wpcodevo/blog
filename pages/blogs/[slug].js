@@ -9,7 +9,6 @@ import BlogContent from "components/BlogContent";
 import { urlFor } from "lib/api";
 import moment from "moment";
 import { PreviewAlert } from "components/PreviewAlert";
-import GoogleFixAds from "components/GoogleFixAds";
 import AdSense from "react-adsense";
 import DownloadFile from "components/DownloadFile";
 import Layout from "components/Layout";
@@ -76,13 +75,13 @@ function BlogDetails({ blog: initialBlog, preview }) {
       />
       {/* Google Ads */}
       <div className='google-ads'>
-        {/* <AdSense.Google
-            client='ca-pub-1057373061381635'
-            slot='9967007599'
-            style={{ display: "block" }}
-            layout='in-article'
-            format='fluid'
-          /> */}
+        <AdSense.Google
+          client={process.env.DATA_AD_CLIENT}
+          slot={process.env.HORIZONTAL_SLOT}
+          style={{ display: "block" }}
+          layout='in-article'
+          format='fluid'
+        />
       </div>
       <Layout blog={initialBlog} tags={tags}>
         {preview && <PreviewAlert />}

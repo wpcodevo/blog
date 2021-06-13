@@ -8,7 +8,6 @@ import PageLayout from "components/PageLayout";
 import ScrollTop from "components/ScrollTop";
 import CookieConsent from "react-cookie-consent";
 import MetaDecorator from "components/MetaDecorator";
-const metaContent = require("data/metaContent");
 const content = require("data/content");
 
 const App = ({ Component, pageProps }) => {
