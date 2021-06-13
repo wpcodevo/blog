@@ -19,8 +19,6 @@ const App = ({ Component, pageProps }) => {
     format='fluid'
   />;
 
-  console.log(content.pageTitle);
-
   return (
     <>
       <MetaDecorator
