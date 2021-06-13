@@ -1,5 +1,5 @@
+import Link from "next/link";
 import BlockContent from "@sanity/block-content-to-react";
-import HighlightCode from "components/HighlightCode";
 import { urlFor } from "lib/api";
 import getYouTubeId from "get-youtube-id";
 import YouTube from "react-youtube";
@@ -50,9 +50,9 @@ const serializers = {
       const { slug = {} } = mark;
       const href = `/blogs/${slug.current}`;
       return (
-        <a href={href} style={{ color: "#ff6200" }}>
-          {children}
-        </a>
+        <Link href={href}>
+          <a style={{ color: "#ff6200" }}>{children}</a>
+        </Link>
       );
     },
   },
