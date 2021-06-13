@@ -3,15 +3,7 @@ import Link from "next/link";
 import { urlFor } from "lib/api";
 import moment from "moment";
 
-const CardItem = ({
-  title,
-  subtitle,
-  slug,
-  date,
-  coverImage,
-  author,
-  link,
-}) => {
+const CardItem = ({ title, date, coverImage, author, link }) => {
   return (
     <Card className={`fj-card`}>
       <div className='card-body-wrapper'>
