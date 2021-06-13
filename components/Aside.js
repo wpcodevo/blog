@@ -58,8 +58,8 @@ const Aside = ({ tags }) => {
       </div>
       <div className='widget advertisement'>
         <AdSense.Google
-          client={process.env.DATA_AD_CLIENT}
-          slot={process.env.VERTICAL_SLOT}
+          client='ca-pub-1057373061381635'
+          slot='8841628189'
           style={{ display: "block" }}
           layout='in-article'
           format='fluid'

@@ -2,6 +2,7 @@ import Layout from "components/Layout";
 import { getPrivacy } from "lib/api";
 import BlogContent from "components/BlogContent";
 import { NextSeo } from "next-seo";
+import AdSense from "react-adsense";
 
 const Privacy = ({ privacyData }) => {
   return (
@@ -9,13 +10,13 @@ const Privacy = ({ privacyData }) => {
       <NextSeo title='Privacy at Codevo' />
       {/* Google Ads */}
       <div className='google-ads'>
-        {/* <AdSense.Google
-            client='ca-pub-1057373061381635'
-            slot='9967007599'
-            style={{ display: "block" }}
-            layout='in-article'
-            format='fluid'
-          /> */}
+        <AdSense.Google
+          client='ca-pub-1057373061381635'
+          slot='9967007599'
+          style={{ display: "block" }}
+          layout='in-article'
+          format='fluid'
+        />
       </div>
       <Layout>
         {privacyData.map((c, i) => {
