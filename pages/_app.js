@@ -26,7 +26,7 @@ const App = ({ Component, pageProps }) => {
       <MetaDecorator
         title={content.pageTitle}
         description={content.pageDescription}
-        imageUrl={"public/images/blog.jpg"}
+        imageUrl={content.pageImageUrl}
         imageAlt={content.pageImageAlt}
       />
       <PageLayout className='container'>
