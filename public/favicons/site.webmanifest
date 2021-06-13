@@ -1,0 +1,16 @@
+{
+  "name": "Codevo | A place to improve your JAVASCRIPT, HTML and CSS Skills",
+  "short_name": "Codevo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0f0f0",
+  "theme_color": "#ff6600",
+  "description": "Tutorials about modern html5, css3, JavaScript, Frameworks such as React, Vuejs, Angular and all things related to Web development.",
+  "icons": [
+    {
+      "src": "/favicons/favicon-196.ico",
+      "sizes": "196x196",
+      "type": "image/x-icon"
+    }
+  ]
+}
