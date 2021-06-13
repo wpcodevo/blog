@@ -40,7 +40,7 @@ export const useGetBlogPages = ({ blogs, filter }) => {
 
       if (!paginatedBlogs) {
         return (
-          <div style={{ width: "100%", textAlign: "center" }}>
+          <div style={{ width: "100%", textAlign: "center", margin: "15px 0" }}>
             <Spinner animation='border' variant='danger' />
           </div>
         );
