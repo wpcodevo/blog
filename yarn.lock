@@ -46,11 +46,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@ctrl/react-adsense@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.npmjs.org/@ctrl/react-adsense/-/react-adsense-1.3.1.tgz"
-  integrity sha512-q/USdDAU8iOY0MlbvUg4BXxcVbME63McW1KWj/Ip0Snu8P+cB+lQqt688Wknu1UpIs0tIIJvKUTkXK90+QMOQQ==
-
 "@hapi/accept@5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.2.tgz"
