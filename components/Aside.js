@@ -15,7 +15,7 @@ import {
 import Link from "next/link";
 import GoogleFixAds from "components/GoogleFixAds";
 
-const Aside = () => {
+const Aside = ({ tags }) => {
   return (
     <aside className='aside'>
       <div className='subscribe widget'>
@@ -99,6 +99,12 @@ const Aside = () => {
           </a>
         </div>
       </div>
+      {tags && (
+        <div className='widget tags'>
+          <h4>Main Tags</h4>
+          <p>{tags}</p>
+        </div>
+      )}
     </aside>
   );
 };

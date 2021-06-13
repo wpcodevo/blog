@@ -13,11 +13,14 @@
   --black: #2d2520;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
 html,
 body {
   height: 100%;
-  font-family: "Proxima-2", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
+  font-weight: 400;
   font-size: 16px;
   background-color: var(--bodyBackground);
   color: var(--bodyColor) !important;
@@ -39,8 +42,10 @@ body {
 h1,
 h2,
 h3,
-h4 {
-  font-family: "Proxima-3";
+h4,
+h5,
+h6 {
+  font-weight: 500;
 }
 
 a {
@@ -100,13 +105,6 @@ a {
   }
 }
 
-// @media only screen and (max-width: 400px) {
-//   .view.overlay {
-//     width: 120px;
-//     height: auto;
-//   }
-// }
-
 .main-content {
   padding: 25px;
 
@@ -131,7 +129,6 @@ p {
   text-align: center;
 
   h1 {
-    font-family: "Proxima-3";
     font-size: 28px !important;
     line-height: 30px !important;
     margin-bottom: 20px;
@@ -304,10 +301,6 @@ p {
     }
   }
 
-  .card-button {
-    font-family: "Proxima-3";
-  }
-
   &.fj-card-list {
     .card-body-wrapper {
       min-height: 180px;
@@ -335,10 +328,6 @@ p {
     background-color: #bebebe;
   }
 }
-
-// .card {
-//   margin-bottom: 60px;
-// }
 
 // HEADER ENDS
 
@@ -437,7 +426,6 @@ p {
 
     h3 {
       font-size: 20px !important;
-      font-family: "Proxima-3";
       text-transform: uppercase;
       margin-bottom: 25px;
     }
@@ -448,7 +436,6 @@ p {
       align-items: center;
 
       h1 {
-        font-family: "Proxima-3";
         font-size: 40px;
       }
     }
@@ -591,7 +578,6 @@ p {
   }
 
   .logo h1 {
-    font-family: "Proxima-3";
     font-size: 20px;
   }
 
@@ -888,12 +874,6 @@ p {
       }
     }
   }
-
-  // .hljs {
-  //   max-height: 500px;
-  //   max-width: 750px !important;
-  //   margin-right: 15px;
-  // }
 }
 
 @media only screen and (max-width: 567px) {
@@ -982,7 +962,6 @@ p {
     height: 190px;
   }
 
-  //
   .download-button {
     width: 200px !important;
     padding: 10px 10px !important;
@@ -1030,7 +1009,6 @@ p {
     color: #fff;
 
     &:last-child {
-      font-family: "Proxima-3";
       font-size: 18px;
       margin-left: 10px;
     }
@@ -1047,7 +1025,6 @@ p {
 
     span {
       color: var(--orange);
-      font-family: "Proxima-3";
     }
   }
 }
@@ -1055,7 +1032,6 @@ p {
 .title {
   margin-bottom: 10px;
   h1 {
-    font-family: "Proxima-3";
     font-size: 2rem;
   }
 }

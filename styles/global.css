@@ -2,22 +2,26 @@
   font-family: "Proxima-1";
   src: url("/fonts/proxima/Proxima-Nova-Light.ttf");
   font-style: normal;
-  font-weight: 300;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Proxima-2";
   src: url("/fonts/proxima/Proxima-Nova-Regular.ttf");
-  font-style: regular;
-  font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Proxima-3";
+  src: url("/fonts/proxima/Proxima-Nova-Semi-bold.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima-4";
   src: url("/fonts/proxima/Proxima-Nova-Bold.ttf");
-  font-style: regular;
-  font-weight: bold;
+  font-style: normal;
   font-display: swap;
 }

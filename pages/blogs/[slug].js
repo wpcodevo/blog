@@ -21,6 +21,13 @@ function BlogDetails({ blog: initialBlog, preview }) {
   const [showLink, setShowLink] = useState(false);
   const [blog, setBlog] = useState(initialBlog);
 
+  let tags = "";
+
+  if (initialBlog.tags) {
+    const blogTags = initialBlog.tags?.map((a) => a.value);
+    tags = blogTags.join("");
+  }
+
   if (!router.isFallback && !blog?.slug) {
     return <ErrorPage statusCode='404' />;
   }
@@ -76,7 +83,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
             format='fluid'
           /> */}
       </div>
-      <Layout blog={initialBlog}>
+      <Layout blog={initialBlog} tags='#ecommerce'>
         {preview && <PreviewAlert />}
         <div className='archive-description'>
           <h1>Top Coding News</h1>

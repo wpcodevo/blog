@@ -19,18 +19,6 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head>
           <link
-            rel='preload'
-            href='/fonts/proxima/Proxima-Nova-Light.ttf'
-            as='font'
-            crossOrigin='anonymous'
-          />
-          <link
-            rel='preload'
-            href='/fonts/proxima/Proxima-Nova-Regular.ttf'
-            as='font'
-            crossOrigin='anonymous'
-          />
-          <link
             rel='icon'
             type='image/png'
             sizes='192x192'
