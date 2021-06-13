@@ -355,14 +355,25 @@ p {
 
 .code-block {
   position: relative;
+
+  button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    transition: 300ms ease-in-out;
+
+    &:hover {
+      color: var(--orange);
+    }
+  }
 }
 
 .code-copy {
-  font-size: 18px;
+  font-size: 22px;
   position: absolute;
   right: 5%;
-  bottom: 5%;
-  cursor: pointer;
+  top: 5%;
+  color: var(--white);
 }
 
 .blog-image {

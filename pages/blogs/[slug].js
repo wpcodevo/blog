@@ -11,9 +11,9 @@ import moment from "moment";
 import { PreviewAlert } from "components/PreviewAlert";
 import GoogleFixAds from "components/GoogleFixAds";
 import AdSense from "react-adsense";
-import { NextSeo } from "next-seo";
 import DownloadFile from "components/DownloadFile";
 import Layout from "components/Layout";
+import MetaDecorator from "components/MetaDecorator";
 
 function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
@@ -60,11 +60,11 @@ function BlogDetails({ blog: initialBlog, preview }) {
 
   return (
     <>
-      <NextSeo
-        title={
-          blog.title ? blog.title : "Codevo - Exploring and Mastering Code"
-        }
-        description='Welcome to my website codevo where I share latest coding snippets'
+      <MetaDecorator
+        title={initialBlog.title}
+        description={initialBlog.subtitle}
+        imageUrl={urlFor(initialBlog.coverImage).url()}
+        imageAlt={initialBlog.title}
       />
       {/* Google Ads */}
       <div className='google-ads'>
