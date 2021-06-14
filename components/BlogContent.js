@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { Spinner } from "react-bootstrap";
 import { urlFor } from "lib/api";
 import getYouTubeId from "get-youtube-id";
-import Code from "components/Code";
+import HighLightCode from "components/HighLightCode";
 const BlockContent = dynamic(() => import("@sanity/block-content-to-react"), {
   loading: () => <Spinner animation='border' variant='danger' />,
 });
@@ -14,7 +14,9 @@ const YouTube = dynamic(() => import("react-youtube"), {
 const serializers = {
   types: {
     code: ({ node: { language, code, filename } }) => {
-      return <Code language={language} code={code} filename={filename} />;
+      return (
+        <HighLightCode language={language} code={code} filename={filename} />
+      );
     },
     youtube: ({ node }) => {
       const { url } = node;

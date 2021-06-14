@@ -368,6 +368,10 @@ p {
   font-size: 14px;
 }
 
+.code-filename {
+  margin-top: -10px;
+}
+
 .code-block {
   position: relative;
   overflow: auto;
@@ -979,10 +983,6 @@ p {
     padding-top: 40px;
   }
 
-  // .google-ads {
-  //   display: none !important;
-  // }
-
   .youtubeWrapper {
     height: 190px;
   }
@@ -1061,18 +1061,13 @@ p {
   }
 }
 
-.hljs {
+.prism-code {
   max-height: 500px;
-  max-width: 100%;
   background-color: #08090a;
   color: #f8f8f2;
+  padding: 10px;
   border-radius: 10px;
-  overflow-x: scroll;
   font-size: 100%;
-
-  &-string {
-    color: #7ed07e;
-  }
 }
 
 .scroll-top {

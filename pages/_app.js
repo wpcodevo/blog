@@ -1,5 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "highlight.js/styles/darcula.css";
 import "styles/styles.scss";
 import Link from "next/link";
 import PageLayout from "components/PageLayout";
