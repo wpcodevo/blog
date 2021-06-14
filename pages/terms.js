@@ -2,16 +2,13 @@ import Layout from "components/Layout";
 import { getTerms } from "lib/api";
 import BlogContent from "components/BlogContent";
 import { NextSeo } from "next-seo";
-import GoogleAds from "components/GoogleAds";
 
 const Terms = ({ termsData }) => {
   return (
     <>
       <NextSeo title='Terms of Use' />
       {/* Google Ads */}
-      <div className='google-ads'>
-        {/* <GoogleAds slot='9967007599' layout='in-article' format='fluid' /> */}
-      </div>
+      <div className='google-ads'></div>
       <Layout>
         {termsData.map((c, i) => {
           return (

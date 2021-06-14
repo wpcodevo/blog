@@ -4,7 +4,6 @@ import { getPaginatedBlogs } from "lib/api";
 import { useGetBlogPages } from "actions/Pagination";
 import { PreviewAlert } from "components/PreviewAlert";
 import Layout from "components/Layout";
-import GoogleAds from "components/GoogleAds";
 
 function Home({ blogs, preview }) {
   const [filter, setFilter] = useState({
@@ -20,9 +19,7 @@ function Home({ blogs, preview }) {
   return (
     <>
       {/* Google Ads */}
-      <div className='google-ads'>
-        {/* <GoogleAds slot='9967007599' layout='in-article' format='fluid' /> */}
-      </div>
+      <div className='google-ads'></div>
       {/* <AuthorIntro /> */}
       <FilteringMenu
         filter={filter}

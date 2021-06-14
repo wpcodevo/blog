@@ -12,7 +12,6 @@ import { PreviewAlert } from "components/PreviewAlert";
 import DownloadFile from "components/DownloadFile";
 import Layout from "components/Layout";
 import MetaDecorator from "components/MetaDecorator";
-import GoogleAds from "components/GoogleAds";
 const BlogContent = dynamic(() => import("components/BlogContent"), {
   loading: () => <p>Loading...</p>,
 });
@@ -77,9 +76,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
         imageAlt={initialBlog.title}
       />
       {/* Google Ads */}
-      <div className='google-ads'>
-        {/* <GoogleAds slot='9967007599' layout='in-article' format='fluid' /> */}
-      </div>
+      <div className='google-ads'></div>
       <Layout blog={initialBlog} tags={tags}>
         {preview && <PreviewAlert />}
         <div className='archive-description'>

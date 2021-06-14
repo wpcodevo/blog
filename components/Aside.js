@@ -12,7 +12,6 @@ import {
   FaTachometerAlt,
 } from "react-icons/fa";
 import Link from "next/link";
-import GoogleAds from "components/GoogleAds";
 
 const Aside = ({ tags }) => {
   return (
@@ -50,9 +49,7 @@ const Aside = ({ tags }) => {
           </Link>
         </div>
       </div>
-      <div className='widget advertisement'>
-        <GoogleAds slot='8841628189' layout='in-article' format='fluid' />
-      </div>
+      <div className='widget advertisement'></div>
 
       <div className='widget help'>
         <div className='heading'>I need help with ...</div>

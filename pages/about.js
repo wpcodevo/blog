@@ -2,16 +2,13 @@ import Layout from "components/Layout";
 import { getAbout } from "lib/api";
 import BlogContent from "components/BlogContent";
 import { NextSeo } from "next-seo";
-import GoogleAds from "components/GoogleAds";
 
 const About = ({ aboutData }) => {
   return (
     <>
       <NextSeo title='About Codevo' />
       {/* Google Ads */}
-      <div className='google-ads'>
-        {/* <GoogleAds slot='9967007599' layout='in-article' format='fluid' /> */}
-      </div>
+      <div className='google-ads'></div>
       <Layout>
         {aboutData.map((c, i) => {
           return (
