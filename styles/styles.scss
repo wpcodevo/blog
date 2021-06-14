@@ -348,11 +348,6 @@ p {
   }
 }
 
-.hljs {
-  padding: 20px 20px 10px;
-  border-radius: 10px;
-}
-
 .code-filename,
 .image-alt {
   opacity: 0.6;
@@ -363,6 +358,7 @@ p {
 
 .code-block {
   position: relative;
+  overflow: auto;
 
   button {
     outline: none;
@@ -380,7 +376,7 @@ p {
   font-size: 23px;
   position: absolute;
   right: 5%;
-  top: 5%;
+  top: 2%;
   color: var(--white);
 }
 
@@ -1054,6 +1050,17 @@ p {
 .hljs {
   max-height: 500px;
   max-width: 100%;
+  background-color: #08090a;
+  color: #f8f8f2;
+  border-radius: 10px;
+  overflow-x: scroll;
+  font-size: 100%;
+
+  &.axapta {
+    &-string {
+      color: #7ed07e;
+    }
+  }
 }
 
 .scroll-top {

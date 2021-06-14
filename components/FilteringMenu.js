@@ -1,5 +1,5 @@
-import { BiListUl, BiBorderAll, BiSortAZ, BiSortZA } from "react-icons/bi";
-import { IconContext } from "react-icons/lib";
+import { BiSortAZ, BiSortZA } from "react-icons/bi";
+import { AiOutlineBorderInner, AiOutlineUnorderedList } from "react-icons/ai";
 
 const FilteringMenu = ({ onChange, filter }) => {
   return (
@@ -7,11 +7,11 @@ const FilteringMenu = ({ onChange, filter }) => {
       <div onClick={() => onChange("view", { list: +!filter.view.list })}>
         {filter.view.list ? (
           <span>
-            <BiListUl size='35px' />
+            <AiOutlineUnorderedList size='30px' />
           </span>
         ) : (
           <span>
-            <BiBorderAll size='30px' />
+            <AiOutlineBorderInner size='30px' />
           </span>
         )}
       </div>

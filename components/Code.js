@@ -1,8 +1,11 @@
 import { useState } from "react";
-import Highlight from "react-highlight";
+import dynamic from "next/dynamic";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaClipboard } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
+const Highlight = dynamic(() => import("react-highlight"), {
+  loading: () => <p>Loading...</p>,
+});
 
 const Code = ({ language, filename, code }) => {
   const [isCopy, setisCopy] = useState(false);

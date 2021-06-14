@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { Card, Image, Spinner } from "react-bootstrap";
 import PageLayout from "components/PageLayout";
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 import ErrorPage from "next/error";
 import { getBlogBySlug, getPaginatedBlogs, onBlogUpdate } from "lib/api";
 import ShareSocial from "components/ShareSocial";
-import BlogContent from "components/BlogContent";
 import { urlFor } from "lib/api";
 import moment from "moment";
 import { PreviewAlert } from "components/PreviewAlert";
@@ -13,6 +13,9 @@ import DownloadFile from "components/DownloadFile";
 import Layout from "components/Layout";
 import MetaDecorator from "components/MetaDecorator";
 import GoogleAds from "components/GoogleAds";
+const BlogContent = dynamic(() => import("components/BlogContent"), {
+  loading: () => <p>Loading...</p>,
+});
 
 function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();

@@ -1,9 +1,14 @@
 import Link from "next/link";
-import BlockContent from "@sanity/block-content-to-react";
+import dynamic from "next/dynamic";
 import { urlFor } from "lib/api";
 import getYouTubeId from "get-youtube-id";
-import YouTube from "react-youtube";
 import Code from "components/Code";
+const BlockContent = dynamic(() => import("@sanity/block-content-to-react"), {
+  loading: () => <p>Loading...</p>,
+});
+const YouTube = dynamic(() => import("react-youtube"), {
+  loading: () => <p>Loading...</p>,
+});
 
 const serializers = {
   types: {
