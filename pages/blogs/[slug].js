@@ -109,12 +109,9 @@ function BlogDetails({ blog: initialBlog, preview }) {
         {initialBlog.coverImage && (
           <Image
             width='100%'
-            data-src={urlFor(initialBlog.coverImage)
-              .width(720)
-              .height(400)
-              .url()}
+            src={urlFor(initialBlog.coverImage).width(720).height(400).url()}
             alt=''
-            className='img-fluid rounded mb-2 pb-4 coverImage lazyload'
+            className='img-fluid rounded mb-2 pb-4 coverImage'
           />
         )}
 
