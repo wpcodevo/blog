@@ -45,7 +45,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 500;
+  font-weight: 500 !important;
+  color: var(--bodyColor) !important;
 }
 
 a {
@@ -115,6 +116,12 @@ a {
   }
 
   ul {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  ol {
     li {
       margin-bottom: 10px;
     }
@@ -251,7 +258,7 @@ p {
       &.italic {
         color: var(--orange);
         font-size: 14px;
-        font-weight: bold;
+        font-style: italic;
 
         &:hover {
           text-decoration: underline;
@@ -266,7 +273,6 @@ p {
     .card-title {
       font-size: 25px;
       line-height: 36px;
-      font-weight: bold;
       margin: 0 0 15px 0;
     }
 
@@ -758,7 +764,6 @@ p {
 
     .heading {
       font-size: 18px;
-      font-weight: 700;
       padding: 10px 0 25px 0;
       text-align: center;
 

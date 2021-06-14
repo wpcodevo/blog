@@ -19,10 +19,10 @@ const Aside = ({ tags }) => {
   return (
     <aside className='aside'>
       <div className='subscribe widget'>
-        <div className='heading'>
+        <h3 className='heading'>
           Over 100+ Readers
           <p>Get fresh content from Codevo</p>
-        </div>
+        </h3>
         <div className='social-icons'>
           <Link href='https://web.facebook.com/codevv/'>
             <a className='icon icon-facebook' target='_blank'>
