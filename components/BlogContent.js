@@ -1,13 +1,14 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { Spinner } from "react-bootstrap";
 import { urlFor } from "lib/api";
 import getYouTubeId from "get-youtube-id";
 import Code from "components/Code";
 const BlockContent = dynamic(() => import("@sanity/block-content-to-react"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <Spinner animation='border' variant='danger' />,
 });
 const YouTube = dynamic(() => import("react-youtube"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <div style={{ height: "45vh", background: "#222" }} />,
 });
 
 const serializers = {

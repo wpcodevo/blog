@@ -4,7 +4,6 @@ import {
   FaYoutube,
   FaLinkedinIn,
   FaGithub,
-  FaPinterestP,
   FaBookReader,
   FaExclamationCircle,
   FaShoppingCart,
@@ -42,11 +41,6 @@ const Aside = ({ tags }) => {
           <Link href='#'>
             <a className='icon icon-linkin' target='_blank'>
               <FaLinkedinIn />
-            </a>
-          </Link>
-          <Link href='#'>
-            <a className='icon icon-pinterest' target='_blank'>
-              <FaPinterestP />
             </a>
           </Link>
           <Link href='https://github.com/ziddahedem'>

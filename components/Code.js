@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaClipboard } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
+
 const Highlight = dynamic(() => import("react-highlight"), {
   loading: () => <div style={{ height: "45vh", background: "#222" }} />,
 });
