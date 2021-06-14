@@ -22,8 +22,8 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
               <a className='card-link'>
                 <Card.Img
                   variant='top'
-                  className='card-img lazyload'
-                  data-src={urlFor(coverImage)
+                  className='card-img'
+                  src={urlFor(coverImage)
                     .width(500)
                     .height(500)
                     .fit("clip")

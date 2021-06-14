@@ -46,7 +46,7 @@ h4,
 h5,
 h6 {
   font-weight: 500 !important;
-  color: var(--bodyColor) !important;
+  color: var(--bodyColor);
 }
 
 a {
@@ -440,6 +440,10 @@ p {
       }
     }
 
+    h1 {
+      color: #fff;
+    }
+
     h3 {
       font-size: 20px !important;
       text-transform: uppercase;
@@ -516,7 +520,7 @@ p {
 
 .logo h1 {
   font-size: 2.5rem;
-  color: #fff !important;
+  color: #fff;
   margin-bottom: 0;
 }
 

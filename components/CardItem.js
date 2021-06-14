@@ -12,14 +12,13 @@ const CardItem = ({ title, date, coverImage, author, link }) => {
             <Link {...link}>
               <a>
                 <Card.Img
-                  data-src={urlFor(coverImage)
+                  src={urlFor(coverImage)
                     .crop("center")
                     .fit("clip")
                     .width(500)
                     .height(500)
                     .url()}
                   alt='Card image cap'
-                  className='lazyload'
                 />
               </a>
             </Link>
@@ -39,12 +38,8 @@ const CardItem = ({ title, date, coverImage, author, link }) => {
           <div className='d-flex'>
             <Image
               roundedCircle
-              className='mr-3 card-avatar lazyload'
-              data-src={urlFor(author?.avatar)
-                .width(40)
-                .height(40)
-                .fit("max")
-                .url()}
+              className='mr-3 card-avatar'
+              src={urlFor(author?.avatar).width(40).height(40).fit("max").url()}
               alt='Generic placeholder'
             />
             <div className='d-col'>
