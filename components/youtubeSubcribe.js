@@ -22,7 +22,6 @@ export default class YouTubeSubscribe extends Component {
     super(props);
     this.youtubeSubscribeNode = React.createRef();
 
-    // To render components economically w/o repetition
     this.state = {
       initialized: false,
     };
@@ -34,39 +33,16 @@ export default class YouTubeSubscribe extends Component {
     });
   }
 
-  /**
-   * 1. Script for API doesn't work in index.html.
-   * 2. So You have to make it after components render.
-   * 3. Make a script with JavaScript method to work.
-   * 4. It is a little slow to show component at first.
-   * 5. YouTube API gives you channelId instead channelName
-   *    So You don't have to think about channelName when you
-   *    need its API.
-   */
-
   componentDidMount() {
     if (this.state.initialized) {
       return;
     }
 
-    // Make <script src="https://apis.google.com/js/platform.js" ></script>
     const youtubescript = document.createElement("script");
     youtubescript.src = "//apis.google.com/js/platform.js";
     this.youtubeSubscribeNode.current.parentNode.appendChild(youtubescript);
     this.initialized();
   }
-
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (this.props.channelName === nextProps.channelName) {
-  //     return false;
-  //   }
-
-  //   if (this.props.channelid === nextProps.channelid) {
-  //     return false;
-  //   }
-
-  //   return true;
-  // }
 
   render() {
     const { theme, layout, count, channelName, channelid } = this.props;
