@@ -187,6 +187,11 @@ p {
 
 .card-img {
   image-rendering: -webkit-optimize-contrast;
+
+  &.list-img {
+    width: 298px;
+    height: 298px;
+  }
 }
 
 .card.fj-card {
@@ -825,6 +830,11 @@ p {
     .card-link {
       width: 200px;
       height: 150px;
+
+      .list-img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 

@@ -27,7 +27,7 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
               <a aria-label={coverImage.alt} className='card-link'>
                 <Card.Img
                   variant='top'
-                  className='card-img'
+                  className='card-img list-img'
                   src={urlFor(coverImage)
                     .width(298)
                     .height(298)
