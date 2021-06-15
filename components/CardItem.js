@@ -38,11 +38,11 @@ const CardItem = ({ title, date, coverImage, author, link }) => {
           <div className='d-flex'>
             <Image
               roundedCircle
-              className='mr-3 card-avatar'
+              className='card-avatar'
               src={urlFor(author?.avatar).width(40).height(40).fit("max").url()}
               alt={author.alt}
             />
-            <div className='d-col'>
+            <div className='d-col mx-2'>
               <Card.Title className='card-title-avatar'>
                 {author.name}
               </Card.Title>

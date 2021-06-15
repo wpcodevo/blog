@@ -29,7 +29,18 @@ const HighLightCode = ({ code, language, filename }) => {
         language={language}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={style}>
+          <pre
+            className={className}
+            style={{
+              ...style,
+              maxHeight: "500px",
+              backgroundColor: "#08090a",
+              color: "#f8f8f2",
+              padding: "10px",
+              borderRadius: "10px",
+              fontSize: "100%",
+            }}
+          >
             {tokens.map((line, i) => (
               <div {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (

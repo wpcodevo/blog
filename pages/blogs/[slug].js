@@ -33,7 +33,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
 
   if (router.isFallback) {
     return (
-      <PageLayout className='center'>
+      <PageLayout className='center d-flex'>
         <div>
           <Spinner animation='border' variant='danger' />
         </div>
@@ -111,7 +111,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
             width='100%'
             src={urlFor(initialBlog.coverImage).width(600).height(400).url()}
             alt={initialBlog.coverImage.alt}
-            className='img-fluid rounded mb-2 pb-4 coverImage'
+            className='img-fluid rounded pb-4 coverImage'
           />
         )}
 

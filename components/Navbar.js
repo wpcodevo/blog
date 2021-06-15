@@ -9,8 +9,8 @@ const BlogNavBar = () => {
 
   return (
     <div className='header'>
-      <nav className='nav'>
-        <div className='navigation container'>
+      <nav className='nav' style={{ padding: "16px 0" }}>
+        <div className='navigation d-flex container'>
           <div className='logo'>
             <Link href='/' as='/'>
               <a aria-label='home'>
@@ -33,7 +33,7 @@ const BlogNavBar = () => {
               </div>
             </div>
 
-            <ul className='nav-list'>
+            <ul className='nav-list d-flex'>
               <li className='nav-item'>
                 <Link aria-label='NavItem' href='/'>
                   <a className='nav-link' onClick={() => setOpenNav(!openNav)}>

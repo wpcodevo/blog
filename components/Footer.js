@@ -3,7 +3,15 @@ import { FaTwitter, FaYoutube, FaFacebookF, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className='page-footer'>
+    <footer
+      className='page-footer'
+      style={{
+        marginTop: "40px",
+        padding: "50px",
+        backgroundColor: "#222",
+        color: "#eaeaea",
+      }}
+    >
       <div className='center container'>
         <div>
           <h1>Coding Tutorials</h1>

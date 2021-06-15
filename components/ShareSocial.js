@@ -15,7 +15,7 @@ const ShareSocial = () => {
       </div>
       <Link href='#'>
         <a aria-label='facebook'>
-          <div className='social-button sharerFacebook'>
+          <div className='social-button d-flex sharerFacebook'>
             <FaFacebookF />
 
             <span>Share</span>
@@ -24,7 +24,7 @@ const ShareSocial = () => {
       </Link>
       <Link href='#'>
         <a aria-label='twitter'>
-          <div className='social-button sharerTwitter'>
+          <div className='social-button d-flex sharerTwitter'>
             <FaTwitter />
 
             <span>Tweet</span>
@@ -33,7 +33,7 @@ const ShareSocial = () => {
       </Link>
       <Link href='#'>
         <a aria-label='linkedin'>
-          <div className='social-button sharerLinkin'>
+          <div className='social-button d-flex sharerLinkin'>
             <FaLinkedinIn />
 
             <span>Share</span>
@@ -42,7 +42,7 @@ const ShareSocial = () => {
       </Link>
       <Link href='#'>
         <a aria-label='pinterest'>
-          <div className='social-button sharerPinterest'>
+          <div className='social-button d-flex sharerPinterest'>
             <FaPinterestP />
             <span>Pin</span>
           </div>
