@@ -53,11 +53,12 @@ const serializers = {
           style={{ color: "#ff6200" }}
           target='_blank'
           rel='noopener'
+          aria-label='external link'
         >
           {children}
         </a>
       ) : (
-        <a href={href} style={{ color: "#ff6200" }}>
+        <a aria-label='external link' href={href} style={{ color: "#ff6200" }}>
           {children}
         </a>
       );
@@ -67,7 +68,9 @@ const serializers = {
       const href = `/blogs/${slug.current}`;
       return (
         <Link href={href}>
-          <a style={{ color: "#ff6200" }}>{children}</a>
+          <a aria-label='internal link' style={{ color: "#ff6200" }}>
+            {children}
+          </a>
         </Link>
       );
     },

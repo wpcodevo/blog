@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 
-const Aside = ({ tags }) => {
+const Aside = () => {
   return (
     <aside className='aside'>
       <div className='subscribe widget'>
@@ -23,27 +23,27 @@ const Aside = ({ tags }) => {
         </h3>
         <div className='social-icons'>
           <Link href='https://web.facebook.com/codevv/'>
-            <a className='icon icon-facebook' target='_blank'>
+            <a aria-label='icon' className='icon icon-facebook' target='_blank'>
               <FaFacebookF />
             </a>
           </Link>
           <Link href='https://twitter.com/EdemZiddah2'>
-            <a className='icon icon-twitter' target='_blank'>
+            <a aria-label='icon' className='icon icon-twitter' target='_blank'>
               <FaTwitter />
             </a>
           </Link>
           <Link href='https://www.youtube.com/channel/UCRITDeojq9IsQfTWPeJ-pDQ?sub_confirmation=1'>
-            <a className='icon icon-youtube' target='_blank'>
+            <a aria-label='icon' className='icon icon-youtube' target='_blank'>
               <FaYoutube />
             </a>
           </Link>
           <Link href='#'>
-            <a className='icon icon-linkin' target='_blank'>
+            <a aria-label='icon' className='icon icon-linkin' target='_blank'>
               <FaLinkedinIn />
             </a>
           </Link>
           <Link href='https://github.com/ziddahedem'>
-            <a className='icon icon-envelope' target='_blank'>
+            <a aria-label='icon' className='icon icon-envelope' target='_blank'>
               <FaGithub />
             </a>
           </Link>
@@ -55,7 +55,7 @@ const Aside = ({ tags }) => {
         <div className='heading'>I need help with ...</div>
         <div className='guideicons'>
           <Link href='#'>
-            <a className='guideicon'>
+            <a aria-label='icon' className='guideicon'>
               <span className='starting'>
                 <FaBookReader />
               </span>
@@ -64,7 +64,7 @@ const Aside = ({ tags }) => {
           </Link>
 
           <Link href='#'>
-            <a className='guideicon '>
+            <a aria-label='icon' className='guideicon '>
               <span className='speed'>
                 <FaTachometerAlt />
               </span>
@@ -72,7 +72,7 @@ const Aside = ({ tags }) => {
             </a>
           </Link>
           <Link href='#'>
-            <a className='guideicon security'>
+            <a aria-label='icon' className='guideicon security'>
               <span className='security'>
                 <FaUnlockAlt />
               </span>
@@ -80,7 +80,7 @@ const Aside = ({ tags }) => {
             </a>
           </Link>
           <Link href='#'>
-            <a className='guideicon'>
+            <a aria-label='icon' className='guideicon'>
               <span className='seo'>
                 <FaChartBar />
               </span>
@@ -88,7 +88,7 @@ const Aside = ({ tags }) => {
             </a>
           </Link>
           <Link href='#'>
-            <a className='guideicon'>
+            <a aria-label='icon' className='guideicon'>
               <span className='error'>
                 <FaExclamationCircle />
               </span>
@@ -96,7 +96,7 @@ const Aside = ({ tags }) => {
             </a>
           </Link>
           <Link href='#'>
-            <a className='guideicon'>
+            <a aria-label='icon' className='guideicon'>
               <span className='shop'>
                 <FaShoppingCart />
               </span>
@@ -105,12 +105,12 @@ const Aside = ({ tags }) => {
           </Link>
         </div>
       </div>
-      {tags && (
+      {/* {tags && (
         <div className='widget tags'>
           <h4>Main Tags</h4>
           <p>{tags}</p>
         </div>
-      )}
+      )} */}
     </aside>
   );
 };

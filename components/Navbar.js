@@ -13,7 +13,7 @@ const BlogNavBar = () => {
         <div className='navigation container'>
           <div className='logo'>
             <Link href='/' as='/'>
-              <a>
+              <a aria-label='home'>
                 <h1>Codevo</h1>
               </a>
             </Link>
@@ -23,7 +23,7 @@ const BlogNavBar = () => {
             <div className='top-nav'>
               <div className='logo'>
                 <Link href='/'>
-                  <a onClick={() => setOpenNav(!openNav)}>
+                  <a aria-label='logo' onClick={() => setOpenNav(!openNav)}>
                     <h1>Codevo</h1>
                   </a>
                 </Link>
@@ -35,7 +35,7 @@ const BlogNavBar = () => {
 
             <ul className='nav-list'>
               <li className='nav-item'>
-                <Link href='/'>
+                <Link aria-label='NavItem' href='/'>
                   <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
                     Home
                   </a>
@@ -43,28 +43,44 @@ const BlogNavBar = () => {
               </li>
               <li className='nav-item'>
                 <Link href='/about'>
-                  <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
+                  <a
+                    aria-label='NavItem'
+                    className='nav-link'
+                    onClick={() => setOpenNav(!openNav)}
+                  >
                     About
                   </a>
                 </Link>
               </li>
               <li className='nav-item'>
                 <Link href='/privacy'>
-                  <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
+                  <a
+                    aria-label='NavItem'
+                    className='nav-link'
+                    onClick={() => setOpenNav(!openNav)}
+                  >
                     Privacy
                   </a>
                 </Link>
               </li>
               <li className='nav-item'>
                 <Link href='/terms'>
-                  <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
+                  <a
+                    aria-label='NavItem'
+                    className='nav-link'
+                    onClick={() => setOpenNav(!openNav)}
+                  >
                     Terms
                   </a>
                 </Link>
               </li>
               <li className='nav-item'>
                 <Link href='/contact'>
-                  <a className='nav-link' onClick={() => setOpenNav(!openNav)}>
+                  <a
+                    aria-label='NavItem'
+                    className='nav-link'
+                    onClick={() => setOpenNav(!openNav)}
+                  >
                     Contact Us
                   </a>
                 </Link>

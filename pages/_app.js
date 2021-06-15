@@ -36,7 +36,7 @@ const App = ({ Component, pageProps }) => {
         Codevo uses cookies to ensure you get the best experience on our
         website.{" "}
         <Link href='/privacy'>
-          <a>Learn more</a>
+          <a aria-label='learn more'>Learn more</a>
         </Link>
       </CookieConsent>
       <ScrollTop />

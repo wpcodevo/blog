@@ -10,7 +10,7 @@ export default function Custom404() {
       <div className='content'>
         <p>The Page You are looking for is now beyound our Reach...</p>
         <Link href='/'>
-          <a>Go Home</a>
+          <a aria-label='back to home'>Go Home</a>
         </Link>
       </div>
     </div>

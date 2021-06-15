@@ -9,7 +9,7 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
       <div className='card-body-wrapper'>
         <Card.Body className='mb2'>
           <Link {...link}>
-            <a className='no-italic'>
+            <a aria-label='title' className='no-italic'>
               <Card.Title className='card-main-title'>{title}</Card.Title>
             </a>
           </Link>
@@ -19,7 +19,7 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
           </div>
           <div className='card-flex'>
             <Link {...link}>
-              <a className='card-link'>
+              <a aria-label={coverImage.alt} className='card-link'>
                 <Card.Img
                   variant='top'
                   className='card-img'
@@ -38,7 +38,10 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
                 ? subtitle.substr(0, 252) + " ..."
                 : subtitle}
               <Link {...link}>
-                <a className='orange-text italic'> READ MORE</a>
+                <a aria-label='read more' className='orange-text italic'>
+                  {" "}
+                  READ MORE
+                </a>
               </Link>
             </Card.Text>
           </div>

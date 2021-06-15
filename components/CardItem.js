@@ -10,7 +10,7 @@ const CardItem = ({ title, date, coverImage, author, link }) => {
         <div className='view overlay'>
           {link && (
             <Link {...link}>
-              <a>
+              <a aria-label={coverImage.alt}>
                 <Card.Img
                   src={urlFor(coverImage)
                     .crop("center")

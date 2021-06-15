@@ -14,7 +14,7 @@ export default function Custom500() {
           at a later time.
         </p>
         <Link href='/'>
-          <a>Bact to Home</a>
+          <a aria-label='back to home'>Bact to Home</a>
         </Link>
       </div>
     </div>
