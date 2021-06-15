@@ -33,8 +33,9 @@ const serializers = {
     image: ({ node: { alt, asset, position = "center" } }) => {
       return (
         <img
+          style={{ width: "100%" }}
           className={`block-img block-img-${position} lazyload`}
-          data-src={urlFor(asset.url).height(300).url()}
+          data-src={urlFor(asset.url).width(550).height(370).url()}
           alt={alt}
         />
       );
