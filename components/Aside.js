@@ -54,42 +54,55 @@ const Aside = ({ tags }) => {
       <div className='widget help'>
         <div className='heading'>I need help with ...</div>
         <div className='guideicons'>
-          <a href='' className='guideicon'>
-            <span className='starting'>
-              <FaBookReader />
-            </span>
-            Blog
-          </a>
-          <a href='' className='guideicon '>
-            <span className='speed'>
-              <FaTachometerAlt />
-            </span>
-            Performance
-          </a>
-          <a href='' className='guideicon security'>
-            <span className='security'>
-              <FaUnlockAlt />
-            </span>
-            Security
-          </a>
-          <a href='' className='guideicon'>
-            <span className='seo'>
-              <FaChartBar />
-            </span>
-            SEO
-          </a>
-          <a href='' className='guideicon'>
-            <span className='error'>
-              <FaExclamationCircle />
-            </span>
-            Error
-          </a>
-          <a href='' className='guideicon'>
-            <span className='shop'>
-              <FaShoppingCart />
-            </span>
-            Online Shop
-          </a>
+          <Link href='#'>
+            <a className='guideicon'>
+              <span className='starting'>
+                <FaBookReader />
+              </span>
+              Blog
+            </a>
+          </Link>
+
+          <Link href='#'>
+            <a className='guideicon '>
+              <span className='speed'>
+                <FaTachometerAlt />
+              </span>
+              Performance
+            </a>
+          </Link>
+          <Link href='#'>
+            <a className='guideicon security'>
+              <span className='security'>
+                <FaUnlockAlt />
+              </span>
+              Security
+            </a>
+          </Link>
+          <Link href='#'>
+            <a className='guideicon'>
+              <span className='seo'>
+                <FaChartBar />
+              </span>
+              SEO
+            </a>
+          </Link>
+          <Link href='#'>
+            <a className='guideicon'>
+              <span className='error'>
+                <FaExclamationCircle />
+              </span>
+              Error
+            </a>
+          </Link>
+          <Link href='#'>
+            <a className='guideicon'>
+              <span className='shop'>
+                <FaShoppingCart />
+              </span>
+              Online Shop
+            </a>
+          </Link>
         </div>
       </div>
       {tags && (

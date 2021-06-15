@@ -13,7 +13,11 @@ import DownloadFile from "components/DownloadFile";
 import Layout from "components/Layout";
 import MetaDecorator from "components/MetaDecorator";
 const BlogContent = dynamic(() => import("components/BlogContent"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => (
+    <div style={{ textAlign: "center" }}>
+      <Spinner animation='border' variant='danger' />
+    </div>
+  ),
 });
 
 function BlogDetails({ blog: initialBlog, preview }) {

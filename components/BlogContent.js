@@ -5,10 +5,17 @@ import { urlFor } from "lib/api";
 import getYouTubeId from "get-youtube-id";
 import HighLightCode from "components/HighLightCode";
 const BlockContent = dynamic(() => import("@sanity/block-content-to-react"), {
-  loading: () => <Spinner animation='border' variant='danger' />,
+  loading: () => (
+    <div style={{ textAlign: "center" }}>
+      <Spinner animation='border' variant='danger' />
+    </div>
+  ),
 });
+
 const YouTube = dynamic(() => import("react-youtube"), {
-  loading: () => <div style={{ height: "45vh", background: "#222" }} />,
+  loading: () => (
+    <div style={{ width: "100%", height: "45vh", background: "#222" }} />
+  ),
 });
 
 const serializers = {
