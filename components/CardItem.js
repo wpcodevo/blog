@@ -18,7 +18,7 @@ const CardItem = ({ title, date, coverImage, author, link }) => {
                     .width(500)
                     .height(500)
                     .url()}
-                  alt='Card image cap'
+                  alt={coverImage.alt}
                 />
               </a>
             </Link>
@@ -40,7 +40,7 @@ const CardItem = ({ title, date, coverImage, author, link }) => {
               roundedCircle
               className='mr-3 card-avatar'
               src={urlFor(author?.avatar).width(40).height(40).fit("max").url()}
-              alt='Generic placeholder'
+              alt={author.alt}
             />
             <div className='d-col'>
               <Card.Title className='card-title-avatar'>

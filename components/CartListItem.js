@@ -28,6 +28,7 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
                     .height(500)
                     .fit("clip")
                     .url()}
+                  alt={coverImage.alt}
                 />
               </a>
             </Link>

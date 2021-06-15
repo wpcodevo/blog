@@ -107,7 +107,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
           <Image
             width='100%'
             src={urlFor(initialBlog.coverImage).width(720).height(400).url()}
-            alt=''
+            alt={initialBlog.coverImage.alt}
             className='img-fluid rounded mb-2 pb-4 coverImage'
           />
         )}
