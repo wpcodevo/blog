@@ -1,7 +1,7 @@
 import { Card } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
-import moment from "moment";
+import Moment from "react-moment";
 
 const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
   return (
@@ -14,8 +14,13 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
             </a>
           </Link>
           <div className='authorInfo'>
-            Posted on {moment(date).format("LL")} by{" "}
-            <span className='orange-text'>{author.name}</span>
+            Posted on{" "}
+            {
+              <Moment format='D MMM YYYY' withTitle>
+                {date}
+              </Moment>
+            }{" "}
+            by <span className='orange-text'>{author.name}</span>
           </div>
           <div className='card-flex'>
             <Link {...link}>

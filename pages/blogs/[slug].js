@@ -7,11 +7,12 @@ import ErrorPage from "next/error";
 import { getBlogBySlug, getPaginatedBlogs, onBlogUpdate } from "lib/api";
 import ShareSocial from "components/ShareSocial";
 import { urlFor } from "lib/api";
-import moment from "moment";
 import { PreviewAlert } from "components/PreviewAlert";
 import DownloadFile from "components/DownloadFile";
 import Layout from "components/Layout";
 import MetaDecorator from "components/MetaDecorator";
+import Moment from "react-moment";
+
 const BlogContent = dynamic(() => import("components/BlogContent"), {
   loading: () => (
     <div style={{ textAlign: "center" }}>
@@ -91,7 +92,13 @@ function BlogDetails({ blog: initialBlog, preview }) {
                 {initialBlog.title}
               </Card.Title>
               <div className='authorInfo'>
-                Posted on {moment(initialBlog.date).format("LLLL")} by{" "}
+                Posted on{" "}
+                {
+                  <Moment format='D MMM YYYY' withTitle>
+                    {initialBlog.date}
+                  </Moment>
+                }{" "}
+                by{" "}
                 <span className='orange-text'>{initialBlog.author.name}</span>
               </div>
             </Card.Body>
