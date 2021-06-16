@@ -1,10 +1,9 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import FilteringMenu from "components/FilteringMenu";
 import { getPaginatedBlogs } from "lib/api";
-import { useGetBlogPages } from "actions/Pagination";
 import Layout from "components/Layout";
-// import { PreviewAlert } from "components/PreviewAlert";
+import useGetBlogPages from "actions/Pagination";
+const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 
 function Home({ blogs, preview }) {

@@ -3,15 +3,14 @@ import { Card, Image, Spinner } from "react-bootstrap";
 import PageLayout from "components/PageLayout";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
-import ErrorPage from "next/error";
 import { getBlogBySlug, getPaginatedBlogs, onBlogUpdate } from "lib/api";
-import ShareSocial from "components/ShareSocial";
 import { urlFor } from "lib/api";
-import { PreviewAlert } from "components/PreviewAlert";
-import DownloadFile from "components/DownloadFile";
 import Layout from "components/Layout";
 import MetaDecorator from "components/MetaDecorator";
-import Moment from "react-moment";
+const ShareSocial = dynamic(() => import("components/ShareSocial"));
+const DownloadFile = dynamic(() => import("components/DownloadFile"));
+const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
+const Moment = dynamic(() => import("react-moment"));
 
 const BlogContent = dynamic(() => import("components/BlogContent"), {
   loading: () => (
@@ -26,10 +25,6 @@ function BlogDetails({ blog: initialBlog, preview }) {
   const [counter, setCounter] = useState(0);
   const [showLink, setShowLink] = useState(false);
   const [blog, setBlog] = useState(initialBlog);
-
-  if (!router.isFallback && !blog?.slug) {
-    return <ErrorPage statusCode='404' />;
-  }
 
   if (router.isFallback) {
     return (

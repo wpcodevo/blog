@@ -26,7 +26,7 @@ const BlogList = ({ blogs, filter }) => {
   );
 };
 
-export const useGetBlogPages = ({ blogs, filter }) => {
+const useGetBlogPages = ({ blogs, filter }) => {
   return useSWRPages(
     "index-page",
     ({ offset, withSWR }) => {
@@ -59,3 +59,5 @@ export const useGetBlogPages = ({ blogs, filter }) => {
     [filter]
   );
 };
+
+export default useGetBlogPages;
