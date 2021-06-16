@@ -4,7 +4,7 @@ import { useGetBlogs } from "actions";
 import CardListItem from "components/CartListItem";
 import CardsItemRow from "components/CardsItemRow";
 
-const BlogList = ({ blogs = [], filter }) => {
+const BlogList = ({ blogs, filter }) => {
   return filter.view.list ? (
     blogs.map((blog) => (
       <div key={`${blogs.length}-${Math.random()}-list`}>

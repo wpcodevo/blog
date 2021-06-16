@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import { Card, Image, Spinner } from "react-bootstrap";
 import PageLayout from "components/PageLayout";
+import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import ErrorPage from "next/error";
-import { getBlogBySlug, getPaginatedBlogs, urlFor, postQuery } from "lib/api";
+import { getBlogBySlug, getPaginatedBlogs, onBlogUpdate } from "lib/api";
+import ShareSocial from "components/ShareSocial";
+import { urlFor } from "lib/api";
+import { PreviewAlert } from "components/PreviewAlert";
+import DownloadFile from "components/DownloadFile";
 import Layout from "components/Layout";
 import MetaDecorator from "components/MetaDecorator";
-import { usePreviewSubscription } from "lib/sanity";
-const ShareSocial = dynamic(() => import("components/ShareSocial"));
-const DownloadFile = dynamic(() => import("components/DownloadFile"));
-const Moment = dynamic(() => import("react-moment"));
-const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
+import Moment from "react-moment";
+
 const BlogContent = dynamic(() => import("components/BlogContent"), {
   loading: () => (
     <div style={{ textAlign: "center" }}>
@@ -20,28 +21,13 @@ const BlogContent = dynamic(() => import("components/BlogContent"), {
   ),
 });
 
-function BlogDetails({ initialBlog, preview }) {
+function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
   const [counter, setCounter] = useState(0);
   const [showLink, setShowLink] = useState(false);
-  const [previewBlog, setPreviewBlog] = useState(initialBlog);
+  const [blog, setBlog] = useState(initialBlog);
 
-  let post = null;
-
-  if (preview) {
-    const {
-      data: { blog },
-    } = usePreviewSubscription(postQuery, {
-      params: { slug: initialBlog?.slug.current },
-      initialData: initialBlog,
-      enabled: preview,
-    });
-    post = blog;
-  }
-
-  const blogPost = previewBlog ? previewBlog : initialBlog;
-
-  if (!router.isFallback && !initialBlog?.slug) {
+  if (!router.isFallback && !blog?.slug) {
     return <ErrorPage statusCode='404' />;
   }
 
@@ -56,9 +42,14 @@ function BlogDetails({ initialBlog, preview }) {
   }
 
   useEffect(() => {
-    if (post) {
-      setPreviewBlog(post);
+    let sub;
+    if (preview) {
+      sub = onBlogUpdate(blog.slug).subscribe((update) => {
+        setBlog(update.result);
+      });
     }
+
+    return () => sub && sub.unsubscribe();
   }, []);
 
   useEffect(() => {
@@ -76,14 +67,14 @@ function BlogDetails({ initialBlog, preview }) {
   return (
     <>
       <MetaDecorator
-        title={blogPost.title}
-        description={blogPost.subtitle}
-        imageUrl={urlFor(blogPost.coverImage).url()}
-        imageAlt={blogPost.title}
+        title={initialBlog.title}
+        description={initialBlog.subtitle}
+        imageUrl={urlFor(initialBlog.coverImage).url()}
+        imageAlt={initialBlog.title}
       />
       {/* Google Ads */}
       <div className='google-ads'></div>
-      <Layout blog={blogPost}>
+      <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
         <div className='archive-description'>
           <h1>Top Coding News</h1>
@@ -98,33 +89,34 @@ function BlogDetails({ initialBlog, preview }) {
           <div className='card-body-wrapper card-body-wrapper-1'>
             <Card.Body className='card-body-1'>
               <Card.Title className='card-main-title'>
-                {blogPost.title}
+                {initialBlog.title}
               </Card.Title>
               <div className='authorInfo'>
                 Posted on{" "}
                 {
                   <Moment format='D MMM YYYY' withTitle>
-                    {blogPost.date}
+                    {initialBlog.date}
                   </Moment>
                 }{" "}
-                by <span className='orange-text'>{blogPost.author.name}</span>
+                by{" "}
+                <span className='orange-text'>{initialBlog.author.name}</span>
               </div>
             </Card.Body>
           </div>
         </Card>
 
         <ShareSocial />
-        {blogPost.coverImage && (
+        {initialBlog.coverImage && (
           <Image
             width='100%'
-            src={urlFor(blogPost.coverImage).width(600).height(400).url()}
-            alt={blogPost.coverImage.alt}
+            src={urlFor(initialBlog.coverImage).width(600).height(400).url()}
+            alt={initialBlog.coverImage.alt}
             className='img-fluid rounded pb-4 coverImage'
           />
         )}
 
-        {blogPost.content && <BlogContent content={blogPost.content} />}
-        <DownloadFile blog={blogPost} />
+        {initialBlog.content && <BlogContent content={initialBlog.content} />}
+        <DownloadFile blog={blog} />
       </Layout>
     </>
   );
@@ -133,13 +125,13 @@ function BlogDetails({ initialBlog, preview }) {
 export default BlogDetails;
 
 export async function getStaticProps({ params, preview = false, previewData }) {
-  const initialBlog = await getBlogBySlug(params.slug, preview);
+  const blog = await getBlogBySlug(params.slug, preview);
   return {
     props: {
-      initialBlog,
+      blog,
       preview,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 

@@ -1,6 +1,6 @@
 import { Alert } from "react-bootstrap";
 
-const PreviewAlert = () => {
+export const PreviewAlert = () => {
   return (
     <Alert variant='secondary'>
       You are in preview mode{" "}
@@ -10,5 +10,3 @@ const PreviewAlert = () => {
     </Alert>
   );
 };
-
-export default PreviewAlert;
