@@ -10,7 +10,7 @@ const BlogNavBar = () => {
 
   return (
     <div className='header'>
-      <nav className='nav' style={{ padding: "16px 0" }}>
+      <nav className='nav'>
         <div className='navigation d-flex container'>
           <div className='logo'>
             <Link href='/' as='/'>

@@ -441,6 +441,10 @@ p {
   justify-content: space-between;
 }
 
+.nav {
+  padding: 16px 0;
+}
+
 .logo h1 {
   font-size: 2.5rem;
   color: #fff;
@@ -481,9 +485,8 @@ p {
 
 @media only screen and (max-width: 768px) {
   .nav {
-    padding: 0;
+    padding: 5px 16px;
   }
-
   .menu {
     position: fixed;
     top: 0;
@@ -506,7 +509,7 @@ p {
     align-items: center;
     justify-content: space-between;
     background-color: var(--orange);
-    padding: 20px 16px;
+    padding: 22px 16px;
   }
 
   .top-nav .close {
