@@ -3,7 +3,9 @@ import dynamic from "next/dynamic";
 import { Spinner } from "react-bootstrap";
 import { urlFor } from "lib/api";
 import getYouTubeId from "get-youtube-id";
-import HighLightCode from "components/HighLightCode";
+
+const HighLightCode = dynamic(() => import("components/HighLightCode"));
+
 const BlockContent = dynamic(() => import("@sanity/block-content-to-react"), {
   loading: () => (
     <div style={{ textAlign: "center" }}>

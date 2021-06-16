@@ -1,7 +1,9 @@
 import { Card } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
-import Moment from "react-moment";
+import dynamic from "next/dynamic";
+
+const Moment = dynamic(() => import("react-moment"));
 
 const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
   return (
