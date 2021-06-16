@@ -7,7 +7,6 @@ export default async function enablePreview(req, res) {
   ) {
     return res.status(401).json({ message: "Invalid Token" });
   }
-
   const blog = await getBlogBySlug(req.query.slug, true);
 
   if (!blog) {
