@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, Image, Spinner } from "react-bootstrap";
+import Link from "next/link";
 import PageLayout from "components/PageLayout";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
@@ -22,8 +23,6 @@ const BlogContent = dynamic(() => import("components/BlogContent"), {
 
 function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
-  const [counter, setCounter] = useState(0);
-  const [showLink, setShowLink] = useState(false);
   const [blog, setBlog] = useState(initialBlog);
 
   if (router.isFallback) {
@@ -46,18 +45,6 @@ function BlogDetails({ blog: initialBlog, preview }) {
 
     return () => sub && sub.unsubscribe();
   }, []);
-
-  useEffect(() => {
-    const timer =
-      showLink & (counter > 0) &&
-      setInterval(() => setCounter(counter - 1), 1000);
-    return () => clearInterval(timer);
-  }, [counter]);
-
-  const setTime = () => {
-    setShowLink(!showLink);
-    setCounter(50);
-  };
 
   return (
     <>
@@ -94,7 +81,13 @@ function BlogDetails({ blog: initialBlog, preview }) {
                   </Moment>
                 }{" "}
                 by{" "}
-                <span className='orange-text'>{initialBlog.author.name}</span>
+                <Link href='/about'>
+                  <a>
+                    <span className='orange-text'>
+                      {initialBlog.author.name}
+                    </span>
+                  </a>
+                </Link>
               </div>
             </Card.Body>
           </div>
@@ -126,7 +119,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
       blog,
       preview,
     },
-    revalidate: 60,
+    revalidate: 1,
   };
 }
 

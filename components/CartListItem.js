@@ -20,7 +20,12 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
                 {date}
               </Moment>
             }{" "}
-            by <span className='orange-text'>{author.name}</span>
+            by{" "}
+            <Link href='/about'>
+              <a>
+                <span className='orange-text'>{author.name}</span>
+              </a>
+            </Link>
           </div>
           <div className='card-flex'>
             <Link {...link}>

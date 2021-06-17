@@ -15,12 +15,12 @@ const DownloadFile = ({ blog }) => {
 
   const setTime = () => {
     setShowLink(!showLink);
-    setCounter(50);
+    setCounter(30);
   };
 
   return (
     <>
-      {blog?.file && (
+      {blog?.download && (
         <div
           className={`download-button d-flex ${showLink ? "hide" : ""}`}
           onClick={() => setTime()}
@@ -37,7 +37,7 @@ const DownloadFile = ({ blog }) => {
             Generating download link in <span>{counter}s</span>
           </p>
           {counter === 0 && (
-            <Link href={`${blog.file}?dl=`}>
+            <Link href={blog.downloadLink}>
               <a aria-label='download'>link here</a>
             </Link>
           )}
