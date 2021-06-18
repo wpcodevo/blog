@@ -12,6 +12,9 @@ const ShareSocial = dynamic(() => import("components/ShareSocial"));
 const DownloadFile = dynamic(() => import("components/DownloadFile"));
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 const Moment = dynamic(() => import("react-moment"));
+const GoogleAds = dynamic(() => import("components/GoogleAds"), {
+  loading: () => <div style={{ height: 0 }}></div>,
+});
 
 const BlogContent = dynamic(() => import("components/BlogContent"), {
   loading: () => (
@@ -55,7 +58,14 @@ function BlogDetails({ blog: initialBlog, preview }) {
         imageAlt={initialBlog.title}
       />
       {/* Google Ads */}
-      <div className='google-ads'></div>
+      <div className='google-ads'>
+        <GoogleAds
+          format='auto'
+          responsive='true'
+          layoutKey={process.env.LAYOUTkEY}
+          slot={process.env.HORIZONTAL_SLOT}
+        />
+      </div>
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
         <div className='archive-description'>

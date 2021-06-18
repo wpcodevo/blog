@@ -5,6 +5,9 @@ import Layout from "components/Layout";
 import useGetBlogPages from "actions/Pagination";
 const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
+const GoogleAds = dynamic(() => import("components/GoogleAds"), {
+  loading: () => <div style={{ height: 0 }}></div>,
+});
 
 function Home({ blogs, preview }) {
   const [filter, setFilter] = useState({
@@ -20,7 +23,14 @@ function Home({ blogs, preview }) {
   return (
     <>
       {/* Google Ads */}
-      <div className='google-ads'></div>
+      <div className='google-ads'>
+        <GoogleAds
+          format='auto'
+          responsive='true'
+          layoutKey={process.env.LAYOUTkEY}
+          slot={process.env.HORIZONTAL_SLOT}
+        />
+      </div>
       {/* <AuthorIntro /> */}
       <FilteringMenu
         filter={filter}

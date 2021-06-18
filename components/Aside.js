@@ -11,7 +11,11 @@ import {
   FaUnlockAlt,
   FaTachometerAlt,
 } from "react-icons/fa";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+const GoogleAds = dynamic(() => import("components/GoogleAds"), {
+  loading: () => <div style={{ height: 0 }}></div>,
+});
 
 const Aside = () => {
   return (
@@ -49,7 +53,13 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div className='widget advertisement'></div>
+      <div className='widget advertisement'>
+        <GoogleAds
+          format='auto'
+          responsive='true'
+          slot={process.env.VERTICAL_SLOT}
+        />
+      </div>
 
       <div className='widget help'>
         <div className='heading'>I need help with ...</div>
