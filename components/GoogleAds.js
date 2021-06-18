@@ -7,6 +7,7 @@ const GoogleAds = ({
   layout = "auto",
   responsive = "",
   layoutKey = "",
+  styles = { display: "block" },
 }) => {
   useEffect(() => {
     const installGoogleAds = () => {
@@ -22,7 +23,7 @@ const GoogleAds = ({
     <AdSense.Google
       client='ca-pub-1057373061381635'
       slot={slot}
-      style={{ display: "block" }}
+      style={styles}
       format={format}
       layout={layout}
       responsive={responsive}

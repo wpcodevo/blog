@@ -27,7 +27,6 @@ function Home({ blogs, preview }) {
         <GoogleAds
           format='auto'
           responsive='true'
-          layoutKey={process.env.LAYOUTkEY}
           slot={process.env.HORIZONTAL_SLOT}
         />
       </div>

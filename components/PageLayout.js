@@ -12,9 +12,8 @@ const PageLayout = ({ children, className }) => {
       <div className={`page-wrapper ${className}`}>{children}</div>
       <GoogleAds
         format='auto'
-        responsive='true'
-        layoutKey={process.env.LAYOUTkEY}
         slot={process.env.HORIZONTAL_SLOT}
+        responsive='true'
       />
       <Footer />
     </div>
