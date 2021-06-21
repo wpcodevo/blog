@@ -81,7 +81,11 @@ const serializers = {
 };
 
 const BlogContent = ({ content }) => {
-  return <BlockContent serializers={serializers} blocks={content} />;
+  return (
+    <div className='blockContent'>
+      <BlockContent serializers={serializers} blocks={content} />
+    </div>
+  );
 };
 
 export default BlogContent;

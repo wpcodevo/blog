@@ -25,9 +25,9 @@ const About = ({ aboutData }) => {
           return (
             <div key={`${i}`}>
               <div className='title'>
-                <h1>{c.title}</h1>
+                <h1>{c.name}</h1>
               </div>
-              {c.content && <BlogContent content={c.content} />}
+              {c.bio && <BlogContent content={c.bio} />}
             </div>
           );
         })}

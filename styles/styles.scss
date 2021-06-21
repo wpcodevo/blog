@@ -192,6 +192,7 @@ p {
   }
 
   .authorInfo {
+    font-size: 15px;
     color: #999;
     margin-bottom: 20px;
   }
@@ -230,8 +231,9 @@ p {
 
       &.italic {
         color: #ff6200;
-        font-size: 14px;
+        font-size: 13px;
         font-style: italic;
+        font-weight: 500;
 
         &:hover {
           text-decoration: underline;
@@ -243,7 +245,7 @@ p {
       }
     }
 
-    .card-title {
+    .blockContent-title {
       font-size: 25px;
       line-height: 36px;
       margin: 0 0 15px 0;
@@ -276,7 +278,11 @@ p {
   }
 
   .card-main-title {
-    font-size: 22px;
+    font-size: 20px !important;
+  }
+
+  .card-main-text {
+    font-size: 15px !important;
   }
 
   &.fj-card-list {
@@ -744,6 +750,7 @@ p {
           text-align: center;
           color: #666;
           margin: 25px 0;
+          font-size: 15px;
 
           span {
             font-size: 36px;
@@ -814,14 +821,37 @@ p {
 }
 
 @media only screen and (max-width: 567px) {
-  .card.fj-card .card-flex {
-    .card-link {
-      width: 200px;
-      height: 150px;
+  .card-wrapper {
+    margin: 0 0 25px;
+  }
 
-      .list-img {
-        width: 100%;
-        height: 100%;
+  .card.fj-card {
+    .card-flex {
+      .card-link {
+        width: 200px;
+        height: 150px;
+
+        .list-img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .card-main-title {
+      line-height: 30px !important;
+      margin: 0 0 5px 0 !important;
+    }
+
+    .authorInfo {
+      margin-bottom: 10px;
+    }
+
+    .card-body {
+      padding: 0 !important;
+
+      &-item {
+        padding: 10px !important;
       }
     }
   }
@@ -1042,5 +1072,11 @@ p {
       color: #fff;
       margin-top: 15px;
     }
+  }
+}
+
+.blockContent {
+  p {
+    font-size: 15px;
   }
 }

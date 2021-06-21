@@ -24,7 +24,7 @@ const CardItem = ({ title, date, coverImage, author, link }) => {
             </Link>
           )}
         </div>
-        <Card.Body>
+        <Card.Body className='card-body-item'>
           {link && (
             <Link {...link}>
               <a className='no-italic'>
@@ -44,7 +44,9 @@ const CardItem = ({ title, date, coverImage, author, link }) => {
             />
             <div className='d-col mx-2'>
               <Card.Title className='card-title-avatar'>
-                {author.name}
+                <Link href='/about'>
+                  <a>{author.name}</a>
+                </Link>
               </Card.Title>
               <Card.Subtitle className='card-subtitle-avatar orange-text'>
                 <Moment format='D MMM YYYY' withTitle>

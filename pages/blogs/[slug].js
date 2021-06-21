@@ -69,7 +69,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
         <div className='archive-description'>
-          <h1>Top Coding News</h1>
+          <h2>Top Coding News</h2>
           <p>
             Codevo's Programming News keeps you updated with what's hot in the
             Programming industry. Stay updated with New Technology releases,
@@ -80,7 +80,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
         <Card className={`fj-card fj-card-list card-wrapper card-wrapper-1`}>
           <div className='card-body-wrapper card-body-wrapper-1'>
             <Card.Body className='card-body-1'>
-              <Card.Title className='card-main-title'>
+              <Card.Title className='blockContent-title'>
                 {initialBlog.title}
               </Card.Title>
               <div className='authorInfo'>
