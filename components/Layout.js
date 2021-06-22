@@ -1,4 +1,5 @@
-import Aside from "./Aside";
+import dynamic from "next/dynamic";
+const Aside = dynamic(() => import("./Aside"));
 
 const Layout = ({ children }) => {
   return (

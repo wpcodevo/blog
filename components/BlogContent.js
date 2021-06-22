@@ -2,8 +2,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Spinner } from "react-bootstrap";
 import { urlFor } from "lib/api";
-import getYouTubeId from "get-youtube-id";
-import HighLightCode from "components/HighLightCode";
+import getYouTubeID from "get-youtube-id";
 const BlockContent = dynamic(() => import("@sanity/block-content-to-react"), {
   loading: () => (
     <div style={{ textAlign: "center" }}>
@@ -12,6 +11,7 @@ const BlockContent = dynamic(() => import("@sanity/block-content-to-react"), {
   ),
 });
 
+const HighLightCode = dynamic(() => import("components/HighLightCode"));
 const YouTube = dynamic(() => import("react-youtube"), {
   loading: () => (
     <div style={{ width: "100%", height: "45vh", background: "#222" }} />
@@ -27,7 +27,7 @@ const serializers = {
     },
     youtube: ({ node }) => {
       const { url } = node;
-      const id = getYouTubeId(url);
+      const id = getYouTubeID(url);
       return <YouTube className='youtubeWrapper lazyload' videoId={id} />;
     },
     image: ({ node: { alt, asset, position = "center" } }) => {
