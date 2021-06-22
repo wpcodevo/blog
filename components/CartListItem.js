@@ -32,10 +32,12 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
               <a aria-label={coverImage.alt} className='card-link'>
                 <Card.Img
                   variant='top'
-                  className='card-img list-img'
+                  style={{
+                    imageRendering: "-webkit-optimize-contrast",
+                  }}
                   src={urlFor(coverImage)
                     .width(298)
-                    .height(298)
+                    .height(250)
                     .fit("clip")
                     .url()}
                   alt={coverImage.alt}
@@ -43,7 +45,7 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
               </a>
             </Link>
 
-            <Card.Text className='card-main-text'>
+            <Card.Text style={{ fontSize: "15px !important" }}>
               {subtitle.length > 252
                 ? subtitle.substr(0, 252) + " ..."
                 : subtitle}

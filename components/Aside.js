@@ -53,12 +53,8 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div className='widget advertisement'>
-        <GoogleAds
-          format='fluid'
-          layout='in-article'
-          slot={process.env.VERTICAL_SLOT}
-        />
+      <div className='widget' style={{ maxHeight: "400px !important" }}>
+        <GoogleAds slot={process.env.VERTICAL_SLOT} />
       </div>
 
       <div className='widget help'>
@@ -115,12 +111,8 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div className='widget advertisement'>
-        <GoogleAds
-          format='fluid'
-          layout='in-article'
-          slot={process.env.VERTICAL_SLOT}
-        />
+      <div className='widget' style={{ maxHeight: "400px !important" }}>
+        <GoogleAds slot={process.env.VERTICAL_SLOT} />
       </div>
       {/* {tags && (
         <div className='widget tags'>

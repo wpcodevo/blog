@@ -41,6 +41,8 @@ a {
   display: grid;
   grid-template-columns: 600px 300px;
   align-items: flex-start;
+  margin-top: 10px;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 996px) {
@@ -129,18 +131,6 @@ p {
   }
 }
 
-.clickable {
-  cursor: pointer;
-}
-
-.hoverable:hover {
-  opacity: 0.7;
-}
-
-.red-text {
-  color: #b31217 !important;
-}
-
 .orange-text {
   color: #ff6200;
 }
@@ -167,15 +157,6 @@ p {
     &.card {
       margin-bottom: 10px;
     }
-  }
-}
-
-.card-img {
-  image-rendering: -webkit-optimize-contrast;
-
-  &.list-img {
-    width: 298px;
-    height: 298px;
   }
 }
 
@@ -257,32 +238,11 @@ p {
       line-height: 26px;
       height: 50px;
     }
-
-    .card-avatar {
-      image-rendering: -webkit-optimize-contrast;
-    }
-
-    .card-title-avatar {
-      font-size: 15px;
-      text-transform: capitalize;
-      margin-bottom: 0;
-    }
-
-    .card-subtitle-avatar {
-      font-size: 14px;
-    }
-  }
-
-  .card-date {
-    font-size: 13px;
   }
 
   .card-main-title {
-    font-size: 20px !important;
-  }
-
-  .card-main-text {
-    font-size: 15px !important;
+    font-size: 22px !important;
+    line-height: 36px !important;
   }
 
   &.fj-card-list {
@@ -344,15 +304,6 @@ p {
   color: #fff;
 }
 
-.blog-image {
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.image-alt {
-  margin-top: 3px;
-}
-
 .blog-detail-page {
   font-size: 19px;
 
@@ -391,16 +342,6 @@ p {
       margin-bottom: 25px;
     }
 
-    div:nth-child(1) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      h1 {
-        font-size: 40px;
-      }
-    }
-
     div:nth-child(2) {
       margin-right: 15px;
     }
@@ -408,13 +349,14 @@ p {
     div:nth-child(3) {
       .icons {
         .icon {
+          display: inline-block;
           border: 1px solid rgba(119, 115, 115, 0.3);
           padding: 7px 10px;
           background-color: rgba(10, 10, 10, 0.1);
           color: #eaeaea;
 
           &:not(:last-child) {
-            margin-right: 10px;
+            margin: 0 10px 5px 0;
           }
         }
       }
@@ -475,6 +417,9 @@ p {
 }
 
 @media only screen and (max-width: 768px) {
+  .navigation {
+    padding: 0;
+  }
   .nav {
     padding: 5px 16px;
   }
@@ -483,7 +428,7 @@ p {
     top: 0;
     left: -100%;
     width: 0;
-    max-width: 350px;
+    max-width: 300px;
     height: 100%;
     background-color: #fff;
     z-index: 100;
@@ -541,15 +486,19 @@ p {
     .center {
       grid-template-columns: 1fr;
 
+      h1 {
+        font-size: 30px !important;
+      }
+
       div {
-        text-align: center;
+        text-align: left;
 
         &:not(:last-child) {
           margin-bottom: 30px;
         }
 
         .icons {
-          justify-content: center;
+          justify-content: start;
         }
       }
     }
@@ -639,7 +588,7 @@ p {
 }
 
 .filtering-menu {
-  margin-bottom: 20px;
+  margin: 20px 0;
 
   div:first-child {
     margin-right: 10px;
@@ -674,16 +623,8 @@ p {
   }
 }
 
-.grid-layout {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-}
-
 .aside {
-  width: 300px;
-  margin-left: 30px;
+  max-width: 300px;
 
   .widget {
     margin: 0 0 20px 0;
@@ -735,10 +676,6 @@ p {
           color: #222;
         }
       }
-    }
-
-    &.advertisement {
-      height: 400px !important;
     }
 
     &.help {
@@ -793,7 +730,7 @@ p {
   background-color: #ff6200;
 }
 
-@media only screen and (max-width: 996px) {
+@media (max-width: 996px) {
   html,
   body {
     background-color: #fff;
@@ -806,7 +743,7 @@ p {
   }
 
   .aside {
-    width: 100%;
+    max-width: 100%;
     margin: 15px 0 0;
 
     .widget {
@@ -820,7 +757,7 @@ p {
   }
 }
 
-@media only screen and (max-width: 567px) {
+@media (max-width: 567px) {
   .card-wrapper {
     margin: 0 0 25px;
   }
@@ -839,6 +776,7 @@ p {
     }
 
     .card-main-title {
+      font-size: 20px;
       line-height: 30px !important;
       margin: 0 0 5px 0 !important;
     }
@@ -878,18 +816,7 @@ p {
   width: 100%;
 }
 
-@media only screen and (max-width: 430px) {
-  .card-flex {
-    .card-link {
-      width: 120px;
-      height: auto;
-
-      img {
-        border: 1px solid #dfdfdf;
-      }
-    }
-  }
-
+@media (max-width: 430px) {
   .sharerHorizontal {
     .social-button {
       justify-content: center;
@@ -953,8 +880,14 @@ p {
   }
 }
 
-.google-ads {
-  margin: 10px 0;
+@media (max-width: 350px) {
+  .card.fj-card {
+    .card-flex {
+      .card-link {
+        width: 120px;
+      }
+    }
+  }
 }
 
 .download-button {
@@ -1033,21 +966,6 @@ p {
     display: block;
     visibility: visible;
     opacity: 1;
-  }
-}
-
-.editor {
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  cursor: text;
-  padding: 16px;
-  border-radius: 2px;
-  margin-bottom: 2em;
-  box-shadow: inset 0px 1px 8px -3px #ababab;
-  background: #fefefe;
-
-  :global(.public-DraftEditor-content) {
-    min-height: 140px;
   }
 }
 

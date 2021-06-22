@@ -12,14 +12,7 @@ const Privacy = ({ privacyData }) => {
     <>
       <NextSeo title='Privacy at Codevo' />
       {/* Google Ads */}
-      <div className='google-ads'>
-        <GoogleAds
-          format='auto'
-          responsive='true'
-          layoutKey={process.env.LAYOUTkEY}
-          slot={process.env.HORIZONTAL_SLOT}
-        />
-      </div>
+      <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
       <Layout>
         {privacyData.map((c, i) => {
           return (

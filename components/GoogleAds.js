@@ -3,11 +3,11 @@ import AdSense from "react-adsense";
 
 const GoogleAds = ({
   slot,
-  format,
-  layout = "auto",
+  format = "fluid",
+  layout = "in-article",
   responsive = "",
   layoutKey = "",
-  styles = { display: "block" },
+  styles = { display: "block", width: "100%" },
 }) => {
   useEffect(() => {
     const installGoogleAds = () => {
@@ -17,18 +17,23 @@ const GoogleAds = ({
       el.defer = true;
       document.body.insertBefore(el, document.body.firstChild);
     };
-    installGoogleAds();
+    setTimeout(() => {
+      installGoogleAds();
+    }, 200);
+    return clearTimeout(installGoogleAds);
   }, []);
   return (
-    <AdSense.Google
-      client='ca-pub-1057373061381635'
-      slot={slot}
-      style={styles}
-      format={format}
-      layout={layout}
-      responsive={responsive}
-      layoutKey={layoutKey}
-    />
+    <div style={{ overflow: "hidden" }}>
+      <AdSense.Google
+        client='ca-pub-1057373061381635'
+        slot={slot}
+        style={styles}
+        format={format}
+        layout={layout}
+        responsive={responsive}
+        layoutKey={layoutKey}
+      />
+    </div>
   );
 };
 

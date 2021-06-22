@@ -12,14 +12,7 @@ const About = ({ aboutData }) => {
     <>
       <NextSeo title='About Codevo' />
       {/* Google Ads */}
-      <div className='google-ads'>
-        <GoogleAds
-          format='auto'
-          responsive='true'
-          layoutKey={process.env.LAYOUTkEY}
-          slot={process.env.HORIZONTAL_SLOT}
-        />
-      </div>
+      <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
       <Layout>
         {aboutData.map((c, i) => {
           return (

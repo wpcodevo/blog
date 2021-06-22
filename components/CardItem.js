@@ -38,17 +38,26 @@ const CardItem = ({ title, date, coverImage, author, link }) => {
           <div className='d-flex'>
             <Image
               roundedCircle
-              className='card-avatar'
+              style={{ imageRendering: " -webkit-optimize-contrast" }}
               src={urlFor(author?.avatar).width(40).height(40).fit("max").url()}
               alt={author.alt}
             />
             <div className='d-col mx-2'>
-              <Card.Title className='card-title-avatar'>
+              <Card.Title
+                style={{
+                  fontSize: "15px",
+                  textTransform: "capitalize",
+                  marginBottom: "5px",
+                }}
+              >
                 <Link href='/about'>
                   <a>{author.name}</a>
                 </Link>
               </Card.Title>
-              <Card.Subtitle className='card-subtitle-avatar orange-text'>
+              <Card.Subtitle
+                className='orange-text'
+                style={{ fontSize: "13px" }}
+              >
                 <Moment format='D MMM YYYY' withTitle>
                   {date}
                 </Moment>

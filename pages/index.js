@@ -23,13 +23,7 @@ function Home({ blogs, preview }) {
   return (
     <>
       {/* Google Ads */}
-      <div className='google-ads'>
-        <GoogleAds
-          format='auto'
-          responsive='true'
-          slot={process.env.HORIZONTAL_SLOT}
-        />
-      </div>
+      <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
       {/* <AuthorIntro /> */}
       <FilteringMenu
         filter={filter}

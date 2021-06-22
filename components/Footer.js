@@ -7,17 +7,17 @@ const Footer = () => {
       className='page-footer'
       style={{
         marginTop: "40px",
-        padding: "50px",
+        padding: "50px 0",
         backgroundColor: "#222",
         color: "#eaeaea",
       }}
     >
       <div className='center container'>
-        <div>
-          <h1>Coding Tutorials</h1>
+        <div className='d-flex'>
+          <h1 style={{ fontSize: "40px" }}>Coding Tutorials</h1>
         </div>
         <div>
-          <h3>About</h3>
+          <h4 style={{ color: "white" }}>About</h4>
           <p>
             Codevo is a blog where we post blogs related to HTML CSS JavaScript
             & Nodejs along with amazing coding stuff.
@@ -30,7 +30,7 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h3>Follow</h3>
+          <h4 style={{ color: "white" }}>Follow</h4>
           <div className='icons d-flex'>
             <div className='social-icons'>
               <Link href='https://web.facebook.com/codevv/'>

@@ -12,14 +12,7 @@ const Terms = ({ termsData }) => {
     <>
       <NextSeo title='Terms of Use' />
       {/* Google Ads */}
-      <div className='google-ads'>
-        <GoogleAds
-          format='auto'
-          responsive='true'
-          layoutKey={process.env.LAYOUTkEY}
-          slot={process.env.HORIZONTAL_SLOT}
-        />
-      </div>
+      <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
       <Layout>
         {termsData.map((c, i) => {
           return (
