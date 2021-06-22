@@ -19,7 +19,7 @@ const GoogleAds = ({
     };
     setTimeout(() => {
       installGoogleAds();
-    }, 200);
+    }, 5000);
     return clearTimeout(installGoogleAds);
   }, []);
   return (
