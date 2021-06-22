@@ -17,10 +17,8 @@ const GoogleAds = ({
       el.defer = true;
       document.body.insertBefore(el, document.body.firstChild);
     };
-    setTimeout(() => {
-      installGoogleAds();
-    }, 5000);
-    return clearTimeout(installGoogleAds);
+
+    installGoogleAds();
   }, []);
   return (
     <div style={{ overflow: "hidden" }}>
