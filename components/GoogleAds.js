@@ -27,6 +27,8 @@ const GoogleAds = ({
       style={{
         overflow: "hidden",
         textAlign: "center",
+        width: "100%",
+        height: "100%",
       }}
     >
       <AdSense.Google
