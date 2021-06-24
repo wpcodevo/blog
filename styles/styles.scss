@@ -321,7 +321,7 @@ p {
 .page-footer {
   .center {
     display: grid;
-    grid-template-columns: 1.4fr 1.6fr 0.7fr;
+    grid-template-columns: 1.4fr 1.6fr 1fr;
 
     p {
       line-height: 20px;
@@ -810,6 +810,10 @@ p {
       margin-right: 5px;
     }
   }
+
+  .fix-ads-bottom {
+    height: 6rem;
+  }
 }
 
 .youtubeWrapper {
@@ -956,7 +960,7 @@ p {
   visibility: hidden;
   opacity: 0;
   transition: all 300ms ease-in-out;
-  z-index: 10000;
+  z-index: 100000;
 
   span {
     color: #fff;
@@ -997,4 +1001,17 @@ p {
   p {
     font-size: 15px;
   }
+}
+
+.fix-ads-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  opacity: 0.5;
+  height: 7rem;
+  z-index: 100000;
+  text-align: center;
+  border-top: 1px solid #d1d1d1;
 }

@@ -53,7 +53,7 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div className='widget' style={{ maxHeight: "400px !important" }}>
+      <div className='widget' style={{ maxHeight: "60rem !important" }}>
         <GoogleAds slot={process.env.VERTICAL_SLOT} />
       </div>
 
@@ -111,7 +111,7 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div className='widget' style={{ maxHeight: "400px !important" }}>
+      <div className='widget' style={{ maxHeight: "60rem !important" }}>
         <GoogleAds slot={process.env.VERTICAL_SLOT} />
       </div>
       {/* {tags && (

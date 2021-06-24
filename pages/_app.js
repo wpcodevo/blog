@@ -3,6 +3,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "styles/styles.scss";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import PageLayout from "components/PageLayout";
 import ScrollTop from "components/ScrollTop";
 import CookieConsent from "react-cookie-consent";
@@ -10,6 +11,7 @@ import MetaDecorator from "components/MetaDecorator";
 const content = require("data/content");
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
+const FixAdsBottom = dynamic(() => import("components/FixAdsBottom"));
 
 const App = ({ Component, pageProps }) => {
   return (
@@ -29,6 +31,7 @@ const App = ({ Component, pageProps }) => {
           backgroundColor: "#fff",
           color: "#222",
           textAlign: "center",
+          margin: "0 0 7rem",
         }}
         buttonStyle={{ backgroundColor: "#46a5ff", color: "#fff" }}
         expires={150}
@@ -39,6 +42,7 @@ const App = ({ Component, pageProps }) => {
           <a aria-label='learn more'>Learn more</a>
         </Link>
       </CookieConsent>
+      <FixAdsBottom />
       <ScrollTop />
     </>
   );
