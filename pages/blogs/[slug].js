@@ -109,6 +109,9 @@ function BlogDetails({ blog: initialBlog, preview }) {
         )}
 
         {initialBlog.content && <BlogContent content={initialBlog.content} />}
+        <div style={{ margin: "1rem 0 1rem" }}>
+          <GoogleAds layoutKey='-5s+ck+w-bk+hr' slot={process.env.NATIVE_ADS} />
+        </div>
         <DownloadFile blog={blog} />
       </Layout>
     </>
