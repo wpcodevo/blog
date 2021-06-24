@@ -609,7 +609,8 @@ p {
   }
 }
 
-.load-btn {
+.load-btn,
+.btn {
   padding: 8px 30px;
   border: 2px solid #ff6200;
   background-color: transparent;
@@ -1021,5 +1022,52 @@ p {
   background-color: rgba(255, 255, 255, 0.8);
   height: 7rem;
   z-index: 100000;
-  border-top: 1px solid #d1d1d1;
+  border-top: 1px solid #e1e1e1;
+}
+
+.commentForm {
+  input,
+  textarea {
+    width: 100%;
+    display: block;
+    border: 1px solid #e1e1e1;
+    color: #333;
+    font-size: 15px;
+    padding: 0.5rem 0;
+    font-size: 15px;
+    text-indent: 1rem;
+    margin-top: 1rem;
+    background-color: #ffffff94;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none !important;
+  }
+
+  input.danger,
+  textarea.danger {
+    border: 1px solid #ff7a7a;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    padding: 0.5rem 0.8rem;
+    font-size: 13px;
+    margin-top: 1rem;
+    background-color: #222;
+    color: white;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      background-color: #ff6200;
+    }
+  }
+
+  span {
+    font-size: 12px;
+    color: #ff7a7a;
+    display: block;
+  }
 }

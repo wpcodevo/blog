@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   FaTwitter,
@@ -5,23 +6,35 @@ import {
   FaPinterestP,
   FaFacebookF,
 } from "react-icons/fa";
+import { FacebookShareButton, FacebookShareCount } from "react-share";
 
 const ShareSocial = () => {
+  const [count, setCount] = useState(0);
+  const [url, setUrl] = useState("");
+  useEffect(() => {
+    setUrl(window.location.href);
+  }, []);
+  console.log(url);
+
   return (
     <div className='sharerHorizontal d-flex'>
       <div className='sharerTitle'>
         <span>208</span>
         <span>shares</span>
       </div>
-      <Link href='#'>
+      <FacebookShareButton url={url}>
         <a aria-label='facebook'>
           <div className='social-button d-flex sharerFacebook'>
             <FaFacebookF />
-
             <span>Share</span>
           </div>
         </a>
-      </Link>
+      </FacebookShareButton>
+      <FacebookShareCount url={url}>
+        {(shareCount) => {
+          setCount(shareCount);
+        }}
+      </FacebookShareCount>
       <Link href='#'>
         <a aria-label='twitter'>
           <div className='social-button d-flex sharerTwitter'>
