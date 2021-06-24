@@ -11,7 +11,13 @@ const PageLayout = ({ children, className }) => {
       <BlogNavBar />
       <div className={`page-wrapper ${className}`}>{children}</div>
       <div className='container'>
-        <div style={{ margin: "1rem 0 1rem", paddingBottom: "7rem" }}>
+        <div
+          style={{
+            margin: "1rem 0 1rem",
+            paddingBottom: "7rem",
+            textAlign: "center",
+          }}
+        >
           <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
         </div>
       </div>

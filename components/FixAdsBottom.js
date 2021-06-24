@@ -9,6 +9,7 @@ const FixAdsBottom = () => {
           height: "100%",
           maxWidth: "80% !important",
           margin: "0 auto",
+          textAlign: "center",
         }}
       >
         <GoogleAds

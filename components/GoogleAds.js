@@ -23,7 +23,12 @@ const GoogleAds = ({
     }
   }, []);
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div
+      style={{
+        overflow: "hidden",
+        textAlign: "center",
+      }}
+    >
       <AdSense.Google
         client='ca-pub-1057373061381635'
         slot={slot}
