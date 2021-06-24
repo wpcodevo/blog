@@ -12,7 +12,9 @@ const About = ({ aboutData }) => {
     <>
       <NextSeo title='About Codevo' />
       {/* Google Ads */}
-      <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+      <div style={{ marginTop: "1rem" }}>
+        <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+      </div>
       <Layout>
         {aboutData.map((c, i) => {
           return (

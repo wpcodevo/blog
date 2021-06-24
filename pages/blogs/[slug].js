@@ -58,7 +58,9 @@ function BlogDetails({ blog: initialBlog, preview }) {
         imageAlt={initialBlog.title}
       />
       {/* Google Ads */}
-      <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+      <div style={{ margin: "1rem 0 1rem" }}>
+        <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+      </div>
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
         <div className='archive-description'>

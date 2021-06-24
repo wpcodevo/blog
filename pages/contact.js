@@ -12,7 +12,9 @@ const Contact = ({ contactData }) => {
     <>
       <NextSeo title='Contact Codevo' />
       {/* Google Ads */}
-      <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+      <div style={{ marginTop: "1rem" }}>
+        <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+      </div>{" "}
       <Layout>
         {contactData.map((c, i) => {
           return (

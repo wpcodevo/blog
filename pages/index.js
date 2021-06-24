@@ -23,8 +23,9 @@ function Home({ blogs, preview }) {
   return (
     <>
       {/* Google Ads */}
-      <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
-      {/* <AuthorIntro /> */}
+      <div style={{ marginTop: "1rem" }}>
+        <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+      </div>
       <FilteringMenu
         filter={filter}
         onChange={(option, value) => {

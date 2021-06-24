@@ -111,8 +111,8 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <GoogleAds slot={process.env.VERTICAL_SLOT} />
+      <div className='widget advertisement'>
+        <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
       </div>
       {/* {tags && (
         <div className='widget tags'>

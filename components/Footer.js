@@ -6,7 +6,6 @@ const Footer = () => {
     <footer
       className='page-footer'
       style={{
-        margin: "40px 0 7rem",
         padding: "50px 0",
         backgroundColor: "#222",
         color: "#eaeaea",

@@ -319,6 +319,8 @@ p {
 }
 
 .page-footer {
+  position: relative;
+  bottom: 7rem;
   .center {
     display: grid;
     grid-template-columns: 1.4fr 1.6fr 1fr;
@@ -811,6 +813,10 @@ p {
     }
   }
 
+  .widget.advertisement {
+    max-height: 20rem !important;
+  }
+
   .fix-ads-bottom {
     height: 6rem;
   }
@@ -1001,6 +1007,10 @@ p {
   p {
     font-size: 15px;
   }
+}
+
+.widget.advertisement {
+  max-height: 50rem;
 }
 
 .fix-ads-bottom {

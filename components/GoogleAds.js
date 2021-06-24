@@ -18,7 +18,9 @@ const GoogleAds = ({
       document.body.insertBefore(el, document.body.firstChild);
     };
 
-    installGoogleAds();
+    if (process.env.NODE_ENV === "production") {
+      installGoogleAds();
+    }
   }, []);
   return (
     <div style={{ overflow: "hidden" }}>
