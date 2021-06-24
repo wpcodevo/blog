@@ -7,7 +7,7 @@ const GoogleAds = ({
   layout = "in-article",
   responsive = "",
   layoutKey = "",
-  styles = { display: "block", width: "100%" },
+  styles = { display: "block" },
 }) => {
   useEffect(() => {
     const installGoogleAds = () => {
