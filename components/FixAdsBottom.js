@@ -3,11 +3,20 @@ import GoogleAds from "components/GoogleAds";
 const FixAdsBottom = () => {
   return (
     <div className='fix-ads-bottom'>
-      <GoogleAds
-        format='fluid'
-        slot={process.env.HORIZONTAL_SLOT}
-        responsive='true'
-      />
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          maxWidth: "80% !important",
+          margin: "0 auto",
+        }}
+      >
+        <GoogleAds
+          format='fluid'
+          slot={process.env.HORIZONTAL_SLOT}
+          responsive='true'
+        />
+      </div>
     </div>
   );
 };
