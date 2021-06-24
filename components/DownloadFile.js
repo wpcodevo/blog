@@ -15,7 +15,7 @@ const DownloadFile = ({ blog }) => {
 
   const setTime = () => {
     setShowLink(!showLink);
-    setCounter(30);
+    setCounter(59);
   };
 
   return (
