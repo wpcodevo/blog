@@ -16,6 +16,7 @@ const PageLayout = ({ children, className }) => {
             margin: "1rem 0 1rem",
             paddingBottom: "7rem",
             textAlign: "center",
+            overflow: "hidden",
           }}
         >
           <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
