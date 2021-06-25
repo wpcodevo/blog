@@ -2,11 +2,14 @@ import Link from "next/link";
 import { FaTwitter, FaYoutube, FaFacebookF, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
+
   return (
     <footer
       className='page-footer'
       style={{
-        padding: "50px 0",
+        padding: "50px 0 0",
         backgroundColor: "#222",
         color: "#eaeaea",
       }}
@@ -24,7 +27,9 @@ const Footer = () => {
           <p>
             Contact Us:{" "}
             <Link href='mailto:contact@wpcodevo.com'>
-              <a aria-label='contact'>contact@wpcodevo.com</a>
+              <a aria-label='contact' style={{ color: "#ff6200" }}>
+                contact@wpcodevo.com
+              </a>
             </Link>
           </p>
         </div>
@@ -54,6 +59,31 @@ const Footer = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+      <div className=' bottom-footer ' style={{ backgroundColor: "#0d0d0d" }}>
+        <div className='container d-flex'>
+          <p>
+            Copyright &copy; {year}{" "}
+            <Link href='/'>
+              <a style={{ color: "#ff6200" }}>Codevo</a>
+            </Link>{" "}
+            All Rights Reserved{" "}
+          </p>
+          <ul className='d-flex'>
+            <Link href='/'>
+              <a>Home</a>
+            </Link>
+            <Link href='/terms'>
+              <a>Terms & Conditions</a>
+            </Link>
+            <Link href='/privacy'>
+              <a>Privacy policy</a>
+            </Link>
+            <Link href='/contact'>
+              <a>Contact Us</a>
+            </Link>
+          </ul>
         </div>
       </div>
     </footer>

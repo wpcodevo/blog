@@ -6,7 +6,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   background-color: #f0f0f0;
-  color: #222 !important;
+  color: #464646 !important;
 }
 
 .container {
@@ -22,11 +22,12 @@ h4,
 h5,
 h6 {
   font-weight: 500 !important;
-  color: #222;
+  color: #464646;
 }
 
 a {
   text-decoration: none !important;
+  transition: all 300ms ease-in-out;
 }
 
 .wrapper-lg {
@@ -112,8 +113,8 @@ a {
 }
 
 p {
-  font-size: 16px;
-  line-height: 1.8em;
+  font-size: 15px;
+  line-height: 1.7em;
   margin: 0;
 }
 
@@ -195,7 +196,6 @@ p {
     }
 
     p {
-      font-size: 16px;
       flex: 0 0 60%;
     }
   }
@@ -327,7 +327,6 @@ p {
 
     p {
       line-height: 20px;
-      font-size: 15px;
 
       &:not(:last-child) {
         margin-bottom: 20px;
@@ -359,6 +358,33 @@ p {
 
           &:not(:last-child) {
             margin: 0 10px 5px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-footer {
+    margin-top: 30px;
+    padding: 0.7rem 0;
+
+    div {
+      justify-content: space-between;
+      font-size: 12px;
+
+      p {
+        font-size: 12px;
+      }
+
+      ul {
+        margin: 0;
+
+        a {
+          margin-right: 0.5rem;
+          color: #eaeaea;
+
+          &:hover {
+            color: #ff6200;
           }
         }
       }
@@ -406,7 +432,6 @@ p {
 .nav-link:visited {
   color: #fff;
   padding: 10px;
-  transition: all 300ms ease-in-out;
 }
 
 .nav-link:hover {
@@ -502,6 +527,20 @@ p {
         .icons {
           justify-content: start;
         }
+      }
+    }
+  }
+
+  .bottom-footer {
+    margin-top: 30px;
+    padding: 1rem 0;
+
+    div {
+      flex-direction: column-reverse;
+
+      ul {
+        margin: 0;
+        padding: 0 0 1.5rem 0;
       }
     }
   }
@@ -874,10 +913,6 @@ p {
 
   .download-link {
     margin: 10px auto 10px;
-
-    p {
-      font-size: 15px !important;
-    }
   }
 }
 
@@ -991,12 +1026,6 @@ p {
       color: #fff;
       margin-top: 15px;
     }
-  }
-}
-
-.blockContent {
-  p {
-    font-size: 15px;
   }
 }
 
