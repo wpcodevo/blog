@@ -98,7 +98,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
           </div>
         </Card>
 
-        <ShareSocial />
+        <ShareSocial blog={initialBlog} />
         {initialBlog.coverImage && (
           <Image
             width='100%'

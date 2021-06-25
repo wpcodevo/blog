@@ -5,24 +5,36 @@ import {
   FaLinkedinIn,
   FaPinterestP,
   FaFacebookF,
+  FaWhatsapp,
 } from "react-icons/fa";
-import { FacebookShareButton, FacebookShareCount } from "react-share";
+import {
+  FacebookShareButton,
+  PinterestShareButton,
+  TwitterShareButton,
+  LinkedinShareButton,
+  WhatsappShareButton,
+} from "react-share";
+import { urlFor } from "lib/api";
 
-const ShareSocial = () => {
-  const [count, setCount] = useState(0);
+const ShareSocial = ({ blog }) => {
   const [url, setUrl] = useState("");
   useEffect(() => {
     setUrl(window.location.href);
   }, []);
-  console.log(url);
+
+  const tags = blog.tags.map((tag) => tag.value).join("");
 
   return (
     <div className='sharerHorizontal d-flex'>
-      <div className='sharerTitle'>
-        <span>208</span>
-        <span>shares</span>
-      </div>
-      <FacebookShareButton url={url}>
+      <WhatsappShareButton title={blog.title} url={url}>
+        <a aria-label='whatsapp'>
+          <div className='social-button d-flex sharerWhapsapp'>
+            <FaWhatsapp />
+            <span>Share</span>
+          </div>
+        </a>
+      </WhatsappShareButton>
+      <FacebookShareButton url={url} quote={blog.subtitle} hashtag={tags}>
         <a aria-label='facebook'>
           <div className='social-button d-flex sharerFacebook'>
             <FaFacebookF />
@@ -30,12 +42,12 @@ const ShareSocial = () => {
           </div>
         </a>
       </FacebookShareButton>
-      <FacebookShareCount url={url}>
-        {(shareCount) => {
-          setCount(shareCount);
-        }}
-      </FacebookShareCount>
-      <Link href='#'>
+
+      <TwitterShareButton
+        url={url}
+        title={blog.title}
+        hashtags={blog.tags.map((tag) => tag.value.slice(1))}
+      >
         <a aria-label='twitter'>
           <div className='social-button d-flex sharerTwitter'>
             <FaTwitter />
@@ -43,8 +55,14 @@ const ShareSocial = () => {
             <span>Tweet</span>
           </div>
         </a>
-      </Link>
-      <Link href='#'>
+      </TwitterShareButton>
+
+      <LinkedinShareButton
+        title={blog.title}
+        summary={blog.subtitle}
+        source={url}
+        url={url}
+      >
         <a aria-label='linkedin'>
           <div className='social-button d-flex sharerLinkin'>
             <FaLinkedinIn />
@@ -52,15 +70,20 @@ const ShareSocial = () => {
             <span>Share</span>
           </div>
         </a>
-      </Link>
-      <Link href='#'>
+      </LinkedinShareButton>
+
+      <PinterestShareButton
+        media={urlFor(blog.coverImage).url()}
+        description={blog.subtitle}
+        url={url}
+      >
         <a aria-label='pinterest'>
           <div className='social-button d-flex sharerPinterest'>
             <FaPinterestP />
             <span>Pin</span>
           </div>
         </a>
-      </Link>
+      </PinterestShareButton>
     </div>
   );
 };

@@ -517,21 +517,6 @@ p {
   padding-bottom: 20px;
   border-bottom: 1px solid #dfdfdf;
 
-  .sharerTitle {
-    margin-right: 20px;
-    border-right: 1px solid #dfdfdf;
-    padding-right: 15px;
-
-    span {
-      display: block;
-      text-align: center;
-
-      &:nth-child(2) {
-        color: #999;
-      }
-    }
-  }
-
   .social-button {
     color: #fff;
     padding: 8px 10px;
@@ -555,6 +540,11 @@ p {
     &.sharerLinkin {
       background: #0077b5;
       border: 1px solid #0077b5;
+    }
+
+    &.sharerWhapsapp {
+      background: #24d366;
+      border: 1px solid #24d366;
     }
 
     &.sharerPinterest {
