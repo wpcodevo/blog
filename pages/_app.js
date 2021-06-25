@@ -1,6 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
 import "styles/styles.scss";
 import Link from "next/link";
 import dynamic from "next/dynamic";
