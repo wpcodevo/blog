@@ -16,7 +16,11 @@ const Footer = () => {
     >
       <div className='center container'>
         <div className='d-flex'>
-          <h1 style={{ fontSize: "40px" }}>Coding Tutorials</h1>
+          <Link href='/'>
+            <a>
+              <h1 style={{ fontSize: "40px" }}>Coding Tutorials</h1>
+            </a>
+          </Link>
         </div>
         <div>
           <h4 style={{ color: "white" }}>About</h4>
