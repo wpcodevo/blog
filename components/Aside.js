@@ -12,6 +12,7 @@ import {
   FaTachometerAlt,
 } from "react-icons/fa";
 import Link from "next/link";
+import PopularBlogs from "components/PopularBlogs";
 import dynamic from "next/dynamic";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
@@ -110,6 +111,15 @@ const Aside = () => {
             </a>
           </Link>
         </div>
+      </div>
+      <div className='widget advertisement'>
+        <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
+      </div>
+      <div className='widget'>
+        <div className='heading'>
+          <span className='orange-text'>Popular</span> Blogs
+        </div>
+        <PopularBlogs />
       </div>
       <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />

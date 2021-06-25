@@ -1061,3 +1061,10 @@ p {
     display: block;
   }
 }
+
+.title-link {
+  transition: all 300ms ease-in-out;
+  &:hover {
+    color: #ff6200;
+  }
+}
