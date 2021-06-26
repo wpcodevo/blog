@@ -10,6 +10,10 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
+          <meta
+            name='p:domain_verify'
+            content='263ed5cf94ded2830175910f7d8f7183'
+          />
           <link rel='manifest' href='/favicons/site.webmanifest' />
           <link
             rel='shortcut icon'
