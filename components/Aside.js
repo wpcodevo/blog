@@ -10,6 +10,7 @@ import {
   FaChartBar,
   FaUnlockAlt,
   FaTachometerAlt,
+  FaPinterest,
 } from "react-icons/fa";
 import Link from "next/link";
 import PopularBlogs from "components/PopularBlogs";
@@ -26,7 +27,7 @@ const Aside = () => {
           Over 100+ Readers
           <p>Get fresh content from Codevo</p>
         </h3>
-        <div className='social-icons'>
+        <div className='social-icons d-flex'>
           <Link href='https://web.facebook.com/codevv/'>
             <a aria-label='icon' className='icon icon-facebook' target='_blank'>
               <FaFacebookF />
@@ -50,6 +51,15 @@ const Aside = () => {
           <Link href='https://github.com/ziddahedem'>
             <a aria-label='icon' className='icon icon-envelope' target='_blank'>
               <FaGithub />
+            </a>
+          </Link>
+          <Link href='https://www.pinterest.com/ekziddah/'>
+            <a
+              aria-label='icon'
+              className='icon icon-pinterest'
+              target='_blank'
+            >
+              <FaPinterest />
             </a>
           </Link>
         </div>

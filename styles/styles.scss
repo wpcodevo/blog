@@ -679,10 +679,14 @@ p {
     .social-icons {
       padding: 0 0 7px 0;
       text-align: center;
+      justify-content: center;
 
       a.icon {
         font-size: 24px;
-        margin: 0 10px 0 10px;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
 
         &-facebook {
           color: #3b5998;
