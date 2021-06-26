@@ -22,6 +22,9 @@ const Terms = ({ termsData }) => {
               <div className='title'>
                 <h1>{c.title}</h1>
               </div>
+              <div style={{ marginTop: "1rem" }}>
+                <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+              </div>
               {c.content && <BlogContent content={c.content} />}
             </div>
           );

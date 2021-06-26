@@ -20,7 +20,10 @@ const About = ({ aboutData }) => {
           return (
             <div key={`${i}`}>
               <div className='title'>
-                <h1>{c.name}</h1>
+                <h1>About</h1>
+              </div>
+              <div style={{ marginTop: "1rem" }}>
+                <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
               </div>
               {c.bio && <BlogContent content={c.bio} />}
             </div>
