@@ -8,7 +8,7 @@ const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
 
-const Category = ({ categories }) => {
+const Categories = ({ categories }) => {
   return (
     <>
       <div style={{ margin: "1rem 0 1rem" }}>
@@ -35,7 +35,7 @@ const Category = ({ categories }) => {
                   ? category.description.substr(0, 85) + " ..."
                   : category.description}
               </p>
-              <Link href='/'>
+              <Link href='/[category]' as={`/${category.slug}`}>
                 <a>Articles</a>
               </Link>
             </div>
@@ -49,7 +49,7 @@ const Category = ({ categories }) => {
   );
 };
 
-export default Category;
+export default Categories;
 
 export async function getStaticProps() {
   const categories = await getCategories();

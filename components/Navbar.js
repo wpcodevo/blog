@@ -43,6 +43,17 @@ const BlogNavBar = () => {
                 </Link>
               </li>
               <li className='nav-item'>
+                <Link href='/categories'>
+                  <a
+                    aria-label='NavItem'
+                    className='nav-link'
+                    onClick={() => setOpenNav(!openNav)}
+                  >
+                    Categories
+                  </a>
+                </Link>
+              </li>
+              <li className='nav-item'>
                 <Link href='/about'>
                   <a
                     aria-label='NavItem'
@@ -53,17 +64,7 @@ const BlogNavBar = () => {
                   </a>
                 </Link>
               </li>
-              <li className='nav-item'>
-                <Link href='/privacy'>
-                  <a
-                    aria-label='NavItem'
-                    className='nav-link'
-                    onClick={() => setOpenNav(!openNav)}
-                  >
-                    Privacy
-                  </a>
-                </Link>
-              </li>
+
               <li className='nav-item'>
                 <Link href='/terms'>
                   <a
