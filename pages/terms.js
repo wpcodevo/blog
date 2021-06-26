@@ -29,6 +29,9 @@ const Terms = ({ termsData }) => {
             </div>
           );
         })}
+        <div style={{ margin: "1rem 0 1rem" }}>
+          <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+        </div>
       </Layout>
     </>
   );
