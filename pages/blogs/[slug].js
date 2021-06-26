@@ -71,6 +71,9 @@ function BlogDetails({ blog: initialBlog, preview }) {
             major announcements, exclusive Programming deals, and much more.
           </p>
         </div>
+        <div style={{ margin: "1rem 0 1rem" }}>
+          <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+        </div>
 
         <Card className={`fj-card fj-card-list card-wrapper card-wrapper-1`}>
           <div className='card-body-wrapper card-body-wrapper-1'>
