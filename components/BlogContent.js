@@ -25,6 +25,30 @@ const serializers = {
         <HighLightCode language={language} code={code} filename={filename} />
       );
     },
+    table: ({ node }) => {
+      return (
+        <table className='table'>
+          <thead>
+            <tr>
+              {node.rows[0].cells.map((cell, index) => (
+                <th key={`${index}-list`} scope='col'>
+                  {cell}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {node.rows.slice(1).map((row, index) => (
+              <tr key={`${index}-lit`}>
+                {row.cells.map((cell, index) => (
+                  <td key={`${index}-lis`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      );
+    },
     youtube: ({ node }) => {
       const { url } = node;
       const id = getYouTubeID(url);

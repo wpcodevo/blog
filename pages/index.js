@@ -1,53 +1,73 @@
-import { useState } from "react";
 import dynamic from "next/dynamic";
-import { getPaginatedBlogs } from "lib/api";
+import { getOnePopularBlogs, getNewsBlogs, getDealsBlogs } from "lib/api";
 import Layout from "components/Layout";
-import { useGetBlogPages } from "actions/Pagination";
-const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
-const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
+import CardListItem from "components/CardListItem";
+import NewsListItem from "components/NewsListItem";
+import DealsListItem from "components/DealsListItem";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
 
-function Home({ blogs, preview }) {
-  const [filter, setFilter] = useState({
-    view: { list: 1 },
-    date: { asc: 0 },
-  });
-
-  const { pages, isLoadingMore, isReachingEnd, loadMore } = useGetBlogPages({
-    blogs,
-    filter,
-  });
-
+function Home({ singlePopularBlog, newsBlog, dealsBlog }) {
   return (
     <>
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
       </div>
-      <FilteringMenu
-        filter={filter}
-        onChange={(option, value) => {
-          setFilter({ ...filter, [option]: value });
-        }}
-      />
       <Layout>
-        {preview && <PreviewAlert />}
-        {pages}
-        {/* Button */}
-        <div style={{ textAlign: "center", marginBottom: "20px" }}>
-          <button
-            onClick={loadMore}
-            disabled={isReachingEnd | isLoadingMore}
-            className='load-btn'
-          >
-            {isLoadingMore
-              ? "Loading..."
-              : isReachingEnd
-              ? "No More Blog"
-              : "Load More"}
-          </button>
+        <h3 className='home-title'>Tutorials</h3>
+        <CardListItem
+          title={singlePopularBlog.title}
+          coverImage={singlePopularBlog.coverImage}
+          subtitle={singlePopularBlog.subtitle}
+          date={singlePopularBlog.date}
+          author={singlePopularBlog.author}
+          link={{
+            href: "blogs/[slug]",
+            as: `blogs/${singlePopularBlog.slug}`,
+          }}
+        />
+        <div style={{ margin: ".5rem" }}>
+          <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+        </div>
+        <div className='news-grid'>
+          {newsBlog?.map((blog) => (
+            <div key={`${newsBlog.length}-${Math.random()}-list`}>
+              <NewsListItem
+                coverImage={blog.coverImage}
+                subtitle={blog.subtitle}
+                link={{
+                  href: "blogs/[slug]",
+                  as: `blogs/${blog.slug}`,
+                }}
+              />
+            </div>
+          ))}
+        </div>
+        <div style={{ margin: ".5rem" }}>
+          <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+        </div>
+        <h3 style={{ margin: "25px 0 25px" }} className='home-title'>
+          Deals & Coupons
+        </h3>
+        <div className='deals'>
+          {dealsBlog?.map((blog) => (
+            <div key={`${dealsBlog.length}-${Math.random()}-list`}>
+              <DealsListItem
+                coverImage={blog.coverImage}
+                subtitle={blog.subtitle}
+                title='FancyThemes Coupon'
+                link={{
+                  href: "blogs/[slug]",
+                  as: `blogs/${blog.slug}`,
+                }}
+              />
+            </div>
+          ))}
+        </div>
+        <div style={{ margin: ".5rem" }}>
+          <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
         </div>
       </Layout>
     </>
@@ -56,12 +76,15 @@ function Home({ blogs, preview }) {
 
 export default Home;
 
-export async function getStaticProps({ preview = false }) {
-  const blogs = await getPaginatedBlogs({ offset: 0, date: "desc" });
+export async function getStaticProps() {
+  const singlePopularBlog = await getOnePopularBlogs();
+  const newsBlog = await getNewsBlogs();
+  const dealsBlog = await getDealsBlogs();
   return {
     props: {
-      blogs,
-      preview,
+      singlePopularBlog,
+      newsBlog,
+      dealsBlog,
     },
     revalidate: 1,
   };

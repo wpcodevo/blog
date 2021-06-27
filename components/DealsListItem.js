@@ -1,0 +1,41 @@
+import { Image } from "react-bootstrap";
+import Link from "next/link";
+import { urlFor } from "lib/api";
+
+const DealsListItem = ({ subtitle, coverImage, link, title }) => {
+  return (
+    <div className='deals d-flex'>
+      <Link {...link}>
+        <a aria-label={coverImage.alt} className='news-link'>
+          <Image
+            variant='top'
+            style={{
+              imageRendering: "-webkit-optimize-contrast",
+              width: "98px",
+              height: "98px",
+            }}
+            src={urlFor(coverImage).width(98).height(98).fit("clip").url()}
+            alt={coverImage.alt}
+          />
+        </a>
+      </Link>
+      <div>
+        <Link {...link}>
+          <a>
+            <h5 style={{ fontSize: "16px" }}>{title}</h5>
+          </a>
+        </Link>
+        <p style={{ fontSize: "15px !important" }}>
+          {subtitle.length > 87 ? subtitle.substr(0, 87) : subtitle}
+          <Link {...link}>
+            <a style={{ fontStyle: "italic", fontWeight: "500" }}>
+              View This Deals
+            </a>
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default DealsListItem;

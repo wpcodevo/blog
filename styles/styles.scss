@@ -28,6 +28,7 @@ h6 {
 a {
   text-decoration: none !important;
   transition: all 300ms ease-in-out;
+  color: inherit;
 }
 
 .wrapper-lg {
@@ -185,8 +186,10 @@ p {
     .card-link {
       margin: 0 15px 0 0;
       float: left;
-      width: 300px;
-      height: 250px;
+      // width: 300px;
+      // height: 250px;
+      width: 200px;
+      height: 150px;
       border: 1px solid #dfdfdf;
       border-radius: 5px;
 
@@ -685,7 +688,7 @@ p {
         font-size: 24px;
 
         &:not(:last-child) {
-          margin-right: 10px;
+          margin-right: 20px;
         }
 
         &-facebook {
@@ -1106,7 +1109,7 @@ p {
 .category-grid {
   margin: 1rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 3rem;
 
   .category {
@@ -1118,10 +1121,12 @@ p {
 
     h3 {
       margin: 0.5rem 0;
+      font-size: 22px;
     }
 
     P {
       text-align: center;
+      height: 70px;
     }
 
     a {
@@ -1130,6 +1135,90 @@ p {
       color: white;
       padding: 0.5rem 1rem;
       margin-top: 1rem;
+    }
+  }
+}
+
+// Home Page
+.home-title {
+  text-transform: uppercase;
+  color: #bbb;
+  font-size: 15px;
+  letter-spacing: 2px;
+  padding: 5px 0 0;
+}
+// News
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 35px;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 25px;
+
+  .news {
+    img {
+      float: left;
+      border: 1px solid #dfdfdf;
+      margin-right: 15px;
+    }
+
+    a {
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+}
+
+// Deals
+.deals {
+  margin-bottom: 25px;
+
+  img {
+    margin-right: 25px;
+    border: 1px solid #dfdfdf;
+  }
+
+  h5 {
+    display: inline-block;
+    &:hover {
+      color: #ff6200;
+    }
+  }
+
+  a {
+    font-size: 14px;
+    color: #ff6200;
+    &:hover {
+      color: #ff6200;
+    }
+  }
+}
+
+// Table
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 10px;
+
+  th {
+    // width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+    color: #fff;
+    background-color: #ff6200;
+    font-weight: normal;
+
+    :last-child {
+      text-align: right;
+    }
+  }
+
+  td {
+    padding: 1rem 0.5rem;
+
+    &:last-child {
+      text-align: right;
     }
   }
 }

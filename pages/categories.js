@@ -24,6 +24,7 @@ const Categories = ({ categories }) => {
                 style={{
                   width: "80px",
                   height: "80px",
+                  margin: "5px 0 5px",
                 }}
                 src={urlFor(category.icon.image).width(50).height(50).url()}
                 alt={category.icon.alt}

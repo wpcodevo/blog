@@ -1,7 +1,7 @@
 import { Spinner } from "react-bootstrap";
 import { useSWRPages } from "swr";
 import { useGetBlogs } from "actions";
-import CardListItem from "components/CartListItem";
+import CardListItem from "components/CardListItem";
 import CardsItemRow from "components/CardsItemRow";
 
 const BlogList = ({ blogs, filter }) => {

@@ -15,6 +15,7 @@ const Moment = dynamic(() => import("react-moment"));
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
+import ErrorPage from "next/error";
 
 const BlogContent = dynamic(() => import("components/BlogContent"), {
   loading: () => (
@@ -28,22 +29,26 @@ function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
   const [blog, setBlog] = useState(initialBlog);
 
-  if (router.isFallback) {
+  if (router.isFallback && !blog?.slug) {
     return (
-      <PageLayout className='center d-flex'>
-        <div>
+      <Layout className='center d-flex'>
+        <div style={{ textAlign: "center" }}>
           <Spinner animation='border' variant='danger' />
         </div>
-      </PageLayout>
+      </Layout>
     );
   }
+
+  // if (!router.isFallback && !blog?.slug) {
+  //   return <ErrorPage statusCode={404} />;
+  // }
 
   useEffect(() => {
     let sub;
     if (preview) {
-      sub = onBlogUpdate(blog.slug).subscribe((update) => {
-        setBlog(update.result);
-      });
+      sub = onBlogUpdate(blog.slug).subscribe((update) =>
+        setBlog(update.result)
+      );
     }
 
     return () => sub && sub.unsubscribe();
