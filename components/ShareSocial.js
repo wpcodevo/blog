@@ -22,7 +22,7 @@ const ShareSocial = ({ blog }) => {
     setUrl(window.location.href);
   }, []);
 
-  const tags = blog.tags.map((tag) => tag.value).join("");
+  const tags = blog?.tags.map((tag) => tag.value).join("");
 
   return (
     <div className='sharerHorizontal d-flex'>

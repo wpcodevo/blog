@@ -1,6 +1,6 @@
-import { getNewsBlogs } from "lib/api";
+import { getTwoPopularBlogs } from "lib/api";
 
 export default async (_, res) => {
-  const data = await getNewsBlogs();
+  const data = await getTwoPopularBlogs();
   res.status(200).json(data);
 };

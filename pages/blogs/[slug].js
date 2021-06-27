@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card, Image, Spinner } from "react-bootstrap";
 import Link from "next/link";
-import PageLayout from "components/PageLayout";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import { getBlogBySlug, getPaginatedBlogs, onBlogUpdate } from "lib/api";
@@ -15,7 +14,8 @@ const Moment = dynamic(() => import("react-moment"));
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
-import ErrorPage from "next/error";
+const CommentForm = dynamic(() => import("components/CommentForm"));
+import { Comments } from "components/Comments";
 
 const BlogContent = dynamic(() => import("components/BlogContent"), {
   loading: () => (
@@ -25,11 +25,11 @@ const BlogContent = dynamic(() => import("components/BlogContent"), {
   ),
 });
 
-function BlogDetails({ blog: initialBlog, preview }) {
+function BlogDetails({ blog: initialBlog, preview, id, comments }) {
   const router = useRouter();
   const [blog, setBlog] = useState(initialBlog);
 
-  if (router.isFallback && !blog?.slug) {
+  if (router.isFallback) {
     return (
       <Layout className='center d-flex'>
         <div style={{ textAlign: "center" }}>
@@ -39,16 +39,12 @@ function BlogDetails({ blog: initialBlog, preview }) {
     );
   }
 
-  // if (!router.isFallback && !blog?.slug) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
-
   useEffect(() => {
     let sub;
     if (preview) {
-      sub = onBlogUpdate(blog.slug).subscribe((update) =>
-        setBlog(update.result)
-      );
+      sub = onBlogUpdate(blog.slug).subscribe((update) => {
+        setBlog(update.result);
+      });
     }
 
     return () => sub && sub.unsubscribe();
@@ -112,7 +108,8 @@ function BlogDetails({ blog: initialBlog, preview }) {
             width='100%'
             src={urlFor(initialBlog.coverImage).width(600).height(400).url()}
             alt={initialBlog.coverImage.alt}
-            className='img-fluid rounded pb-4 coverImage'
+            className='img-fluid rounded mb-3 coverImage'
+            style={{ border: "1px solid #ddd" }}
           />
         )}
 
@@ -121,6 +118,9 @@ function BlogDetails({ blog: initialBlog, preview }) {
           <GoogleAds layoutKey='-5s+ck+w-bk+hr' slot={process.env.NATIVE_ADS} />
         </div>
         <DownloadFile blog={blog} />
+
+        <Comments comments={comments} />
+        <CommentForm _id={id} />
       </Layout>
     </>
   );
@@ -130,10 +130,14 @@ export default BlogDetails;
 
 export async function getStaticProps({ params, preview = false, previewData }) {
   const blog = await getBlogBySlug(params.slug, preview);
+  const id = blog._id;
+  const comments = blog.comments;
   return {
     props: {
-      blog,
       preview,
+      blog: blog || null,
+      id,
+      comments,
     },
     revalidate: 1,
   };
@@ -141,11 +145,12 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
 export async function getStaticPaths() {
   const blogs = await getPaginatedBlogs();
-  const paths = blogs?.map((b) => {
-    return {
-      params: { slug: b.slug },
-    };
-  });
+  const paths =
+    blogs?.map((b) => {
+      return {
+        params: { slug: b.slug },
+      };
+    }) || [];
 
   return {
     paths,

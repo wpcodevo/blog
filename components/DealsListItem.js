@@ -13,6 +13,7 @@ const DealsListItem = ({ subtitle, coverImage, link, title }) => {
               imageRendering: "-webkit-optimize-contrast",
               width: "98px",
               height: "98px",
+              objectFit: "cover",
             }}
             src={urlFor(coverImage).width(98).height(98).fit("clip").url()}
             alt={coverImage.alt}
@@ -26,7 +27,7 @@ const DealsListItem = ({ subtitle, coverImage, link, title }) => {
           </a>
         </Link>
         <p style={{ fontSize: "15px !important" }}>
-          {subtitle.length > 87 ? subtitle.substr(0, 87) : subtitle}
+          {subtitle}
           <Link {...link}>
             <a style={{ fontStyle: "italic", fontWeight: "500" }}>
               View This Deals

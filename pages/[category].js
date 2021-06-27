@@ -1,19 +1,14 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import Layout from "components/Layout";
+import { useRouter } from "next/router";
+import { Spinner } from "react-bootstrap";
 import { useGetBlogPages } from "actions/Pagination";
 const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
-const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
-import {
-  getBlogsByCategory,
-  getPaginatedBlogs,
-  getCategories,
-  onBlogUpdate,
-} from "lib/api";
-import { urlFor } from "lib/api";
+import { getBlogsByCategory, getCategories } from "lib/api";
 
 function Category({ blogs, category }) {
   const [filter, setFilter] = useState({
@@ -21,11 +16,23 @@ function Category({ blogs, category }) {
     date: { asc: 0 },
   });
 
+  const router = useRouter();
+
   const { pages, isLoadingMore, isReachingEnd, loadMore } = useGetBlogPages({
     category,
     blogs,
     filter,
   });
+
+  if (router.isFallback) {
+    return (
+      <Layout className='center d-flex'>
+        <div style={{ textAlign: "center" }}>
+          <Spinner animation='border' variant='danger' />
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <>

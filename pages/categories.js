@@ -16,7 +16,6 @@ const Categories = ({ categories }) => {
       </div>
       <div style={{ padding: "1rem" }}>
         <h2>All Categories</h2>
-
         <div className='category-grid'>
           {categories.map((category, index) => (
             <div className='category d-flex' key={`${category.title}-${index}`}>
@@ -26,7 +25,10 @@ const Categories = ({ categories }) => {
                   height: "80px",
                   margin: "5px 0 5px",
                 }}
-                src={urlFor(category.icon.image).width(50).height(50).url()}
+                src={
+                  urlFor(category.icon.image).width(50).height(50).url() ||
+                  "https://via.placeholder.com/50"
+                }
                 alt={category.icon.alt}
                 rounded
               />
@@ -42,9 +44,6 @@ const Categories = ({ categories }) => {
             </div>
           ))}
         </div>
-      </div>
-      <div style={{ margin: "1rem 0 1rem" }}>
-        <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
       </div>
     </>
   );

@@ -38,10 +38,12 @@ export default class YouTubeSubscribe extends Component {
       return;
     }
 
-    const youtubescript = document.createElement("script");
-    youtubescript.src = "//apis.google.com/js/platform.js";
-    this.youtubeSubscribeNode.current.parentNode.appendChild(youtubescript);
-    this.initialized();
+    if (process.env.NODE_ENV === "production") {
+      const youtubescript = document.createElement("script");
+      youtubescript.src = "//apis.google.com/js/platform.js";
+      this.youtubeSubscribeNode.current.parentNode.appendChild(youtubescript);
+      this.initialized();
+    }
   }
 
   render() {
