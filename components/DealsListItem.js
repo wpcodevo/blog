@@ -15,7 +15,7 @@ const DealsListItem = ({ subtitle, coverImage, link, title }) => {
               height: "98px",
               objectFit: "cover",
             }}
-            src={urlFor(coverImage).width(98).height(98).fit("clip").url()}
+            src={urlFor(coverImage).width(300).height(300).fit("clip").url()}
             alt={coverImage.alt}
           />
         </a>

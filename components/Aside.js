@@ -62,7 +62,7 @@ const Aside = () => {
         <GoogleAds slot={process.env.VERTICAL_SLOT} />
       </div>
 
-      <div className='widget no-pad'>
+      <div className='widget no-pad promo'>
         <Link href='https://www.hostg.xyz/aff_c?offer_id=6&aff_id=79354'>
           <a>
             <Image
@@ -70,6 +70,7 @@ const Aside = () => {
               src='/images/widgetDiscount.jpg'
               height='400'
               width='300'
+              alt='hostinger review'
             />
           </a>
         </Link>

@@ -67,7 +67,7 @@ const serializers = {
   },
   marks: {
     color: ({ mark, children }) => {
-      return <span style={{ color: mark.hex }}>{children}</span>;
+      return <h3 style={{ color: mark.hex }}>{children}</h3>;
     },
     link: ({ mark, children }) => {
       const { blank, href } = mark;

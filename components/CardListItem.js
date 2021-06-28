@@ -11,7 +11,7 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
         <Card.Body className='mb2'>
           <Link {...link}>
             <a aria-label='title' className='no-italic'>
-              <Card.Title className='card-main-title'>{title}</Card.Title>
+              <h1 className='card-main-title'>{title}</h1>
             </a>
           </Link>
           <div className='authorInfo'>
@@ -37,8 +37,8 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
                     imageRendering: "-webkit-optimize-contrast",
                   }}
                   src={urlFor(coverImage)
-                    .width(298)
-                    .height(250)
+                    .width(500)
+                    .height(500)
                     .fit("clip")
                     .url()}
                   alt={coverImage.alt}

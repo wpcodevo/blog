@@ -18,7 +18,7 @@ const Footer = () => {
         <div className='d-flex'>
           <Link href='/'>
             <a>
-              <h1 style={{ fontSize: "40px" }}>Coding Tutorials</h1>
+              <h2 style={{ fontSize: "40px" }}>Coding Tutorials</h2>
             </a>
           </Link>
         </div>
@@ -74,7 +74,7 @@ const Footer = () => {
             </Link>{" "}
             All Rights Reserved{" "}
           </p>
-          <ul className='d-flex'>
+          <div className='d-flex list'>
             <Link href='/'>
               <a>Home</a>
             </Link>
@@ -87,7 +87,7 @@ const Footer = () => {
             <Link href='/contact'>
               <a>Contact Us</a>
             </Link>
-          </ul>
+          </div>
         </div>
       </div>
     </footer>

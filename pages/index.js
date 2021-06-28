@@ -18,7 +18,7 @@ function Home({ popularBlog, newsBlog, dealsBlog }) {
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>
-            <h3 className='home-title'>Tutorials</h3>
+            <span className='home-title'>Tutorials</span>
             {popularBlog.map((blog, index) => (
               <div key={`${index}-list`}>
                 <CardListItem

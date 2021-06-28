@@ -39,16 +39,20 @@ function BlogDetails({ blog: initialBlog, preview, id, comments }) {
     );
   }
 
-  useEffect(() => {
+  function setUpdate() {
     let sub;
     if (preview) {
       sub = onBlogUpdate(blog.slug).subscribe((update) => {
         setBlog(update.result);
       });
-    }
 
-    return () => sub && sub.unsubscribe();
-  }, []);
+      return () => sub && sub.unsubscribe();
+    }
+  }
+
+  // useEffect(() => {
+  //   setUpdate();
+  // }, []);
 
   return (
     <>
@@ -65,7 +69,7 @@ function BlogDetails({ blog: initialBlog, preview, id, comments }) {
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
         <div className='archive-description'>
-          <h2>Top Coding News</h2>
+          <span>Top Coding News</span>
           <p>
             Codevo's Programming News keeps you updated with what's hot in the
             Programming industry. Stay updated with New Technology releases,
@@ -79,9 +83,7 @@ function BlogDetails({ blog: initialBlog, preview, id, comments }) {
         <Card className={`fj-card fj-card-list card-wrapper card-wrapper-1`}>
           <div className='card-body-wrapper card-body-wrapper-1'>
             <Card.Body className='card-body-1'>
-              <Card.Title className='blockContent-title'>
-                {initialBlog.title}
-              </Card.Title>
+              <h1 className='blockContent-title'>{initialBlog.title}</h1>
               <div className='authorInfo'>
                 Posted on{" "}
                 {
