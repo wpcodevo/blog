@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import swal from "sweetalert2";
 import { Spinner } from "react-bootstrap";
 
-function CommentForm({ _id }) {
+function Form() {
   const [formData, setFormData] = useState();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -18,16 +18,17 @@ function CommentForm({ _id }) {
     let response;
     setFormData(data);
     try {
-      response = await fetch("/api/createComment", {
+      response = await fetch("/api/contact", {
         method: "POST",
         body: JSON.stringify(data),
         type: "application/json",
       });
       setIsSubmitting(false);
       setHasSubmitted(true);
+      console.log(response.status);
 
       if (response.status === 200) {
-        swal.fire("Great Job!", "Thanks for Your Comment!", "success");
+        swal.fire("Great Job!", "Thanks for Your Contacting Us!", "success");
       }
     } catch (err) {
       setFormData(err);
@@ -43,7 +44,7 @@ function CommentForm({ _id }) {
   }
 
   const resetFields = () => {
-    const inputs = [...document.querySelectorAll(".commentForm .field")];
+    const inputs = [...document.querySelectorAll(".contactForm .field")];
     inputs.forEach((input) => (input.value = ""));
   };
 
@@ -52,16 +53,13 @@ function CommentForm({ _id }) {
   }
 
   return (
-    <form className='commentForm' onSubmit={handleSubmit(onSubmit)} disabled>
-      <h5>LEAVE A REPLY</h5>
-      <input
-        {...register("_id", {
-          required: true,
-        })}
-        type='hidden'
-        name='_id'
-        value={_id}
-      />
+    <form
+      className='commentForm contactForm'
+      onSubmit={handleSubmit(onSubmit)}
+      disabled
+    >
+      <h5>Contact Us</h5>
+
       <input
         className={`field ${errors.name ? "danger" : ""}`}
         name='name'
@@ -80,19 +78,19 @@ function CommentForm({ _id }) {
       {errors.email && <span>Please enter your email address here!</span>}
 
       <textarea
-        className={`field ${errors.comment ? "danger" : ""}`}
-        {...register("comment", { required: true })}
-        name='comment'
+        className={`field ${errors.message ? "danger" : ""}`}
+        {...register("message", { required: true })}
+        name='message'
         rows='8'
-        placeholder='Comment:'
+        placeholder='Message:'
       ></textarea>
-      {errors.comment && <span>Please enter your comment!</span>}
+      {errors.message && <span>Please enter your message!</span>}
 
-      <button type='submit' value='Post Comment'>
-        Post Comment
+      <button type='submit' value='Send'>
+        Send
       </button>
     </form>
   );
 }
 
-export default CommentForm;
+export default Form;

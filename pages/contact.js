@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
-
+import Form from "components/Form";
 const Contact = ({ contactData }) => {
   return (
     <>
@@ -32,6 +32,7 @@ const Contact = ({ contactData }) => {
         <div style={{ margin: "1rem 0 1rem" }}>
           <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
         </div>
+        <Form />
       </Layout>
     </>
   );
