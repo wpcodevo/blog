@@ -83,6 +83,7 @@ a {
 
   .view.overlay {
     height: 200px;
+    background-color: #555;
 
     img {
       object-fit: cover;
@@ -191,6 +192,7 @@ p {
       height: 150px;
       border: 1px solid #dfdfdf;
       border-radius: 5px;
+      background-color: #555;
 
       img {
         height: 100%;
@@ -662,6 +664,18 @@ p {
     background: #fff;
     border: 1px solid #dfdfdf;
 
+    &.tags {
+      a {
+        display: block;
+        &:hover {
+          color: #ff6200;
+        }
+      }
+      div:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+
     .heading {
       font-size: 18px;
       text-align: center;
@@ -711,51 +725,6 @@ p {
         }
       }
     }
-
-    &.help {
-      .guideicons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        a.guideicon {
-          text-align: center;
-          color: #666;
-          margin: 25px 0;
-          font-size: 15px;
-
-          span {
-            font-size: 36px;
-            display: block;
-            padding-bottom: 10px;
-            line-height: 20px;
-
-            &.starting {
-              color: #46a5ff;
-            }
-
-            &.speed {
-              color: #ff6200;
-            }
-
-            &.security {
-              color: #cf0000;
-            }
-
-            &.seo {
-              color: #46b000;
-            }
-
-            &.error {
-              color: #a6a6a6;
-            }
-
-            &.shop {
-              color: #7b36a6;
-            }
-          }
-        }
-      }
-    }
   }
 }
 
@@ -779,15 +748,6 @@ p {
   .aside {
     max-width: 100%;
     margin: 15px 0 0;
-
-    .widget {
-      &.help {
-        .guideicons {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-      }
-    }
   }
 }
 

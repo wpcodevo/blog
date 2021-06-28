@@ -4,6 +4,7 @@ import Layout from "components/Layout";
 import { useRouter } from "next/router";
 import { Spinner } from "react-bootstrap";
 import { useGetBlogPages } from "actions/Pagination";
+import { NextSeo } from "next-seo";
 const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
@@ -36,6 +37,7 @@ function Category({ blogs, category }) {
 
   return (
     <>
+      <NextSeo title={category.charAt(0).toUpperCase() + category.slice(1)} />
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />

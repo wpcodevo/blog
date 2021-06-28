@@ -1,4 +1,3 @@
-import Layout from "components/Layout";
 import { getContact } from "lib/api";
 import BlogContent from "components/BlogContent";
 import { NextSeo } from "next-seo";
@@ -7,6 +6,8 @@ const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
 import Form from "components/Form";
+const Aside = dynamic(() => import("components/Aside"));
+
 const Contact = ({ contactData }) => {
   return (
     <>
@@ -15,25 +16,31 @@ const Contact = ({ contactData }) => {
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
       </div>{" "}
-      <Layout>
-        {contactData.map((c, i) => {
-          return (
-            <div key={`${i}`}>
-              <div className='title'>
-                <h1>{c.title}</h1>
-              </div>
-              <div style={{ margin: "1rem 0 1rem" }}>
-                <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
-              </div>
-              {c.content && <BlogContent content={c.content} />}
+      <div className='layoutWrapper'>
+        <div className='wrapper-lg no-border'>
+          <main className='main-content no-pad'>
+            {contactData.map((c, i) => {
+              return (
+                <div key={`${i}`}>
+                  <div className='title'>
+                    <h1>{c.title}</h1>
+                  </div>
+                  <div style={{ margin: "1rem 0 1rem" }}>
+                    <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+                  </div>
+                  {c.content && <BlogContent content={c.content} />}
+                </div>
+              );
+            })}
+            <div style={{ margin: "1rem 0 1rem" }}>
+              <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
             </div>
-          );
-        })}
-        <div style={{ margin: "1rem 0 1rem" }}>
-          <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+            <Form />
+          </main>
         </div>
-        <Form />
-      </Layout>
+        {/* Aside */}
+        <Aside />
+      </div>
     </>
   );
 };

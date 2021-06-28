@@ -1,8 +1,8 @@
-import { useEffect } from "react";
 import { Image } from "react-bootstrap";
 import { urlFor } from "lib/api";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 import { getCategories } from "lib/api";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
@@ -11,6 +11,8 @@ const GoogleAds = dynamic(() => import("components/GoogleAds"), {
 const Categories = ({ categories }) => {
   return (
     <>
+      <NextSeo title='Categories' />
+
       <div style={{ margin: "1rem 0 1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
       </div>

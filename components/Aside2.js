@@ -7,13 +7,15 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import Link from "next/link";
-import Image from "next/image";
+import PopularBlogs from "components/PopularBlogs";
 import dynamic from "next/dynamic";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
+import Image from "next/image";
+import AsideCateogories from "components/AsideCategories";
 
-const Aside = () => {
+const Aside2 = () => {
   return (
     <aside className='aside'>
       <div className='subscribe widget'>
@@ -61,7 +63,16 @@ const Aside = () => {
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
         <GoogleAds slot={process.env.VERTICAL_SLOT} />
       </div>
+      <div className='widget'>
+        <div className='heading'>
+          <span className='orange-text'>Popular</span> Blogs
+        </div>
+        <PopularBlogs />
+      </div>
 
+      <div className='widget advertisement'>
+        <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
+      </div>
       <div className='widget no-pad'>
         <Link href='https://www.hostg.xyz/aff_c?offer_id=6&aff_id=79354'>
           <a>
@@ -74,6 +85,7 @@ const Aside = () => {
           </a>
         </Link>
       </div>
+      {/* <AsideCateogories /> */}
       <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
       </div>
@@ -81,4 +93,4 @@ const Aside = () => {
   );
 };
 
-export default Aside;
+export default Aside2;

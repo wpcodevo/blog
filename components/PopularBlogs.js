@@ -2,19 +2,19 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Image } from "react-bootstrap";
-import { urlFor } from "lib/api";
+import { urlFor, getPopularBlogs } from "lib/api";
 const Moment = dynamic(() => import("react-moment"));
 
 const PopularBlogs = () => {
   const [blogs, setBlogs] = useState([]);
   const fetchBlogs = async () => {
-    const res = await fetch("/api/popularblogs");
-    const data = await res.json();
-    setBlogs(data);
+    const res = await getPopularBlogs();
+    setBlogs(res);
   };
   useEffect(() => {
     fetchBlogs();
   }, []);
+
   return (
     <div className='d-flex mt-3' style={{ flexDirection: "column" }}>
       {blogs.map((blog, index) => {

@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-const Aside = dynamic(() => import("./Aside"));
+const Aside2 = dynamic(() => import("./Aside2"));
 
 const Layout = ({ children }) => {
   return (
@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
         <main className='main-content no-pad'>{children}</main>
       </div>
       {/* Aside */}
-      <Aside />
+      <Aside2 />
     </div>
   );
 };
