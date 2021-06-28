@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { getTwoPopularBlogs, getNewsBlogs, getDealsBlogs } from "lib/api";
+import { getTwoPopularBlogs, getTechBlogs, getDealsBlogs } from "lib/api";
 import Layout from "components/Layout";
 import CardListItem from "components/CardListItem";
 import NewsListItem from "components/NewsListItem";
@@ -83,7 +83,7 @@ export default Home;
 
 export async function getStaticProps() {
   const popularBlog = await getTwoPopularBlogs();
-  const newsBlog = await getNewsBlogs();
+  const newsBlog = await getTechBlogs();
   const dealsBlog = await getDealsBlogs();
   return {
     props: {
