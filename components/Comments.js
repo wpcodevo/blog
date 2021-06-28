@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 const Moment = dynamic(() => import("react-moment"));
 import Image from "next/image";
 
-export function Comments({ comments = [] }) {
+export function Comments({ comments }) {
   return (
     <div className='comments'>
       <h3
@@ -30,7 +30,7 @@ export function Comments({ comments = [] }) {
       )}
 
       <div>
-        {comments?.map(({ _id, _createdAt, name, email, comment }) => (
+        {comments.map(({ _id, _createdAt, name, email, comment }) => (
           <div key={_id} className='mb-4 comment'>
             <div className='d-flex'>
               <div style={{ marginRight: "20px" }}>

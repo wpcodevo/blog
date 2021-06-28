@@ -39,16 +39,16 @@ function BlogDetails({ blog: initialBlog, preview, id, comments }) {
     );
   }
 
-  useEffect(() => {
-    let sub;
-    if (preview) {
-      sub = onBlogUpdate(blog.slug).subscribe((update) => {
-        setBlog(update.result);
-      });
-    }
+  // useEffect(() => {
+  //   let sub;
+  //   if (preview) {
+  //     sub = onBlogUpdate(blog.slug).subscribe((update) => {
+  //       setBlog(update.result);
+  //     });
+  //   }
 
-    return () => sub && sub.unsubscribe();
-  }, []);
+  //   return () => sub && sub.unsubscribe();
+  // }, []);
 
   return (
     <>
@@ -137,7 +137,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
       preview,
       blog: blog || null,
       id,
-      comments,
+      comments: comments || [],
     },
     revalidate: 1,
   };
