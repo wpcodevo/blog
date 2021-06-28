@@ -37,8 +37,8 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
                     imageRendering: "-webkit-optimize-contrast",
                   }}
                   src={urlFor(coverImage)
-                    .width(500)
-                    .height(500)
+                    .width(300)
+                    .height(240)
                     .fit("clip")
                     .url()}
                   alt={coverImage.alt}
