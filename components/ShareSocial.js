@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import {
   FaTwitter,
   FaLinkedinIn,
@@ -46,7 +45,7 @@ const ShareSocial = ({ blog }) => {
       <TwitterShareButton
         url={url}
         title={blog.title}
-        hashtags={blog.tags.map((tag) => tag.value.slice(1))}
+        hashtags={blog?.tags.map((tag) => tag.value.slice(1))}
       >
         <a aria-label='twitter'>
           <div className='social-button d-flex sharerTwitter'>
