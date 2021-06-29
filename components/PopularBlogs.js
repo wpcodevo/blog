@@ -34,6 +34,7 @@ const PopularBlogs = () => {
                     width: "90px",
                     height: "60px",
                     objectFit: "cover",
+                    border: "1px solid #ddd",
                   }}
                   width='100%'
                   src={urlFor(blog.coverImage).width(100).height(70).url()}
