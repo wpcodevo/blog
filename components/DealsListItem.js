@@ -2,11 +2,11 @@ import { Image } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
 
-const DealsListItem = ({ subtitle, coverImage, link, title }) => {
+const DealsListItem = ({ subtitle, smallImage, link, title }) => {
   return (
     <div className='deals d-flex'>
       <Link {...link}>
-        <a aria-label={coverImage.alt} className='news-link'>
+        <a aria-label={smallImage.alt} className='news-link'>
           <Image
             variant='top'
             style={{
@@ -15,8 +15,8 @@ const DealsListItem = ({ subtitle, coverImage, link, title }) => {
               height: "98px",
               objectFit: "cover",
             }}
-            src={urlFor(coverImage).width(300).height(300).fit("clip").url()}
-            alt={coverImage.alt}
+            src={urlFor(smallImage).width(300).height(300).fit("clip").url()}
+            alt={smallImage.alt}
           />
         </a>
       </Link>

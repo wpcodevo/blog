@@ -65,7 +65,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
               {dealsBlog?.map((blog) => (
                 <div key={`${dealsBlog.length}-${Math.random()}-list`}>
                   <DealsListItem
-                    coverImage={blog.coverImage}
+                    smallImage={blog.smallImage}
                     subtitle={blog.subtitle}
                     title={blog.title}
                     link={{
