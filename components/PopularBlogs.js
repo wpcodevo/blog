@@ -26,7 +26,7 @@ const PopularBlogs = () => {
           >
             <Link href='/blogs/[slug]' as={`/blogs/${blog.slug}`}>
               <a
-                aria-label={blog.coverImage.alt}
+                aria-label={blog.smallImage.alt}
                 style={{ marginRight: "10px" }}
               >
                 <Image
@@ -37,8 +37,8 @@ const PopularBlogs = () => {
                     border: "1px solid #ddd",
                   }}
                   width='100%'
-                  src={urlFor(blog.coverImage).width(100).height(70).url()}
-                  alt={blog.coverImage.alt}
+                  src={urlFor(blog.smallImage).width(100).height(70).url()}
+                  alt={blog.smallImage.alt}
                   className='img-fluid rounded'
                 />
               </a>

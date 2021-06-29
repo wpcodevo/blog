@@ -4,7 +4,7 @@ import { urlFor } from "lib/api";
 import dynamic from "next/dynamic";
 const Moment = dynamic(() => import("react-moment"));
 
-const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
+const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
   return (
     <Card className={`fj-card fj-card-list card-wrapper`}>
       <div className='card-body-wrapper'>
@@ -30,18 +30,18 @@ const CardListItem = ({ title, subtitle, date, author, coverImage, link }) => {
           </div>
           <div className='card-flex'>
             <Link {...link}>
-              <a aria-label={coverImage.alt} className='card-link'>
+              <a aria-label={smallImage.alt} className='card-link'>
                 <Card.Img
                   variant='top'
                   style={{
                     imageRendering: "-webkit-optimize-contrast",
                   }}
-                  src={urlFor(coverImage)
+                  src={urlFor(smallImage)
                     .width(300)
                     .height(240)
                     .fit("clip")
                     .url()}
-                  alt={coverImage.alt}
+                  alt={smallImage.alt}
                 />
               </a>
             </Link>

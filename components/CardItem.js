@@ -4,22 +4,22 @@ import { urlFor } from "lib/api";
 import dynamic from "next/dynamic";
 const Moment = dynamic(() => import("react-moment"));
 
-const CardItem = ({ title, date, coverImage, author, link }) => {
+const CardItem = ({ title, date, smallImage, author, link }) => {
   return (
     <Card className={`fj-card`}>
       <div className='card-body-wrapper'>
         <div className='view overlay'>
           {link && (
             <Link {...link}>
-              <a aria-label={coverImage.alt}>
+              <a aria-label={smallImage.alt}>
                 <Card.Img
-                  src={urlFor(coverImage)
+                  src={urlFor(smallImage)
                     .crop("center")
                     .fit("clip")
                     .width(500)
                     .height(500)
                     .url()}
-                  alt={coverImage.alt}
+                  alt={smallImage.alt}
                 />
               </a>
             </Link>

@@ -9,7 +9,7 @@ const CardsItemRow = ({ paginatedBlogs }) => {
             title={blog.title}
             subtitle={blog.subtitle}
             slug={blog.slug}
-            coverImage={blog.coverImage}
+            smallImage={blog.smallImage}
             date={blog.date}
             author={blog.author}
             link={{

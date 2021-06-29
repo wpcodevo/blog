@@ -10,7 +10,7 @@ const BlogList = ({ blogs, filter }) => {
       <div key={`${blogs.length}-${Math.random()}-list`}>
         <CardListItem
           title={blog.title}
-          coverImage={blog.coverImage}
+          smallImage={blog.smallImage}
           subtitle={blog.subtitle}
           date={blog.date}
           author={blog.author}

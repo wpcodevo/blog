@@ -26,7 +26,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
               <div key={`${index}-list`}>
                 <CardListItem
                   title={blog.title}
-                  coverImage={blog.coverImage}
+                  smallImage={blog.smallImage}
                   subtitle={blog.subtitle}
                   date={blog.date}
                   author={blog.author}
@@ -45,7 +45,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
               {newsBlog?.map((blog) => (
                 <div key={`${newsBlog.length}-${Math.random()}-list`}>
                   <NewsListItem
-                    coverImage={blog.coverImage}
+                    smallImage={blog.smallImage}
                     subtitle={blog.subtitle}
                     link={{
                       href: "blogs/[slug]",
