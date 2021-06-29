@@ -36,5 +36,6 @@
     "sitemap": "^7.0.0",
     "sweetalert2": "^11.0.18",
     "swr": "0.2.2"
-  }
+  },
+  "devDependencies": {}
 }

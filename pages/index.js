@@ -55,9 +55,9 @@ function Home({ popularBlog, newsBlog, dealsBlog }) {
             <div style={{ margin: ".5rem" }}>
               <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
             </div>
-            <h3 style={{ margin: "25px 0 25px" }} className='home-title'>
+            <span style={{ margin: "25px 0 25px" }} className='home-title'>
               Deals & Coupons
-            </h3>
+            </span>
             <div className='deals'>
               {dealsBlog?.map((blog) => (
                 <div key={`${dealsBlog.length}-${Math.random()}-list`}>
