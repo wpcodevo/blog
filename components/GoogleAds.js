@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import AdSense from "react-adsense";
 
 const GoogleAds = ({
@@ -9,19 +8,6 @@ const GoogleAds = ({
   layoutKey = "",
   styles = { display: "block" },
 }) => {
-  useEffect(() => {
-    const installGoogleAds = () => {
-      const el = document.createElement("script");
-      el.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-      el.async = true;
-      el.defer = true;
-      document.body.insertBefore(el, document.body.firstChild);
-    };
-
-    if (process.env.NODE_ENV === "production") {
-      installGoogleAds();
-    }
-  }, []);
   return (
     <div
       style={{
