@@ -1,6 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { GA_TRACKING_ID } from "lib/gtag";
-import Script from "next/script";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -33,28 +31,6 @@ class MyDocument extends Document {
             rel='stylesheet'
           />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <Script src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          />
-          <Script
-            src='https://apis.google.com/js/platform.js'
-            onLoad={() => {
-              console.log("Loaded successfully Codevo");
-            }}
-          />
-          <Script
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-            }}
-          />
         </Head>
         <body>
           <Main />

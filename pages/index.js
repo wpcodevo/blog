@@ -8,10 +8,29 @@ const GoogleAds = dynamic(() => import("components/GoogleAds"), {
 });
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 const Aside = dynamic(() => import("components/Aside"));
+import { GA_TRACKING_ID } from "lib/gtag";
+import Script from "next/script";
 
 function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
   return (
     <>
+      <Script src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+      />
+      <Script src='https://apis.google.com/js/platform.js' />
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />

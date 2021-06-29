@@ -23,7 +23,7 @@ const Footer = () => {
           </Link>
         </div>
         <div>
-          <h4 style={{ color: "white" }}>About</h4>
+          <h3 style={{ color: "white" }}>About</h3>
           <p>
             Codevo is a blog where we post blogs related to HTML CSS JavaScript
             & Nodejs along with amazing coding stuff.
@@ -38,7 +38,7 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h4 style={{ color: "white" }}>Follow</h4>
+          <h3 style={{ color: "white" }}>Follow</h3>
           <div className='icons d-flex'>
             <div className='social-icons'>
               <Link href='https://web.facebook.com/codevv/'>

@@ -7,6 +7,7 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
@@ -64,9 +65,13 @@ const Aside = () => {
       <div className='widget no-pad promo'>
         <Link href='https://www.hostg.xyz/aff_c?offer_id=6&aff_id=79354'>
           <a>
-            <img
-              src='https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/widgetDiscount2.jpg'
+            <Image
+              src='/images/asidebanner.svg'
               alt='hostinger review'
+              width='300'
+              height='400'
+              placeholder='blur'
+              blurDataURL='LGFFaXYk^6#M@-5c,1J5@[or[Q6.'
             />
           </a>
         </Link>
