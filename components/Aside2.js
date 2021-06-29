@@ -12,7 +12,6 @@ import dynamic from "next/dynamic";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
-import Image from "next/image";
 import AsideCateogories from "components/AsideCategories";
 
 const Aside2 = () => {
@@ -76,11 +75,8 @@ const Aside2 = () => {
       <div className='widget no-pad promo'>
         <Link href='https://www.hostg.xyz/aff_c?offer_id=6&aff_id=79354'>
           <a>
-            <Image
-              style={{ width: "100%", height: "100%" }}
-              src='/images/widgetDiscount.jpg'
-              height='400'
-              width='300'
+            <img
+              src='https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/widgetDiscount2.jpg'
               alt='hostinger review'
             />
           </a>

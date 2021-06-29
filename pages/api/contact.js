@@ -9,7 +9,7 @@ export default async function contact(req, res) {
     port: 465,
     host: "smtp.gmail.com",
     auth: {
-      user: "edemnextjs@gmail.com",
+      user: "ekziddah@gmail.com",
       pass: password,
     },
     secure: true,
@@ -17,7 +17,7 @@ export default async function contact(req, res) {
 
   const mailData = {
     from: email,
-    to: "edemnextjs@gmail.com",
+    to: "ekziddah@gmail.com",
     subject: `Message From ${name}`,
     text: message,
     html: `<div>${message}</div><p>Sent from:
