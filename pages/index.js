@@ -6,9 +6,10 @@ import DealsListItem from "components/DealsListItem";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
+const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 const Aside = dynamic(() => import("components/Aside"));
 
-function Home({ popularBlog, newsBlog, dealsBlog }) {
+function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
   return (
     <>
       {/* Google Ads */}
@@ -18,6 +19,8 @@ function Home({ popularBlog, newsBlog, dealsBlog }) {
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>
+            {preview && <PreviewAlert />}
+
             <span className='home-title'>Tutorials</span>
             {popularBlog.map((blog, index) => (
               <div key={`${index}-list`}>
@@ -87,7 +90,7 @@ function Home({ popularBlog, newsBlog, dealsBlog }) {
 
 export default Home;
 
-export async function getStaticProps() {
+export async function getStaticProps({ preview = false }) {
   const popularBlog = await getTwoPopularBlogs();
   const newsBlog = await getTechBlogs();
   const dealsBlog = await getDealsBlogs();
@@ -96,6 +99,7 @@ export async function getStaticProps() {
       popularBlog,
       newsBlog,
       dealsBlog,
+      preview,
     },
     revalidate: 1,
   };
