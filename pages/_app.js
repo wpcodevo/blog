@@ -16,7 +16,9 @@ import Script from "next/script";
 const App = ({ Component, pageProps }) => {
   return (
     <>
-      <Script src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
+      {process.env.NODE_ENV === "production" && (
+        <Script src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
+      )}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
       />
@@ -59,7 +61,7 @@ const App = ({ Component, pageProps }) => {
           <a aria-label='learn more'>Learn more</a>
         </Link>
       </CookieConsent>
-      <FixAdsBottom />
+      {process.env.NODE_ENV === "production" && <FixAdsBottom />}
       <ScrollTop />
     </>
   );
