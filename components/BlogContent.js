@@ -1,6 +1,6 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { Spinner } from "react-bootstrap";
+import dynamic from "next/dynamic";
 import { urlFor } from "lib/api";
 import getYouTubeID from "get-youtube-id";
 const BlockContent = dynamic(() => import("@sanity/block-content-to-react"), {
@@ -16,6 +16,10 @@ const YouTube = dynamic(() => import("react-youtube"), {
   loading: () => (
     <div style={{ width: "100%", height: "45vh", background: "#222" }} />
   ),
+});
+
+const GoogleAds = dynamic(() => import("components/GoogleAds"), {
+  loading: () => <div style={{ height: 0 }}></div>,
 });
 
 const serializers = {
@@ -67,7 +71,14 @@ const serializers = {
   },
   marks: {
     color: ({ mark, children }) => {
-      return <span style={{ color: mark.hex }}>{children}</span>;
+      return (
+        <span style={{ color: mark.hex }}>
+          {children}
+          <div style={{ margin: "1rem 0 1rem" }}>
+            <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+          </div>
+        </span>
+      );
     },
     link: ({ mark, children }) => {
       const { blank, href } = mark;
