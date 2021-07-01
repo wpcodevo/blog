@@ -103,6 +103,9 @@ const Aside2 = () => {
       <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
       </div>
+      <div className='widget advertisement'>
+        <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
+      </div>
     </aside>
   );
 };
