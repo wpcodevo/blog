@@ -75,7 +75,10 @@ const serializers = {
         <span style={{ color: mark.hex }}>
           {children}
           <div style={{ margin: "1rem 0 1rem" }}>
-            <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+            <GoogleAds
+              layoutKey='-5s+ck+w-bk+hr'
+              slot={process.env.NATIVE_ADS}
+            />
           </div>
         </span>
       );

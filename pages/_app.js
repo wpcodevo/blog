@@ -51,6 +51,7 @@ const App = ({ Component, pageProps }) => {
           backgroundColor: "#fff",
           color: "#222",
           textAlign: "center",
+          zIndex: 999999,
         }}
         buttonStyle={{ backgroundColor: "#46a5ff", color: "#fff" }}
         expires={150}
