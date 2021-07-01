@@ -69,9 +69,9 @@ a {
 
 .d-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   align-items: flex-start;
-  gap: 0 20px;
+  gap: 30px 20px;
 
   .card.fj-card .card-body {
     padding: 20px 10px;
@@ -84,6 +84,8 @@ a {
   .view.overlay {
     height: 200px;
     background-color: #555;
+    color: #555;
+    border-bottom: 1px solid #ddd;
 
     img {
       object-fit: cover;
@@ -166,11 +168,19 @@ p {
 }
 
 .card.fj-card {
+  &.box {
+    overflow: hidden;
+    border-radius: 0.5rem 0.5rem 0 0;
+    &:hover {
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
   .card-body-wrapper {
     background-color: #fff;
     min-height: 280px;
     position: relative;
     z-index: 2;
+    transition: all 300ms ease-in-out;
 
     &-1 {
       min-height: 100px !important;
@@ -236,10 +246,11 @@ p {
     }
 
     .card-main-title-2 {
-      margin: 0 0 10px 0;
+      margin: 0 0 20px;
       font-size: 20px;
       line-height: 26px;
       height: 50px;
+      font-weight: 400;
     }
   }
 
@@ -645,17 +656,16 @@ p {
 .load-btn,
 .btn {
   padding: 8px 30px;
-  border: 2px solid #ff6200;
+  border: 2px solid #ddd;
   background-color: transparent;
   color: #ff6200;
   outline: none;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 5px;
+  font-weight: 500;
 
   &:hover,
   &:active {
-    background-color: #ff6200;
-    color: #fff;
+    background-color: #ddd;
   }
 }
 

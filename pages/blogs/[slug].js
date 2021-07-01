@@ -17,13 +17,7 @@ const GoogleAds = dynamic(() => import("components/GoogleAds"), {
 const CommentForm = dynamic(() => import("components/CommentForm"));
 import { Comments } from "components/Comments";
 
-const BlogContent = dynamic(() => import("components/BlogContent"), {
-  loading: () => (
-    <div style={{ textAlign: "center" }}>
-      <Spinner animation='border' variant='danger' />
-    </div>
-  ),
-});
+const BlogContent = dynamic(() => import("components/BlogContent"));
 
 function BlogDetails({ blog: initialBlog, preview, id, comments }) {
   const router = useRouter();

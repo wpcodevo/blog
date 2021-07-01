@@ -23,6 +23,7 @@ const App = ({ Component, pageProps }) => {
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
       />
       <Script src='https://apis.google.com/js/platform.js' />
+
       <Script
         dangerouslySetInnerHTML={{
           __html: `
@@ -50,7 +51,6 @@ const App = ({ Component, pageProps }) => {
           backgroundColor: "#fff",
           color: "#222",
           textAlign: "center",
-          margin: "0 0 7rem",
         }}
         buttonStyle={{ backgroundColor: "#46a5ff", color: "#fff" }}
         expires={150}

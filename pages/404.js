@@ -10,6 +10,7 @@ export default function Custom404() {
           src='/images/404.svg'
           height='400'
           width='400'
+          alt='404 image'
         />
       </div>
       <div className='content'>

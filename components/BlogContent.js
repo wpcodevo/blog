@@ -59,7 +59,7 @@ const serializers = {
         <img
           style={{ width: "100%" }}
           className={`block-img block-img-${position} lazyload`}
-          data-src={urlFor(asset.url).width(550).height(370).url()}
+          src={urlFor(asset.url).width(550).height(370).url()}
           alt={alt}
         />
       );
@@ -67,7 +67,7 @@ const serializers = {
   },
   marks: {
     color: ({ mark, children }) => {
-      return <h3 style={{ color: mark.hex }}>{children}</h3>;
+      return <span style={{ color: mark.hex }}>{children}</span>;
     },
     link: ({ mark, children }) => {
       const { blank, href } = mark;

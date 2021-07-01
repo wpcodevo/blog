@@ -6,7 +6,7 @@ const Moment = dynamic(() => import("react-moment"));
 
 const CardItem = ({ title, date, smallImage, author, link }) => {
   return (
-    <Card className={`fj-card`}>
+    <Card className={`fj-card box`}>
       <div className='card-body-wrapper'>
         <div className='view overlay'>
           {link && (
@@ -48,7 +48,9 @@ const CardItem = ({ title, date, smallImage, author, link }) => {
                 style={{
                   fontSize: "15px",
                   textTransform: "capitalize",
-                  marginBottom: "5px",
+                  marginBottom: 5,
+                  fontWeight: 400,
+                  padding: 5,
                 }}
               >
                 <Link href='/about'>
@@ -57,7 +59,7 @@ const CardItem = ({ title, date, smallImage, author, link }) => {
               </Card.Title>
               <Card.Subtitle
                 className='orange-text'
-                style={{ fontSize: "13px" }}
+                style={{ fontSize: "13px", fontWeight: 400 }}
               >
                 <Moment format='D MMM YYYY' withTitle>
                   {date}

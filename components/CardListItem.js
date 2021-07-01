@@ -10,7 +10,7 @@ const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
       <div className='card-body-wrapper'>
         <Card.Body className='mb2'>
           <Link {...link}>
-            <a aria-label='title' className='no-italic'>
+            <a aria-label='title' className='no-italic' style={{ padding: 5 }}>
               <h1 className='card-main-title'>{title}</h1>
             </a>
           </Link>

@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 const Aside2 = dynamic(() => import("./Aside2"));
 
-const Layout = ({ children }) => {
+const Layout = ({ children, grid }) => {
   return (
     <div className='layoutWrapper'>
       <div className='wrapper-lg no-border'>

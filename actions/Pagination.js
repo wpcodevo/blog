@@ -1,61 +1,29 @@
-import { Spinner } from "react-bootstrap";
-import { useSWRPages } from "swr";
-import { useGetBlogs } from "actions";
-import CardListItem from "components/CardListItem";
-import CardsItemRow from "components/CardsItemRow";
+import { useSWRInfinite } from "swr";
+import { getBlogs } from "actions";
 
-const BlogList = ({ blogs, filter }) => {
-  return filter.view.list ? (
-    blogs.map((blog) => (
-      <div key={`${blogs.length}-${Math.random()}-list`}>
-        <CardListItem
-          title={blog.title}
-          smallImage={blog.smallImage}
-          subtitle={blog.subtitle}
-          date={blog.date}
-          author={blog.author}
-          link={{
-            href: "blogs/[slug]",
-            as: `blogs/${blog.slug}`,
-          }}
-        />
-      </div>
-    ))
-  ) : (
-    <CardsItemRow paginatedBlogs={blogs} />
-  );
-};
+export const useGetBlogsPages = ({ category, filter }) => {
+  const result = useSWRInfinite((index, previousPageData) => {
+    if (index === 0) {
+      return `/api/blogs?date=${
+        filter.date.asc ? "asc" : "desc"
+      }&category=${category}`;
+    }
 
-export const useGetBlogPages = ({ category, blogs, filter }) => {
-  return useSWRPages(
-    "index-page",
-    ({ offset, withSWR }) => {
-      const { data: paginatedBlogs, error } = withSWR(
-        useGetBlogs({ category, offset, filter })
-      );
+    if (!previousPageData.length) {
+      return null;
+    }
 
-      if (!offset && !paginatedBlogs && !error) {
-        return <BlogList blogs={blogs} filter={filter} />;
-      }
+    return `/api/blogs?offset=${index * 6}&date=${
+      filter.date.asc ? "asc" : "desc"
+    }&category=${category}`;
+  }, getBlogs);
 
-      if (!paginatedBlogs) {
-        return (
-          <div style={{ width: "100%", textAlign: "center", margin: "15px 0" }}>
-            <Spinner animation='border' variant='danger' />
-          </div>
-        );
-      }
+  let hitEnd = false;
+  const { data } = result;
 
-      return <BlogList blogs={paginatedBlogs} filter={filter} />;
-      // return blog list
-    },
+  if (data) {
+    hitEnd = data[data.length - 1].length === 0;
+  }
 
-    (SWR, index) => {
-      if (SWR.data && SWR.data.length === 0) {
-        return null;
-      }
-      return (index + 1) * 6;
-    },
-    [filter]
-  );
+  return { ...result, hitEnd };
 };

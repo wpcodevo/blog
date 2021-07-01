@@ -10,6 +10,7 @@ export default function Custom500() {
           src='/images/505.svg'
           height='400'
           width='400'
+          alt='500 image'
         />
       </div>
       <div className='content'>

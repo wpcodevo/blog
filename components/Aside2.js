@@ -7,13 +7,25 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import Link from "next/link";
-import PopularBlogs from "components/PopularBlogs";
 import dynamic from "next/dynamic";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
+const PopularBlogs = dynamic(() => import("components/PopularBlogs"), {
+  loading: () => (
+    <div
+      style={{ height: "100px", width: "100%", backgroundColor: "white" }}
+    ></div>
+  ),
+});
+const AsideCateogories = dynamic(() => import("components/AsideCategories"), {
+  loading: () => (
+    <div
+      style={{ height: "400px", width: "100%", backgroundColor: "white" }}
+    ></div>
+  ),
+});
 import Image from "next/image";
-import AsideCateogories from "components/AsideCategories";
 
 const Aside2 = () => {
   return (
@@ -87,7 +99,7 @@ const Aside2 = () => {
           </a>
         </Link>
       </div>
-      {/* <AsideCateogories /> */}
+      <AsideCateogories />
       <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
       </div>

@@ -1,4 +1,4 @@
-import { Card, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
 

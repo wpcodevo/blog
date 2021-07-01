@@ -25,7 +25,7 @@ export default async function contact(req, res) {
   };
 
   transporter.sendMail(mailData, function (err, info) {
-    if (err) console.log(err);
+    if (err) res.status(500).json(err);
   });
   res.status(200).send("It worked");
 }
