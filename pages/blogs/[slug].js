@@ -17,6 +17,7 @@ const GoogleAds = dynamic(() => import("components/GoogleAds"), {
 });
 const CommentForm = dynamic(() => import("components/CommentForm"));
 import { Comments } from "components/Comments";
+import NewsLetter from "components/NewsLetter";
 
 const BlogContent = dynamic(() => import("components/BlogContent"));
 
@@ -24,7 +25,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
   const [blog, setBlog] = useState(initialBlog);
 
-  if (!router.isFallback && !initialBlog) {
+  if (router.isFallback && !blog) {
     return <Error statusCode={404} />;
   }
 
@@ -108,6 +109,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
 
         <Comments comments={initialBlog.comments} />
         <CommentForm _id={initialBlog._id} />
+        <NewsLetter />
       </Layout>
     </>
   );
@@ -137,6 +139,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
