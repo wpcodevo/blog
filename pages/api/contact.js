@@ -1,6 +1,5 @@
 require("dotenv").config();
 const nodemailer = require("nodemailer");
-import validate from "deep-email-validator";
 
 const password = process.env.PASSWORD;
 
@@ -26,21 +25,8 @@ export default async function contact(req, res) {
     ${email}</p>`,
   };
 
-  if (!email) {
-    return res.status(400).json({ error: "Email is required" });
-  }
-
-  let response = await validate(email);
-  console.log(response.valid);
-
-  if (response.valid === false) {
-    return res.status(401).json({
-      message: "Please enter a valid email address",
-    });
-  }
-
   transporter.sendMail(mailData, function (err, info) {
     if (err) res.status(500).json(err);
   });
-  res.status(200).send("It worked");
+  res.status(200).json(null);
 }
