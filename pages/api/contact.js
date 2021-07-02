@@ -3,9 +3,11 @@ const nodemailer = require("nodemailer");
 import validate from "deep-email-validator";
 
 const password = process.env.PASSWORD;
+console.log(password);
 
 export default async function contact(req, res) {
-  const { name, email, message } = req.body;
+  const { name, email, message } = JSON.parse(req.body);
+  console.log(name, email, message);
 
   const transporter = nodemailer.createTransport({
     port: 465,
