@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
-import { Card, Image, Spinner } from "react-bootstrap";
+import { useState } from "react";
+import { Card, Image } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Error from "next/error";
 import dynamic from "next/dynamic";
 import { getBlogBySlug, getPaginatedBlogs, onBlogUpdate } from "lib/api";
 import { urlFor } from "lib/api";
@@ -19,18 +20,12 @@ import { Comments } from "components/Comments";
 
 const BlogContent = dynamic(() => import("components/BlogContent"));
 
-function BlogDetails({ blog: initialBlog, preview, id, comments }) {
+function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
   const [blog, setBlog] = useState(initialBlog);
 
-  if (router.isFallback) {
-    return (
-      <Layout className='center d-flex'>
-        <div style={{ textAlign: "center" }}>
-          <Spinner animation='border' variant='danger' />
-        </div>
-      </Layout>
-    );
+  if (!router.isFallback && !initialBlog) {
+    return <Error statusCode={404} />;
   }
 
   function setUpdate() {
@@ -43,10 +38,6 @@ function BlogDetails({ blog: initialBlog, preview, id, comments }) {
       return () => sub && sub.unsubscribe();
     }
   }
-
-  // useEffect(() => {
-  //   setUpdate();
-  // }, []);
 
   return (
     <>
@@ -115,8 +106,8 @@ function BlogDetails({ blog: initialBlog, preview, id, comments }) {
         </div>
         <DownloadFile blog={blog} />
 
-        <Comments comments={comments} />
-        <CommentForm _id={id} />
+        <Comments comments={initialBlog.comments} />
+        <CommentForm _id={initialBlog._id} />
       </Layout>
     </>
   );
@@ -126,14 +117,10 @@ export default BlogDetails;
 
 export async function getStaticProps({ params, preview = false, previewData }) {
   const blog = await getBlogBySlug(params.slug, preview);
-  const id = blog._id;
-  const comments = blog.comments;
   return {
     props: {
       preview,
-      blog,
-      id,
-      comments,
+      blog: blog || null,
     },
     revalidate: 1,
   };
@@ -150,6 +137,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }

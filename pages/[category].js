@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import Layout from "components/Layout";
 import { useRouter } from "next/router";
 import { Spinner } from "react-bootstrap";
+import Error from "next/error";
 import { useGetBlogsPages } from "actions/Pagination";
 import { NextSeo } from "next-seo";
 const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
@@ -47,20 +48,14 @@ function Category({ blogs, category }) {
 
   const router = useRouter();
 
+  if (!router.isFallback && !blogs && !category) {
+    return <Error status={404} />;
+  }
+
   const { data, size, setSize, hitEnd } = useGetBlogsPages({
     filter,
     category,
   });
-
-  if (router.isFallback) {
-    return (
-      <Layout className='center d-flex'>
-        <div style={{ textAlign: "center" }}>
-          <Spinner animation='border' variant='danger' />
-        </div>
-      </Layout>
-    );
-  }
 
   return (
     <>
@@ -124,6 +119,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
