@@ -1,7 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Custom500() {
+  const router = useRouter();
+
+  useEffect(() => {
+    setTimeout(() => {
+      router.push("/");
+    }, 5000);
+  }, []);
+
   return (
     <div className='error404'>
       <div className='errorImage'>
