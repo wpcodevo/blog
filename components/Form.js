@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert2";
 import { Spinner } from "react-bootstrap";
@@ -11,9 +11,10 @@ function Form() {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = async (data) => {
+  const onSubmit = async (data, e) => {
     setIsSubmitting(true);
     let response;
     setFormData(data);
@@ -28,6 +29,14 @@ function Form() {
 
       if (response.status === 200) {
         swal.fire("Great Job!", "Thanks for Your Contacting Us!", "success");
+      }
+
+      if (response.status === 401) {
+        swal.fire(
+          "Oops!",
+          "Sorry, our system has detected this email to be invalid",
+          "error"
+        );
       }
     } catch (err) {
       setFormData(err);
@@ -60,6 +69,7 @@ function Form() {
       <h5>Contact Us</h5>
 
       <input
+        autoComplete='off'
         className={`field ${errors.name ? "danger" : ""}`}
         name='name'
         {...register("name", { required: true })}
@@ -68,6 +78,7 @@ function Form() {
       {errors.name && <span>Please enter your name here!</span>}
 
       <input
+        autoComplete='off'
         className={`field ${errors.email ? "danger" : ""}`}
         name='email'
         type='email'

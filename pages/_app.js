@@ -19,14 +19,21 @@ const App = ({ Component, pageProps }) => {
       {process.env.NODE_ENV === "production" && (
         <Script src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
       )}
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
-      <Script src='https://apis.google.com/js/platform.js' />
 
-      <Script
-        dangerouslySetInnerHTML={{
-          __html: `
+      {process.env.NODE_ENV === "production" && (
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+      )}
+
+      {process.env.NODE_ENV === "production" && (
+        <Script src='https://apis.google.com/js/platform.js' />
+      )}
+
+      {process.env.NODE_ENV === "production" && (
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -34,8 +41,10 @@ const App = ({ Component, pageProps }) => {
               page_path: window.location.pathname,
             });
           `,
-        }}
-      />
+          }}
+        />
+      )}
+
       <MetaDecorator
         title={content.pageTitle}
         description={content.pageDescription}

@@ -63,6 +63,7 @@ function CommentForm({ _id }) {
         value={_id}
       />
       <input
+        autoComplete='off'
         className={`field ${errors.name ? "danger" : ""}`}
         name='name'
         {...register("name", { required: true })}
@@ -71,6 +72,7 @@ function CommentForm({ _id }) {
       {errors.name && <span>Please enter your name here!</span>}
 
       <input
+        autoComplete='off'
         className={`field ${errors.email ? "danger" : ""}`}
         name='email'
         type='email'

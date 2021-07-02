@@ -126,8 +126,8 @@ export default BlogDetails;
 
 export async function getStaticProps({ params, preview = false, previewData }) {
   const blog = await getBlogBySlug(params.slug, preview);
-  const id = blog._id;
-  const comments = blog.comments;
+  const id = blog?._id;
+  const comments = blog?.comments;
   return {
     props: {
       preview,
