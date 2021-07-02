@@ -1,26 +1,8 @@
-require("dotenv").config();
 import axios from "axios";
 
-function Req(email) {
-  const API_KEY = process.env.MAILCHIMP_API_KEY;
-  const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
-  const DATACENTER = API_KEY.split("-")[1];
-  const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`;
-  const data = {
-    email_address: email,
-    status: "subscribed",
-  };
-  const base64ApiKey = Buffer.from(`anystring:${API_KEY}`).toString("base64");
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: `Auth ${base64ApiKey}`,
-  };
-  return {
-    url,
-    data,
-    headers,
-  };
-}
+const API_URL = process.env.API_URL;
+const CONVERTKIT_API_KEY = process.env.CONVERTKIT_API_KEY;
+const FORM_ID = process.env.FORM_ID;
 
 export default async (req, res) => {
   const { email } = JSON.parse(req.body);
@@ -30,10 +12,23 @@ export default async (req, res) => {
   }
 
   try {
-    const { url, data, headers } = Req(email);
-    const result = await axios.post(url, data, { headers });
+    const data = { email, api_key: CONVERTKIT_API_KEY };
+    const result = await fetch(`${API_URL}/forms/${FORM_ID}/subscribe`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if (result.status >= 400) {
+      return res.status(400).json({
+        message: "There was an error subscribing to the list!",
+      });
+    }
     return res.status(201).json({ error: null });
   } catch (error) {
-    console.log(error);
+    return res.status(500).json({
+      error: error.message || error.toString(),
+    });
   }
 };

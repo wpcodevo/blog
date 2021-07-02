@@ -70,7 +70,7 @@ const NewsLetter = () => {
   useEffect(() => {
     const modal = setTimeout(() => {
       openModal();
-    }, 10000);
+    }, 15000);
 
     return () => clearTimeout(modal);
   }, []);
@@ -130,7 +130,9 @@ const NewsLetter = () => {
               </span>
 
               <button type='submit' value='Send Me a Free Chapter'>
-                {isSubmitting ? "loading..." : "Send Me a Free Chapter"}
+                {isSubmitting
+                  ? "Please Wait loading..."
+                  : "Send Me a Free Chapter"}
               </button>
             </form>
           </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, Image } from "react-bootstrap";
+import { Card, Image, Spinner } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Error from "next/error";
@@ -25,7 +25,11 @@ function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
   const [blog, setBlog] = useState(initialBlog);
 
-  if (router.isFallback && !blog) {
+  if (!router.isFallback && !initialBlog?.slug) {
+    return <Error statusCode={404} />;
+  }
+
+  if (router.isFallback) {
     return <Error statusCode={404} />;
   }
 
