@@ -79,6 +79,10 @@ a {
   .layoutWrapper {
     grid-template-columns: 1fr;
     gap: 15px 0;
+
+    .aside {
+      max-width: 100%;
+    }
   }
 
   .container {

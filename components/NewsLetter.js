@@ -53,7 +53,7 @@ const NewsLetter = () => {
           "Thanks for Subscribing to our Newsletter",
           "success"
         );
-        Cookie.set("token", "subscribed", { expires: 10000000 });
+        Cookie.set("token", "subscribed", { expires: 90 });
         setIsOpen(false);
       }
     } catch (err) {
