@@ -4,7 +4,7 @@ const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
 const Aside = dynamic(() => import("components/Aside"));
-import Image from "next/image";
+import { Image } from "react-bootstrap";
 
 const Subscription = () => {
   return (
@@ -28,25 +28,45 @@ const Subscription = () => {
                 In 1-2 Minutes, you will receive an email, Just go to your
                 inbox, open the email from Codevo Web, and click the link.
               </p>
-              <Image
-                width='1100'
-                height='399'
-                src='/images/confirmTwo.png'
-                alt='confirm gmail for convertKit'
-                style={{ width: "100%", height: "100%" }}
-              />
+              <div
+                className='img-holder'
+                style={{
+                  width: "800px",
+                  height: "399px",
+                }}
+              >
+                <Image
+                  src='https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/confirmTwo.png'
+                  alt='confirm gmail for convertKit'
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
               <p>
                 PS: If you don’t see a confirmation email, please check your
                 spam/junk folder or promotion tab. Sometimes the confirmation
                 message ends up there by mistake.
               </p>
-              <Image
-                width='11000'
-                height='399'
-                src='/images/confirmOne.png'
-                alt='confirm gmail for convertKit'
-                style={{ width: "100%", height: "100%" }}
-              />
+              <div
+                className='img-holder'
+                style={{
+                  width: "800px",
+                  height: "399px",
+                }}
+              >
+                <Image
+                  src='https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/confirmOne.png'
+                  alt='confirm gmail for convertKit'
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
             </div>
             <div style={{ margin: "1rem 0 1rem" }}>
               <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
