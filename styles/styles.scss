@@ -713,15 +713,34 @@ p {
       }
     }
 
-    &.tags {
+    &.categories {
       a {
         display: block;
+        border: 1px solid #ddd;
+        font-size: 15px;
+        padding: 2px;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+
         &:hover {
-          color: #ff6200;
+          color: #fff;
+          border: 1px solid #ddd;
+          background-color: #ff6200;
         }
       }
       div:not(:last-child) {
         margin-bottom: 5px;
+      }
+    }
+
+    &.tags {
+      div {
+        list-style: none;
+        background-color: #e6e6e6;
+        font-size: 13px;
+        padding: 5px;
+        word-break: break-all;
+        margin: 0 10px 5px 0;
       }
     }
 
@@ -847,6 +866,20 @@ p {
 
   .widget.advertisement {
     max-height: 20rem !important;
+  }
+
+  .widget {
+    &.tags {
+      height: 0;
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      border: none;
+      div {
+        padding: 0;
+        margin: 0;
+      }
+    }
   }
 
   .fix-ads-bottom {

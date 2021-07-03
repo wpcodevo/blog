@@ -13,7 +13,7 @@ const AsideCateogories = () => {
   }, []);
 
   return (
-    <div className='widget tags'>
+    <div className='widget categories'>
       <h4 style={{ padding: "15px 0" }}>Categories</h4>
       {categories.map((category, index) => (
         <div key={`${index}-list`}>

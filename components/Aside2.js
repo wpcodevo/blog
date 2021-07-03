@@ -27,7 +27,7 @@ const AsideCateogories = dynamic(() => import("components/AsideCategories"), {
 });
 import Image from "next/image";
 
-const Aside2 = () => {
+const Aside2 = ({ blog }) => {
   return (
     <aside className='aside'>
       <div className='subscribe widget'>
@@ -120,6 +120,11 @@ const Aside2 = () => {
       </div>
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
         <GoogleAds slot={process.env.VERTICAL_SLOT} />
+      </div>
+      <div className='widget tags'>
+        {blog.tags.map((tag) => (
+          <div>{tag.value}</div>
+        ))}
       </div>
     </aside>
   );
