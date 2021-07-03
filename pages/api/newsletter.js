@@ -1,5 +1,3 @@
-import axios from "axios";
-
 const API_URL = process.env.API_URL;
 const CONVERTKIT_API_KEY = process.env.CONVERTKIT_API_KEY;
 const FORM_ID = process.env.FORM_ID;
