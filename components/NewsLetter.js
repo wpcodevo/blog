@@ -64,6 +64,8 @@ const NewsLetter = () => {
       }
     } catch (err) {
       setFormData(err);
+      swal.fire("Ooops!", "something bad just happened", "error");
+      setIsOpen(false);
     }
   };
 
