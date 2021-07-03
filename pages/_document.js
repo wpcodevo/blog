@@ -14,6 +14,7 @@ class MyDocument extends Document {
             name='p:domain_verify'
             content='263ed5cf94ded2830175910f7d8f7183'
           />
+          <meta name='theme-color' content='#444' />
           <link rel='manifest' href='/favicons/site.webmanifest' />
           <link
             rel='shortcut icon'
