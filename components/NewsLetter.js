@@ -70,7 +70,7 @@ const NewsLetter = () => {
   useEffect(() => {
     const modal = setTimeout(() => {
       openModal();
-    }, 15000);
+    }, 20000);
 
     return () => clearTimeout(modal);
   }, []);
