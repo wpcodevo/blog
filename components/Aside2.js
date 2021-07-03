@@ -85,20 +85,7 @@ const Aside2 = () => {
       <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
       </div>
-      <div className='widget no-pad promo'>
-        <Link href='https://www.hostg.xyz/aff_c?offer_id=6&aff_id=79354'>
-          <a>
-            <Image
-              height='400'
-              width='300'
-              src='/images/hostinger.svg'
-              alt='hostinger review'
-              placeholder='blur'
-              blurDataURL='LGFFaXYk^6#M@-5c,1J5@[or[Q6.'
-            />
-          </a>
-        </Link>
-      </div>
+
       <AsideCateogories />
       <div className='widget no-pad promo'>
         <Link href='https://www.hostg.xyz/aff_c?offer_id=6&aff_id=79354'>
