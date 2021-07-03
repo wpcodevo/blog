@@ -4,6 +4,7 @@ import swal from "sweetalert2";
 import Modal from "react-modal";
 import { AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
+import Cookie from "js-cookie";
 
 const customStyles = {
   overlay: {
@@ -52,6 +53,7 @@ const NewsLetter = () => {
           "Thanks for Subscribing to our Newsletter",
           "success"
         );
+        Cookie.set("token", "subscribed", { expires: 10000000 });
         setIsOpen(false);
       }
     } catch (err) {
@@ -65,11 +67,18 @@ const NewsLetter = () => {
 
   function closeModal() {
     setIsOpen(false);
+    Cookie.set("wait", "wait", { expires: 1 / 24 });
   }
 
   useEffect(() => {
     const modal = setTimeout(() => {
-      openModal();
+      if (Cookie.get("token") === "subscribed") {
+        closeModal();
+      } else {
+        if (!(Cookie.get("wait") === "wait")) {
+          openModal();
+        }
+      }
     }, 20000);
 
     return () => clearTimeout(modal);
