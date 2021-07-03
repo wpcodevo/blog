@@ -87,6 +87,7 @@ const serializers = {
       const { blank, href } = mark;
       return blank ? (
         <a
+          rel='noreferrer'
           href={href}
           style={{ color: "#ff6200", textDecoration: "underline" }}
           target='_blank'

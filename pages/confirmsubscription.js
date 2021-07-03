@@ -32,6 +32,7 @@ const Subscription = () => {
                 <Image
                   src='https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/confirmTwo.png'
                   alt='confirm gmail for convertKit'
+                  className='lazyload'
                 />
               </div>
               <p>
@@ -44,7 +45,7 @@ const Subscription = () => {
                 <Image
                   src='https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/confirmOne.png'
                   alt='confirm gmail for convertKit'
-                  className='img-move'
+                  className='img-move lazyload'
                 />
               </div>
             </div>
