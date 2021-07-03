@@ -66,8 +66,11 @@ const NewsLetter = () => {
   }
 
   function closeModal() {
+    const date = new Date();
+    const minutes = 7;
+    date.setTime(date.getTime() + minutes * 60 * 1000);
     setIsOpen(false);
-    Cookie.set("wait", "wait", { expires: 1 / 24 });
+    Cookie.set("wait", "wait", { expires: date });
   }
 
   useEffect(() => {
