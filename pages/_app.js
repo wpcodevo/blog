@@ -4,12 +4,12 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import PageLayout from "components/PageLayout";
 import ScrollTop from "components/ScrollTop";
-import CookieConsent from "react-cookie-consent";
 import MetaDecorator from "components/MetaDecorator";
 const content = require("data/content");
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
 const FixAdsBottom = dynamic(() => import("components/FixAdsBottom"));
+const CookieConsent = dynamic(() => import("react-cookie-consent"));
 import { GA_TRACKING_ID } from "lib/gtag";
 import Script from "next/script";
 
