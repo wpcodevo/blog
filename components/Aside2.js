@@ -91,7 +91,7 @@ const Aside2 = () => {
             <Image
               height='400'
               width='300'
-              src='/images/asidebanner.svg'
+              src='/images//images/hostinger.svg'
               alt='hostinger review'
               placeholder='blur'
               blurDataURL='LGFFaXYk^6#M@-5c,1J5@[or[Q6.'
