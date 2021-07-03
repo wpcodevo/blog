@@ -1405,3 +1405,32 @@ p {
     height: 400px !important;
   }
 }
+
+.confirmSubscription {
+  .img-holder {
+    position: relative;
+    width: 800px;
+    height: 399px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width: 567px) {
+  .confirmSubscription {
+    .img-holder {
+      position: relative;
+      width: 800px;
+      height: 270px;
+
+      .img-move {
+        position: absolute;
+        transform: translateX(-30%);
+      }
+    }
+  }
+}

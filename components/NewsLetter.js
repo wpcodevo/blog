@@ -5,6 +5,7 @@ import Modal from "react-modal";
 import { AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
 import Cookie from "js-cookie";
+import { useRouter } from "next/router";
 
 const customStyles = {
   overlay: {
@@ -24,6 +25,7 @@ const customStyles = {
 };
 
 const NewsLetter = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,11 +50,15 @@ const NewsLetter = () => {
       setHasSubmitted(true);
 
       if (response.status === 201) {
-        swal.fire(
-          "Great Job!",
-          "Thanks for Subscribing to our Newsletter",
-          "success"
-        );
+        swal
+          .fire(
+            "Great Job!",
+            "Thanks for Subscribing to our Newsletter",
+            "success"
+          )
+          .then(() => {
+            router.push("/confirmsubscription");
+          });
         Cookie.set("token", "subscribed", { expires: 90 });
         setIsOpen(false);
       }

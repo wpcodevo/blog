@@ -17,7 +17,7 @@ const Subscription = () => {
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>
-            <div>
+            <div className='confirmSubscription'>
               <h1>Welcome to our Newsletter!</h1>
               <p>
                 Before you can receive Free Updates and Exclusive Tips you need
@@ -28,43 +28,23 @@ const Subscription = () => {
                 In 1-2 Minutes, you will receive an email, Just go to your
                 inbox, open the email from Codevo Web, and click the link.
               </p>
-              <div
-                className='img-holder'
-                style={{
-                  width: "800px",
-                  height: "399px",
-                }}
-              >
+              <div className='img-holder'>
                 <Image
                   src='https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/confirmTwo.png'
                   alt='confirm gmail for convertKit'
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                  }}
                 />
               </div>
               <p>
                 PS: If you don’t see a confirmation email, please check your
-                spam/junk folder or promotion tab. Sometimes the confirmation
+                <strong> spam/junk</strong> folder or{" "}
+                <strong>promotion tab</strong>. Sometimes the confirmation
                 message ends up there by mistake.
               </p>
-              <div
-                className='img-holder'
-                style={{
-                  width: "800px",
-                  height: "399px",
-                }}
-              >
+              <div className='img-holder'>
                 <Image
                   src='https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/confirmOne.png'
                   alt='confirm gmail for convertKit'
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                  }}
+                  className='img-move'
                 />
               </div>
             </div>
