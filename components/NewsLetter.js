@@ -145,7 +145,7 @@ const NewsLetter = () => {
                 placeholder='First Name'
               />
 
-              <span className={errors.name ? "show" : ""}>
+              <span className={errors.first_name ? "show" : ""}>
                 Please enter your name here!
               </span>
               <input
