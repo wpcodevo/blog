@@ -30,7 +30,22 @@ function BlogDetails({ blog: initialBlog, preview }) {
   }
 
   if (router.isFallback) {
-    return <Error statusCode={404} />;
+    return (
+      <div className='fallbackHeight'>
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Spinner animation='border' variant='danger' />
+        </div>
+      </div>
+    );
   }
 
   function setUpdate() {
