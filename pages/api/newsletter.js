@@ -3,14 +3,14 @@ const CONVERTKIT_API_KEY = process.env.CONVERTKIT_API_KEY;
 const FORM_ID = process.env.FORM_ID;
 
 export default async (req, res) => {
-  const { email } = JSON.parse(req.body);
+  const { email, first_name } = JSON.parse(req.body);
 
-  if (!email) {
-    return res.status(400).json({ error: "Email is required" });
+  if (!email && !first_name) {
+    return res.status(400).json({ error: "email and name is required" });
   }
 
   try {
-    const data = { email, api_key: CONVERTKIT_API_KEY };
+    const data = { email, first_name, api_key: CONVERTKIT_API_KEY };
     const result = await fetch(`${API_URL}/forms/${FORM_ID}/subscribe`, {
       method: "POST",
       headers: {

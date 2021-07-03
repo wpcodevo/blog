@@ -138,6 +138,18 @@ const NewsLetter = () => {
             <form onSubmit={handleSubmit(onSubmit)} disabled>
               <input
                 autocomplete='off'
+                className={`field ${errors.first_name ? "danger" : ""}`}
+                name='first_name'
+                type='text'
+                {...register("first_name", { required: true })}
+                placeholder='First Name'
+              />
+
+              <span className={errors.name ? "show" : ""}>
+                Please enter your name here!
+              </span>
+              <input
+                autocomplete='off'
                 className={`field ${errors.email ? "danger" : ""}`}
                 name='email'
                 type='email'
