@@ -1,6 +1,5 @@
-import dynamic from "next/dynamic";
-const Moment = dynamic(() => import("react-moment"));
 import Image from "next/image";
+import { format, parseISO } from "date-fns";
 
 export function Comments({ comments }) {
   return (
@@ -43,13 +42,12 @@ export function Comments({ comments }) {
                 >
                   {name}
                 </a>
-                <Moment
-                  format='D MMM YYYY hh:mm'
-                  withTitle
+
+                <span
                   style={{ fontSize: 13, color: "#ff6200", fontWeight: 500 }}
                 >
-                  {_createdAt}
-                </Moment>
+                  {format(parseISO(_createdAt), "PPP")}
+                </span>
               </div>
             </div>
             <p

@@ -1,8 +1,7 @@
 import { Card, Image } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
-import dynamic from "next/dynamic";
-const Moment = dynamic(() => import("react-moment"));
+import { format, parseISO } from "date-fns";
 
 const CardItem = ({ title, date, smallImage, author, link }) => {
   return (
@@ -61,9 +60,7 @@ const CardItem = ({ title, date, smallImage, author, link }) => {
                 className='orange-text'
                 style={{ fontSize: "13px", fontWeight: 400 }}
               >
-                <Moment format='D MMM YYYY' withTitle>
-                  {date}
-                </Moment>
+                {format(parseISO(date), "PPP")}
               </Card.Subtitle>
             </div>
           </div>

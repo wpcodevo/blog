@@ -1,9 +1,8 @@
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Image } from "react-bootstrap";
 import { urlFor, getPopularBlogs } from "lib/api";
-const Moment = dynamic(() => import("react-moment"));
+import { format, parseISO } from "date-fns";
 
 const PopularBlogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -57,9 +56,7 @@ const PopularBlogs = () => {
               <span
                 style={{ fontSize: "11px", display: "block", color: "#767676" }}
               >
-                <Moment format='D MMM YYYY' withTitle>
-                  {blog.date}
-                </Moment>
+                {format(parseISO(blog.date), "PPP")}
               </span>
             </div>
           </div>

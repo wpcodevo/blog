@@ -11,7 +11,8 @@ import MetaDecorator from "components/MetaDecorator";
 const ShareSocial = dynamic(() => import("components/ShareSocial"));
 const DownloadFile = dynamic(() => import("components/DownloadFile"));
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
-const Moment = dynamic(() => import("react-moment"));
+import { format, parseISO } from "date-fns";
+
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
@@ -90,13 +91,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
             <Card.Body className='card-body-1'>
               <h1 className='blockContent-title'>{initialBlog.title}</h1>
               <div className='authorInfo'>
-                Posted on{" "}
-                {
-                  <Moment format='D MMM YYYY' withTitle>
-                    {initialBlog.date}
-                  </Moment>
-                }{" "}
-                by{" "}
+                Posted on {format(parseISO(initialBlog.date), "PPP")} by{" "}
                 <Link href='/about'>
                   <a>
                     <span className='orange-text'>

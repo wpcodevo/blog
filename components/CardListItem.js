@@ -1,8 +1,7 @@
 import { Card } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
-import dynamic from "next/dynamic";
-const Moment = dynamic(() => import("react-moment"));
+import { format } from "date-fns";
 
 const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
   return (
@@ -15,12 +14,7 @@ const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
             </a>
           </Link>
           <div className='authorInfo'>
-            Posted on{" "}
-            {
-              <Moment format='D MMM YYYY' withTitle>
-                {date}
-              </Moment>
-            }{" "}
+            {/* Posted on {format(date, ["dd-mm-yyyy"])} */}
             by{" "}
             <Link href='/about'>
               <a>
