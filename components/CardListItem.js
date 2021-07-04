@@ -1,7 +1,7 @@
 import { Card } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
   return (
@@ -14,8 +14,7 @@ const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
             </a>
           </Link>
           <div className='authorInfo'>
-            {/* Posted on {format(date, ["dd-mm-yyyy"])} */}
-            by{" "}
+            {format(parseISO(date), "PPP")} by{" "}
             <Link href='/about'>
               <a>
                 <span className='orange-text'>{author.name}</span>

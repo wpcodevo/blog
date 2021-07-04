@@ -26,6 +26,9 @@ const Categories = ({ categories }) => {
                   width: "80px",
                   height: "80px",
                   margin: "5px 0 5px",
+                  color: "transparent",
+                  borderRadius: "50%",
+                  background: "transparent",
                 }}
                 src={
                   urlFor(category.icon.image).width(50).height(50).url() ||

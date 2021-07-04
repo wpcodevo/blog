@@ -38,7 +38,9 @@ const DownloadFile = ({ blog }) => {
           </p>
           {counter === 0 && (
             <Link href={blog.downloadLink}>
-              <a aria-label='download'>link here</a>
+              <a aria-label='download' style={{ color: "dodgerblue" }}>
+                link here
+              </a>
             </Link>
           )}
         </div>
