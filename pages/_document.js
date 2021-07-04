@@ -18,7 +18,7 @@ class MyDocument extends Document {
           <link rel='manifest' href='/favicons/site.webmanifest' />
           <link
             rel='shortcut icon'
-            href='/favicons/favicon-196.ico'
+            href='/favicons/favicon.ico'
             type='image/x-icon'
           />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
@@ -31,7 +31,6 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap'
             rel='stylesheet'
           />
-          {/* Global Site Tag (gtag.js) - Google Analytics */}
         </Head>
         <body>
           <Main />
