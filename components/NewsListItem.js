@@ -2,7 +2,7 @@ import { Image } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
 
-const NewsListItem = ({ subtitle, smallImage, link }) => {
+const NewsListItem = ({ shorttitle, smallImage, link }) => {
   return (
     <div className='news'>
       <Link {...link}>
@@ -22,7 +22,9 @@ const NewsListItem = ({ subtitle, smallImage, link }) => {
       <Link {...link}>
         <a>
           <p style={{ fontSize: "15px !important" }}>
-            {subtitle.length > 60 ? subtitle.substr(0, 60) + " ..." : subtitle}
+            {shorttitle.length > 60
+              ? shorttitle.substr(0, 60) + " ..."
+              : shorttitle}
           </p>
         </a>
       </Link>

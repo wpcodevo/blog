@@ -75,14 +75,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
       </div>
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
-        <div className='archive-description'>
-          <span>Top Coding News</span>
-          <p>
-            Codevo's Programming News keeps you updated with what's hot in the
-            Programming industry. Stay updated with New Technology releases,
-            major announcements, exclusive Programming deals, and much more.
-          </p>
-        </div>
+
         <Breadcrumbs
           listStyle={{ listStyle: "none", margin: 0, padding: 10 }}
           containerClassName='labelBread'

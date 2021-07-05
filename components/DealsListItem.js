@@ -2,7 +2,7 @@ import { Image } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
 
-const DealsListItem = ({ subtitle, smallImage, link, title }) => {
+const DealsListItem = ({ shorttitle, smallImage, link, title }) => {
   return (
     <div className='deals d-flex'>
       <Link {...link}>
@@ -28,7 +28,7 @@ const DealsListItem = ({ subtitle, smallImage, link, title }) => {
         </h1>
 
         <p style={{ fontSize: "15px !important" }}>
-          {subtitle}
+          {shorttitle}
           <Link {...link}>
             <a style={{ fontStyle: "italic", fontWeight: "500" }}>
               View This Deals

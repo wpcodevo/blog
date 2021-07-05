@@ -46,7 +46,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
                 <div key={`${newsBlog.length}-${Math.random()}-list`}>
                   <NewsListItem
                     smallImage={blog.smallImage}
-                    subtitle={blog.subtitle}
+                    shorttitle={blog.shorttitle}
                     link={{
                       href: "blogs/[slug]",
                       as: `blogs/${blog.slug}`,
@@ -66,7 +66,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
                 <div key={`${dealsBlog.length}-${Math.random()}-list`}>
                   <DealsListItem
                     smallImage={blog.smallImage}
-                    subtitle={blog.subtitle}
+                    shorttitle={blog.shorttitle}
                     title={blog.title}
                     link={{
                       href: "blogs/[slug]",
