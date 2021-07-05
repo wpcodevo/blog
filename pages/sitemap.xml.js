@@ -24,7 +24,7 @@ Sitemap.getInitialProps = async ({ res, req }) => {
   const routes = [
     "",
     "/about",
-    "terms",
+    "/terms",
     "/categories",
     "/contact",
     "/confirmsubscription",

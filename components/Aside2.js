@@ -31,10 +31,10 @@ const Aside2 = ({ blog }) => {
   return (
     <aside className='aside'>
       <div className='subscribe widget'>
-        <h3 className='heading'>
+        <p className='heading'>
           Over 100+ Readers
           <p>Get fresh content from Codevo</p>
-        </h3>
+        </p>
         <div className='social-icons d-flex'>
           <Link href='https://web.facebook.com/codevv/'>
             <a
