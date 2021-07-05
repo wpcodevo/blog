@@ -1,6 +1,10 @@
 import { getPaginatedBlogs, getCategories } from "lib/api";
 const toUrl = (host, route) =>
-  `<url><loc>http://www.${host}${route}</loc></url>`;
+  `<url>
+  <loc>http://www.${host}${route}</loc>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+  </url>`;
 
 const createSitemap = (
   host,
