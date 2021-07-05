@@ -121,6 +121,12 @@ a {
 .main-content {
   padding: 25px;
 
+  .breadcrumbs {
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+
   &:last-child {
     p {
       padding-bottom: 13px;
@@ -154,6 +160,7 @@ p {
   text-align: center;
 
   span {
+    display: inline-block;
     font-size: 28px !important;
     line-height: 30px !important;
     margin-bottom: 20px;
@@ -162,7 +169,7 @@ p {
 }
 
 .orange-text {
-  color: #ff6200;
+  color: #ff6200 !important;
 }
 
 .page-wrapper {
@@ -281,6 +288,11 @@ p {
   .card-main-title {
     font-size: 22px !important;
     line-height: 36px !important;
+
+    a {
+      display: inline-block;
+      text-align: left;
+    }
   }
 
   &.fj-card-list {
@@ -445,7 +457,7 @@ p {
 }
 
 .logo h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #fff;
   margin-bottom: 0;
 }
@@ -1224,6 +1236,15 @@ p {
     }
   }
 
+  h1 {
+    a {
+      color: inherit;
+      &:hover {
+        color: #ff6200;
+      }
+    }
+  }
+
   a {
     font-size: 14px;
     color: #ff6200;
@@ -1473,6 +1494,47 @@ p {
       .img-move {
         position: absolute;
         transform: translateX(-30%);
+      }
+    }
+  }
+}
+
+.labelBread {
+  ol {
+    background: #f2f2f2;
+    margin: 5px 0 0;
+    border: 1px solid #eeeded;
+    height: 40px;
+    overflow-y: hidden;
+    font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    box-shadow: inset 1px 1px 1px #e0e0e0;
+    letter-spacing: 1px;
+    line-height: 1.6em;
+  }
+  li {
+    display: inline;
+
+    &:last-child {
+      a {
+        color: #bbb;
+        pointer-events: none;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    a {
+      color: #666;
+      font-size: 14px;
+      font-weight: 600;
+      line-break: loose;
+
+      &:hover {
+        color: #222;
       }
     }
   }

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.wpcodevo.com/api/sitemap
+Sitemap: https://www.wpcodevo.com/sitemap.xml

@@ -28,9 +28,9 @@ const CardItem = ({ title, date, smallImage, author, link }) => {
           {link && (
             <Link {...link}>
               <a className='no-italic'>
-                <Card.Title className='card-main-title-2'>
+                <h1 className='card-main-title-2'>
                   {title.length > 40 ? title.substr(0, 40) + " ..." : title}
-                </Card.Title>
+                </h1>
               </a>
             </Link>
           )}

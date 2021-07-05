@@ -2,17 +2,17 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Error from "next/error";
-import { useGetBlogsPages } from "actions/Pagination";
+import { useGetBlogs } from "actions/Pagination";
 import { NextSeo } from "next-seo";
 const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
-import { getBlogsByCategory, getCategories } from "lib/api";
-
+import { getPaginatedBlogs } from "lib/api";
 const CardListItem = dynamic(() => import("components/CardListItem"));
 const CardsItemRow = dynamic(() => import("components/CardsItemRow"));
 const Aside = dynamic(() => import("components/Aside"));
+const Breadcrumbs = dynamic(() => import("nextjs-breadcrumbs"));
 
 const BlogList = ({ data = [], filter }) => {
   return data.map((page) => {
@@ -38,7 +38,7 @@ const BlogList = ({ data = [], filter }) => {
   });
 };
 
-function Category({ blogs, category }) {
+function Blogs({ blogs }) {
   const [filter, setFilter] = useState({
     view: { list: 1 },
     date: { asc: 0 },
@@ -46,18 +46,17 @@ function Category({ blogs, category }) {
 
   const router = useRouter();
 
-  if (!router.isFallback && !blogs && !category) {
+  if (!router.isFallback && !blogs) {
     return <Error status={404} />;
   }
 
-  const { data, size, setSize, hitEnd } = useGetBlogsPages({
+  const { data, size, setSize, hitEnd } = useGetBlogs({
     filter,
-    category,
   });
 
   return (
     <>
-      <NextSeo title={`Category - ${category}`} />
+      <NextSeo title='Codevo Blogs' />
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
@@ -71,6 +70,21 @@ function Category({ blogs, category }) {
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>
+            <div className='breadcrumbs'>
+              <Breadcrumbs
+                listStyle={{ listStyle: "none", margin: 0, padding: 10 }}
+                containerClassName='labelBread'
+                // listClassName='labelBread'
+                rootLabel='WPCODEVO'
+                labelsToUppercase={true}
+                inactiveItemStyle={{ color: "#bbb " }}
+                transformLabel={(title) =>
+                  title.length > 33
+                    ? title.substr(0, 33).replace(/-/g, " ") + " ..."
+                    : title.replace(/-/g, " ")
+                }
+              />
+            </div>
             <div className={!filter.view.list ? "d-grid" : ""}>
               <BlogList data={data || [blogs]} filter={filter} />
             </div>
@@ -93,30 +107,14 @@ function Category({ blogs, category }) {
   );
 }
 
-export default Category;
+export default Blogs;
 
-export async function getStaticProps({ params }) {
-  const category = params.category;
-  const blogs = await getBlogsByCategory({ category, offset: 0, date: "desc" });
+export async function getStaticProps() {
+  const blogs = await getPaginatedBlogs({ offset: 0, date: "desc" });
   return {
     props: {
       blogs,
-      category,
     },
     revalidate: 1,
-  };
-}
-
-export async function getStaticPaths() {
-  const categories = await getCategories();
-  const paths = categories?.map((b) => {
-    return {
-      params: { category: b.slug },
-    };
-  });
-
-  return {
-    paths,
-    fallback: false,
   };
 }

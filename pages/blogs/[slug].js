@@ -12,6 +12,7 @@ const ShareSocial = dynamic(() => import("components/ShareSocial"));
 const DownloadFile = dynamic(() => import("components/DownloadFile"));
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 import { format, parseISO } from "date-fns";
+const Breadcrumbs = dynamic(() => import("nextjs-breadcrumbs"));
 
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
@@ -82,6 +83,19 @@ function BlogDetails({ blog: initialBlog, preview }) {
             major announcements, exclusive Programming deals, and much more.
           </p>
         </div>
+        <Breadcrumbs
+          listStyle={{ listStyle: "none", margin: 0, padding: 10 }}
+          containerClassName='labelBread'
+          // listClassName='labelBread'
+          rootLabel='WPCODEVO'
+          labelsToUppercase={true}
+          inactiveItemStyle={{ color: "#bbb " }}
+          transformLabel={(title) =>
+            title.length > 33
+              ? title.substr(0, 33).replace(/-/g, " ") + " ..."
+              : title.replace(/-/g, " ")
+          }
+        />
         <div style={{ margin: "1rem 0 1rem" }}>
           <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
         </div>

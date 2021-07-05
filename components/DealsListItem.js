@@ -21,11 +21,12 @@ const DealsListItem = ({ subtitle, smallImage, link, title }) => {
         </a>
       </Link>
       <div>
-        <Link {...link}>
-          <a>
-            <h2 style={{ fontSize: "16px" }}>{title}</h2>
-          </a>
-        </Link>
+        <h1 style={{ fontSize: "16px" }}>
+          <Link {...link}>
+            <a>{title}</a>
+          </Link>
+        </h1>
+
         <p style={{ fontSize: "15px !important" }}>
           {subtitle}
           <Link {...link}>

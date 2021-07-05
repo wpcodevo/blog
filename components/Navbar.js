@@ -15,7 +15,7 @@ const BlogNavBar = () => {
           <div className='logo'>
             <Link href='/' as='/'>
               <a aria-label='home'>
-                <h1>Codevo</h1>
+                <h1>CODEVO</h1>
               </a>
             </Link>
           </div>

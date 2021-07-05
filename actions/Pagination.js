@@ -27,3 +27,28 @@ export const useGetBlogsPages = ({ category, filter }) => {
 
   return { ...result, hitEnd };
 };
+
+export const useGetBlogs = ({ filter }) => {
+  const result = useSWRInfinite((index, previousPageData) => {
+    if (index === 0) {
+      return `/api/allblogs?date=${filter.date.asc ? "asc" : "desc"}`;
+    }
+
+    if (!previousPageData.length) {
+      return null;
+    }
+
+    return `/api/allblogs?offset=${index * 6}&date=${
+      filter.date.asc ? "asc" : "desc"
+    }`;
+  }, getBlogs);
+
+  let hitEnd = false;
+  const { data } = result;
+
+  if (data) {
+    hitEnd = data[data.length - 1].length === 0;
+  }
+
+  return { ...result, hitEnd };
+};

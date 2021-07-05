@@ -8,18 +8,25 @@ const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
     <Card className={`fj-card fj-card-list card-wrapper`}>
       <div className='card-body-wrapper'>
         <Card.Body className='mb2'>
-          <Link {...link}>
-            <a aria-label='title' className='no-italic' style={{ padding: 5 }}>
-              <h1 className='card-main-title'>{title}</h1>
-            </a>
-          </Link>
-          <div className='authorInfo'>
-            {format(parseISO(date), "PPP")} by{" "}
-            <Link href='/about'>
-              <a>
-                <span className='orange-text'>{author.name}</span>
+          <h1 className='card-main-title'>
+            <Link {...link}>
+              <a
+                aria-label='title'
+                className='no-italic'
+                style={{ padding: 5 }}
+              >
+                {title}
               </a>
             </Link>
+          </h1>
+
+          <div className='authorInfo'>
+            {format(parseISO(date), "PPP")} by{" "}
+            <span>
+              <Link href='/about'>
+                <a className='orange-text'>{author.name}</a>
+              </Link>
+            </span>
           </div>
           <div className='card-flex'>
             <Link {...link}>
