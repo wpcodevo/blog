@@ -3,6 +3,8 @@ import { getTwoPopularBlogs, getTechBlogs, getDealsBlogs } from "lib/api";
 import CardListItem from "components/CardListItem";
 import NewsListItem from "components/NewsListItem";
 import DealsListItem from "components/DealsListItem";
+import { PageSeo } from "components/MetaDecorator";
+const content = require("data/content");
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
@@ -12,6 +14,11 @@ const Aside = dynamic(() => import("components/Aside"));
 function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
   return (
     <>
+      <PageSeo
+        title={`${content.title}`}
+        description={`${content.description}`}
+        url={`${content.siteUrl}`}
+      />
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />

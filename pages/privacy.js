@@ -1,6 +1,7 @@
 import { getPrivacy } from "lib/api";
 import BlogContent from "components/BlogContent";
-import { NextSeo } from "next-seo";
+import { PageSeo } from "components/MetaDecorator";
+const content = require("data/content");
 import dynamic from "next/dynamic";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
@@ -10,7 +11,11 @@ const Aside = dynamic(() => import("components/Aside"));
 const Privacy = ({ privacyData }) => {
   return (
     <>
-      <NextSeo title='Privacy at Codevo' />
+      <PageSeo
+        title='Privacy Policy'
+        description='Privacy Policy At Codevo'
+        url={`${content.siteUrl}/privacy`}
+      />
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />

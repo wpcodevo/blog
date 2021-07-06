@@ -1,6 +1,17 @@
 {
-  "pageTitle": "Codevo | A place to improve your JAVASCRIPT, HTML and CSS Skills",
-  "pageDescription": "Tutorials about modern html5, css3, JavaScript, Frameworks such as React, Vuejs, Angular and all things related to Web development.",
-  "pageImageAlt": "The image contains the logo of this blog",
-  "pageImageUrl": "https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/blog.jpg"
+  "title": "Codevo | A place to improve your JAVASCRIPT, HTML and CSS Skills",
+  "description": "Tutorials about modern html5, css3, JavaScript, Frameworks such as React, Vuejs, Angular and all things related to Web development.",
+  "imageAlt": "The image contains the logo of this blog",
+  "imageUrl": "https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/blog.jpg",
+  "author": "Ziddah Edem",
+  "siteUrl": "https://www.wpcodevo.com",
+  "logo": "../public/images/logo.jpg",
+  "locale": "en-US",
+  "language": "en-us",
+  "email": "contact@wpcodevo.com",
+  "github": "https://github.com/ziddahedem",
+  "twitter": "https://twitter.com/EdemZiddah2",
+  "facebook": "https://web.facebook.com/codevv/",
+  "youtube": "https://www.youtube.com/channel/UCRITDeojq9IsQfTWPeJ-pDQ?sub_confirmation=1",
+  "linkedin": "https://www.linkedin.com"
 }

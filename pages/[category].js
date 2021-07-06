@@ -3,7 +3,8 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Error from "next/error";
 import { useGetBlogsPages } from "actions/Pagination";
-import { NextSeo } from "next-seo";
+import { PageSeo } from "components/MetaDecorator";
+const content = require("data/content");
 const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
@@ -57,7 +58,12 @@ function Category({ blogs, category }) {
 
   return (
     <>
-      <NextSeo title={`Category - ${category}`} />
+      <PageSeo
+        title={`All Articles of ${category} - Codevo`}
+        description={`Browse all All Articles of ${category} - Codevo`}
+        url={`${content.siteUrl}/${category}`}
+      />
+
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
@@ -98,6 +104,7 @@ export default Category;
 export async function getStaticProps({ params }) {
   const category = params.category;
   const blogs = await getBlogsByCategory({ category, offset: 0, date: "desc" });
+  console.log(blogs);
   return {
     props: {
       blogs,

@@ -1,6 +1,7 @@
 import { getContact } from "lib/api";
 import BlogContent from "components/BlogContent";
-import { NextSeo } from "next-seo";
+import { PageSeo } from "components/MetaDecorator";
+const content = require("data/content");
 import dynamic from "next/dynamic";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
@@ -11,7 +12,11 @@ const Aside = dynamic(() => import("components/Aside"));
 const Contact = ({ contactData }) => {
   return (
     <>
-      <NextSeo title='Contact Codevo' />
+      <PageSeo
+        title={`Contact - ${content.author}`}
+        description={`About me - ${content.description}`}
+        url={`${content.siteUrl}/contact`}
+      />
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />

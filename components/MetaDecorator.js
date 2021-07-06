@@ -1,8 +1,75 @@
 import { useEffect } from "react";
-import { NextSeo } from "next-seo";
+import { NextSeo, ArticleJsonLd } from "next-seo";
 const metaContent = require("data/metaContent");
+const content = require("data/content");
 
-const MetaDecorator = ({ title, description, imageUrl, imageAlt }) => {
+export const SEO = {
+  title: content.title,
+  description: content.description,
+  openGraph: {
+    type: "website",
+    locale: content.language,
+    url: content.siteUrl,
+    title: content.title,
+    description: content.description,
+    images: [
+      {
+        url: `${content.imageUrl}`,
+        alt: content.imageAlt,
+        width: 1200,
+        height: 600,
+      },
+    ],
+  },
+  twitter: {
+    handle: content.twitter,
+    site: content.twitter,
+    cardType: "summary_large_image",
+  },
+  additionalMetaTags: [
+    {
+      name: "author",
+      content: content.author,
+    },
+  ],
+};
+
+export const PageSeo = ({ title, description, url, tags = [] }) => {
+  return (
+    <NextSeo
+      title={`${title}`}
+      description={description}
+      canonical={url}
+      openGraph={{
+        type: "article",
+        url,
+        title,
+        description,
+        article: {
+          tags,
+        },
+        images: [
+          {
+            url: `${content.imageUrl}`,
+            width: 800,
+            height: 600,
+            alt: `${content.imageAlt}`,
+          },
+        ],
+      }}
+    />
+  );
+};
+
+const MetaDecorator = ({
+  title,
+  description,
+  imageUrl,
+  createdAt,
+  imageAlt,
+  updatedAt,
+  tags,
+}) => {
   let url;
 
   useEffect(() => {
@@ -10,33 +77,60 @@ const MetaDecorator = ({ title, description, imageUrl, imageAlt }) => {
       metaContent.hostName + window.location.particle + window.location.search;
   }, []);
   return (
-    <NextSeo
-      title={title}
-      description={description}
-      canonical={url}
-      openGraph={{
-        url,
-        title,
-        description,
-        images: [
+    <>
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={url}
+        openGraph={{
+          type: "article",
+          url,
+          title,
+          description,
+          article: {
+            publishedTime: createdAt,
+            modifiedTime: updatedAt,
+            authors: [`${content.siteUrl}/about`],
+            tags,
+          },
+          images: [
+            {
+              url: imageUrl,
+              width: 800,
+              height: 600,
+              alt: imageAlt,
+            },
+          ],
+          site_name: "Codevo",
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image",
+        }}
+        facebook={{
+          appId: "@appId",
+        }}
+      />
+      <ArticleJsonLd
+        authorName={content.author}
+        dateModified={updatedAt}
+        datePublished={createdAt}
+        description={description}
+        images={[
           {
             url: imageUrl,
             width: 800,
             height: 600,
             alt: imageAlt,
           },
-        ],
-        site_name: "Codevo",
-      }}
-      twitter={{
-        handle: "@handle",
-        site: "@site",
-        cardType: "summary_large_image",
-      }}
-      facebook={{
-        appId: "@appId",
-      }}
-    />
+        ]}
+        publisherName={content.author}
+        title={title}
+        url={url}
+        publisherLogo={content.logo}
+      />
+    </>
   );
 };
 

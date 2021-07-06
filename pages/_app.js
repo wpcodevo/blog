@@ -4,7 +4,9 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import PageLayout from "components/PageLayout";
 import ScrollTop from "components/ScrollTop";
-import MetaDecorator from "components/MetaDecorator";
+import { SEO } from "components/MetaDecorator";
+import { DefaultSeo } from "next-seo";
+
 const content = require("data/content");
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
@@ -45,12 +47,7 @@ const App = ({ Component, pageProps }) => {
         />
       )}
 
-      <MetaDecorator
-        title={content.pageTitle}
-        description={content.pageDescription}
-        imageUrl={content.pageImageUrl}
-        imageAlt={content.pageImageAlt}
-      />
+      <DefaultSeo {...SEO} />
       <PageLayout className='container'>
         <Component {...pageProps} />
       </PageLayout>

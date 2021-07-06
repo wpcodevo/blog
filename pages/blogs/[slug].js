@@ -23,13 +23,15 @@ import NewsLetter from "components/NewsLetter";
 
 const BlogContent = dynamic(() => import("components/BlogContent"));
 
-function BlogDetails({ blog: initialBlog, preview }) {
+function BlogDetails({ blog: initialBlog, blogTags, preview }) {
   const router = useRouter();
   const [blog, setBlog] = useState(initialBlog);
 
   if (!router.isFallback && !initialBlog?.slug) {
     return <Error statusCode={404} />;
   }
+
+  const tags = blogTags?.map((tag) => tag.value.slice(1));
 
   if (router.isFallback) {
     return (
@@ -68,6 +70,9 @@ function BlogDetails({ blog: initialBlog, preview }) {
         description={initialBlog.subtitle}
         imageUrl={urlFor(initialBlog.coverImage).url()}
         imageAlt={initialBlog.title}
+        updatedAt={initialBlog._updatedAt}
+        createdAt={initialBlog._createdAt}
+        tags={tags}
       />
       {/* Google Ads */}
       <div style={{ margin: "1rem 0 1rem" }}>
@@ -140,10 +145,12 @@ export default BlogDetails;
 
 export async function getStaticProps({ params, preview = false, previewData }) {
   const blog = await getBlogBySlug(params.slug, preview);
+  const blogTags = blog.tags;
   return {
     props: {
       preview,
       blog: blog || null,
+      blogTags: blogTags || [],
     },
     revalidate: 1,
   };

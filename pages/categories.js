@@ -2,16 +2,23 @@ import { Image } from "react-bootstrap";
 import { urlFor } from "lib/api";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { NextSeo } from "next-seo";
+import { PageSeo } from "components/MetaDecorator";
+const content = require("data/content");
 import { getCategories } from "lib/api";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
 
 const Categories = ({ categories }) => {
+  const tags = categories?.map((category) => category.title);
   return (
     <>
-      <NextSeo title='Categories' />
+      <PageSeo
+        title={`Browse all categories - Codevo`}
+        description={`Browse all categories - Codevo`}
+        url={`${content.siteUrl}/categories`}
+        tags={tags}
+      />
 
       <div style={{ margin: "1rem 0 1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />

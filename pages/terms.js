@@ -1,6 +1,7 @@
 import { getTerms } from "lib/api";
 import BlogContent from "components/BlogContent";
-import { NextSeo } from "next-seo";
+import { PageSeo } from "components/MetaDecorator";
+const content = require("data/content");
 import dynamic from "next/dynamic";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
@@ -10,7 +11,11 @@ const Aside = dynamic(() => import("components/Aside"));
 const Terms = ({ termsData }) => {
   return (
     <>
-      <NextSeo title='Terms of Use' />
+      <PageSeo
+        title='Term of Use'
+        description='Our Terms of Use'
+        url={`${content.siteUrl}/terms`}
+      />
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />

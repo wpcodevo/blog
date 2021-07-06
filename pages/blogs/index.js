@@ -3,7 +3,8 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Error from "next/error";
 import { useGetBlogs } from "actions/Pagination";
-import { NextSeo } from "next-seo";
+import { PageSeo } from "components/MetaDecorator";
+const content = require("data/content");
 const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
@@ -56,7 +57,12 @@ function Blogs({ blogs }) {
 
   return (
     <>
-      <NextSeo title='Codevo Blogs' />
+      <PageSeo
+        title={`Browse all Blogs - Codevo`}
+        description={`Browse all Blogs - Codevo`}
+        url={`${content.siteUrl}/blogs`}
+      />
+
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
