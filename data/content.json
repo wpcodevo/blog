@@ -5,7 +5,7 @@
   "imageUrl": "https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/blog.jpg",
   "author": "Ziddah Edem",
   "siteUrl": "https://www.wpcodevo.com",
-  "logo": "../public/images/logo.jpg",
+  "logo": "https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/logo.jpg",
   "locale": "en-US",
   "language": "en-us",
   "email": "contact@wpcodevo.com",
