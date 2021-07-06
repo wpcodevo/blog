@@ -57,6 +57,12 @@ export const PageSeo = ({ title, description, url, tags = [] }) => {
           },
         ],
       }}
+      additionalMetaTags={[
+        {
+          name: "twitter:image",
+          content: `${content.imageUrl}`,
+        },
+      ]}
     />
   );
 };
