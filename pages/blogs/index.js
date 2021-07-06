@@ -11,7 +11,7 @@ const GoogleAds = dynamic(() => import("components/GoogleAds"), {
 import { getPaginatedBlogs } from "lib/api";
 const CardListItem = dynamic(() => import("components/CardListItem"));
 const CardsItemRow = dynamic(() => import("components/CardsItemRow"));
-const Aside = dynamic(() => import("components/Aside"));
+const Aside3 = dynamic(() => import("components/Aside3"));
 const Breadcrumbs = dynamic(() => import("nextjs-breadcrumbs"));
 
 const BlogList = ({ data = [], filter }) => {
@@ -88,6 +88,9 @@ function Blogs({ blogs }) {
             <div className={!filter.view.list ? "d-grid" : ""}>
               <BlogList data={data || [blogs]} filter={filter} />
             </div>
+            <div style={{ marginTop: "1rem" }}>
+              <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+            </div>
             {/* Button */}
             <div style={{ textAlign: "center", margin: "50px 0 20px" }}>
               <button
@@ -101,7 +104,7 @@ function Blogs({ blogs }) {
           </main>
         </div>
         {/* Aside */}
-        <Aside />
+        <Aside3 />
       </div>
     </>
   );
