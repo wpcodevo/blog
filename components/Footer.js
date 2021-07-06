@@ -18,12 +18,16 @@ const Footer = () => {
         <div className='d-flex'>
           <Link href='/'>
             <a>
-              <h2 style={{ fontSize: "40px" }}>Coding Tutorials</h2>
+              <span style={{ fontSize: "40px", fontWeight: 700 }}>
+                Coding Tutorials
+              </span>
             </a>
           </Link>
         </div>
         <div>
-          <h3 style={{ color: "white" }}>About</h3>
+          <span className='bold' style={{ color: "white" }}>
+            About
+          </span>
           <p>
             Codevo is a blog where we post blogs related to HTML CSS JavaScript
             & Nodejs along with amazing coding stuff.
@@ -38,7 +42,9 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h3 style={{ color: "white" }}>Follow</h3>
+          <span className='bold' style={{ color: "white" }}>
+            Follow
+          </span>
           <div className='icons d-flex'>
             <div className='social-icons'>
               <Link href='https://web.facebook.com/codevv/'>

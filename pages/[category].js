@@ -104,7 +104,6 @@ export default Category;
 export async function getStaticProps({ params }) {
   const category = params.category;
   const blogs = await getBlogsByCategory({ category, offset: 0, date: "desc" });
-  console.log(blogs);
   return {
     props: {
       blogs,

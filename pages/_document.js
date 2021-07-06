@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
+          <link rel='canonical' href='https://www.wpcodevo.com/' />
           <meta
             name='p:domain_verify'
             content='263ed5cf94ded2830175910f7d8f7183'
