@@ -72,15 +72,12 @@ const serializers = {
   marks: {
     color: ({ mark, children }) => {
       return (
-        <span style={{ color: mark.hex }}>
+        <div style={{ color: mark.hex }}>
           {children}
-          <div style={{ margin: "1rem 0 1rem" }}>
-            <GoogleAds
-              layoutKey='-5s+ck+w-bk+hr'
-              slot={process.env.NATIVE_ADS}
-            />
+          <div style={{ margin: 0 }}>
+            <GoogleAds layoutKey='-5s+ck+w-bk+hr' slot='3195818756' />
           </div>
-        </span>
+        </div>
       );
     },
     link: ({ mark, children }) => {

@@ -33,7 +33,7 @@ const Aside2 = ({ blog }) => {
       <div className='subscribe widget'>
         <p className='heading'>
           Over 100+ Readers
-          <p>Get fresh content from Codevo</p>
+          <span>Get fresh content from Codevo</span>
         </p>
         <div className='social-icons d-flex'>
           <Link href='https://web.facebook.com/codevv/'>
@@ -151,6 +151,9 @@ const Aside2 = ({ blog }) => {
         {blog.tags.map((tag, index) => (
           <div key={`${index}-list`}>{tag.value}</div>
         ))}
+      </div>
+      <div className={`widget advertisement`}>
+        <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
       </div>
     </aside>
   );

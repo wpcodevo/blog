@@ -26,7 +26,7 @@ const Aside3 = () => {
       <div className='subscribe widget'>
         <p className='heading'>
           Over 100+ Readers
-          <p>Get fresh content from Codevo</p>
+          <span>Get fresh content from Codevo</span>
         </p>
         <div className='social-icons d-flex'>
           <Link href='https://web.facebook.com/codevv/'>

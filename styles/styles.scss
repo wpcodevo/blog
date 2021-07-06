@@ -746,11 +746,12 @@ p {
       font-size: 18px;
       text-align: center;
 
-      p {
+      span {
         font-size: 14px;
         color: #999;
         font-weight: 400;
         padding: 3px 0 0;
+        display: block;
       }
     }
 

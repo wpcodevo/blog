@@ -111,6 +111,7 @@ const NewsLetter = () => {
         // onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
+        ariaHideApp={false}
       >
         <div className='popup' style={{ display: "table" }}>
           <div className='close' onClick={closeModal}>
