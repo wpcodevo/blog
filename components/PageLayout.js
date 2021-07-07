@@ -1,9 +1,7 @@
 import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0, width: 0 }}></div>,
-});
+import GoogleAds from "components/GoogleAds";
+import BlogNavBar from "./Navbar";
 const Footer = dynamic(() => import("./Footer"));
-const BlogNavBar = dynamic(() => import("./Navbar"));
 
 const PageLayout = ({ children, className }) => {
   return (

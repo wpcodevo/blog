@@ -138,7 +138,7 @@ const NewsLetter = () => {
             </p>
             <form onSubmit={handleSubmit(onSubmit)} disabled>
               <input
-                autocomplete='off'
+                autoComplete='off'
                 className={`field ${errors.first_name ? "danger" : ""}`}
                 name='first_name'
                 type='text'
@@ -150,7 +150,7 @@ const NewsLetter = () => {
                 Please enter your name here!
               </span>
               <input
-                autocomplete='off'
+                autoComplete='off'
                 className={`field ${errors.email ? "danger" : ""}`}
                 name='email'
                 type='email'

@@ -8,30 +8,22 @@ import { getBlogBySlug, getPaginatedBlogs, onBlogUpdate } from "lib/api";
 import { urlFor } from "lib/api";
 import Layout from "components/Layout";
 import MetaDecorator from "components/MetaDecorator";
-const ShareSocial = dynamic(() => import("components/ShareSocial"));
+import ShareSocial from "components/ShareSocial";
 const DownloadFile = dynamic(() => import("components/DownloadFile"));
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
+import Breadcrumbs from "nextjs-breadcrumbs";
 import { format, parseISO } from "date-fns";
-const Breadcrumbs = dynamic(() => import("nextjs-breadcrumbs"));
-
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
 const CommentForm = dynamic(() => import("components/CommentForm"));
 import { Comments } from "components/Comments";
 import NewsLetter from "components/NewsLetter";
+import BlogContent from "components/BlogContent";
 
-const BlogContent = dynamic(() => import("components/BlogContent"));
-
-function BlogDetails({ blog: initialBlog, blogTags, preview }) {
+function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
   const [blog, setBlog] = useState(initialBlog);
-
-  if (!router.isFallback && !initialBlog?.slug) {
-    return <Error statusCode={404} />;
-  }
-
-  const tags = blogTags?.map((tag) => tag.value.slice(1));
 
   if (router.isFallback) {
     return (
@@ -51,6 +43,12 @@ function BlogDetails({ blog: initialBlog, blogTags, preview }) {
       </div>
     );
   }
+
+  if (!router.isFallback && !initialBlog?.slug) {
+    return <Error statusCode={404} />;
+  }
+
+  const tags = blog?.tags.map((tag) => tag.value.slice(1));
 
   function setUpdate() {
     let sub;
@@ -142,12 +140,10 @@ export default BlogDetails;
 
 export async function getStaticProps({ params, preview = false, previewData }) {
   const blog = await getBlogBySlug(params.slug, preview);
-  const blogTags = blog.tags;
   return {
     props: {
       preview,
       blog: blog || null,
-      blogTags: blogTags || [],
     },
     revalidate: 1,
   };

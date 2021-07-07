@@ -1,12 +1,9 @@
 import { getAbout } from "lib/api";
 import BlogContent from "components/BlogContent";
-import dynamic from "next/dynamic";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
-const Aside = dynamic(() => import("components/Aside"));
+import GoogleAds from "components/GoogleAds";
+import Aside from "components/Aside";
 
 const About = ({ aboutData }) => {
   return (

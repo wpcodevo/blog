@@ -840,6 +840,11 @@ p {
     .card-body {
       padding: 0 !important;
 
+      .blockContent-title {
+        font-size: 20px;
+        line-height: 30px;
+      }
+
       &-item {
         padding: 10px !important;
       }

@@ -1,15 +1,17 @@
-import { NextSeo } from "next-seo";
-import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
-const Aside = dynamic(() => import("components/Aside"));
+import { PageSeo } from "components/MetaDecorator";
+const content = require("data/content");
+import GoogleAds from "components/GoogleAds";
+import Aside from "components/Aside";
 import { Image } from "react-bootstrap";
 
 const Subscription = () => {
   return (
     <>
-      <NextSeo title='Email Confirmation' />
+      <PageSeo
+        title='Email Confirmation'
+        description='Confirm email to successfully subscribe to Codevo'
+        url={`${content.siteUrl}/confirmsubscription`}
+      />
       {/* Google Ads */}
       <div style={{ marginTop: "1rem" }}>
         <GoogleAds slot={process.env.HORIZONTAL_SLOT} />

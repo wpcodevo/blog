@@ -1,26 +1,10 @@
 import Link from "next/link";
-import { Spinner } from "react-bootstrap";
-import dynamic from "next/dynamic";
 import { urlFor } from "lib/api";
 import getYouTubeID from "get-youtube-id";
-const BlockContent = dynamic(() => import("@sanity/block-content-to-react"), {
-  loading: () => (
-    <div style={{ textAlign: "center" }}>
-      <Spinner animation='border' variant='danger' />
-    </div>
-  ),
-});
-
-const HighLightCode = dynamic(() => import("components/HighLightCode"));
-const YouTube = dynamic(() => import("react-youtube"), {
-  loading: () => (
-    <div style={{ width: "100%", height: "45vh", background: "#222" }} />
-  ),
-});
-
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
+import BlockContent from "@sanity/block-content-to-react";
+import HighLightCode from "components/HighLightCode";
+import YouTube from "react-youtube";
+import GoogleAds from "components/GoogleAds";
 
 const serializers = {
   types: {

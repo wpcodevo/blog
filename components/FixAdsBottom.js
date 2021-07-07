@@ -1,7 +1,4 @@
-import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
+import GoogleAds from "components/GoogleAds";
 
 const FixAdsBottom = () => {
   return (

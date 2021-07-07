@@ -5,15 +5,15 @@ import Error from "next/error";
 import { useGetBlogs } from "actions/Pagination";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
 });
+import FilteringMenu from "components/FilteringMenu";
 import { getPaginatedBlogs } from "lib/api";
-const CardListItem = dynamic(() => import("components/CardListItem"));
-const CardsItemRow = dynamic(() => import("components/CardsItemRow"));
-const Aside3 = dynamic(() => import("components/Aside3"));
-const Breadcrumbs = dynamic(() => import("nextjs-breadcrumbs"));
+import CardListItem from "components/CardListItem";
+import CardsItemRow from "components/CardsItemRow";
+import Aside3 from "components/Aside3";
+import Breadcrumbs from "nextjs-breadcrumbs";
 
 const BlogList = ({ data = [], filter }) => {
   return data.map((page) => {
@@ -39,7 +39,7 @@ const BlogList = ({ data = [], filter }) => {
   });
 };
 
-function Blogs({ blogs }) {
+function AllBlogs({ blogs }) {
   const [filter, setFilter] = useState({
     view: { list: 1 },
     date: { asc: 0 },
@@ -116,7 +116,7 @@ function Blogs({ blogs }) {
   );
 }
 
-export default Blogs;
+export default AllBlogs;
 
 export async function getStaticProps() {
   const blogs = await getPaginatedBlogs({ offset: 0, date: "desc" });

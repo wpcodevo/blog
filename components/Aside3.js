@@ -8,17 +8,8 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
-const AsideCateogories = dynamic(() => import("components/AsideCategories"), {
-  loading: () => (
-    <div
-      style={{ height: "400px", width: "100%", backgroundColor: "white" }}
-    ></div>
-  ),
-});
+import GoogleAds from "components/GoogleAds";
+import AsideCateogories from "components/AsideCategories";
 
 const Aside3 = () => {
   return (
@@ -103,8 +94,6 @@ const Aside3 = () => {
               alt='hostinger coupon code'
               width='300'
               height='400'
-              placeholder='blur'
-              blurDataURL='LGFFaXYk^6#M@-5c,1J5@[or[Q6.'
             />
           </a>
         </Link>
@@ -120,8 +109,6 @@ const Aside3 = () => {
               alt='bluehost coupon code'
               width='300'
               height='400'
-              placeholder='blur'
-              blurDataURL='LGFFaXYk^6#M@-5c,1J5@[or[Q6.'
             />
           </a>
         </Link>

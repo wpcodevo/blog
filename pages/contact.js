@@ -2,12 +2,9 @@ import { getContact } from "lib/api";
 import BlogContent from "components/BlogContent";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
+import GoogleAds from "components/GoogleAds";
 import Form from "components/Form";
-const Aside = dynamic(() => import("components/Aside"));
+import Aside from "components/Aside";
 
 const Contact = ({ contactData }) => {
   return (

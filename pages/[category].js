@@ -1,19 +1,15 @@
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Error from "next/error";
 import { useGetBlogsPages } from "actions/Pagination";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-const FilteringMenu = dynamic(() => import("components/FilteringMenu"));
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
+import GoogleAds from "components/GoogleAds";
 import { getBlogsByCategory, getCategories } from "lib/api";
-
-const CardListItem = dynamic(() => import("components/CardListItem"));
-const CardsItemRow = dynamic(() => import("components/CardsItemRow"));
-const Aside = dynamic(() => import("components/Aside"));
+import FilteringMenu from "components/FilteringMenu";
+import CardListItem from "components/CardListItem";
+import CardsItemRow from "components/CardsItemRow";
+import Aside from "components/Aside";
 
 const BlogList = ({ data = [], filter }) => {
   return data.map((page) => {

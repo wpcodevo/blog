@@ -1,13 +1,10 @@
 import { Image } from "react-bootstrap";
 import { urlFor } from "lib/api";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
 import { getCategories } from "lib/api";
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
+import GoogleAds from "components/GoogleAds";
 
 const Categories = ({ categories }) => {
   const tags = categories?.map((category) => category.title);

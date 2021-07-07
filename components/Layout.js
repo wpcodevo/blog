@@ -1,5 +1,4 @@
-import dynamic from "next/dynamic";
-const Aside2 = dynamic(() => import("./Aside2"));
+import Aside2 from "./Aside2";
 
 const Layout = ({ children, blog }) => {
   return (

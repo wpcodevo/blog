@@ -5,11 +5,9 @@ import NewsListItem from "components/NewsListItem";
 import DealsListItem from "components/DealsListItem";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
+import GoogleAds from "components/GoogleAds";
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
-const Aside = dynamic(() => import("components/Aside"));
+import Aside from "components/Aside";
 
 function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
   return (

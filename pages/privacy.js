@@ -2,11 +2,8 @@ import { getPrivacy } from "lib/api";
 import BlogContent from "components/BlogContent";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
-const Aside = dynamic(() => import("components/Aside"));
+import GoogleAds from "components/GoogleAds";
+import Aside from "components/Aside";
 
 const Privacy = ({ privacyData }) => {
   return (

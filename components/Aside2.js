@@ -7,24 +7,9 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
-const PopularBlogs = dynamic(() => import("components/PopularBlogs"), {
-  loading: () => (
-    <div
-      style={{ height: "100px", width: "100%", backgroundColor: "white" }}
-    ></div>
-  ),
-});
-const AsideCateogories = dynamic(() => import("components/AsideCategories"), {
-  loading: () => (
-    <div
-      style={{ height: "400px", width: "100%", backgroundColor: "white" }}
-    ></div>
-  ),
-});
+import GoogleAds from "components/GoogleAds";
+import PopularBlogs from "components/PopularBlogs";
+import AsideCateogories from "components/AsideCategories";
 import Image from "next/image";
 
 const Aside2 = ({ blog }) => {
@@ -102,9 +87,9 @@ const Aside2 = ({ blog }) => {
         <GoogleAds slot={process.env.VERTICAL_SLOT} />
       </div>
       <div className='widget'>
-        <div className='heading'>
+        <p style={{ fontSize: 23, textAlign: "center" }}>
           <span className='orange-text'>Popular</span> Blogs
-        </div>
+        </p>
         <PopularBlogs />
       </div>
 
@@ -121,8 +106,6 @@ const Aside2 = ({ blog }) => {
               alt='hostinger coupon code'
               width='300'
               height='400'
-              placeholder='blur'
-              blurDataURL='LGFFaXYk^6#M@-5c,1J5@[or[Q6.'
             />
           </a>
         </Link>
@@ -138,8 +121,6 @@ const Aside2 = ({ blog }) => {
               alt='bluehost coupon code'
               width='300'
               height='400'
-              placeholder='blur'
-              blurDataURL='LGFFaXYk^6#M@-5c,1J5@[or[Q6.'
             />
           </a>
         </Link>

@@ -8,10 +8,7 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
+import GoogleAds from "components/GoogleAds";
 
 const Aside = () => {
   return (
@@ -96,8 +93,6 @@ const Aside = () => {
               alt='hostinger coupon code'
               width='300'
               height='400'
-              placeholder='blur'
-              blurDataURL='LGFFaXYk^6#M@-5c,1J5@[or[Q6.'
             />
           </a>
         </Link>
@@ -113,8 +108,6 @@ const Aside = () => {
               alt='bluehost coupon code'
               width='300'
               height='400'
-              placeholder='blur'
-              blurDataURL='LGFFaXYk^6#M@-5c,1J5@[or[Q6.'
             />
           </a>
         </Link>

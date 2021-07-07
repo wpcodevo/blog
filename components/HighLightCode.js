@@ -1,13 +1,10 @@
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaClipboard } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
 import { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/nightOwl";
-const Highlight = dynamic(() => import("prism-react-renderer"), {
-  loading: () => <div style={{ height: "45vh", background: "#222" }} />,
-});
+import Highlight from "prism-react-renderer";
 
 const HighLightCode = ({ code, language, filename }) => {
   const [isCopy, setisCopy] = useState(false);
