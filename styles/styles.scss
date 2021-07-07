@@ -712,6 +712,7 @@ p {
     }
 
     &.categories {
+      height: 298px;
       a {
         display: block;
         border: 1px solid #ddd;
@@ -866,10 +867,6 @@ p {
       padding: 5px 7px;
       margin-right: 5px;
     }
-  }
-
-  .widget.advertisement {
-    max-height: 20rem !important;
   }
 
   .widget {
@@ -1424,7 +1421,16 @@ p {
   }
 }
 
+.horizontal {
+  height: 200px;
+  overflow: hidden;
+}
+
 @media (max-width: 567px) {
+  .horizontal {
+    height: 100px !important;
+  }
+
   .popup {
     form {
       input {

@@ -1,10 +1,19 @@
 import Link from "next/link";
 import { urlFor } from "lib/api";
 import getYouTubeID from "get-youtube-id";
+import dynamic from "next/dynamic";
 import BlockContent from "@sanity/block-content-to-react";
-import HighLightCode from "components/HighLightCode";
-import YouTube from "react-youtube";
 import GoogleAds from "components/GoogleAds";
+const YouTube = dynamic(() => import("react-youtube"), {
+  loading: () => (
+    <div style={{ width: "100%", height: "45vh", background: "#222" }} />
+  ),
+});
+const HighLightCode = dynamic(() => import("components/HighLightCode"), {
+  loading: () => (
+    <div style={{ width: "100%", height: "45vh", background: "#222" }} />
+  ),
+});
 
 const serializers = {
   types: {

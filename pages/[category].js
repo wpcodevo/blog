@@ -4,7 +4,7 @@ import Error from "next/error";
 import { useGetBlogsPages } from "actions/Pagination";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-import GoogleAds from "components/GoogleAds";
+import AdSense from "react-adsense";
 import { getBlogsByCategory, getCategories } from "lib/api";
 import FilteringMenu from "components/FilteringMenu";
 import CardListItem from "components/CardListItem";
@@ -61,8 +61,14 @@ function Category({ blogs, category }) {
       />
 
       {/* Google Ads */}
-      <div style={{ marginTop: "1rem" }}>
-        <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+      <div className='horizontal' style={{ margin: "1rem 0 1rem" }}>
+        <AdSense.Google
+          client='ca-pub-1057373061381635'
+          slot='9967007599'
+          style={{ display: "block", height: 200 }}
+          format=''
+          layout=''
+        />
       </div>
       <FilteringMenu
         filter={filter}

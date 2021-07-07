@@ -83,10 +83,15 @@ const Aside2 = ({ blog }) => {
           </Link>
         </div>
       </div>
-      <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <GoogleAds slot={process.env.VERTICAL_SLOT} />
+      <div className='widget' style={{ maxHeight: "200px !important" }}>
+        <GoogleAds
+          slot={process.env.VERTICAL_SLOT}
+          styles={{ height: "200px", display: "block" }}
+          layout=''
+          format=''
+        />
       </div>
-      <div className='widget'>
+      <div className='widget' style={{ height: 517 }}>
         <p style={{ fontSize: 23, textAlign: "center" }}>
           <span className='orange-text'>Popular</span> Blogs
         </p>
@@ -125,8 +130,13 @@ const Aside2 = ({ blog }) => {
           </a>
         </Link>
       </div>
-      <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <GoogleAds slot={process.env.VERTICAL_SLOT} />
+      <div className='widget' style={{ maxHeight: "200px !important" }}>
+        <GoogleAds
+          slot={process.env.VERTICAL_SLOT}
+          styles={{ height: "200px", display: "block" }}
+          layout=''
+          format=''
+        />
       </div>
       <div className='widget tags'>
         {blog.tags.map((tag, index) => (

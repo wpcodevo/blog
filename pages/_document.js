@@ -29,6 +29,18 @@ class MyDocument extends Document {
             crossOrigin='true'
           />
           <link
+            rel='preload'
+            href='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+            as='script'
+            type='text/javascript'
+          />
+          <link
+            rel='preload'
+            href='https://apis.google.com/js/platform.js'
+            as='script'
+            type='text/javascript'
+          />
+          <link
             href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap'
             rel='stylesheet'
           />

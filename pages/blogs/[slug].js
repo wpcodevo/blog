@@ -13,9 +13,8 @@ const DownloadFile = dynamic(() => import("components/DownloadFile"));
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 import Breadcrumbs from "nextjs-breadcrumbs";
 import { format, parseISO } from "date-fns";
-const GoogleAds = dynamic(() => import("components/GoogleAds"), {
-  loading: () => <div style={{ height: 0 }}></div>,
-});
+import AdSense from "react-adsense";
+import GoogleAds from "components/GoogleAds";
 const CommentForm = dynamic(() => import("components/CommentForm"));
 import { Comments } from "components/Comments";
 import NewsLetter from "components/NewsLetter";
@@ -73,8 +72,14 @@ function BlogDetails({ blog: initialBlog, preview }) {
         tags={tags}
       />
       {/* Google Ads */}
-      <div style={{ margin: "1rem 0 1rem" }}>
-        <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+      <div className='horizontal' style={{ margin: "1rem 0 1rem" }}>
+        <AdSense.Google
+          client='ca-pub-1057373061381635'
+          slot='9967007599'
+          style={{ display: "block", height: 200 }}
+          format=''
+          layout=''
+        />
       </div>
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}

@@ -29,7 +29,10 @@ const App = ({ Component, pageProps }) => {
       )}
 
       {process.env.NODE_ENV === "production" && (
-        <Script src='https://apis.google.com/js/platform.js' />
+        <Script
+          strategy='lazyOnload'
+          src='https://apis.google.com/js/platform.js'
+        />
       )}
 
       {process.env.NODE_ENV === "production" && (
