@@ -81,10 +81,10 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div className='widget' style={{ maxHeight: "200px !important" }}>
+      <div className='widget' style={{ maxHeight: "300px !important" }}>
         <GoogleAds
           slot={process.env.VERTICAL_SLOT}
-          styles={{ height: "200px", display: "block" }}
+          styles={{ height: "300px", display: "block" }}
           layout=''
           format=''
         />
@@ -102,10 +102,10 @@ const Aside = () => {
           </a>
         </Link>
       </div>
-      <div className='widget' style={{ maxHeight: "200px !important" }}>
+      <div className='widget' style={{ maxHeight: "300px !important" }}>
         <GoogleAds
           slot={process.env.VERTICAL_SLOT}
-          styles={{ height: "200px", display: "block" }}
+          styles={{ height: "300px", display: "block" }}
           layout=''
           format=''
         />
@@ -122,10 +122,10 @@ const Aside = () => {
           </a>
         </Link>
       </div>
-      <div className='widget' style={{ maxHeight: "200px !important" }}>
+      <div className='widget' style={{ maxHeight: "300px !important" }}>
         <GoogleAds
           slot={process.env.VERTICAL_SLOT}
-          styles={{ height: "200px", display: "block" }}
+          styles={{ height: "300px", display: "block" }}
           layout=''
           format=''
         />
