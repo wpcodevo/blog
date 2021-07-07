@@ -125,8 +125,8 @@ const Aside2 = ({ blog }) => {
           </a>
         </Link>
       </div>
-      <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <GoogleAds slot={process.env.VERTICAL_SLOT} />
+      <div className={`widget advertisement`}>
+        <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
       </div>
       <div className='widget tags'>
         {blog.tags.map((tag, index) => (
