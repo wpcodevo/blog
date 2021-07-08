@@ -319,6 +319,9 @@ p {
   overflow: auto;
 
   button {
+    position: absolute;
+    right: 5%;
+    top: 2%;
     outline: none;
     border: none;
     background-color: transparent;
@@ -332,9 +335,6 @@ p {
 
 .code-copy {
   font-size: 23px;
-  position: absolute;
-  right: 5%;
-  top: 2%;
   color: #fff;
 }
 
