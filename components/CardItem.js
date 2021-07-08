@@ -2,6 +2,7 @@ import { Card, Image } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
 import { format, parseISO } from "date-fns";
+import { CustomImage } from "lib/sanity";
 
 const CardItem = ({ title, date, smallImage, author, link }) => {
   return (
@@ -42,6 +43,7 @@ const CardItem = ({ title, date, smallImage, author, link }) => {
               src={urlFor(author?.avatar).width(40).height(40).fit("max").url()}
               alt={author.alt}
             />
+            {/* <CustomImage data={author} max={567} w={40} other={50} /> */}
             <div className='d-col mx-2'>
               <Card.Title
                 style={{

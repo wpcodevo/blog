@@ -10,4 +10,7 @@ module.exports = {
     DATA_YOUTUBE_ID: process.env.DATA_YOUTUBE_ID,
     DATA_AD_CLIENT: process.env.DATA_AD_CLIENT,
   },
+  images: {
+		domains: ['cdn.sanity.io']
+	}
 };

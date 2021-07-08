@@ -1563,6 +1563,13 @@ native-url@0.3.4:
   dependencies:
     querystring "^0.2.0"
 
+next-sanity-image@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/next-sanity-image/-/next-sanity-image-3.1.4.tgz#fae49df764b45cd968a9661cab4e7e8b85865b1c"
+  integrity sha512-I4Falal5lZQv+LLwgB5snw0vtW1rtzAa6VB7+72bxwSAcX5MI2O/KII1C4U1WDFA+CW7dJUVCkRjNP8BB7dE9A==
+  dependencies:
+    "@sanity/image-url" "^0.140.22"
+
 next-sanity@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/next-sanity/-/next-sanity-0.2.0.tgz#4e2d01ef6eabfc870f85d6e7b4915d2bcc9c479f"

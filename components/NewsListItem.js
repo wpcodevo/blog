@@ -13,6 +13,7 @@ const NewsListItem = ({ shorttitle, smallImage, link }) => {
               imageRendering: "-webkit-optimize-contrast",
               width: "98px",
               height: "98px",
+              objectFit: "cover",
             }}
             src={urlFor(smallImage).width(98).height(98).fit("clip").url()}
             alt={smallImage.alt}
