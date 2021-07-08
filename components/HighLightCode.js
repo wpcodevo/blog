@@ -16,7 +16,7 @@ const HighLightCode = ({ code, language, filename }) => {
         className={`code-copy ${isCopy ? "color" : ""}`}
         onCopy={() => setisCopy(true)}
       >
-        <button>{isCopy ? <BsCheck /> : <FaClipboard />}</button>
+        {isCopy ? <BsCheck /> : <FaClipboard />}
       </CopyToClipboard>
 
       <Highlight

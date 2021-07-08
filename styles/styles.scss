@@ -318,12 +318,14 @@ p {
   position: relative;
   overflow: auto;
 
-  button {
+  .code-copy {
     position: absolute;
     right: 5%;
     top: 2%;
     outline: none;
     border: none;
+    font-size: 23px;
+    color: #fff;
     background-color: transparent;
     transition: 300ms ease-in-out;
 
@@ -331,11 +333,6 @@ p {
       color: #69bf31;
     }
   }
-}
-
-.code-copy {
-  font-size: 23px;
-  color: #fff;
 }
 
 .blog-detail-page {
