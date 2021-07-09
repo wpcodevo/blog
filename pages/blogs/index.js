@@ -1,5 +1,4 @@
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Error from "next/error";
 import { useGetBlogs } from "actions/Pagination";
@@ -16,9 +15,9 @@ import Breadcrumbs from "nextjs-breadcrumbs";
 
 const BlogList = ({ data = [], filter }) => {
   return data.map((page) => {
-    return page.map((blog) =>
+    return page.map((blog, index) =>
       filter.view.list ? (
-        <div key={`${data.length}-${Math.random()}-list`}>
+        <div key={`${data.length}-${Math.random()}-list-${index}`}>
           <CardListItem
             title={blog.title}
             smallImage={blog.smallImage}

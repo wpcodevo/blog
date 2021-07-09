@@ -23,11 +23,7 @@ class MyDocument extends Document {
           <link rel='manifest' href='/favicons/site.webmanifest' />
 
           <link rel='preconnect' href='https://fonts.googleapis.com' />
-          <link
-            rel='preconnect'
-            href='https://fonts.gstatic.com'
-            crossOrigin='true'
-          />
+
           <link
             rel='preload'
             href='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
@@ -39,10 +35,6 @@ class MyDocument extends Document {
             href='https://apis.google.com/js/platform.js'
             as='script'
             type='text/javascript'
-          />
-          <link
-            href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap'
-            rel='stylesheet'
           />
         </Head>
         <body>
