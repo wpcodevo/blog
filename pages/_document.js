@@ -15,13 +15,13 @@ class MyDocument extends Document {
             name='p:domain_verify'
             content='263ed5cf94ded2830175910f7d8f7183'
           />
-          <meta name='theme-color' content='#444' />
+          <meta name='theme-color' content='#fff' />
+          <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+          <link rel='icon' sizes='16x16' href='/favicons/favicon-16x16.png' />
+          <link rel='icon' sizes='32x32' href='/favicons/favicon-32x32.png' />
+          <link rel='stylesheet' href='' />
           <link rel='manifest' href='/favicons/site.webmanifest' />
-          <link
-            rel='shortcut icon'
-            href='/favicons/favicon.ico'
-            type='image/x-icon'
-          />
+
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link
             rel='preconnect'
