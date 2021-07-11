@@ -3,7 +3,9 @@ import { urlFor } from "lib/api";
 import getYouTubeID from "get-youtube-id";
 import dynamic from "next/dynamic";
 import BlockContent from "@sanity/block-content-to-react";
-import GoogleAds from "components/GoogleAds";
+const GoogleAds = dynamic(() => import("components/GoogleAds"), {
+  loading: () => <div style={{ height: 0 }}></div>,
+});
 const YouTube = dynamic(() => import("react-youtube"), {
   loading: () => (
     <div style={{ width: "100%", height: "45vh", background: "#222" }} />
@@ -14,9 +16,17 @@ const HighLightCode = dynamic(() => import("components/HighLightCode"), {
     <div style={{ width: "100%", height: "45vh", background: "#222" }} />
   ),
 });
+import Image from "next/image";
 
 const serializers = {
   types: {
+    ads: ({}) => {
+      return (
+        <div style={{ margin: "0 0 20px" }}>
+          <GoogleAds layoutKey='-5s+ck+w-bk+hr' slot='3195818756' />
+        </div>
+      );
+    },
     code: ({ node: { language, code, filename } }) => {
       return (
         <HighLightCode language={language} code={code} filename={filename} />
@@ -53,26 +63,24 @@ const serializers = {
     },
     image: ({ node: { alt, asset, position = "center" } }) => {
       return (
-        <img
-          style={{ width: "100%" }}
-          className={`block-img block-img-${position} lazyload`}
-          src={urlFor(asset.url).width(550).height(370).url()}
-          alt={alt}
-        />
+        <div style={{ position: "relative" }}>
+          <Image
+            src={urlFor(asset.url).width(550).height(370).url()}
+            width={550}
+            height={370}
+            layout='responsive'
+            className='mb-3'
+            alt={alt}
+          />
+        </div>
       );
     },
   },
   marks: {
     color: ({ mark, children }) => {
-      return (
-        <div style={{ color: mark.hex }}>
-          {children}
-          <div style={{ margin: 0 }}>
-            <GoogleAds layoutKey='-5s+ck+w-bk+hr' slot='3195818756' />
-          </div>
-        </div>
-      );
+      return <span style={{ color: mark.hex }}>{children}</span>;
     },
+
     link: ({ mark, children }) => {
       const { blank, href } = mark;
       return blank ? (

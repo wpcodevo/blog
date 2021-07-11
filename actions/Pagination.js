@@ -38,7 +38,7 @@ export const useGetBlogs = ({ filter }) => {
       return null;
     }
 
-    return `/api/allblogs?offset=${index * 6}&date=${
+    return `/api/allblogs?offset=${index * 10}&date=${
       filter.date.asc ? "asc" : "desc"
     }`;
   }, getBlogs);

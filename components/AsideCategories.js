@@ -14,7 +14,16 @@ const AsideCateogories = () => {
 
   return (
     <div className='widget categories'>
-      <h4 style={{ padding: "15px 0" }}>Categories</h4>
+      <p
+        style={{
+          padding: "0 0 15px",
+          fontSize: 23,
+          textAlign: "center",
+          fontWeight: 500,
+        }}
+      >
+        Categories
+      </p>
       {categories.map((category, index) => (
         <div key={`${index}-list`}>
           <Link href='/[category]' as={`/${category.slug}`}>

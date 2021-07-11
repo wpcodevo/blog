@@ -1,8 +1,8 @@
-import { Card, Image } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
 import { format, parseISO } from "date-fns";
-import { CustomImage } from "lib/sanity";
+import Image from "next/image";
 
 const CardItem = ({ title, date, smallImage, author, link }) => {
   return (
@@ -12,13 +12,16 @@ const CardItem = ({ title, date, smallImage, author, link }) => {
           {link && (
             <Link {...link}>
               <a aria-label={smallImage.alt}>
-                <Card.Img
+                <Image
                   src={urlFor(smallImage)
                     .crop("center")
                     .fit("clip")
-                    .width(500)
-                    .height(500)
+                    .width(300)
+                    .height(200)
                     .url()}
+                  width={300}
+                  height={200}
+                  layout='responsive'
                   alt={smallImage.alt}
                 />
               </a>
@@ -38,10 +41,11 @@ const CardItem = ({ title, date, smallImage, author, link }) => {
 
           <div className='d-flex'>
             <Image
-              roundedCircle
-              style={{ imageRendering: " -webkit-optimize-contrast" }}
+              className='radius'
               src={urlFor(author?.avatar).width(40).height(40).fit("max").url()}
               alt={author.alt}
+              width={40}
+              height={40}
             />
             <div className='d-col mx-2'>
               <Card.Title

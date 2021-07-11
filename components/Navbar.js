@@ -2,7 +2,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { BiMenu } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
-import YouTubeSubscribe from "components/youtubeSubcribe";
+// import YouTubeSubscribe from "components/youtubeSubcribe";
+import dynamic from "next/dynamic";
+const YouTubeSubscribe = dynamic(() => import("components/youtubeSubcribe"));
 
 const BlogNavBar = () => {
   const [openNav, setOpenNav] = useState(false);

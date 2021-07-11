@@ -121,11 +121,9 @@ const NewsLetter = () => {
             <div className='img-container'>
               <Image
                 src='/images/popup.jpg'
-                width='600'
-                height='450'
+                width={600}
+                height={450}
                 alt='newletter image'
-                placeholder='blur'
-                blurDataURL='LGFFaXYk^6#M@-5c,1J5@[or[Q6.'
               />
             </div>
           </div>

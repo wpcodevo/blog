@@ -1,27 +1,23 @@
-import { Image } from "react-bootstrap";
 import Link from "next/link";
 import { urlFor } from "lib/api";
+import Image from "next/image";
 
 const DealsListItem = ({ shorttitle, smallImage, link, title }) => {
   return (
-    <div className='deals d-flex'>
+    <div className='deals'>
       <Link {...link}>
-        <a aria-label={smallImage.alt} className='news-link'>
+        <a aria-label={smallImage.alt} className='deals-link'>
           <Image
-            variant='top'
-            style={{
-              imageRendering: "-webkit-optimize-contrast",
-              width: "98px",
-              height: "98px",
-              objectFit: "cover",
-            }}
-            src={urlFor(smallImage).width(300).height(300).fit("clip").url()}
+            width={98}
+            height={98}
+            src={urlFor(smallImage).width(98).height(98).fit("clip").url()}
             alt={smallImage.alt}
+            className='border'
           />
         </a>
       </Link>
       <div>
-        <h1 style={{ fontSize: "16px" }}>
+        <h1 style={{ fontSize: "20px" }}>
           <Link {...link}>
             <a>{title}</a>
           </Link>

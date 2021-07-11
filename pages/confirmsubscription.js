@@ -3,7 +3,8 @@ const content = require("data/content");
 import AdSense from "react-adsense";
 import GoogleAds from "components/GoogleAds";
 import Aside from "components/Aside";
-import { Image } from "react-bootstrap";
+// import { Image } from "react-bootstrap";
+import Image from "next/image";
 
 const Subscription = () => {
   return (
@@ -41,7 +42,9 @@ const Subscription = () => {
                 <Image
                   src='https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/confirmTwo.png'
                   alt='confirm gmail for convertKit'
-                  className='lazyload'
+                  width={550}
+                  height={370}
+                  layout='responsive'
                 />
               </div>
               <p>
@@ -54,7 +57,11 @@ const Subscription = () => {
                 <Image
                   src='https://raw.githubusercontent.com/ziddahedem/blog/main/public/images/confirmOne.png'
                   alt='confirm gmail for convertKit'
-                  className='img-move lazyload'
+                  width={550}
+                  height={370}
+                  className='img-move'
+                  layout='responsive'
+                  objectPosition=''
                 />
               </div>
             </div>

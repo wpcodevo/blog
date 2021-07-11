@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Image } from "react-bootstrap";
+import Image from "next/image";
 import { urlFor, getPopularBlogs } from "lib/api";
 import { format, parseISO } from "date-fns";
+
+const imageLink = {};
 
 const PopularBlogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -29,16 +31,11 @@ const PopularBlogs = () => {
                 style={{ marginRight: "10px" }}
               >
                 <Image
-                  style={{
-                    width: "90px",
-                    height: "60px",
-                    objectFit: "cover",
-                    border: "1px solid #ddd",
-                  }}
-                  width='100%'
-                  src={urlFor(blog.smallImage).width(100).height(70).url()}
+                  width={90}
+                  height={70}
+                  className='border'
+                  src={urlFor(blog.smallImage).width(90).height(70).url()}
                   alt={blog.smallImage.alt}
-                  className='img-fluid rounded'
                 />
               </a>
             </Link>

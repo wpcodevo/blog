@@ -8,8 +8,11 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import GoogleAds from "components/GoogleAds";
-import AsideCateogories from "components/AsideCategories";
+// import GoogleAds from "components/GoogleAds";
+// import AsideCateogories from "components/AsideCategories";
+import dynamic from "next/dynamic";
+const GoogleAds = dynamic(() => import("components/GoogleAds"));
+const AsideCateogories = dynamic(() => import("components/AsideCategories"));
 
 const Aside3 = () => {
   return (

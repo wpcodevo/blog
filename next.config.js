@@ -11,6 +11,6 @@ module.exports = {
     DATA_AD_CLIENT: process.env.DATA_AD_CLIENT,
   },
   images: {
-		domains: ['cdn.sanity.io']
-	}
+    domains: ["cdn.sanity.io", "raw.githubusercontent.com"],
+  },
 };

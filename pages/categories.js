@@ -49,8 +49,8 @@ const Categories = ({ categories }) => {
               />
               <h3>{category.title}</h3>
               <p>
-                {category.description.length > 85
-                  ? category.description.substr(0, 85) + " ..."
+                {category.description.length > 70
+                  ? category.description.substr(0, 70) + " ..."
                   : category.description}
               </p>
               <Link href='/[category]' as={`/${category.slug}`}>

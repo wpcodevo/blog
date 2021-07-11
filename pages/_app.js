@@ -5,12 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "styles/styles.scss";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
 import PageLayout from "components/PageLayout";
 import ScrollTop from "components/ScrollTop";
 import { SEO } from "components/MetaDecorator";
 import { DefaultSeo } from "next-seo";
-
-const content = require("data/content");
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
 const FixAdsBottom = dynamic(() => import("components/FixAdsBottom"));
@@ -19,6 +18,13 @@ import { GA_TRACKING_ID } from "lib/gtag";
 import Script from "next/script";
 
 const App = ({ Component, pageProps }) => {
+  const [size, setSize] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth > 567) {
+      setSize(true);
+    }
+  }, []);
   return (
     <>
       {process.env.NODE_ENV === "production" && (
@@ -31,7 +37,7 @@ const App = ({ Component, pageProps }) => {
         />
       )}
 
-      {process.env.NODE_ENV === "production" && (
+      {process.env.NODE_ENV === "production" && size && (
         <Script
           strategy='lazyOnload'
           src='https://apis.google.com/js/platform.js'

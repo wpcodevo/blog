@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, Image, Spinner } from "react-bootstrap";
+import { Card, Spinner } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Error from "next/error";
@@ -19,6 +19,7 @@ const CommentForm = dynamic(() => import("components/CommentForm"));
 import { Comments } from "components/Comments";
 import NewsLetter from "components/NewsLetter";
 import BlogContent from "components/BlogContent";
+import Image from "next/image";
 
 function BlogDetails({ blog: initialBlog, preview }) {
   const router = useRouter();
@@ -85,7 +86,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
         {preview && <PreviewAlert />}
 
         <Breadcrumbs
-          listStyle={{ listStyle: "none", margin: 0, padding: 10 }}
+          listStyle={{ listStyle: "none", margin: "0 0 15px", padding: 10 }}
           containerClassName='labelBread'
           // listClassName='labelBread'
           rootLabel='WPCODEVO'
@@ -119,11 +120,12 @@ function BlogDetails({ blog: initialBlog, preview }) {
         <ShareSocial blog={initialBlog} />
         {initialBlog.coverImage && (
           <Image
-            width='100%'
+            width={600}
+            height={400}
+            className='border mb-3'
+            layout='responsive'
             src={urlFor(initialBlog.coverImage).width(600).height(400).url()}
             alt={initialBlog.coverImage.alt}
-            className='img-fluid rounded mb-3 coverImage'
-            style={{ border: "1px solid #ddd" }}
           />
         )}
 

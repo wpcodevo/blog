@@ -1,4 +1,5 @@
 import { Card } from "react-bootstrap";
+import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "lib/api";
 import { format, parseISO } from "date-fns";
@@ -31,24 +32,23 @@ const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
           <div className='card-flex'>
             <Link {...link}>
               <a aria-label={smallImage.alt} className='card-link'>
-                <Card.Img
-                  variant='top'
-                  style={{
-                    imageRendering: "-webkit-optimize-contrast",
-                  }}
+                <Image
                   src={urlFor(smallImage)
                     .width(300)
                     .height(240)
                     .fit("clip")
                     .url()}
                   alt={smallImage.alt}
+                  width={300}
+                  height={240}
+                  layout='responsive'
                 />
               </a>
             </Link>
 
-            <Card.Text style={{ fontSize: "15px !important" }}>
-              {subtitle.length > 252
-                ? subtitle.substr(0, 252) + " ..."
+            <Card.Text style={{ fontSize: "16px !important" }}>
+              {subtitle.length > 230
+                ? subtitle.substr(0, 230) + " ..."
                 : subtitle}
               <Link {...link}>
                 <a aria-label='read more' className='orange-text italic'>

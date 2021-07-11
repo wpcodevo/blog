@@ -7,9 +7,12 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import Link from "next/link";
-import GoogleAds from "components/GoogleAds";
-import PopularBlogs from "components/PopularBlogs";
-import AsideCateogories from "components/AsideCategories";
+// import PopularBlogs from "components/PopularBlogs";
+// import AsideCateogories from "components/AsideCategories";
+import dynamic from "next/dynamic";
+const GoogleAds = dynamic(() => import("components/GoogleAds"));
+const AsideCateogories = dynamic(() => import("components/AsideCategories"));
+const PopularBlogs = dynamic(() => import("components/PopularBlogs"));
 import Image from "next/image";
 
 const Aside2 = ({ blog }) => {

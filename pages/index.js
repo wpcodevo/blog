@@ -70,7 +70,10 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
             <div style={{ margin: ".5rem" }}>
               <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
             </div>
-            <span style={{ margin: "25px 0 25px" }} className='home-title'>
+            <span
+              style={{ margin: "25px 0 25px", display: "inline-block" }}
+              className='home-title'
+            >
               Deals & Coupons
             </span>
             <div className='deals'>

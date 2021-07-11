@@ -1,4 +1,6 @@
-import GoogleAds from "components/GoogleAds";
+// import GoogleAds from "components/GoogleAds";
+import dynamic from "next/dynamic";
+const GoogleAds = dynamic(() => import("components/GoogleAds"));
 
 const FixAdsBottom = () => {
   return (

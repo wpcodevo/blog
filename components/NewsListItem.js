@@ -1,4 +1,4 @@
-import { Image } from "react-bootstrap";
+import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "lib/api";
 
@@ -8,15 +8,11 @@ const NewsListItem = ({ shorttitle, smallImage, link }) => {
       <Link {...link}>
         <a aria-label={smallImage.alt} className='news-link'>
           <Image
-            variant='top'
-            style={{
-              imageRendering: "-webkit-optimize-contrast",
-              width: "98px",
-              height: "98px",
-              objectFit: "cover",
-            }}
+            width={98}
+            height={98}
             src={urlFor(smallImage).width(98).height(98).fit("clip").url()}
             alt={smallImage.alt}
+            className='border'
           />
         </a>
       </Link>
