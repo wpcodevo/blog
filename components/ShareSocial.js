@@ -26,7 +26,7 @@ const ShareSocial = ({ blog }) => {
   return (
     <div className='sharerHorizontal d-flex'>
       <WhatsappShareButton title={blog.title} url={url}>
-        <a aria-label='whatsapp'>
+        <a href={url} aria-label='whatsapp'>
           <div className='social-button d-flex sharerWhapsapp'>
             <FaWhatsapp />
             <span>Share</span>
@@ -34,7 +34,7 @@ const ShareSocial = ({ blog }) => {
         </a>
       </WhatsappShareButton>
       <FacebookShareButton url={url} quote={blog.subtitle} hashtag={tags}>
-        <a aria-label='facebook'>
+        <a href={url} aria-label='facebook'>
           <div className='social-button d-flex sharerFacebook'>
             <FaFacebookF />
             <span>Share</span>
@@ -47,7 +47,7 @@ const ShareSocial = ({ blog }) => {
         title={blog.title}
         hashtags={blog?.tags.map((tag) => tag.value.slice(1))}
       >
-        <a aria-label='twitter'>
+        <a href={url} aria-label='twitter'>
           <div className='social-button d-flex sharerTwitter'>
             <FaTwitter />
 
@@ -62,7 +62,7 @@ const ShareSocial = ({ blog }) => {
         source={url}
         url={url}
       >
-        <a aria-label='linkedin'>
+        <a href={url} aria-label='linkedin'>
           <div className='social-button d-flex sharerLinkin'>
             <FaLinkedinIn />
 
@@ -76,7 +76,7 @@ const ShareSocial = ({ blog }) => {
         description={blog.subtitle}
         url={url}
       >
-        <a aria-label='pinterest'>
+        <a href={url} aria-label='pinterest'>
           <div className='social-button d-flex sharerPinterest'>
             <FaPinterestP />
             <span>Pin</span>
