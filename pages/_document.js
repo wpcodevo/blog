@@ -20,21 +20,6 @@ class MyDocument extends Document {
           <link rel='icon' sizes='16x16' href='/favicons/favicon-16x16.png' />
           <link rel='icon' sizes='32x32' href='/favicons/favicon-32x32.png' />
           <link rel='manifest' href='/favicons/site.webmanifest' />
-
-          {/* <link rel='preconnect' href='https://fonts.googleapis.com' /> */}
-
-          {/* <link
-            rel='preload'
-            href='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
-            as='script'
-            type='text/javascript'
-          /> */}
-          {/* <link
-            rel='preload'
-            href='https://apis.google.com/js/platform.js'
-            as='script'
-            type='text/javascript'
-          /> */}
         </Head>
         <body>
           <Main />

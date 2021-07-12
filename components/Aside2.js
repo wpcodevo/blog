@@ -7,8 +7,6 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import Link from "next/link";
-// import PopularBlogs from "components/PopularBlogs";
-// import AsideCateogories from "components/AsideCategories";
 import dynamic from "next/dynamic";
 const GoogleAds = dynamic(() => import("components/GoogleAds"));
 const AsideCateogories = dynamic(() => import("components/AsideCategories"));
@@ -128,7 +126,7 @@ const Aside2 = ({ blog }) => {
           </a>
         </Link>
       </div>
-      <div className={`widget advertisement`}>
+      <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
       </div>
       <div className='widget tags'>
@@ -136,7 +134,7 @@ const Aside2 = ({ blog }) => {
           <div key={`${index}-list`}>{tag.value}</div>
         ))}
       </div>
-      <div className={`widget advertisement`}>
+      <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
       </div>
     </aside>

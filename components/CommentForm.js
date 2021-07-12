@@ -53,7 +53,7 @@ function CommentForm({ _id }) {
 
   return (
     <form className='commentForm' onSubmit={handleSubmit(onSubmit)} disabled>
-      <h5>LEAVE A REPLY</h5>
+      <h4>LEAVE A REPLY</h4>
       <input
         {...register("_id", {
           required: true,

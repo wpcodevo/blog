@@ -10,8 +10,6 @@ import PageLayout from "components/PageLayout";
 import ScrollTop from "components/ScrollTop";
 import { SEO } from "components/MetaDecorator";
 import { DefaultSeo } from "next-seo";
-import "lazysizes";
-import "lazysizes/plugins/parent-fit/ls.parent-fit";
 const FixAdsBottom = dynamic(() => import("components/FixAdsBottom"));
 const CookieConsent = dynamic(() => import("react-cookie-consent"));
 import { GA_TRACKING_ID } from "lib/gtag";

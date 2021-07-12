@@ -33,7 +33,12 @@ export function Comments({ comments }) {
           <div key={_id} className='mb-4 comment'>
             <div className='d-flex'>
               <div style={{ marginRight: "20px" }}>
-                <Image width='60' height='60' src='/images/avator.png' />
+                <Image
+                  width='60'
+                  height='60'
+                  alt='avator'
+                  src='/images/avator.png'
+                />
               </div>
               <div>
                 <a

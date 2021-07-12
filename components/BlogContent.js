@@ -59,7 +59,7 @@ const serializers = {
     youtube: ({ node }) => {
       const { url } = node;
       const id = getYouTubeID(url);
-      return <YouTube className='youtubeWrapper lazyload' videoId={id} />;
+      return <YouTube className='youtubeWrapper' videoId={id} />;
     },
     image: ({ node: { alt, asset, position = "center" } }) => {
       return (
@@ -89,7 +89,6 @@ const serializers = {
           href={href}
           style={{ color: "#ff6200", textDecoration: "underline" }}
           target='_blank'
-          rel='noopener'
           aria-label='external link'
         >
           {children}
