@@ -28,7 +28,7 @@ function Form() {
       setHasSubmitted(true);
 
       if (response.status === 200) {
-        swal.fire("Great Job!", "Thanks for Your Contacting Us!", "success");
+        swal.fire("Great Job!", "Thanks for Contacting Us!", "success");
       }
 
       if (response.status === 401) {
