@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert2";
 import { Spinner } from "react-bootstrap";
+import emailjs from "emailjs-com";
 
 function Form() {
   const [formData, setFormData] = useState();
@@ -15,30 +16,31 @@ function Form() {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data, e) => {
+    e.preventDefault();
     setIsSubmitting(true);
     let response;
     setFormData(data);
     try {
-      response = await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify(data),
-        type: "application/json",
-      });
+      response = await emailjs.send(
+        "service_ozfelsi",
+        "template_ylomibh",
+        data,
+        "user_aBPkyhZrjAvk0MAQzLCvz"
+      );
       setIsSubmitting(false);
       setHasSubmitted(true);
-
       if (response.status === 200) {
         swal.fire("Great Job!", "Thanks for Contacting Us!", "success");
       }
-
-      if (response.status === 401) {
+      reset();
+    } catch (err) {
+      if (err) {
         swal.fire(
           "Oops!",
-          "Sorry, our system has detected this email to be invalid",
+          "Sorry, Something bad really happended, Please try again",
           "error"
         );
       }
-    } catch (err) {
       setFormData(err);
     }
   };
