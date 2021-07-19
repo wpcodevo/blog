@@ -16,8 +16,8 @@ const CardItem = ({ title, date, smallImage, author, link }) => {
                   src={urlFor(smallImage)
                     .crop("center")
                     .fit("clip")
-                    .width(300)
-                    .height(200)
+                    .width(1920)
+                    .height(1080)
                     .url()}
                   width={300}
                   height={200}

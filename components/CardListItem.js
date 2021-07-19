@@ -34,8 +34,8 @@ const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
               <a aria-label={smallImage.alt} className='card-link'>
                 <Image
                   src={urlFor(smallImage)
-                    .width(300)
-                    .height(240)
+                    .width(1920)
+                    .height(1080)
                     .fit("clip")
                     .url()}
                   alt={smallImage.alt}
