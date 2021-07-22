@@ -11,7 +11,7 @@ const BlogNavBar = () => {
   return (
     <div className='header'>
       <nav className='nav'>
-        <div className='navigation d-flex container'>
+        <div className='navigation container'>
           <div className='logo'>
             <Link href='/' as='/'>
               <a aria-label='home'>
