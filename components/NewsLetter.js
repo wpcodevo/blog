@@ -3,21 +3,22 @@ import { useForm } from "react-hook-form";
 import swal from "sweetalert2";
 import Modal from "react-modal";
 import { AiOutlineClose } from "react-icons/ai";
-import Image from "next/image";
 import Cookie from "js-cookie";
 import { useRouter } from "next/router";
 
 const customStyles = {
   overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
     zIndex: "9999999",
   },
   content: {
     top: "50%",
     left: "50%",
     transform: "translate(-50%,-50%)",
-    width: "90%",
-    height: "550px",
+    maxWidth: "90%",
+    width: "500px",
+    height: "100%",
+    maxHeight: "480px",
     overflow: "hidden",
     background: "white",
     border: "none",
@@ -113,21 +114,11 @@ const NewsLetter = () => {
         style={customStyles}
         ariaHideApp={false}
       >
-        <div className='popup' style={{ display: "table" }}>
+        <div className='popup'>
           <div className='close' onClick={closeModal}>
             <AiOutlineClose size='20px' />
           </div>
-          <div className='popup-left'>
-            <div className='img-container'>
-              <Image
-                src='/images/popup.jpg'
-                width={600}
-                height={450}
-                alt='newletter image'
-              />
-            </div>
-          </div>
-          <div className='popup-right'>
+          <div className='popup-center'>
             <h2>JOIN OUR NEWSLETTER</h2>
             <p>
               Big news! I'm writing a book about React called: The Complete

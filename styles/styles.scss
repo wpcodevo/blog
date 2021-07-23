@@ -1301,68 +1301,55 @@ p {
 // PopUp
 
 .popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100%;
+  padding: 20px;
 
   .close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
     padding: 8px 13px;
-    background-color: #ff6200;
+    background-color: #f1f1f1;
     border-radius: 50%;
     cursor: pointer;
-    color: white;
+    color: #222;
     font-size: 20px;
-  }
+    transition: 300ms;
 
-  .popup-left {
-    display: table-cell;
-    width: 50%;
-    height: 100%;
-    vertical-align: middle;
-  }
-
-  .popup-right {
-    display: table-cell;
-    width: 50%;
-    vertical-align: middle;
-    padding: 0 50px;
-    text-align: center;
-  }
-
-  .img-container {
-    width: 100%;
-    overflow: hidden;
-
-    img {
-      display: block;
-      width: 60rem;
-      height: 450px;
-      max-width: 100%;
-      border-radius: 16px;
-      object-fit: cover;
+    &:hover {
+      background-color: #ff6200;
+      color: #fff;
     }
   }
 
-  .popup-right h2 {
-    font-size: 40px;
-    color: #222;
-    margin-bottom: 16px;
+  .popup-center {
+    width: 100%;
+    h2 {
+      font-size: 35px;
+      width: 100%;
+      font-weight: 400;
+      color: #222;
+      margin-bottom: 16px;
+    }
   }
 
-  .popup-right p {
+  .popup-center p {
     font-size: 16px;
     color: #555;
     margin-bottom: 16px;
   }
 
   form {
+    width: 100%;
     input {
       width: 100%;
       padding: 15px 0;
       text-indent: 16px;
-      border-radius: 30px;
-      background-color: #ddd;
+      border-radius: 5px;
+      background-color: #f1f1f1;
       color: #222;
       font-size: 16px;
       border: none;
@@ -1374,7 +1361,7 @@ p {
 
     span {
       display: block;
-      margin-top: 10px;
+      margin: 10px 0;
       color: orangered;
       font-size: 13px;
       visibility: hidden;
@@ -1387,52 +1374,42 @@ p {
     }
   }
 
-  .popup-right button {
+  .popup-center button {
     display: inline-block;
-    padding: 10px 20px;
-    border-radius: 30px;
-    margin-top: 30px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: 100%;
     color: white;
-    background-color: #ff6200;
+    background-color: #222;
     transition: 0.3s;
     border: none;
     outline: none;
 
     &:hover {
-      background-color: #222;
+      background-color: #555;
     }
   }
 }
 
 @media (max-width: 1200px) {
   .popup {
-    .popup-right {
-      width: 100%;
-    }
-
-    .popup-right h2 {
-      font-size: 35px;
+    .popup-center h2 {
+      font-size: 30px;
       margin-bottom: 13px;
     }
   }
 }
 
-@media (max-width: 998px) {
-  .popup {
-    .popup-left {
-      display: none;
-    }
+@media (min-width: 568px) {
+  .ReactModal__Content {
+    height: 480px !important;
   }
 }
 
 @media (max-width: 768px) {
   .popup {
-    .popup-right {
-      padding: 0;
-    }
     form input {
       padding: 13px 0;
-      margin: 0 auto;
     }
   }
 }
@@ -1444,18 +1421,20 @@ p {
 
 @media (max-width: 567px) {
   .popup {
+    padding: 10px;
     form {
       input {
         padding: 8px 0;
       }
 
       span {
-        margin-bottom: 5px;
+        margin: 0;
+        padding: 5px 0;
       }
     }
-    .popup-right {
+    .popup-center {
       h2 {
-        font-size: 30px;
+        font-size: 20px;
       }
 
       p {
@@ -1463,20 +1442,24 @@ p {
       }
     }
 
-    .popup-right button {
-      padding: 10px;
-      margin-top: 10px;
+    .popup-center button {
+      padding: 8px;
     }
 
     .close {
-      top: 10px;
-      right: 10px;
       padding: 5px 9px;
     }
   }
 
   .ReactModal__Content {
-    height: 450px !important;
+    height: 380px !important;
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 290px) {
+  .ReactModal__Content {
+    height: 360px !important;
   }
 }
 
