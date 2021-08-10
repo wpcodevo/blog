@@ -23,7 +23,7 @@ const serializers = {
     ads: ({}) => {
       return (
         <div style={{ margin: "0 0 20px" }}>
-          <GoogleAds layoutKey='-5s+ck+w-bk+hr' slot='3195818756' />
+          <GoogleAds slot={process.env.NEXT_PUBLIC_IN_ARTICLE_ADS} />
         </div>
       );
     },

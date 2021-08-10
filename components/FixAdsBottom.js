@@ -18,7 +18,7 @@ const FixAdsBottom = () => {
       >
         <GoogleAds
           format=''
-          slot={process.env.HORIZONTAL_SLOT}
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
           styles={{ display: "block", width: "100%", height: "7rem" }}
         />
       </div>

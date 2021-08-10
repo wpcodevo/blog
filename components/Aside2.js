@@ -85,7 +85,7 @@ const Aside2 = ({ blog }) => {
         </div>
       </div>
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <GoogleAds slot={process.env.VERTICAL_SLOT} />
+        <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <div className='widget' style={{ height: 517 }}>
         <p style={{ fontSize: 23, textAlign: "center" }}>
@@ -95,7 +95,7 @@ const Aside2 = ({ blog }) => {
       </div>
 
       <div className='widget advertisement'>
-        <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
+        <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
 
       <AsideCateogories />
@@ -112,7 +112,7 @@ const Aside2 = ({ blog }) => {
         </Link>
       </div>
       <div className='widget advertisement'>
-        <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
+        <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <div className='widget no-pad promo'>
         <Link href='https://www.bluehost.com/track/edemziddah/Aside'>
@@ -127,7 +127,7 @@ const Aside2 = ({ blog }) => {
         </Link>
       </div>
       <div className='widget advertisement'>
-        <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
+        <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <div className='widget tags'>
         {blog.tags.map((tag, index) => (
@@ -135,7 +135,7 @@ const Aside2 = ({ blog }) => {
         ))}
       </div>
       <div className='widget advertisement'>
-        <GoogleAds format='auto' slot={process.env.VERTICAL_SLOT} />
+        <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
     </aside>
   );

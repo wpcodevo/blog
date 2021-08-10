@@ -21,8 +21,8 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
       {/* Google Ads */}
       <div className='horizontal' style={{ margin: "1rem 0 1rem" }}>
         <AdSense.Google
-          client='ca-pub-1057373061381635'
-          slot='9967007599'
+          client={process.env.NEXT_PUBLIC_DATA_AD_CLIENT}
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
           style={{ display: "block", height: 200 }}
           format=''
           layout=''
@@ -51,7 +51,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
             ))}
 
             <div style={{ margin: ".5rem" }}>
-              <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
             </div>
             <div className='news-grid'>
               {newsBlog?.map((blog) => (
@@ -68,7 +68,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
               ))}
             </div>
             <div style={{ margin: ".5rem" }}>
-              <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
             </div>
             <span
               style={{ margin: "25px 0 25px", display: "inline-block" }}
@@ -92,7 +92,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
               ))}
             </div>
             <div style={{ margin: ".5rem" }}>
-              <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
             </div>
           </main>
         </div>

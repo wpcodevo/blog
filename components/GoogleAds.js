@@ -15,6 +15,7 @@ const GoogleAds = ({
         textAlign: "center",
         width: "100%",
         height: "100%",
+        background: "red",
       }}
     >
       <AdSense.Google

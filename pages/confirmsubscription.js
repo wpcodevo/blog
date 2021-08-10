@@ -17,8 +17,8 @@ const Subscription = () => {
       {/* Google Ads */}
       <div className='horizontal' style={{ margin: "1rem 0 1rem" }}>
         <AdSense.Google
-          client='ca-pub-1057373061381635'
-          slot='9967007599'
+          client={process.env.NEXT_PUBLIC_DATA_AD_CLIENT}
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
           style={{ display: "block", height: 200 }}
           format=''
           layout=''
@@ -66,7 +66,7 @@ const Subscription = () => {
               </div>
             </div>
             <div style={{ margin: "1rem 0 1rem" }}>
-              <GoogleAds slot={process.env.HORIZONTAL_SLOT} />
+              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
             </div>
           </main>
         </div>

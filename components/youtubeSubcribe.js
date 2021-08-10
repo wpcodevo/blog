@@ -3,7 +3,7 @@ const YouTubeSubscribe = () => {
     <section className='youtubeSubscribe'>
       <div
         className='g-ytsubscribe'
-        data-channelid='UCRITDeojq9IsQfTWPeJ-pDQ'
+        data-channelid={process.env.NEXT_PUBLIC_DATA_YOUTUBE_ID}
         data-layout='default'
         data-count='default'
       ></div>
