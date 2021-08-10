@@ -29,7 +29,7 @@ const App = ({ Component, pageProps }) => {
         <Script src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
       )}
 
-      {process.env.NODE_ENV === "productions" && (
+      {process.env.NODE_ENV === "production" && (
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         />

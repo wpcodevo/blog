@@ -15,11 +15,10 @@ const GoogleAds = ({
         textAlign: "center",
         width: "100%",
         height: "100%",
-        background: "red",
       }}
     >
       <AdSense.Google
-        client='ca-pub-1057373061381635'
+        client={process.env.NEXT_PUBLIC_DATA_AD_CLIENT}
         slot={slot}
         style={styles}
         format={format}
