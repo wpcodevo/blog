@@ -1529,3 +1529,17 @@ p {
     }
   }
 }
+
+// ProgressScroll
+.scroll-progres {
+  background-color: #ff6200;
+  height: 4px;
+  width: 0%;
+
+  &.fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+}
