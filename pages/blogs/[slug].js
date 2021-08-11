@@ -123,9 +123,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
         )}
 
         {initialBlog.content && <BlogContent content={initialBlog.content} />}
-        <div style={{ margin: "1rem 0 1rem" }}>
-          <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-        </div>
+        <FixGoogleAds />
         <DownloadFile blog={blog} />
 
         <Comments comments={initialBlog.comments} />

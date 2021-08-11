@@ -90,9 +90,7 @@ function AllBlogs({ blogs }) {
             <div className={!filter.view.list ? "d-grid" : ""}>
               <BlogList data={data || [blogs]} filter={filter} />
             </div>
-            <div style={{ marginTop: "1rem" }}>
-              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-            </div>
+            <FixGoogleAds />
             {/* Button */}
             <div style={{ textAlign: "center", margin: "50px 0 20px" }}>
               <button

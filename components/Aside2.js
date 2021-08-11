@@ -94,8 +94,11 @@ const Aside2 = ({ blog }) => {
         <PopularBlogs />
       </div>
 
-      <div className='widget advertisement'>
+      {/* <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+      </div> */}
+      <div className='widget' style={{ maxHeight: "60rem !important" }}>
+        <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
 
       <AsideCateogories />
@@ -111,8 +114,11 @@ const Aside2 = ({ blog }) => {
           </a>
         </Link>
       </div>
-      <div className='widget advertisement'>
+      {/* <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+      </div> */}
+      <div className='widget' style={{ maxHeight: "60rem !important" }}>
+        <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <div className='widget no-pad promo'>
         <Link href='https://www.bluehost.com/track/edemziddah/Aside'>
@@ -126,16 +132,22 @@ const Aside2 = ({ blog }) => {
           </a>
         </Link>
       </div>
-      <div className='widget advertisement'>
+      {/* <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+      </div> */}
+      <div className='widget' style={{ maxHeight: "60rem !important" }}>
+        <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <div className='widget tags'>
         {blog.tags.map((tag, index) => (
           <div key={`${index}-list`}>{tag.value}</div>
         ))}
       </div>
-      <div className='widget advertisement'>
+      {/* <div className='widget advertisement'>
         <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+      </div> */}
+      <div className='widget' style={{ maxHeight: "60rem !important" }}>
+        <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
     </aside>
   );
