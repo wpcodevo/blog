@@ -5,6 +5,7 @@ import {
   FaLinkedinIn,
   FaGithub,
   FaPinterest,
+  FaDev,
 } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
@@ -50,14 +51,14 @@ const Aside = () => {
               <FaYoutube />
             </a>
           </Link>
-          <Link href='#'>
+          <Link href='https://dev.to/wpcodevo'>
             <a
               rel='noreferrer'
               aria-label='icon'
               className='icon icon-linkin'
               target='_blank'
             >
-              <FaLinkedinIn />
+              <FaDev />
             </a>
           </Link>
           <Link href='https://github.com/ziddahedem'>
