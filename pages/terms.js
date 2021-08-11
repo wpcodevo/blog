@@ -25,16 +25,12 @@ const Terms = ({ termsData }) => {
                   <div className='title'>
                     <h1>{c.title}</h1>
                   </div>
-                  <div style={{ margin: "1rem 0 1rem" }}>
-                    <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-                  </div>
+                  <FixGoogleAds />
                   {c.content && <BlogContent content={c.content} />}
                 </div>
               );
             })}
-            <div style={{ margin: "1rem 0 1rem" }}>
-              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-            </div>
+            <FixGoogleAds />
           </main>
         </div>
         {/* Aside */}

@@ -26,16 +26,13 @@ const About = ({ aboutData }) => {
                   <div className='title'>
                     <h1>About</h1>
                   </div>
-                  <div style={{ margin: "1rem 0 1rem" }}>
-                    <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-                  </div>
+                  <FixGoogleAds />
+
                   {c.bio && <BlogContent content={c.bio} />}
                 </div>
               );
             })}
-            <div className='widget' style={{ maxHeight: "60rem !important" }}>
-              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-            </div>
+            <FixGoogleAds />
           </main>
         </div>
         {/* Aside */}
