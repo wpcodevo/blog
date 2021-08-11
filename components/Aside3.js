@@ -31,16 +31,17 @@ const Aside3 = () => {
               <FaFacebookF />
             </a>
           </Link>
-          <Link href='https://twitter.com/EdemZiddah2'>
+          <Link href='https://dev.to/wpcodevo'>
             <a
               rel='noreferrer'
               aria-label='icon'
-              className='icon icon-twitter'
+              className='icon icon-linkin'
               target='_blank'
             >
-              <FaTwitter />
+              <FaDev />
             </a>
           </Link>
+
           <Link href='https://www.youtube.com/channel/UCRITDeojq9IsQfTWPeJ-pDQ?sub_confirmation=1'>
             <a
               rel='noreferrer'
@@ -51,14 +52,14 @@ const Aside3 = () => {
               <FaYoutube />
             </a>
           </Link>
-          <Link href='#'>
+          <Link href='https://twitter.com/EdemZiddah2'>
             <a
               rel='noreferrer'
               aria-label='icon'
-              className='icon icon-linkin'
+              className='icon icon-twitter'
               target='_blank'
             >
-              <FaLinkedinIn />
+              <FaTwitter />
             </a>
           </Link>
           <Link href='https://github.com/ziddahedem'>
