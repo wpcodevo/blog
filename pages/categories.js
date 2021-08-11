@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
 import { getCategories } from "lib/api";
-import AdSense from "react-adsense";
+import FixGoogleAds from "components/FixGoogleAds";
 
 const Categories = ({ categories }) => {
   const tags = categories?.map((category) => category.title);
@@ -17,15 +17,7 @@ const Categories = ({ categories }) => {
         tags={tags}
       />
 
-      <div className='horizontal' style={{ margin: "1rem 0 1rem" }}>
-        <AdSense.Google
-          client={process.env.NEXT_PUBLIC_DATA_AD_CLIENT}
-          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
-          style={{ display: "block", height: 200 }}
-          format=''
-          layout=''
-        />
-      </div>
+      <FixGoogleAds />
       <div style={{ padding: "1rem" }}>
         <h2>All Categories</h2>
         <div className='category-grid'>

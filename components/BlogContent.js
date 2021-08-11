@@ -16,6 +16,7 @@ const HighLightCode = dynamic(() => import("components/HighLightCode"), {
     <div style={{ width: "100%", height: "45vh", background: "#222" }} />
   ),
 });
+
 import Image from "next/image";
 
 const serializers = {

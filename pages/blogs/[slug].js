@@ -19,6 +19,7 @@ const CommentForm = dynamic(() => import("components/CommentForm"));
 import { Comments } from "components/Comments";
 import NewsLetter from "components/NewsLetter";
 import BlogContent from "components/BlogContent";
+import FixGoogleAds from "components/FixGoogleAds";
 import Image from "next/image";
 
 function BlogDetails({ blog: initialBlog, preview }) {
@@ -73,15 +74,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
         tags={tags}
       />
       {/* Google Ads */}
-      <div className='horizontal' style={{ margin: "1rem 0 1rem" }}>
-        <AdSense.Google
-          client={process.env.NEXT_PUBLIC_DATA_AD_CLIENT}
-          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
-          style={{ display: "block", height: 200 }}
-          format=''
-          layout=''
-        />
-      </div>
+      <FixGoogleAds />
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
 

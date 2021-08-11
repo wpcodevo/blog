@@ -5,10 +5,10 @@ import NewsListItem from "components/NewsListItem";
 import DealsListItem from "components/DealsListItem";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-import AdSense from "react-adsense";
 import GoogleAds from "components/GoogleAds";
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 import Aside from "components/Aside";
+import FixGoogleAds from "components/FixGoogleAds";
 
 function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
   return (
@@ -19,15 +19,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
         url={`${content.siteUrl}`}
       />
       {/* Google Ads */}
-      <div className='horizontal' style={{ margin: "1rem 0 1rem" }}>
-        <AdSense.Google
-          client={process.env.NEXT_PUBLIC_DATA_AD_CLIENT}
-          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
-          style={{ display: "block", height: 200 }}
-          format=''
-          layout=''
-        />
-      </div>
+      <FixGoogleAds />
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>

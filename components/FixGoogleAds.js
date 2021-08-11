@@ -1,14 +1,7 @@
 import AdSense from "react-adsense";
 import { useState, useEffect } from "react";
 
-const GoogleAds = ({
-  slot,
-  format = "fluid",
-  layout = "in-article",
-  responsive = "",
-  layoutKey = "",
-  styles = { display: "block" },
-}) => {
+const FixGoogleAds = () => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -23,27 +16,18 @@ const GoogleAds = ({
     clearTimeout(showAds);
   });
   return show ? (
-    <div></div>
-  ) : (
-    <div
-      style={{
-        overflow: "hidden",
-        textAlign: "center",
-        width: "100%",
-        height: "100%",
-      }}
-    >
+    <div className='horizontal' style={{ margin: "1rem 0 1rem" }}>
       <AdSense.Google
         client={process.env.NEXT_PUBLIC_DATA_AD_CLIENT}
-        slot={slot}
-        style={styles}
-        format={format}
-        layout={layout}
-        responsive={responsive}
-        layoutKey={layoutKey}
+        slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+        style={{ display: "block", height: 200 }}
+        format=''
+        layout=''
       />
     </div>
+  ) : (
+    <div></div>
   );
 };
 
-export default GoogleAds;
+export default FixGoogleAds;
