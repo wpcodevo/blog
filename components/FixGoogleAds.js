@@ -1,21 +1,7 @@
 import AdSense from "react-adsense";
-import { useState, useEffect } from "react";
 
 const FixGoogleAds = () => {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const ads = document.querySelector("ins.adsbygoogle");
-    const showAds = setTimeout(() => {
-      if (ads.getAttribute("data-ad-status") === "filled") {
-        setShow(true);
-        console.log("show empty div");
-      }
-    }, 2000);
-
-    clearTimeout(showAds);
-  });
-  return show ? (
+  return (
     <div className='horizontal' style={{ margin: "1rem 0 1rem" }}>
       <AdSense.Google
         client={process.env.NEXT_PUBLIC_DATA_AD_CLIENT}
@@ -25,8 +11,6 @@ const FixGoogleAds = () => {
         layout=''
       />
     </div>
-  ) : (
-    <div></div>
   );
 };
 

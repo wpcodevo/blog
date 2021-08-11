@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import AdSense from "react-adsense";
 import BlogNavBar from "./Navbar";
+import FixGoogleAds from "./FixGoogleAds";
 const Footer = dynamic(() => import("./Footer"));
 
 const PageLayout = ({ children, className }) => {
@@ -17,15 +18,7 @@ const PageLayout = ({ children, className }) => {
             overflow: "hidden",
           }}
         >
-          <div className='horizontal' style={{ margin: "1rem 0 1rem" }}>
-            <AdSense.Google
-              client='ca-pub-1057373061381635'
-              slot='9967007599'
-              style={{ display: "block", height: 200 }}
-              format=''
-              layout=''
-            />
-          </div>
+          <FixGoogleAds />
         </div>
       </div>
       <Footer />

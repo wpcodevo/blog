@@ -25,7 +25,7 @@ const App = ({ Component, pageProps }) => {
   }, []);
   return (
     <>
-      {process.env.NODE_ENV === "development" && (
+      {process.env.NODE_ENV === "production" && (
         <Script src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
       )}
 
