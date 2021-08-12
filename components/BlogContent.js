@@ -138,14 +138,14 @@ const serializers = {
         <a
           rel='noreferrer'
           href={href}
-          style={{ color: "#ff6200", textDecoration: "underline" }}
           target='_blank'
           aria-label='external link'
+          className='hover_underline'
         >
           {children}
         </a>
       ) : (
-        <a aria-label='external link' href={href} style={{ color: "#ff6200" }}>
+        <a aria-label='external link' className='hover_underline' href={href}>
           {children}
         </a>
       );
@@ -155,10 +155,7 @@ const serializers = {
       const href = `/blogs/${slug.current}`;
       return (
         <Link href={href}>
-          <a
-            aria-label='internal link'
-            style={{ color: "#ff6200", textDecoration: "underline" }}
-          >
+          <a className='hover_underline' aria-label='internal link'>
             {children}
           </a>
         </Link>

@@ -6,7 +6,7 @@ body {
   font-weight: 400;
   font-size: 17px;
   background-color: #f0f0f0;
-  color: #464646 !important;
+  color: #484848 !important;
 }
 
 .container {
@@ -22,7 +22,11 @@ h4,
 h5,
 h6 {
   font-weight: 500;
-  color: #464646;
+  color: #3a4244;
+}
+
+h4 {
+  font-size: 22px;
 }
 
 a {
@@ -63,6 +67,15 @@ img {
   align-items: flex-start;
   margin-top: 10px;
   justify-content: space-between;
+}
+
+.hover_underline {
+  color: #ff6200;
+
+  &:hover {
+    color: #ff6200;
+    text-decoration: underline !important;
+  }
 }
 
 @media only screen and (max-width: 996px) {
@@ -148,6 +161,7 @@ img {
 
   ul {
     li {
+      list-style: square;
       margin-bottom: 10px;
     }
   }
