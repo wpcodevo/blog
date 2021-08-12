@@ -1,5 +1,5 @@
 import { getAbout } from "lib/api";
-import BlogContent from "components/BlogContent";
+import { BlogContent } from "components/BlogContent";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
 import AdSense from "react-adsense";

@@ -18,7 +18,7 @@ import GoogleAds from "components/GoogleAds";
 const CommentForm = dynamic(() => import("components/CommentForm"));
 import { Comments } from "components/Comments";
 import NewsLetter from "components/NewsLetter";
-import BlogContent from "components/BlogContent";
+import { BlogContent, TableContent } from "components/BlogContent";
 import FixGoogleAds from "components/FixGoogleAds";
 import Image from "next/image";
 
@@ -121,6 +121,8 @@ function BlogDetails({ blog: initialBlog, preview }) {
             alt={initialBlog.coverImage.alt}
           />
         )}
+
+        {/* {initialBlog.content && <TableContent content={initialBlog.content} />} */}
 
         {initialBlog.content && <BlogContent content={initialBlog.content} />}
         <FixGoogleAds />

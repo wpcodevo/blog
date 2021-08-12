@@ -19,8 +19,57 @@ const HighLightCode = dynamic(() => import("components/HighLightCode"), {
 
 import Image from "next/image";
 
+const customSerializer = {
+  types: {
+    block: ({ node, children }) => {
+      const style = node.style || "normal";
+      if (/^h\d/.test(style)) {
+        return (
+          <a style={{ display: "block" }} href={`#${node._key}`}>
+            {children}{" "}
+          </a>
+        );
+      }
+
+      // only return heading blocks
+      return null;
+    },
+    // ignore other block types
+    youtube: () => null,
+    code: () => null,
+    ads: () => null,
+    table: () => null,
+    image: () => null,
+  },
+  // marks: {
+  //   color: () => null,
+  //   link: () => null,
+  //   internalLink: () => null,
+  // },
+};
+
 const serializers = {
   types: {
+    block: (props) => {
+      const { node, children } = props;
+      // Protect against a blank node.style property
+      const style = node.style || "normal";
+      // find the heading blocks (style == h1,h2,h3 etc)
+      if (/^h\d/.test(style)) {
+        // set the heading tag (h1,h2,h3,etc)
+        const HeadingTag = style;
+        return (
+          // use the node key as the id, it's guaranteed unique
+          // one can also slugify the children spans if one want
+          // nicer URLs
+          <HeadingTag id={node._key}>
+            {children} <a href={`#${node._key}`}></a>
+          </HeadingTag>
+        );
+      }
+      if (style === "blockquote") return <blockquote>{children}</blockquote>;
+      return BlockContent.defaultSerializers.types.block(props);
+    },
     ads: ({}) => {
       return (
         // <div style={{ margin: "0 0 20px" }}>
@@ -118,12 +167,18 @@ const serializers = {
   },
 };
 
-const BlogContent = ({ content }) => {
+export const TableContent = ({ content }) => {
+  return (
+    <ul>
+      <BlockContent serializers={customSerializer} blocks={content} />
+    </ul>
+  );
+};
+
+export const BlogContent = ({ content }) => {
   return (
     <div className='blockContent'>
       <BlockContent serializers={serializers} blocks={content} />
     </div>
   );
 };
-
-export default BlogContent;
