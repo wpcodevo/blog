@@ -28,6 +28,7 @@ h6 {
 h4 {
   font-size: 22px;
   margin-bottom: 20px;
+  padding-top: 10px;
 }
 
 a {
@@ -161,6 +162,7 @@ img {
   }
 
   ul {
+    padding-left: 1rem;
     li {
       list-style: square;
       margin-bottom: 10px;
@@ -170,6 +172,20 @@ img {
   ol {
     li {
       margin-bottom: 10px;
+    }
+  }
+
+  .tableofcontent {
+    li {
+      margin: 0 0 5px;
+      padding: 0;
+
+      a {
+        font-size: 16px;
+        &:hover {
+          text-decoration: underline !important;
+        }
+      }
     }
   }
 }

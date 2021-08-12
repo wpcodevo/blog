@@ -1,15 +1,9 @@
 import Link from "next/link";
 import { urlFor } from "lib/api";
-import getYouTubeID from "get-youtube-id";
 import dynamic from "next/dynamic";
 import BlockContent from "@sanity/block-content-to-react";
 const GoogleAds = dynamic(() => import("components/GoogleAds"), {
   loading: () => <div style={{ height: 0 }}></div>,
-});
-const YouTube = dynamic(() => import("react-youtube"), {
-  loading: () => (
-    <div style={{ width: "100%", height: "45vh", background: "#222" }} />
-  ),
 });
 const HighLightCode = dynamic(() => import("components/HighLightCode"), {
   loading: () => (
@@ -22,6 +16,8 @@ import Image from "next/image";
 let tableofcontent;
 
 const customSerializer = {
+  listItem: () => null,
+  list: () => null,
   types: {
     block: (props) => {
       const { node, children } = props;
@@ -29,7 +25,9 @@ const customSerializer = {
       if (/^h\d/.test(style)) {
         return (
           <li>
-            <a href={`#${node._key}`}>{children}</a>
+            <a className='orange-text' href={`#${node._key}`}>
+              {children}{" "}
+            </a>
           </li>
         );
       }
@@ -46,14 +44,36 @@ const customSerializer = {
     tablecontent: () => null,
   },
   marks: {
-    color: () => null,
     link: () => null,
     internalLink: () => null,
+    color: ({ mark, children }) => {
+      return <span style={{ color: mark.hex }}>{children}</span>;
+    },
   },
 };
 
 const serializers = {
   types: {
+    block: (props) => {
+      const { node, children } = props;
+      // Protect against a blank node.style property
+      const style = node.style;
+      // find the heading blocks (style == h1,h2,h3 etc)
+      if (/^h\d/.test(style)) {
+        // set the heading tag (h1,h2,h3,etc)
+        const HeadingTag = style;
+        return (
+          // use the node key as the id, it's guaranteed unique
+          // one can also slugify the children spans if one want
+          // nicer URLs
+          <HeadingTag id={node._key}>
+            {children} <a href={`#${node._key}`}></a>
+          </HeadingTag>
+        );
+      }
+      if (style === "blockquote") return <blockquote>{children}</blockquote>;
+      return BlockContent.defaultSerializers.types.block(props);
+    },
     ads: ({}) => {
       return (
         // <div style={{ margin: "0 0 20px" }}>
@@ -62,7 +82,16 @@ const serializers = {
         <div></div>
       );
     },
-    tablecontent: () => null,
+    tablecontent: () => {
+      return (
+        <ul className='tableofcontent'>
+          <BlockContent
+            serializers={customSerializer}
+            blocks={tableofcontent}
+          />
+        </ul>
+      );
+    },
     code: ({ node: { language, code, filename } }) => {
       return (
         <HighLightCode language={language} code={code} filename={filename} />
@@ -93,9 +122,19 @@ const serializers = {
       );
     },
     youtube: ({ node }) => {
-      const { url } = node;
-      const id = getYouTubeID(url);
-      return <YouTube className='youtubeWrapper' videoId={id} />;
+      return (
+        <iframe
+          className='youtubeWrapper'
+          loading='lazy'
+          title='YT Embed'
+          width='100%'
+          height='315'
+          src={`https://www.youtube.com/embed/${node.url.split("/")[3]}`}
+          frameBorder='0'
+          allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+          allowFullScreen
+        />
+      );
     },
     image: ({ node: { alt, asset, position = "center" } }) => {
       return (
