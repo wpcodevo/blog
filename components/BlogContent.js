@@ -144,7 +144,6 @@ const serializers = {
             width={550}
             height={370}
             layout='responsive'
-            className='mb-3'
             alt={alt}
           />
         </div>
