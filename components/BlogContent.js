@@ -31,7 +31,7 @@ const customSerializer = {
         );
       }
 
-      // only return heading blocks
+      // only return heading block
       return null;
     },
     // ignore other block types
