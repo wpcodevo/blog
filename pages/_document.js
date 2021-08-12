@@ -12,6 +12,10 @@ class MyDocument extends Document {
         <Head>
           <link rel='canonical' href='https://www.wpcodevo.com/' />
           <meta
+            name='google-site-verification'
+            content='QVihTzJUN1bwjjME4WQtDetK-P8gRUstoBhg1-baD1o'
+          />
+          <meta
             name='p:domain_verify'
             content='263ed5cf94ded2830175910f7d8f7183'
           />

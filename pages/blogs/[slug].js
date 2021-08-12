@@ -122,7 +122,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
           />
         )}
 
-        {/* {initialBlog.content && <TableContent content={initialBlog.content} />} */}
+        {/* {initialBlog.content && TableContent(initialBlog.content)} */}
 
         {initialBlog.content && <BlogContent content={initialBlog.content} />}
         <FixGoogleAds />
