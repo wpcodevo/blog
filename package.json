@@ -17,7 +17,7 @@
     "emailjs-com": "^3.2.0",
     "feed": "^4.2.2",
     "js-cookie": "^2.2.1",
-    "next": "^11.0.1",
+    "next": "^11.1.0",
     "next-pwa": "^5.2.24",
     "next-sanity": "^0.2.0",
     "next-seo": "^4.24.0",
@@ -36,6 +36,7 @@
     "react-scroll": "^1.8.2",
     "react-share": "^4.4.0",
     "sass": "^1.34.0",
+    "sharp": "^0.28.3",
     "sweetalert2": "^11.0.18",
     "swr": "^0.5.6"
   },
