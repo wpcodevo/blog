@@ -127,7 +127,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
         {initialBlog.content && <BlogContent content={initialBlog.content} />}
         <FixGoogleAds />
         <DownloadFile blog={blog} />
-
+        <ShareSocial blog={initialBlog} />
         <Comments comments={initialBlog.comments} />
         <CommentForm _id={initialBlog._id} />
         <NewsLetter />
