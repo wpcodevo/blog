@@ -15,7 +15,7 @@ class MyDocument extends Document {
           <link
             rel='alternate'
             type='application/rss+xml'
-            href='https://www.wpcodevo.com/rss/rss.xml'
+            href='https://www.wpcodevo.com/rss/feed.xml'
           />
           <link
             rel='alternate'

@@ -36,7 +36,7 @@ const generateRSSFeed = async (blogs) => {
     updated: date,
     generator: "Next.js using Feed for Node.js",
     feedLinks: {
-      rss2: `${siteUrl}/rss/rss.xml`,
+      rss2: `${siteUrl}/rss/feed.xml`,
       json: `${siteUrl}/rss/feed.json`,
       atom: `${siteUrl}/rss/atom.xml`,
     },
