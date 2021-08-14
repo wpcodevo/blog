@@ -1,5 +1,10 @@
 import dynamic from "next/dynamic";
-import { getTwoPopularBlogs, getTechBlogs, getDealsBlogs } from "lib/api";
+import {
+  getTwoPopularBlogs,
+  getTechBlogs,
+  getDealsBlogs,
+  getBlogs,
+} from "lib/api";
 import CardListItem from "components/CardListItem";
 import NewsListItem from "components/NewsListItem";
 import DealsListItem from "components/DealsListItem";
@@ -9,6 +14,8 @@ import GoogleAds from "components/GoogleAds";
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 import Aside from "components/Aside";
 import FixGoogleAds from "components/FixGoogleAds";
+import generateRSSFeed from "scripts/rss";
+const fs = require("fs");
 
 function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
   return (
@@ -101,6 +108,14 @@ export async function getStaticProps({ preview = false }) {
   const popularBlog = await getTwoPopularBlogs();
   const newsBlog = await getTechBlogs();
   const dealsBlog = await getDealsBlogs();
+
+  const blogs = await getBlogs();
+
+  const feed = await generateRSSFeed(blogs);
+  fs.mkdirSync("./public/rss", { recursive: true });
+  fs.writeFileSync("./public/rss/feed.xml", feed.rss2());
+  fs.writeFileSync("./public/rss/atom.xml", feed.atom1());
+  fs.writeFileSync("./public/rss/feed.json", feed.json1());
   return {
     props: {
       popularBlog,
