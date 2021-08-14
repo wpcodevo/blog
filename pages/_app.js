@@ -7,11 +7,11 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import PageLayout from "components/PageLayout";
-import ScrollTop from "components/ScrollTop";
 import { SEO } from "components/MetaDecorator";
 import { DefaultSeo } from "next-seo";
 const FixAdsBottom = dynamic(() => import("components/FixAdsBottom"));
 const CookieConsent = dynamic(() => import("react-cookie-consent"));
+const ScrollTop = dynamic(() => import("components/ScrollTop"));
 import { GA_TRACKING_ID } from "lib/gtag";
 import Script from "next/script";
 

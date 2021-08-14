@@ -16,7 +16,7 @@ export default function Custom404() {
     <div className='error404'>
       <div className='errorImage'>
         <Image
-          style={{ width: "100%", height: "100%" }}
+          className='errorimg'
           src='/images/404.svg'
           height='400'
           width='400'

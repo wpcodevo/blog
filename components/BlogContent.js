@@ -66,7 +66,7 @@ const serializers = {
           // use the node key as the id, it's guaranteed unique
           // one can also slugify the children spans if one want
           // nicer URLs
-          <HeadingTag id={node._key}>
+          <HeadingTag id={node._key} style={{ color: "#ff6200" }}>
             {children} <a href={`#${node._key}`}></a>
           </HeadingTag>
         );
@@ -151,6 +151,7 @@ const serializers = {
     },
   },
   marks: {
+    heading: ({ children }) => <h4 style={{ color: "#ff6200" }}>{children}</h4>,
     color: ({ mark, children }) => {
       return <span style={{ color: mark.hex }}>{children}</span>;
     },

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import swal from "sweetalert2";
-import { Spinner } from "react-bootstrap";
 import emailjs from "emailjs-com";
+import { Spinner } from "react-bootstrap";
 
 function Form() {
   const [formData, setFormData] = useState();

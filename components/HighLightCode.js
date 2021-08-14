@@ -2,9 +2,8 @@ import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaClipboard } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
-import { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/nightOwl";
-import Highlight from "prism-react-renderer";
+import Highlight, { defaultProps } from "prism-react-renderer";
 
 const HighLightCode = ({ code, language, filename }) => {
   const [isCopy, setisCopy] = useState(false);
@@ -31,6 +30,7 @@ const HighLightCode = ({ code, language, filename }) => {
             style={{
               ...style,
               maxHeight: "500px",
+              width: "100%",
               backgroundColor: "#08090a",
               color: "#f8f8f2",
               padding: "10px",
