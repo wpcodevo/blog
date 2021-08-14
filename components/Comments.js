@@ -4,7 +4,10 @@ import { format, parseISO } from "date-fns";
 export function Comments({ comments }) {
   return (
     <div className='comments'>
-      <h4>{comments.length} COMMENTS</h4>
+      <h4 className='mt-10 mb-4 d-flex'>
+        {comments.length} COMMENTS
+        {"  "}
+      </h4>
       {comments.length === 0 && (
         <p
           style={{
