@@ -1,8 +1,7 @@
-import dynamic from "next/dynamic";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { getBlogsByQuery, getSearchBlogs } from "lib/api";
-import { useGetSearchBlogs, useGetAllSearchBlogs } from "actions/Pagination";
+import { useGetSearchBlogs } from "actions/Pagination";
 import SearchItem from "components/SearchItem";
 import SearchListItem from "components/SearchListItem";
 import { PageSeo } from "components/MetaDecorator";

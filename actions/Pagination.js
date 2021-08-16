@@ -63,7 +63,7 @@ export const useGetSearchBlogs = ({ filter, query }) => {
       return null;
     }
 
-    return `/api/search?offset=${index * 6}&date=${
+    return `/api/search?offset=${index * 10}&date=${
       filter.date.asc ? "asc" : "desc"
     }&q=${query}`;
   }, getBlogs);

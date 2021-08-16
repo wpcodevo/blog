@@ -25,7 +25,7 @@ const SearchWidget = ({ openSearch, setOpenSearch }) => {
     router.push(`/search?q=${query}`);
   };
 
-  if (router.query.q.replace(/ /g, "+") === `${formData.fullsearch}`) {
+  if (router.query.q?.replace(/ /g, "+") === `${formData.fullsearch}`) {
     setTimeout(() => {
       setShowLoader(false);
       setOpenSearch(false);

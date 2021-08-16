@@ -115,8 +115,16 @@ const BlogNavBar = () => {
               </ul>
             </div>
 
-            <div onClick={() => setOpenNav(!openNav)} className='hamburger'>
-              <BiMenu />
+            <div className='d-flex'>
+              <div
+                onClick={() => setOpenSearch(true)}
+                className='search-nav-mobile'
+              >
+                <BiSearch />
+              </div>
+              <div onClick={() => setOpenNav(!openNav)} className='hamburger'>
+                <BiMenu />
+              </div>
             </div>
           </div>
         </nav>

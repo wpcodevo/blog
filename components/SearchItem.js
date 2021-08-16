@@ -8,7 +8,6 @@ const SearchItem = ({ value }) => {
   const router = useRouter();
   const [formData, setFormData] = useState({ search: "" });
   const [showLoader, setShowLoader] = useState(false);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const {
     register,
@@ -28,18 +27,7 @@ const SearchItem = ({ value }) => {
   if (router.query.q.replace(/ /g, "+") === `${formData.search}`) {
     setTimeout(() => {
       setShowLoader(false);
-      setHasSubmitted(true);
-      setFormData({ search: "" });
     }, 1500);
-  }
-
-  const resetFields = () => {
-    const input = document.querySelector(".searchItem  .field");
-    input.value = "";
-  };
-
-  if (hasSubmitted) {
-    resetFields();
   }
 
   return (

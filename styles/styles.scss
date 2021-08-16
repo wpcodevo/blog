@@ -528,7 +528,8 @@ p {
 }
 
 .top-nav,
-.hamburger {
+.hamburger,
+.search-nav-mobile {
   display: none;
 }
 
@@ -582,6 +583,15 @@ p {
     font-size: 30px;
     padding: 10px;
     cursor: pointer;
+  }
+
+  .search-nav-mobile {
+    display: block;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
   }
 
   .nav-link:link,
@@ -1768,5 +1778,31 @@ p {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .fullscreen {
+    .close {
+      padding: 7px 10px 7px;
+    }
+    .searchform {
+      .field {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .fullscreen {
+    .close {
+      padding: 5px 8px 5px;
+    }
+    .searchform {
+      .field {
+        font-size: 30px;
+      }
+    }
   }
 }
