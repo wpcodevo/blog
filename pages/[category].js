@@ -11,6 +11,7 @@ import CardListItem from "components/CardListItem";
 import CardsItemRow from "components/CardsItemRow";
 import Aside from "components/Aside";
 import FixGoogleAds from "components/FixGoogleAds";
+import { Spinner } from "react-bootstrap";
 
 const BlogList = ({ data = [], filter }) => {
   return data.map((page) => {
@@ -48,10 +49,15 @@ function Category({ blogs, category }) {
     return <Error status={404} />;
   }
 
-  const { data, size, setSize, hitEnd } = useGetBlogsPages({
+  const { data, size, error, setSize, hitEnd } = useGetBlogsPages({
     filter,
     category,
   });
+
+  const isLoadingInitialData = !data && !error;
+  const isLoadingMore =
+    isLoadingInitialData ||
+    (size > 0 && data && typeof data[size - 1] === "undefined");
 
   return (
     <>
@@ -82,7 +88,23 @@ function Category({ blogs, category }) {
                 disabled={hitEnd}
                 className='load-btn'
               >
-                {hitEnd ? "No More Blog" : "Load More"}
+                {isLoadingMore ? (
+                  <>
+                    <Spinner
+                      as='span'
+                      animation='grow'
+                      size='sm'
+                      role='status'
+                      aria-hidden='true'
+                    />
+                    {"  "}
+                    loading...
+                  </>
+                ) : hitEnd ? (
+                  "no more blogs"
+                ) : (
+                  "load more"
+                )}
               </button>
             </div>
           </main>
