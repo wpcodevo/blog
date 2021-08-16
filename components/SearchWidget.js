@@ -32,7 +32,7 @@ const SearchWidget = ({ openSearch, setOpenSearch }) => {
       setHasSubmitted(true);
       setFormData({ fullsearch: "" });
       reset({ fullsearch: "" });
-    }, 1500);
+    }, 1000);
   }
 
   const resetFields = () => {

@@ -27,7 +27,7 @@ const SearchItem = ({ value }) => {
   if (router.query.q.replace(/ /g, "+") === `${formData.search}`) {
     setTimeout(() => {
       setShowLoader(false);
-    }, 1500);
+    }, 1000);
   }
 
   return (
