@@ -52,3 +52,28 @@ export const useGetBlogs = ({ filter }) => {
 
   return { ...result, hitEnd };
 };
+
+export const useGetSearchBlogs = ({ filter, query }) => {
+  const result = useSWRInfinite((index, previousPageData) => {
+    if (index === 0) {
+      return `/api/search?date=${filter.date.asc ? "asc" : "desc"}&q=${query}`;
+    }
+
+    if (!previousPageData.length) {
+      return null;
+    }
+
+    return `/api/search?offset=${index * 6}&date=${
+      filter.date.asc ? "asc" : "desc"
+    }&q=${query}`;
+  }, getBlogs);
+
+  let hitEnd = false;
+  const { data } = result;
+
+  if (data) {
+    hitEnd = data[data.length - 1].length === 0;
+  }
+
+  return { ...result, hitEnd };
+};

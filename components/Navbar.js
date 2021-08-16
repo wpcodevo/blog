@@ -2,12 +2,15 @@ import { useState } from "react";
 import Link from "next/link";
 import { BiMenu } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
+import { BiSearch } from "react-icons/bi";
 import dynamic from "next/dynamic";
 const YouTubeSubscribe = dynamic(() => import("components/youtubeSubcribe"));
 import ScrollProgress from "components/ScrollProgress";
+const SearchWidget = dynamic(() => import("components/SearchWidget"));
 
 const BlogNavBar = () => {
   const [openNav, setOpenNav] = useState(false);
+  const [openSearch, setOpenSearch] = useState(false);
 
   return (
     <>
@@ -103,6 +106,12 @@ const BlogNavBar = () => {
                     count={"default"}
                   />
                 </li>
+                <li
+                  className='nav-item search-nav'
+                  onClick={() => setOpenSearch(true)}
+                >
+                  <BiSearch size={24} />
+                </li>
               </ul>
             </div>
 
@@ -113,6 +122,7 @@ const BlogNavBar = () => {
         </nav>
       </header>
       <ScrollProgress />
+      <SearchWidget openSearch={openSearch} setOpenSearch={setOpenSearch} />
     </>
   );
 };

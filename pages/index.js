@@ -112,10 +112,13 @@ export async function getStaticProps({ preview = false }) {
   const blogs = await getBlogs();
 
   const feed = await generateRSSFeed(blogs);
-  fs.mkdirSync("./public/rss", { recursive: true });
-  fs.writeFileSync("./public/rss/feed.xml", feed.rss2());
-  fs.writeFileSync("./public/rss/atom.xml", feed.atom1());
-  fs.writeFileSync("./public/rss/feed.json", feed.json1());
+
+  if (process.env.NODE_ENV === "production") {
+    fs.mkdirSync("./public/rss", { recursive: true });
+    fs.writeFileSync("./public/rss/feed.xml", feed.rss2());
+    fs.writeFileSync("./public/rss/atom.xml", feed.atom1());
+    fs.writeFileSync("./public/rss/feed.json", feed.json1());
+  }
   return {
     props: {
       popularBlog,

@@ -494,6 +494,7 @@ p {
 
 .nav-list {
   margin: 0;
+  padding: 0;
 }
 
 .nav-item {
@@ -501,6 +502,14 @@ p {
 
   &:last-child {
     height: auto;
+  }
+
+  &.search-nav {
+    margin-left: 30px;
+    svg {
+      fill: white;
+      cursor: pointer;
+    }
   }
 }
 
@@ -589,6 +598,16 @@ p {
     padding: 20px 16px;
     background-color: #222;
     height: 100%;
+  }
+
+  .nav-item {
+    &.search-nav {
+      display: none;
+      svg {
+        fill: white;
+        cursor: pointer;
+      }
+    }
   }
 
   .page-footer {
@@ -1580,5 +1599,174 @@ p {
     top: 0;
     left: 0;
     z-index: 100;
+  }
+}
+
+// Search Functionality
+.searchItem {
+  margin-bottom: 10px;
+  div {
+    position: relative;
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background: none;
+
+      svg {
+        fill: #888;
+      }
+    }
+    .field {
+      font-family: "Roboto", sans-serif;
+      width: 100%;
+      border: 1px solid #ddd;
+      outline: none;
+      text-indent: 16px;
+      font-size: 18px;
+      padding: 8px 0;
+      border-radius: 2px;
+
+      &.danger {
+        border: 1px solid #ff6200;
+      }
+    }
+  }
+}
+.search-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+}
+
+.entry {
+  margin-bottom: 15px;
+
+  &-title {
+    font-size: 25px;
+    color: #444;
+  }
+}
+
+.search-stats {
+  color: grey;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.search {
+  &-link {
+    display: block;
+    color: #0000cc;
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &:hover {
+      color: #0000cc;
+      text-decoration: underline !important;
+    }
+  }
+
+  &-href {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 16px;
+    display: block;
+    margin: 5px 0;
+    color: #008000;
+    text-decoration: none;
+    font-size: 15px;
+
+    &:hover {
+      color: #008000;
+    }
+  }
+}
+
+// Search Widget
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999;
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+  transform: translate(0px, -100%) scale(0, 0);
+  opacity: 0;
+
+  &.open {
+    transform: translate(0px, 0px) scale(1, 1);
+    opacity: 1;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #999;
+    border: 1px solid #dfdfdf;
+    opacity: 1;
+    padding: 10px 13px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #ff6200;
+      color: #fff;
+    }
+  }
+
+  .searchform {
+    height: 80px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 90%;
+    margin: 0 5%;
+
+    .field {
+      border: none;
+      outline: none;
+      background: transparent;
+      cursor: pointer;
+      color: #999;
+      font-size: 60px;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+
+      &.danger {
+        border: 1px solid #ff6200;
+      }
+    }
+
+    .search-submit {
+      display: none;
+    }
+  }
+
+  .spinner {
+    position: absolute;
+    top: 218px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 }
