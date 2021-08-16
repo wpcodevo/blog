@@ -10,6 +10,7 @@ import Aside from "components/Aside";
 const content = require("data/content");
 import FixGoogleAds from "components/FixGoogleAds";
 import Breadcrumbs from "nextjs-breadcrumbs";
+import { Spinner } from "react-bootstrap";
 
 let siteUrl = "";
 if (process.env.NODE_ENV === "production") {
@@ -47,10 +48,15 @@ function Search({ query, blogs, searchResults }) {
     return <Error status={404} />;
   }
 
-  const { data, size, setSize, hitEnd } = useGetSearchBlogs({
+  const { data, size, error, setSize, hitEnd } = useGetSearchBlogs({
     filter,
     query,
   });
+
+  const isLoadingInitialData = !data && !error;
+  const isLoadingMore =
+    isLoadingInitialData ||
+    (size > 0 && data && typeof data[size - 1] === "undefined");
 
   return (
     <>
@@ -94,7 +100,23 @@ function Search({ query, blogs, searchResults }) {
                 disabled={hitEnd}
                 className='load-btn'
               >
-                {hitEnd ? "No More Blog" : "Load More"}
+                {isLoadingMore ? (
+                  <>
+                    <Spinner
+                      as='span'
+                      animation='grow'
+                      size='sm'
+                      role='status'
+                      aria-hidden='true'
+                    />
+                    {"  "}
+                    loading...
+                  </>
+                ) : hitEnd ? (
+                  "no more blogs"
+                ) : (
+                  "load more"
+                )}
               </button>
             </div>
           </main>
