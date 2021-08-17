@@ -21,14 +21,16 @@ const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
             </Link>
           </h1>
 
-          <div className='authorInfo'>
-            {format(parseISO(date), "PPP")} by{" "}
-            <span>
-              <Link href='/about'>
-                <a className='orange-text'>{author.name}</a>
-              </Link>
-            </span>
-          </div>
+          {author && (
+            <div className='authorInfo'>
+              {format(parseISO(date), "PPP")} by{" "}
+              <span>
+                <Link href='/about'>
+                  <a className='orange-text'>{author.name}</a>
+                </Link>
+              </span>
+            </div>
+          )}
           <div className='card-flex'>
             <Link {...link}>
               <a aria-label={smallImage.alt} className='card-link'>
