@@ -48,7 +48,7 @@ const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
               </a>
             </Link>
 
-            <Card.Text style={{ fontSize: "16px !important" }}>
+            <Card.Text style={{ fontSize: "17px !important" }}>
               {subtitle.length > 230
                 ? subtitle.substr(0, 230) + " ..."
                 : subtitle}

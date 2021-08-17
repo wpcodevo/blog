@@ -193,7 +193,6 @@ img {
       padding: 0;
 
       a {
-        font-size: 16px;
         &:hover {
           text-decoration: underline !important;
         }
@@ -203,8 +202,6 @@ img {
 }
 
 p {
-  font-size: 16px;
-  line-height: 1.7em;
   margin: 0;
 }
 
@@ -297,7 +294,7 @@ p {
 
       &.italic {
         color: #ff6200;
-        font-size: 13px;
+        font-size: 15px;
         font-style: italic;
         font-weight: 500;
 
@@ -803,7 +800,7 @@ p {
       a {
         display: block;
         border: 1px solid #ddd;
-        font-size: 15px;
+        font-size: 16px;
         padding: 2px;
         margin-bottom: 10px;
         text-transform: capitalize;
@@ -835,7 +832,7 @@ p {
       text-align: center;
 
       span {
-        font-size: 14px;
+        font-size: 16px;
         color: #999;
         font-weight: 400;
         padding: 3px 0 0;
@@ -1327,7 +1324,7 @@ p {
   p {
     a {
       color: #ff6200;
-      font-size: 14px;
+      font-size: 15px;
 
       &:hover {
         color: #ff6200;

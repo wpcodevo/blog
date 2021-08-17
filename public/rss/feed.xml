@@ -4,7 +4,7 @@
         <title>Codevo | A place to improve your JAVASCRIPT, HTML and CSS Skills</title>
         <link>https://www.wpcodevo.com</link>
         <description>Tutorials about modern html5, css3, JavaScript, Frameworks such as React, Vuejs, Angular and all things related to Web development.</description>
-        <lastBuildDate>Tue, 17 Aug 2021 20:00:21 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 17 Aug 2021 23:24:37 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Next.js using Feed for Node.js</generator>
         <language>en</language>
@@ -14,6 +14,15 @@
             <link>https://www.wpcodevo.com</link>
         </image>
         <copyright>All rights reserved 2021, Edem Ziddah</copyright>
+        <item>
+            <title><![CDATA[Top 10 Gaming Affiliate Programs 2021 [Video Game Affiliate Programs]]]></title>
+            <link>https://www.wpcodevo.com/gaming-affiliate-programs</link>
+            <guid>https://www.wpcodevo.com/gaming-affiliate-programs</guid>
+            <pubDate>Tue, 17 Aug 2021 15:42:00 GMT</pubDate>
+            <description><![CDATA[Are you a passionate gamer looking for new ways to start earning additional income through gaming affiliate marketing?     luckily, at the time of writing the gaming industry is currently worth US$115 billion, with the potential of being worth over US$600 billion within the next 10 years.]]></description>
+            <content:encoded><![CDATA[Are you a passionate gamer looking for new ways to start earning additional income through gaming affiliate marketing?     luckily, at the time of writing the gaming industry is currently worth US$115 billion, with the potential of being worth over US$600 billion within the next 10 years.]]></content:encoded>
+            <author>contact@wpcodevo.com (Ziddah Edem)</author>
+        </item>
         <item>
             <title><![CDATA[Responsive Contact Form with recaptcha using HTML and CSS only]]></title>
             <link>https://www.wpcodevo.com/contact-form-with-recaptcha-using-html-and-css-only</link>
@@ -123,7 +132,7 @@
             <author>contact@wpcodevo.com (Ziddah Edem)</author>
         </item>
         <item>
-            <title><![CDATA[Best Keyboard for programming & coding: top 5 options]]></title>
+            <title><![CDATA[Best Keyboard for programming & coding: top 5 options 2021]]></title>
             <link>https://www.wpcodevo.com/best-keyboard-for-programming-and-coding-top-5-options</link>
             <guid>https://www.wpcodevo.com/best-keyboard-for-programming-and-coding-top-5-options</guid>
             <pubDate>Mon, 28 Jun 2021 04:42:00 GMT</pubDate>

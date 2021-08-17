@@ -42,7 +42,7 @@ const PopularBlogs = () => {
             <div>
               <Link href='/blogs/[slug]' as={`/blogs/${blog.slug}`}>
                 <a>
-                  <h5 style={{ fontSize: "14px" }} className='title-link'>
+                  <h5 style={{ fontSize: "15px" }} className='title-link'>
                     {blog.title.length > 35
                       ? blog.title.substr(0, 35) + " ..."
                       : blog.title}
@@ -51,7 +51,7 @@ const PopularBlogs = () => {
               </Link>
 
               <span
-                style={{ fontSize: "11px", display: "block", color: "#767676" }}
+                style={{ fontSize: "13px", display: "block", color: "#767676" }}
               >
                 {format(parseISO(blog.date), "PPP")}
               </span>

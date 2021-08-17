@@ -1,10 +1,14 @@
-import { Feed } from "feed";
+const Feed = require("feed").Feed;
 const content = require("data/content");
+const fs = require("fs");
+const getBlogs = require("lib/api").getBlogs;
 
-const generateRSSFeed = async (blogs) => {
+const generateRSSFeed = async () => {
   if (process.env.NODE_ENV === "development") {
     return;
   }
+
+  const blogs = await getBlogs();
 
   const {
     siteUrl,
@@ -59,7 +63,10 @@ const generateRSSFeed = async (blogs) => {
     });
   });
 
-  return feed;
+  fs.mkdirSync("./public/rss", { recursive: true });
+  fs.writeFileSync("./public/rss/feed.xml", feed.rss2());
+  fs.writeFileSync("./public/rss/atom.xml", feed.atom1());
+  fs.writeFileSync("./public/rss/feed.json", feed.json1());
 
   // Write the RSS output to a public file, making it
   // accessible at ashleemboyer.com/rss.xml
