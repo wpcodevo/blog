@@ -6,7 +6,9 @@ body {
   font-weight: 400;
   font-size: 17px;
   background-color: #f0f0f0;
-  color: #484848 !important;
+  color: #494949 !important;
+  letter-spacing: 0.3px;
+  word-wrap: break-word;
 }
 
 .container {
@@ -69,6 +71,16 @@ img {
   align-items: flex-start;
   margin-top: 10px;
   justify-content: space-between;
+}
+
+.external_link {
+  color: #0b9c71;
+  font-weight: bold;
+  transition: color 100ms ease-in-out;
+  &:hover {
+    color: #ff6200;
+    text-decoration: underline !important;
+  }
 }
 
 .hover_underline {

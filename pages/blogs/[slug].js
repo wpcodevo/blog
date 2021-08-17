@@ -97,7 +97,8 @@ function BlogDetails({ blog: initialBlog, preview }) {
             <Card.Body className='card-body-1'>
               <h1 className='blockContent-title'>{initialBlog.title}</h1>
               <div className='authorInfo'>
-                Posted on {format(parseISO(initialBlog.date), "PPP")} by{" "}
+                Last Updated on{" "}
+                {format(parseISO(initialBlog._updatedAt), "PPP")} by{" "}
                 <Link href='/about'>
                   <a>
                     <span className='orange-text'>

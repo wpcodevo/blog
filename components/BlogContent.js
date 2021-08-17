@@ -164,12 +164,12 @@ const serializers = {
           href={href}
           target='_blank'
           aria-label='external link'
-          className='hover_underline'
+          className='external_link'
         >
           {children}
         </a>
       ) : (
-        <a aria-label='external link' className='hover_underline' href={href}>
+        <a aria-label='external link' className='external_link' href={href}>
           {children}
         </a>
       );
