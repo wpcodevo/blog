@@ -787,7 +787,7 @@ p {
     }
 
     &.categories {
-      height: 298px;
+      min-height: 298px;
       a {
         display: block;
         border: 1px solid #ddd;
