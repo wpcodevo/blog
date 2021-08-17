@@ -107,7 +107,7 @@ export async function getStaticProps({ preview = false }) {
   const newsBlog = await getTechBlogs();
   const dealsBlog = await getDealsBlogs();
 
-  const blogs = await getBlogs();
+  // const blogs = await getBlogs();
 
   // const feed = await generateRSSFeed(blogs);
 
