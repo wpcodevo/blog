@@ -140,7 +140,7 @@ const Aside2 = ({ blog }) => {
         <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <div className='widget tags'>
-        {blog.tags.map((tag, index) => (
+        {blog.tags?.map((tag, index) => (
           <div key={`${index}-list`}>{tag.value}</div>
         ))}
       </div>
