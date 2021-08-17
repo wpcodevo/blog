@@ -23,7 +23,7 @@ const DealsListItem = ({ shorttitle, smallImage, link, title }) => {
           </Link>
         </h1>
 
-        <p style={{ fontSize: "15px !important" }}>
+        <p>
           {shorttitle}
           <Link {...link}>
             <a style={{ fontStyle: "italic", fontWeight: "500" }}>

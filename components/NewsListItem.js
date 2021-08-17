@@ -18,7 +18,7 @@ const NewsListItem = ({ shorttitle, smallImage, link }) => {
       </Link>
       <Link {...link}>
         <a>
-          <p style={{ fontSize: "15px !important" }}>
+          <p>
             {shorttitle.length > 60
               ? shorttitle.substr(0, 60) + " ..."
               : shorttitle}
