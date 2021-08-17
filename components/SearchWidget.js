@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
@@ -51,14 +51,13 @@ const SearchWidget = ({ openSearch, setOpenSearch }) => {
       </div>
       <form className='searchform' onSubmit={handleSubmit(onSubmit)} disabled>
         <input
+          autoFocus
           className={`field ${errors.fullsearch ? "danger" : ""}`}
           type='fullsearch'
           name='fullsearch'
           {...register("fullsearch", { required: true })}
-          placeholder='Name*'
           autoComplete='off'
-          autoFocus
-          placeholder='Search Wpcodevo'
+          placeholder='Search Wpcodevo...'
         />
         <input type='submit' value='Search' className='search-submit' />
       </form>
