@@ -57,6 +57,7 @@ const SearchWidget = ({ openSearch, setOpenSearch }) => {
           {...register("fullsearch", { required: true })}
           placeholder='Name*'
           autoComplete='off'
+          autoFocus
           placeholder='Search Wpcodevo'
         />
         <input type='submit' value='Search' className='search-submit' />
