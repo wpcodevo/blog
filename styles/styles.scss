@@ -1370,6 +1370,12 @@ p {
     img {
       border-radius: 50%;
     }
+
+    a {
+      &:hover {
+        color: #ff6200;
+      }
+    }
   }
 }
 
