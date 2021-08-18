@@ -140,7 +140,7 @@ const serializers = {
       return (
         <div style={{ position: "relative" }}>
           <Image
-            src={urlFor(asset.url).width(900).height(600).url()}
+            src={urlFor(asset.url).width(1000).height(600).url()}
             width={550}
             height={370}
             layout='responsive'
