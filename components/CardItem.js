@@ -22,6 +22,7 @@ const CardItem = ({ title, date, smallImage, author, link }) => {
                   width={300}
                   height={200}
                   layout='responsive'
+                  objectFit='cover'
                   alt={smallImage.alt}
                 />
               </a>
@@ -46,6 +47,7 @@ const CardItem = ({ title, date, smallImage, author, link }) => {
               alt={author.alt}
               width={40}
               height={40}
+              objectFit='cover'
             />
             <div className='d-col mx-2'>
               <Card.Title

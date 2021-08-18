@@ -44,6 +44,7 @@ const CardListItem = ({ title, subtitle, date, author, smallImage, link }) => {
                   width={300}
                   height={240}
                   layout='responsive'
+                  objectFit='cover'
                 />
               </a>
             </Link>
