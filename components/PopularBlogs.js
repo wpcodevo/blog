@@ -21,7 +21,7 @@ const PopularBlogs = () => {
       {blogs.map((blog, index) => {
         return (
           <div
-            className='d-flex mb-4'
+            className='d-flex mb-3'
             key={`${blog.date}` + index}
             style={{ alignItems: "flex-start" }}
           >
@@ -42,7 +42,10 @@ const PopularBlogs = () => {
             <div>
               <Link href='/blogs/[slug]' as={`/blogs/${blog.slug}`}>
                 <a>
-                  <h5 style={{ fontSize: "15px" }} className='title-link'>
+                  <h5
+                    style={{ fontSize: "15px", margin: 0 }}
+                    className='title-link'
+                  >
                     {blog.title.length > 35
                       ? blog.title.substr(0, 35) + " ..."
                       : blog.title}

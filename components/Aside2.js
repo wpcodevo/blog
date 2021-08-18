@@ -88,7 +88,7 @@ const Aside2 = ({ blog }) => {
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
         <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
-      <div className='widget' style={{ height: 517 }}>
+      <div className='widget' style={{ minHeight: 485 }}>
         <p style={{ fontSize: 23, textAlign: "center" }}>
           <span className='orange-text'>Popular</span> Blogs
         </p>
