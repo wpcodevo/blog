@@ -80,18 +80,24 @@ function Form() {
       {errors.name && <span>Please enter your name here!</span>}
 
       <input
-        autoComplete='off'
+        autoComplete='email'
         className={`field ${errors.email ? "danger" : ""}`}
         name='email'
         type='email'
-        {...register("email", { required: true })}
+        {...register("email", {
+          required: "Please enter your email address here!",
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+            message: "Invalid email address.",
+          },
+        })}
         placeholder='Email*'
       />
-      {errors.email && <span>Please enter your email address here!</span>}
+      {errors.email && <span>{errors.email.message}</span>}
 
       <textarea
         className={`field ${errors.message ? "danger" : ""}`}
-        {...register("message", { required: true })}
+        {...register("message", { required: "true" })}
         name='message'
         rows='8'
         placeholder='Message:'

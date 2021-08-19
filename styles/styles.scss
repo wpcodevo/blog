@@ -1361,7 +1361,7 @@ p {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  padding: 20px;
+  padding: 20px 20px 0;
 
   .close {
     position: absolute;
@@ -1396,13 +1396,14 @@ p {
     font-size: 16px;
     color: #555;
     margin-bottom: 16px;
+    line-height: 1.5em;
   }
 
   form {
     width: 100%;
     input {
       width: 100%;
-      padding: 15px 0;
+      padding: 10px 0;
       text-indent: 16px;
       border-radius: 5px;
       background-color: #f1f1f1;
@@ -1422,7 +1423,6 @@ p {
     }
 
     span {
-      margin: 10px 0;
       color: orangered;
       font-size: 13px;
       display: none;
@@ -1435,7 +1435,7 @@ p {
 
   .popup-center button {
     display: inline-block;
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-radius: 5px;
     width: 100%;
     color: white;
@@ -1461,15 +1461,7 @@ p {
 
 @media (min-width: 568px) {
   .ReactModal__Content {
-    height: 480px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .popup {
-    form input {
-      padding: 13px 0;
-    }
+    height: 430px !important;
   }
 }
 
@@ -1480,15 +1472,10 @@ p {
 
 @media (max-width: 567px) {
   .popup {
-    padding: 10px;
+    padding: 10px 10px 0;
     form {
       input {
         padding: 8px 0;
-      }
-
-      span {
-        margin: 0;
-        padding: 5px 0;
       }
     }
     .popup-center {
@@ -1512,7 +1499,7 @@ p {
 
   .ReactModal__Content {
     height: 380px !important;
-    padding: 10px !important;
+    padding: 10px 10px 0 !important;
   }
 }
 

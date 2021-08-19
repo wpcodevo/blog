@@ -18,7 +18,6 @@ const customStyles = {
     maxWidth: "90%",
     width: "500px",
     height: "100%",
-    maxHeight: "480px",
     overflow: "hidden",
     background: "white",
     border: "none",
