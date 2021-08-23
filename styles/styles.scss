@@ -471,9 +471,9 @@ p {
 }
 
 .navigation {
-  display: grid;
+  display: flex;
   align-items: center;
-  grid-template-columns: 3fr 5fr;
+  justify-content: space-between;
 }
 
 .nav {
@@ -481,9 +481,10 @@ p {
 }
 
 .logo h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #fff;
   margin-bottom: 0;
+  font-weight: bold;
 }
 
 .nav-list {
@@ -522,8 +523,7 @@ p {
 }
 
 .top-nav,
-.hamburger,
-.search-nav-mobile {
+.search-hamburger {
   display: none;
 }
 
@@ -571,8 +571,12 @@ p {
     font-size: 20px;
   }
 
+  .search-hamburger {
+    display: flex;
+    align-items: center;
+  }
+
   .hamburger {
-    display: block;
     color: #fff;
     font-size: 30px;
     padding: 10px;
@@ -580,7 +584,6 @@ p {
   }
 
   .search-nav-mobile {
-    display: block;
     color: #fff;
     font-size: 25px;
     padding: 10px 5px 10px;

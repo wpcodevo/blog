@@ -115,7 +115,7 @@ const BlogNavBar = () => {
               </ul>
             </div>
 
-            <div className='d-flex'>
+            <div className='search-hamburger'>
               <div
                 onClick={() => setOpenSearch(true)}
                 className='search-nav-mobile'
