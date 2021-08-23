@@ -46,9 +46,9 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
               </div>
             ))}
 
-            {/* <div style={{ margin: ".5rem" }}>
+            <div style={{ margin: ".5rem" }}>
               <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-            </div> */}
+            </div>
             <div className='news-grid'>
               {newsBlog?.map((blog) => (
                 <div key={`${newsBlog.length}-${Math.random()}-list`}>
@@ -63,9 +63,9 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
                 </div>
               ))}
             </div>
-            {/* <div style={{ margin: ".5rem" }}>
+            <div style={{ margin: ".5rem" }}>
               <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-            </div> */}
+            </div>
             <span
               style={{ margin: "25px 0 25px", display: "inline-block" }}
               className='home-title'
@@ -87,9 +87,9 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
                 </div>
               ))}
             </div>
-            {/* <div style={{ margin: ".5rem" }}>
+            <div style={{ margin: ".5rem" }}>
               <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-            </div> */}
+            </div>
           </main>
         </div>
         {/* Aside */}

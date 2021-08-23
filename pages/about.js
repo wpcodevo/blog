@@ -2,8 +2,6 @@ import { getAbout } from "lib/api";
 import { BlogContent } from "components/BlogContent";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-import AdSense from "react-adsense";
-import GoogleAds from "components/GoogleAds";
 import Aside from "components/Aside";
 import FixGoogleAds from "components/FixGoogleAds";
 

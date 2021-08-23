@@ -1,6 +1,5 @@
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-import GoogleAds from "components/GoogleAds";
 import Aside from "components/Aside";
 import FixGoogleAds from "components/FixGoogleAds";
 import Image from "next/image";
@@ -56,9 +55,7 @@ const Subscription = () => {
                 />
               </div>
             </div>
-            <div style={{ margin: "1rem 0 1rem" }}>
-              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-            </div>
+            <FixGoogleAds />
           </main>
         </div>
         {/* Aside */}

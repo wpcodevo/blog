@@ -4,7 +4,6 @@ import Error from "next/error";
 import { useGetBlogsPages } from "actions/Pagination";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-import AdSense from "react-adsense";
 import { getBlogsByCategory, getCategories } from "lib/api";
 import FilteringMenu from "components/FilteringMenu";
 import CardListItem from "components/CardListItem";

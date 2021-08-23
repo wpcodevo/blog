@@ -5,7 +5,6 @@ import { useGetSearchBlogs } from "actions/Pagination";
 import SearchItem from "components/SearchItem";
 import SearchListItem from "components/SearchListItem";
 import { PageSeo } from "components/MetaDecorator";
-import GoogleAds from "components/GoogleAds";
 import Aside from "components/Aside";
 const content = require("data/content");
 import FixGoogleAds from "components/FixGoogleAds";

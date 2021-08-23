@@ -4,7 +4,6 @@ import Error from "next/error";
 import { useGetBlogs } from "actions/Pagination";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-import GoogleAds from "components/GoogleAds";
 import FilteringMenu from "components/FilteringMenu";
 import { getPaginatedBlogs } from "lib/api";
 import CardListItem from "components/CardListItem";

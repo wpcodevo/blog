@@ -13,8 +13,6 @@ const DownloadFile = dynamic(() => import("components/DownloadFile"));
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 import Breadcrumbs from "nextjs-breadcrumbs";
 import { format, parseISO } from "date-fns";
-import AdSense from "react-adsense";
-import GoogleAds from "components/GoogleAds";
 const CommentForm = dynamic(() => import("components/CommentForm"));
 const NewsLetter = dynamic(() => import("components/NewsLetter"));
 import { Comments } from "components/Comments";
