@@ -87,9 +87,6 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
                 </div>
               ))}
             </div>
-            <div style={{ margin: ".5rem" }}>
-              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
-            </div>
           </main>
         </div>
         {/* Aside */}
