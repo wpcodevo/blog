@@ -34,7 +34,7 @@ class MyDocument extends Document {
           <meta name='keywords' content={content.keywords} />
           <meta
             name='p:domain_verify'
-            content='263ed5cf94ded2830175910f7d8f7183'
+            content='cddddd105ea22d8afea7fde8b6adfbaa'
           />
           <meta name='theme-color' content='#fff' />
           <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
