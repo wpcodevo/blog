@@ -52,6 +52,18 @@ const BlogNavBar = () => {
                 </li>
 
                 <li className='nav-item'>
+                  <Link href='https://ziddah.com'>
+                    <a
+                      aria-label='NavItem'
+                      className='nav-link'
+                      onClick={() => setOpenNav(!openNav)}
+                      target='_blank'
+                    >
+                      My Blog
+                    </a>
+                  </Link>
+                </li>
+                <li className='nav-item'>
                   <Link href='/categories'>
                     <a
                       aria-label='NavItem'
