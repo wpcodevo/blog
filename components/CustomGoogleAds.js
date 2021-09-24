@@ -4,8 +4,7 @@ const CustomGoogleAds = ({
   slot,
   format = "fluid",
   layout = "",
-  responsive = "",
-  layoutKey = "",
+  responsive = "true",
   styles = { display: "block" },
 }) => {
   return (
@@ -24,7 +23,6 @@ const CustomGoogleAds = ({
         format={format}
         layout={layout}
         responsive={responsive}
-        layoutKey={layoutKey}
       />
     </div>
   );

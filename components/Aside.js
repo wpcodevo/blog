@@ -84,7 +84,7 @@ const Aside = () => {
         </div>
       </div>
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS_2} />
       </div>
 
       <div className='widget no-pad promo'>

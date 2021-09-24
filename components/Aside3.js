@@ -89,7 +89,7 @@ const Aside3 = () => {
       <div className='widget advertisement'>
         <CustomCustomGoogleAds
           format='auto'
-          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS_2}
         />
       </div>
 
@@ -108,7 +108,7 @@ const Aside3 = () => {
       <div className='widget advertisement'>
         <CustomCustomGoogleAds
           format='auto'
-          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS_2}
         />
       </div>
       <div className='widget no-pad promo'>

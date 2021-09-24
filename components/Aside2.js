@@ -86,7 +86,7 @@ const Aside2 = ({ blog }) => {
         </div>
       </div>
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS_2} />
       </div>
       <div className='widget' style={{ minHeight: 485 }}>
         <p style={{ fontSize: 23, textAlign: "center" }}>
@@ -98,7 +98,7 @@ const Aside2 = ({ blog }) => {
       <div className='widget advertisement'>
         <CustomGoogleAds
           format='auto'
-          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS_2}
         />
       </div>
 
