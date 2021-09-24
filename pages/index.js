@@ -10,7 +10,6 @@ import NewsListItem from "components/NewsListItem";
 import DealsListItem from "components/DealsListItem";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
-import GoogleAds from "components/GoogleAds";
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 import Aside from "components/Aside";
 import FixGoogleAds from "components/FixGoogleAds";
@@ -47,7 +46,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
             ))}
 
             <div style={{ margin: ".5rem" }}>
-              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+              <FixGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
             </div>
             <div className='news-grid'>
               {newsBlog?.map((blog) => (
@@ -64,7 +63,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
               ))}
             </div>
             <div style={{ margin: ".5rem" }}>
-              <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+              <FixGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
             </div>
             <span
               style={{ margin: "25px 0 25px", display: "inline-block" }}
