@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import AdSense from "react-adsense";
 import BlogNavBar from "./Navbar";
 import FixGoogleAds from "./FixGoogleAds";
 const Footer = dynamic(() => import("./Footer"));
