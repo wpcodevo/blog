@@ -3,7 +3,7 @@ import AdSense from "react-adsense";
 const CustomGoogleAds = ({
   slot,
   format = "fluid",
-  layout = "in-article",
+  layout = "",
   responsive = "",
   layoutKey = "",
   styles = { display: "block" },

@@ -9,7 +9,9 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"));
+const CustomCustomGoogleAds = dynamic(() =>
+  import("components/CustomCustomGoogleAds")
+);
 const AsideCateogories = dynamic(() => import("components/AsideCategories"));
 
 const Aside3 = () => {
@@ -85,7 +87,10 @@ const Aside3 = () => {
         </div>
       </div>
       <div className='widget advertisement'>
-        <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomCustomGoogleAds
+          format='auto'
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+        />
       </div>
 
       <div className='widget no-pad promo'>
@@ -101,7 +106,10 @@ const Aside3 = () => {
         </Link>
       </div>
       <div className='widget advertisement'>
-        <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomCustomGoogleAds
+          format='auto'
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+        />
       </div>
       <div className='widget no-pad promo'>
         <Link href='https://www.bluehost.com/track/edemziddah/Aside'>
@@ -116,7 +124,7 @@ const Aside3 = () => {
         </Link>
       </div>
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomCustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <AsideCateogories />
     </aside>

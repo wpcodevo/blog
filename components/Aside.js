@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"));
+const CustomGoogleAds = dynamic(() => import("components/CustomGoogleAds"));
 
 const Aside = () => {
   return (
@@ -84,7 +84,7 @@ const Aside = () => {
         </div>
       </div>
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
 
       <div className='widget no-pad promo'>
@@ -100,7 +100,7 @@ const Aside = () => {
         </Link>
       </div>
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <div className='widget no-pad promo'>
         <Link href='https://www.bluehost.com/track/edemziddah/Aside'>
@@ -115,7 +115,10 @@ const Aside = () => {
         </Link>
       </div>
       <div className='widget advertisement'>
-        <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds
+          format='auto'
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+        />
       </div>
     </aside>
   );

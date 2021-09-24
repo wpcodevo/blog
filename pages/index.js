@@ -47,7 +47,10 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
             ))}
 
             <div style={{ margin: ".5rem" }}>
-              <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+              <CustomGoogleAds
+                slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+                layout='in-article'
+              />
             </div>
             <div className='news-grid'>
               {newsBlog?.map((blog) => (
@@ -64,7 +67,10 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
               ))}
             </div>
             <div style={{ margin: ".5rem" }}>
-              <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+              <CustomGoogleAds
+                slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+                layout='in-article'
+              />
             </div>
             <span
               style={{ margin: "25px 0 25px", display: "inline-block" }}

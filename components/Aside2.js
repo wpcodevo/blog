@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"));
+const CustomGoogleAds = dynamic(() => import("components/CustomGoogleAds"));
 const AsideCateogories = dynamic(() => import("components/AsideCategories"));
 const PopularBlogs = dynamic(() => import("components/PopularBlogs"));
 import Image from "next/image";
@@ -86,7 +86,7 @@ const Aside2 = ({ blog }) => {
         </div>
       </div>
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <div className='widget' style={{ minHeight: 485 }}>
         <p style={{ fontSize: 23, textAlign: "center" }}>
@@ -96,7 +96,10 @@ const Aside2 = ({ blog }) => {
       </div>
 
       <div className='widget advertisement'>
-        <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds
+          format='auto'
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+        />
       </div>
 
       <AsideCateogories />
@@ -113,7 +116,10 @@ const Aside2 = ({ blog }) => {
         </Link>
       </div>
       <div className='widget advertisement'>
-        <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds
+          format='auto'
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+        />
       </div>
 
       <div className='widget no-pad promo'>
@@ -129,7 +135,10 @@ const Aside2 = ({ blog }) => {
         </Link>
       </div>
       <div className='widget advertisement'>
-        <GoogleAds format='auto' slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds
+          format='auto'
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+        />
       </div>
       <div className='widget tags'>
         {blog.tags?.map((tag, index) => (
@@ -137,7 +146,7 @@ const Aside2 = ({ blog }) => {
         ))}
       </div>
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <GoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
     </aside>
   );
