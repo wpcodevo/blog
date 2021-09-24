@@ -10,7 +10,7 @@ const CustomGoogleAds = ({
   return (
     <div
       style={{
-        overflow: "hidden",
+        overflow: "hidden !important",
         textAlign: "center",
         width: "100%",
         height: "100%",

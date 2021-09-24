@@ -1474,6 +1474,10 @@ p {
 }
 
 @media (max-width: 567px) {
+  .fix-ads-bottom {
+    display: none !important;
+  }
+
   .popup {
     padding: 10px 10px 0;
     form {

@@ -13,6 +13,7 @@ const FixAdsBottom = () => {
           display: " flex",
           alignItems: "center",
           justifyContent: "center",
+          overflow: "hidden !important",
         }}
       >
         <CustomGoogleAds
