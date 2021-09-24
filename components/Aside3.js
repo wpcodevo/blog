@@ -9,9 +9,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-const CustomCustomGoogleAds = dynamic(() =>
-  import("components/CustomCustomGoogleAds")
-);
+const CustomGoogleAds = dynamic(() => import("components/CustomGoogleAds"));
 const AsideCateogories = dynamic(() => import("components/AsideCategories"));
 
 const Aside3 = () => {
@@ -87,7 +85,7 @@ const Aside3 = () => {
         </div>
       </div>
       <div className='widget advertisement'>
-        <CustomCustomGoogleAds
+        <CustomGoogleAds
           format='auto'
           slot={process.env.NEXT_PUBLIC_DISPLAY_ADS_2}
         />
@@ -106,7 +104,7 @@ const Aside3 = () => {
         </Link>
       </div>
       <div className='widget advertisement'>
-        <CustomCustomGoogleAds
+        <CustomGoogleAds
           format='auto'
           slot={process.env.NEXT_PUBLIC_DISPLAY_ADS_2}
         />
@@ -124,7 +122,7 @@ const Aside3 = () => {
         </Link>
       </div>
       <div className='widget' style={{ maxHeight: "60rem !important" }}>
-        <CustomCustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <AsideCateogories />
     </aside>
