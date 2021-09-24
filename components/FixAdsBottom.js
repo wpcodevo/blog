@@ -1,6 +1,5 @@
-// import GoogleAds from "components/GoogleAds";
 import dynamic from "next/dynamic";
-const GoogleAds = dynamic(() => import("components/GoogleAds"));
+const CustomGoogleAds = dynamic(() => import("components/CustomGoogleAds"));
 
 const FixAdsBottom = () => {
   return (
@@ -16,7 +15,7 @@ const FixAdsBottom = () => {
           justifyContent: "center",
         }}
       >
-        <GoogleAds
+        <CustomGoogleAds
           format=''
           slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
           styles={{ display: "block", width: "100%", height: "7rem" }}
