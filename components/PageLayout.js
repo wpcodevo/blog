@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import BlogNavBar from "./Navbar";
-import FixFooterAds from "./FixFooterAds";
+import FixGoogleAds from "./FixGoogleAds";
 const Footer = dynamic(() => import("./Footer"));
 
 const PageLayout = ({ children, className }) => {
@@ -17,7 +17,7 @@ const PageLayout = ({ children, className }) => {
             overflow: "hidden",
           }}
         >
-          <FixFooterAds />
+          <FixGoogleAds />
         </div>
       </div>
       <Footer />
