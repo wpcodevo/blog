@@ -52,7 +52,7 @@ const Aside3 = () => {
               <FaYoutube />
             </a>
           </Link>
-          <Link href='https://twitter.com/EdemZiddah2'>
+          <Link href='https://twitter.com/wpcodevo'>
             <a
               rel='noreferrer'
               aria-label='icon'
@@ -62,7 +62,7 @@ const Aside3 = () => {
               <FaTwitter />
             </a>
           </Link>
-          <Link href='https://github.com/ziddahedem'>
+          <Link href='https://github.com/wpcodevo'>
             <a
               rel='noreferrer'
               aria-label='icon'
@@ -72,7 +72,7 @@ const Aside3 = () => {
               <FaGithub />
             </a>
           </Link>
-          <Link href='https://www.pinterest.com/ekziddah/'>
+          <Link href='https://www.pinterest.com/passivecoin/'>
             <a
               rel='noreferrer'
               aria-label='icon'
