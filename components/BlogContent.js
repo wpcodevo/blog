@@ -76,10 +76,9 @@ const serializers = {
     },
     ads: ({}) => {
       return (
-        <div></div>
-        // <div style={{ margin: "0 0 20px" }}>
-        //   <GoogleAds slot={process.env.NEXT_PUBLIC_IN_FEED} />
-        // </div>
+        <div style={{ margin: "0 0 20px" }}>
+          {/* <GoogleAds slot={process.env.NEXT_PUBLIC_IN_FEED} /> */}
+        </div>
       );
     },
     tablecontent: () => {
