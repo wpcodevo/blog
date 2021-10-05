@@ -17,7 +17,7 @@ const PageLayout = ({ children, className }) => {
             overflow: "hidden",
           }}
         >
-          <FixGoogleAds />
+          {/* <FixGoogleAds /> */}
         </div>
       </div>
       <Footer />

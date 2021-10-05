@@ -72,7 +72,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
         tags={tags}
       />
       {/* Google Ads */}
-      <FixGoogleAds />
+      {/* <FixGoogleAds /> */}
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
 
