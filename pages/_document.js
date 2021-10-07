@@ -31,6 +31,10 @@ class MyDocument extends Document {
             name='google-site-verification'
             content='QVihTzJUN1bwjjME4WQtDetK-P8gRUstoBhg1-baD1o'
           />
+          <meta
+            name='msvalidate.01'
+            content='81F7CEF0C372A4EDA853D46F26A8B43F'
+          />
           <meta name='keywords' content={content.keywords} />
           <meta
             name='p:domain_verify'
