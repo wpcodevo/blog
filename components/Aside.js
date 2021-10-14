@@ -83,7 +83,10 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div className='widget' style={{ maxHeight: "60rem !important" }}>
+      <div
+        className='widget advertisement'
+        style={{ maxHeight: "60rem !important" }}
+      >
         <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS_2} />
       </div>
 
@@ -99,7 +102,10 @@ const Aside = () => {
           </a>
         </Link>
       </div>
-      <div className='widget' style={{ maxHeight: "60rem !important" }}>
+      <div
+        className='widget advertisement'
+        style={{ maxHeight: "60rem !important" }}
+      >
         <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
       <div className='widget no-pad promo'>

@@ -145,7 +145,10 @@ const Aside2 = ({ blog }) => {
           <div key={`${index}-list`}>{tag.value}</div>
         ))}
       </div>
-      <div className='widget' style={{ maxHeight: "60rem !important" }}>
+      <div
+        className='widget advertisement'
+        style={{ maxHeight: "60rem !important" }}
+      >
         <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
       </div>
     </aside>
