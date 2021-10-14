@@ -1143,6 +1143,7 @@ p {
 
 .widget.advertisement {
   max-height: 50rem;
+  overflow: hidden !important;
 }
 
 .fix-ads-bottom {
@@ -1470,7 +1471,6 @@ p {
 
 .horizontal {
   height: 200px;
-  overflow: hidden;
 }
 
 @media (max-width: 567px) {
