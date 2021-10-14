@@ -4,7 +4,7 @@ const CustomGoogleAds = ({
   slot,
   format = "fluid",
   layout = "",
-  responsive = "",
+  responsive = "true",
   styles = { display: "block" },
 }) => {
   return (
