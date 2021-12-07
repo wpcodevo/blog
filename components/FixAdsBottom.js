@@ -9,6 +9,7 @@ const FixAdsBottom = () => {
           width: "100%",
           height: "100%",
           maxWidth: "1200px !important",
+          padding: "0 30px",
           margin: "0 auto",
           display: " flex",
           alignItems: "center",
