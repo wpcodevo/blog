@@ -4,19 +4,20 @@ import Image from "next/image";
 
 const DealsListItem = ({ shorttitle, smallImage, link, title }) => {
   return (
-    <div className='deals'>
+    <div className='deal'>
       <Link {...link}>
-        <a aria-label={smallImage.alt} className='deals-link'>
+        <a aria-label={smallImage.alt} className='deal-link'>
           <Image
-            width={98}
-            height={98}
-            src={urlFor(smallImage).width(98).height(98).fit("clip").url()}
+            width={130}
+            height={130}
+            src={urlFor(smallImage).width(130).height(130).fit("clip").url()}
             alt={smallImage.alt}
             className='border'
+            objectFit='cover'
           />
         </a>
       </Link>
-      <div>
+      <div className='content'>
         <h1 style={{ fontSize: "20px" }}>
           <Link {...link}>
             <a>{title}</a>

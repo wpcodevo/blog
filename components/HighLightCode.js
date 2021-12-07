@@ -31,6 +31,7 @@ const HighLightCode = ({ code, language, filename }) => {
               ...style,
               maxHeight: "500px",
               width: "100%",
+              overflow: "auto",
               backgroundColor: "#08090a",
               color: "#f8f8f2",
               padding: "10px",

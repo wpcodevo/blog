@@ -8,9 +8,9 @@ const NewsListItem = ({ shorttitle, smallImage, link }) => {
       <Link {...link}>
         <a aria-label={smallImage.alt} className='news-link'>
           <Image
-            width={98}
-            height={98}
-            src={urlFor(smallImage).width(98).height(98).fit("clip").url()}
+            width={130}
+            height={130}
+            src={urlFor(smallImage).width(130).height(130).fit("clip").url()}
             alt={smallImage.alt}
             className='border'
           />

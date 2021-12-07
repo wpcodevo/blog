@@ -5,7 +5,8 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  background-color: #f0f0f0;
+  // background-color: #f0f0f0;
+  background-color: #f1f7fe;
   color: #454545 !important;
   letter-spacing: 0.3px;
   line-height: 1.8em;
@@ -14,7 +15,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 960px !important;
+  max-width: 1200px !important;
   margin: 0 auto;
 }
 
@@ -59,7 +60,7 @@ img {
 }
 
 .wrapper-lg {
-  max-width: 600px;
+  max-width: 800px;
   width: 100%;
   background-color: #fff;
   border: 1px solid #dfdfdf;
@@ -68,7 +69,7 @@ img {
 
 .layoutWrapper {
   display: grid;
-  grid-template-columns: 600px 300px;
+  grid-template-columns: 750px 360px;
   align-items: flex-start;
   margin-top: 10px;
   justify-content: space-between;
@@ -261,8 +262,8 @@ p {
     .card-link {
       margin: 0 15px 0 0;
       float: left;
-      width: 200px;
-      height: 150px;
+      width: 250px;
+      height: auto;
       border: 1px solid #dfdfdf;
       border-radius: 5px;
       background-color: #555;
@@ -465,7 +466,7 @@ p {
 }
 
 .header {
-  background-color: #222;
+  background-color: #268df1;
   width: 100%;
   border-bottom: 1px solid #dfdfdf;
 }
@@ -474,17 +475,20 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 30px;
 }
 
 .nav {
   padding: 16px 0;
+  height: 90px;
 }
 
-.logo h1 {
-  font-size: 1.8rem;
-  color: #fff;
-  margin-bottom: 0;
-  font-weight: bold;
+.logo {
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .nav-list {
@@ -516,10 +520,6 @@ p {
 .nav-link:visited {
   color: #fff;
   padding: 10px;
-}
-
-.nav-link:hover {
-  color: #ff6200;
 }
 
 .top-nav,
@@ -557,18 +557,15 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #ff6200;
-    padding: 22px 16px;
+    // background-color: #ff6200;
+    background-color: #268df1;
+    padding: 20px 16px;
   }
 
   .top-nav .close {
     color: #fff;
     font-size: 20px;
     cursor: pointer;
-  }
-
-  .logo h1 {
-    font-size: 20px;
   }
 
   .search-hamburger {
@@ -764,7 +761,7 @@ p {
 }
 
 .aside {
-  max-width: 300px;
+  max-width: 360px;
 
   .widget {
     margin: 0 0 20px 0;
@@ -874,6 +871,19 @@ p {
 }
 
 @media (max-width: 567px) {
+  .horizontal {
+    padding: 0;
+  }
+
+  .nav {
+    .logo {
+      a {
+        img {
+          height: 50px !important;
+        }
+      }
+    }
+  }
   .fallbackHeight {
     height: 50vh;
   }
@@ -1276,13 +1286,11 @@ p {
 }
 
 // Deals
-.deals {
+.deal {
   margin-bottom: 25px;
-
-  .deals-link {
-    margin-right: 25px;
-    float: left;
-  }
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 25px;
 
   h5 {
     display: inline-block;
@@ -1469,10 +1477,20 @@ p {
 }
 
 .horizontal {
-  height: 200px;
+  height: 280px;
+  padding: 0 30px;
 }
 
 @media (max-width: 567px) {
+  .deal {
+    display: block;
+
+    .deal-link {
+      float: left;
+      margin-right: 15px;
+    }
+  }
+
   .popup {
     padding: 10px 10px 0;
     form {

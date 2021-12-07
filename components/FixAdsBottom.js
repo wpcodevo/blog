@@ -8,7 +8,7 @@ const FixAdsBottom = () => {
         style={{
           width: "100%",
           height: "100%",
-          maxWidth: "80% !important",
+          maxWidth: "1200px !important",
           margin: "0 auto",
           display: " flex",
           alignItems: "center",

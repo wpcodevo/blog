@@ -9,7 +9,7 @@ const FixGoogleAds = () => {
       <AdSense.Google
         client={process.env.NEXT_PUBLIC_DATA_AD_CLIENT}
         slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
-        style={{ display: "block", height: 200 }}
+        style={{ display: "block", height: 280 }}
         format=''
         layout=''
       />

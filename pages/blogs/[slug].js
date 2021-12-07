@@ -72,7 +72,9 @@ function BlogDetails({ blog: initialBlog, preview }) {
         tags={tags}
       />
       {/* Google Ads */}
-      <div style={{ margin: "0 0 70px" }}>{/* <FixGoogleAds /> */}</div>
+      <div style={{ margin: "0 0 70px" }}>
+        <FixGoogleAds />
+      </div>
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
 

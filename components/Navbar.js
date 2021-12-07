@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { BiMenu } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
 import { BiSearch } from "react-icons/bi";
@@ -20,7 +21,11 @@ const BlogNavBar = () => {
             <div className='logo'>
               <Link href='/' as='/'>
                 <a aria-label='home'>
-                  <h1>CODEVO</h1>
+                  <Image
+                    src='/images/codevo-logo.svg'
+                    width='150'
+                    height='70'
+                  />
                 </a>
               </Link>
             </div>
@@ -30,7 +35,11 @@ const BlogNavBar = () => {
                 <div className='logo'>
                   <Link href='/'>
                     <a aria-label='logo' onClick={() => setOpenNav(!openNav)}>
-                      <h1>Codevo</h1>
+                      <Image
+                        src='/images/codevo-logo.svg'
+                        width='100'
+                        height='50'
+                      />
                     </a>
                   </Link>
                 </div>
