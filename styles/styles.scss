@@ -69,7 +69,7 @@ img {
 
 .layoutWrapper {
   display: grid;
-  grid-template-columns: 750px 360px;
+  grid-template-columns: 750px 300px;
   align-items: flex-start;
   margin-top: 10px;
   justify-content: space-between;
@@ -761,7 +761,7 @@ p {
 }
 
 .aside {
-  max-width: 360px;
+  max-width: 300px;
 
   .widget {
     margin: 0 0 20px 0;
