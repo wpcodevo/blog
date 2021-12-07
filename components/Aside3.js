@@ -121,11 +121,11 @@ const Aside3 = () => {
           </a>
         </Link>
       </div>
-      <div
-        className='widget advertisement'
-        style={{ maxHeight: "400px !important" }}
-      >
-        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+      <div className='widget advertisement'>
+        <CustomGoogleAds
+          format='auto'
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+        />
       </div>
       <AsideCateogories />
     </aside>
