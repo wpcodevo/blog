@@ -1225,15 +1225,15 @@ p {
 .category-grid {
   margin: 1rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 3rem;
 
   .category {
     background-color: white;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1rem 1rem 1.5rem;
     border: 1px solid #e1e1e1;
-    border-radius: 5px;
+    border-radius: 10px;
 
     h3 {
       margin: 0.5rem 0;
@@ -1242,7 +1242,7 @@ p {
 
     P {
       text-align: center;
-      height: 80px;
+      height: 85px;
     }
 
     a {
