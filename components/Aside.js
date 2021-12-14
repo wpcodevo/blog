@@ -83,11 +83,11 @@ const Aside = () => {
           </Link>
         </div>
       </div>
-      <div
-        className='widget advertisement'
-        style={{ maxHeight: "400px !important" }}
-      >
-        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS_2} />
+      <div className='widget advertisement'>
+        <CustomGoogleAds
+          format='auto'
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+        />
       </div>
 
       <div className='widget no-pad promo'>
@@ -102,11 +102,11 @@ const Aside = () => {
           </a>
         </Link>
       </div>
-      <div
-        className='widget advertisement'
-        style={{ maxHeight: "400px !important" }}
-      >
-        <CustomGoogleAds slot={process.env.NEXT_PUBLIC_DISPLAY_ADS} />
+      <div className='widget advertisement'>
+        <CustomGoogleAds
+          format='auto'
+          slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
+        />
       </div>
       <div className='widget no-pad promo'>
         <Link href='https://www.bluehost.com/track/edemziddah/Aside'>
