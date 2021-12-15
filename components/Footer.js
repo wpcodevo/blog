@@ -67,7 +67,7 @@ const Footer = () => {
                   <FaTwitter />
                 </a>
               </Link>
-              <Link href='https://github.com/ziddahedem'>
+              <Link href='https://github.com/wpcodevo'>
                 <a
                   rel='noreferrer'
                   aria-label='github'
