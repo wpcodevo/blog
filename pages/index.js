@@ -12,8 +12,6 @@ import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
 const PreviewAlert = dynamic(() => import("components/PreviewAlert"));
 import Aside from "components/Aside";
-import FixGoogleAds from "components/FixGoogleAds";
-import CustomGoogleAds from "components/CustomGoogleAds";
 import generateRSSFeed from "scripts/rss";
 
 function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
@@ -25,7 +23,6 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
         url={`${content.siteUrl}`}
       />
       {/* Google Ads */}
-      <FixGoogleAds />
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>
@@ -46,12 +43,6 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
               </div>
             ))}
 
-            <div style={{ margin: ".5rem" }}>
-              <CustomGoogleAds
-                slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
-                layout='in-article'
-              />
-            </div>
             <div className='news-grid'>
               {newsBlog?.map((blog) => (
                 <div key={`${newsBlog.length}-${Math.random()}-list`}>
@@ -66,12 +57,7 @@ function Home({ popularBlog, newsBlog, dealsBlog, preview }) {
                 </div>
               ))}
             </div>
-            <div style={{ margin: ".5rem" }}>
-              <CustomGoogleAds
-                slot={process.env.NEXT_PUBLIC_DISPLAY_ADS}
-                layout='in-article'
-              />
-            </div>
+
             <span
               style={{ margin: "25px 0 25px", display: "inline-block" }}
               className='home-title'

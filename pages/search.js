@@ -7,7 +7,6 @@ import SearchListItem from "components/SearchListItem";
 import { PageSeo } from "components/MetaDecorator";
 import Aside from "components/Aside";
 const content = require("data/content");
-import FixGoogleAds from "components/FixGoogleAds";
 import Breadcrumbs from "nextjs-breadcrumbs";
 import { Spinner } from "react-bootstrap";
 
@@ -65,7 +64,6 @@ function Search({ query, blogs, searchResults }) {
         url={`${content.siteUrl}/search?${query}`}
       />
       {/* Google Ads */}
-      <FixGoogleAds />
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>

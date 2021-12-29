@@ -9,7 +9,6 @@ import { getPaginatedBlogs } from "lib/api";
 import CardListItem from "components/CardListItem";
 import CardsItemRow from "components/CardsItemRow";
 import Aside3 from "components/Aside3";
-import FixGoogleAds from "components/FixGoogleAds";
 import Breadcrumbs from "nextjs-breadcrumbs";
 import { Spinner } from "react-bootstrap";
 
@@ -67,7 +66,6 @@ function AllBlogs({ blogs }) {
       />
 
       {/* Google Ads */}
-      <FixGoogleAds />
       <FilteringMenu
         filter={filter}
         onChange={(option, value) => {
@@ -95,7 +93,6 @@ function AllBlogs({ blogs }) {
             <div className={!filter.view.list ? "d-grid" : ""}>
               <BlogList data={data || [blogs]} filter={filter} />
             </div>
-            <FixGoogleAds />
             {/* Button */}
             <div style={{ textAlign: "center", margin: "50px 0 20px" }}>
               <button

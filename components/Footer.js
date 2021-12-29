@@ -12,6 +12,7 @@ const Footer = () => {
         padding: "50px 0 0",
         backgroundColor: "#222",
         color: "#eaeaea",
+        marginTop: 30,
       }}
     >
       <div className='center container'>

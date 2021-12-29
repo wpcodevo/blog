@@ -9,7 +9,6 @@ import FilteringMenu from "components/FilteringMenu";
 import CardListItem from "components/CardListItem";
 import CardsItemRow from "components/CardsItemRow";
 import Aside from "components/Aside";
-import FixGoogleAds from "components/FixGoogleAds";
 import { Spinner } from "react-bootstrap";
 
 const BlogList = ({ data = [], filter }) => {
@@ -67,7 +66,6 @@ function Category({ blogs, category }) {
       />
 
       {/* Google Ads */}
-      <FixGoogleAds />
       <FilteringMenu
         filter={filter}
         onChange={(option, value) => {

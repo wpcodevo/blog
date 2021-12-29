@@ -3,7 +3,6 @@ import { BlogContent } from "components/BlogContent";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
 import Aside from "components/Aside";
-import FixGoogleAds from "components/FixGoogleAds";
 
 const Privacy = ({ privacyData }) => {
   return (
@@ -14,7 +13,6 @@ const Privacy = ({ privacyData }) => {
         url={`${content.siteUrl}/privacy`}
       />
       {/* Google Ads */}
-      <FixGoogleAds />{" "}
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>
@@ -24,12 +22,10 @@ const Privacy = ({ privacyData }) => {
                   <div className='title'>
                     <h1>{c.title}</h1>
                   </div>
-                  <FixGoogleAds />
                   {c.content && <BlogContent content={c.content} />}
                 </div>
               );
             })}
-            <FixGoogleAds />
           </main>
         </div>
         {/* Aside */}

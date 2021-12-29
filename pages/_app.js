@@ -9,7 +9,6 @@ import { useState, useEffect } from "react";
 import PageLayout from "components/PageLayout";
 import { SEO } from "components/MetaDecorator";
 import { DefaultSeo } from "next-seo";
-const FixAdsBottom = dynamic(() => import("components/FixAdsBottom"));
 const CookieConsent = dynamic(() => import("react-cookie-consent"));
 const ScrollTop = dynamic(() => import("components/ScrollTop"));
 import { GA_TRACKING_ID } from "lib/gtag";
@@ -25,10 +24,6 @@ const App = ({ Component, pageProps }) => {
   }, []);
   return (
     <>
-      {process.env.NODE_ENV === "production" && (
-        <Script src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
-      )}
-
       {process.env.NODE_ENV === "production" && (
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
@@ -78,7 +73,6 @@ const App = ({ Component, pageProps }) => {
           <a aria-label='learn more'>Learn more</a>
         </Link>
       </CookieConsent>
-      {process.env.NODE_ENV === "production" && <FixAdsBottom />}
       <ScrollTop />
     </>
   );

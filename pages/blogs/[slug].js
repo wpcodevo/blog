@@ -17,7 +17,6 @@ const CommentForm = dynamic(() => import("components/CommentForm"));
 const NewsLetter = dynamic(() => import("components/NewsLetter"));
 import { Comments } from "components/Comments";
 import { BlogContent, TableContent } from "components/BlogContent";
-import FixGoogleAds from "components/FixGoogleAds";
 import Image from "next/image";
 
 function BlogDetails({ blog: initialBlog, preview }) {
@@ -72,9 +71,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
         tags={tags}
       />
       {/* Google Ads */}
-      <div style={{ margin: "0 0 70px" }}>
-        <FixGoogleAds />
-      </div>
+      <div style={{ margin: "0 0 70px" }}></div>
       <Layout blog={initialBlog}>
         {preview && <PreviewAlert />}
 
@@ -126,7 +123,7 @@ function BlogDetails({ blog: initialBlog, preview }) {
         {initialBlog.content && TableContent(initialBlog.content)}
 
         {initialBlog.content && <BlogContent content={initialBlog.content} />}
-        <FixGoogleAds />
+
         <DownloadFile blog={blog} />
         <ShareSocial blog={initialBlog} />
         <Comments comments={initialBlog.comments} />

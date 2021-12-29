@@ -4,7 +4,6 @@ import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
 import Form from "components/Form";
 import Aside from "components/Aside";
-import FixGoogleAds from "components/FixGoogleAds";
 
 const Contact = ({ contactData }) => {
   return (
@@ -15,7 +14,6 @@ const Contact = ({ contactData }) => {
         url={`${content.siteUrl}/contact`}
       />
       {/* Google Ads */}
-      <FixGoogleAds />{" "}
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>
@@ -26,12 +24,10 @@ const Contact = ({ contactData }) => {
                     <h1>{c.title}</h1>
                   </div>
 
-                  <FixGoogleAds />
                   {c.content && <BlogContent content={c.content} />}
                 </div>
               );
             })}
-            <FixGoogleAds />
             <Form />
           </main>
         </div>

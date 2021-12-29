@@ -3,7 +3,6 @@ import { BlogContent } from "components/BlogContent";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
 import Aside from "components/Aside";
-import FixGoogleAds from "components/FixGoogleAds";
 
 const About = ({ aboutData }) => {
   return (
@@ -14,7 +13,6 @@ const About = ({ aboutData }) => {
         url={`${content.siteUrl}/about`}
       />
       {/* Google Ads */}
-      <FixGoogleAds />
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>
@@ -24,13 +22,11 @@ const About = ({ aboutData }) => {
                   <div className='title'>
                     <h1>About</h1>
                   </div>
-                  <FixGoogleAds />
 
                   {c.bio && <BlogContent content={c.bio} />}
                 </div>
               );
             })}
-            <FixGoogleAds />
           </main>
         </div>
         {/* Aside */}

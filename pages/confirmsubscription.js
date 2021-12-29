@@ -1,7 +1,6 @@
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
 import Aside from "components/Aside";
-import FixGoogleAds from "components/FixGoogleAds";
 import Image from "next/image";
 
 const Subscription = () => {
@@ -13,7 +12,6 @@ const Subscription = () => {
         url={`${content.siteUrl}/confirmsubscription`}
       />
       {/* Google Ads */}
-      <FixGoogleAds />{" "}
       <div className='layoutWrapper'>
         <div className='wrapper-lg no-border'>
           <main className='main-content no-pad'>
@@ -55,7 +53,6 @@ const Subscription = () => {
                 />
               </div>
             </div>
-            <FixGoogleAds />
           </main>
         </div>
         {/* Aside */}

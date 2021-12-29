@@ -9,16 +9,16 @@ const PageLayout = ({ children, className }) => {
       <BlogNavBar />
       <div className={`page-wrapper ${className}`}>{children}</div>
       <div className='container'>
-        <div
+        {/* <div
           style={{
             margin: "1rem 0 1rem",
-            paddingBottom: "7rem",
+            paddingBottom: "1rem",
             textAlign: "center",
             overflow: "hidden",
           }}
         >
           <FixGoogleAds />
-        </div>
+        </div> */}
       </div>
       <Footer />
     </>

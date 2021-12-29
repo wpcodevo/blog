@@ -71,7 +71,7 @@ img {
   display: grid;
   grid-template-columns: 750px 300px;
   align-items: flex-start;
-  margin-top: 10px;
+  margin-top: 30px;
   justify-content: space-between;
 }
 
@@ -391,7 +391,7 @@ p {
 
 .page-footer {
   position: relative;
-  bottom: 7rem;
+  // bottom: 7rem;
   .center {
     display: grid;
     grid-template-columns: 1.4fr 1.6fr 1fr;
@@ -959,6 +959,7 @@ p {
 
   .fix-ads-bottom {
     height: 6rem;
+    display: none;
   }
 
   .comments {
@@ -1155,6 +1156,7 @@ p {
 
 .widget.advertisement {
   overflow: hidden !important;
+  display: none;
 }
 
 .fix-ads-bottom {
@@ -1481,6 +1483,7 @@ p {
 .horizontal {
   height: 280px;
   padding: 0 30px;
+  display: none;
 }
 
 @media (max-width: 567px) {

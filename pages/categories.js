@@ -4,7 +4,6 @@ import Link from "next/link";
 import { PageSeo } from "components/MetaDecorator";
 const content = require("data/content");
 import { getCategories } from "lib/api";
-import FixGoogleAds from "components/FixGoogleAds";
 
 const Categories = ({ categories }) => {
   const tags = categories?.map((category) => category.title);
@@ -17,8 +16,7 @@ const Categories = ({ categories }) => {
         tags={tags}
       />
 
-      <FixGoogleAds />
-      <div style={{ padding: "1rem" }}>
+      <div style={{ padding: "1rem", marginTop: "30px" }}>
         <h2>All Categories</h2>
         <div className='category-grid'>
           {categories.map((category, index) => (
